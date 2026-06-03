@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KhanaBook POS for Indian restaurants. First year free — offline-first billing, AI menu import, UPI payments, GST tools, and reports.">
+  <meta property="og:title" content="KhanaBook | Android POS for Indian Restaurants">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="KhanaBook POS for Indian restaurants. First year free — offline-first billing, AI menu import, UPI payments, GST tools, and reports.">
+  <meta property="og:image" content="../assets/social_card.png">
+  <meta property="og:url" content="https://khanabook.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="../assets/social_card.png">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://khanabook.com/">
+  <title>KhanaBook | Android POS for Indian Restaurants</title>
+  <link rel="icon" type="image/png" href="../assets/khanabook_logo_header.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/home-v2.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"KhanaBook POS","operatingSystem":"Android","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","ratingCount":"50"}}
+  </script>
+  <script>
+    (function(){try{var t=localStorage.getItem('khana-theme')||( window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}})();
+  </script>
+</head>
+<body data-page-version="1.1.0">
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<!-- ══ NAV ══════════════════════════════════════════════════ -->
+<nav class="nav" id="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="home.html" class="nav-brand" aria-label="KhanaBook home">
+      <img src="../assets/khanabook_logo.png" alt="KhanaBook logo" width="34" height="34">
+      KhanaBook
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="features.html">Features</a></li>
+      <li><a href="pricing-plans.html">Pricing</a></li>
+      <li><a href="our-story.html">About Us</a></li>
+      <li><a href="help-center.html">Help Center</a></li>
+      <li><a href="get-started.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span class="material-symbols-outlined" id="theme-icon" style="font-size:1.1rem">light_mode</span>
+      </button>
+      <a href="get-started.html" class="nav-cta">Start First Year Free</a>
+      <button class="hamburger" id="hamburger-trigger" aria-expanded="false" aria-label="Open navigation menu">
+        <span class="material-symbols-outlined" id="mobile-menu-icon" style="font-size:1.25rem">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div id="mobile-drawer" data-open="false" aria-hidden="true" inert class="mobile-drawer">
+  <a href="home.html">Home</a>
+  <a href="features.html">Features</a>
+  <a href="pricing-plans.html">Pricing</a>
+  <a href="our-story.html">About Us</a>
+  <a href="help-center.html">Help Center</a>
+  <a href="get-started.html">Contact</a>
+  <a href="get-started.html" class="mobile-cta-btn">Start First Year Free</a>
+</div>
+
+<main id="main-content">
+
+  <!-- ══ HERO ══════════════════════════════════════════════ -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-bg-blob hero-bg-blob-1"></div>
+      <div class="hero-bg-blob hero-bg-blob-2"></div>
+      <div class="hero-bg-blob hero-bg-blob-3"></div>
+      <div class="hero-bg-pattern"></div>
+    </div>
+    <div class="hero-inner">
+      <!-- Left: copy -->
+      <div class="hero-content">
+        <div class="hero-badge" data-reveal>
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Now with AI Menu Import
+        </div>
+        <h1 class="hero-title" data-reveal data-reveal-delay="1">
+          Precision POS for<span style="display:block;white-space:nowrap"><span class="accent-violet">Indian</span> <span class="accent-saffron">Restaurants</span></span>
+        </h1>
+        <p class="hero-body" data-reveal data-reveal-delay="2">
+          From 5-step billing to AI-powered menu imports — manage your restaurant with the world's most intuitive Android POS. First year completely free.
+        </p>
+        <div class="hero-actions" data-reveal data-reveal-delay="3">
+          <a href="get-started.html" class="btn-primary">
+            <span class="material-symbols-outlined" style="font-size:1.1rem" aria-hidden="true">rocket_launch</span>
+            Start First Year Free
+          </a>
+          <a href="features.html" class="btn-secondary">
+            <span class="material-symbols-outlined" style="font-size:1.1rem" aria-hidden="true">play_circle</span>
+            See All Features
+          </a>
+        </div>
+
+        <div class="hero-stats" data-reveal data-reveal-delay="5">
+          <div>
+            <div class="hero-stat-value">5s</div>
+            <div class="hero-stat-label">Average Billing Time</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">100%</div>
+            <div class="hero-stat-label">Offline Capable</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">50+</div>
+            <div class="hero-stat-label">Happy Restaurants</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: visual -->
+      <div class="hero-visual" data-reveal data-reveal-delay="2">
+        <div class="hero-mockup-wrap">
+          <div class="hero-mockup-card">
+            <img src="../assets/pos_phone_billing_mockup.png" alt="KhanaBook POS billing screen on an Android device" loading="eager">
+          </div>
+          <div class="hero-float-card hero-float-card-1" aria-hidden="true">
+            <span class="hero-float-icon">🧾</span>
+            <div>
+              <div class="hero-float-label">Bill Generated</div>
+              <div class="hero-float-sub">5 seconds</div>
+            </div>
+          </div>
+          <div class="hero-float-card hero-float-card-2" aria-hidden="true">
+            <span class="hero-float-icon">📶</span>
+            <div>
+              <div class="hero-float-label">Works Offline</div>
+              <div class="hero-float-sub">SQLCipher sync</div>
+            </div>
+          </div>
+          <div class="hero-float-badge" aria-hidden="true">
+            ⚡ AI OCR<br>Menu Import
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STATS STRIP ════════════════════════════════════════ -->
+  <div class="stats-strip" aria-label="Key statistics">
+    <div class="stats-grid">
+      <div data-reveal>
+        <div class="stat-big"><span>50</span>+</div>
+        <div class="stat-label">Restaurants Onboarded</div>
+      </div>
+      <div data-reveal data-reveal-delay="1">
+        <div class="stat-big"><span>5</span>s</div>
+        <div class="stat-label">Average Bill Time</div>
+      </div>
+      <div data-reveal data-reveal-delay="2">
+        <div class="stat-big"><span>100</span>%</div>
+        <div class="stat-label">Offline Capable</div>
+      </div>
+      <div data-reveal data-reveal-delay="3">
+        <div class="stat-big"><span>₹0</span></div>
+        <div class="stat-label">First Year Cost</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ COMPARISON TABLE ═══════════════════════════════════ -->
+  <section class="features-section" aria-labelledby="compare-title">
+    <div class="section-inner">
+      <div data-reveal>
+        <div class="section-eyebrow">Why KhanaBook</div>
+        <h2 class="section-title" id="compare-title">
+          Built different. <span class="hl">See for yourself.</span>
+        </h2>
+      </div>
+
+      <div style="overflow-x:auto;margin-top:2rem" data-reveal>
+        <table class="compare-table" aria-label="KhanaBook vs competitors">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th style="color:var(--violet);font-weight:800">KhanaBook</th>
+              <th>Petpooja</th>
+              <th>Posist</th>
+              <th>Loyverse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Offline-First Billing</td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-dash">✗</td><td class="compare-dash">✗</td><td class="compare-dash">✗</td></tr>
+            <tr><td>Swiggy & Zomato Integration</td><td style="color:var(--saffron-dark);font-weight:700">Soon</td><td class="compare-dash">✗</td><td class="compare-dash">✗</td><td class="compare-dash">✗</td></tr>
+            <tr><td>AI OCR Menu Import</td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-dash">✗</td><td class="compare-dash">✗</td><td class="compare-dash">✗</td></tr>
+            <tr><td>Sub-merchant Splits</td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-dash">✗</td><td class="compare-dash">✗</td><td class="compare-dash">✗</td></tr>
+            <tr><td>Android Native App</td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-dash">✗</td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td></tr>
+            <tr><td>SQLCipher Encryption</td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-dash">✗</td><td class="compare-dash">✗</td><td class="compare-dash">✗</td></tr>
+            <tr><td>GST Auto-Compliance</td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-dash">✗</td></tr>
+            <tr><td>UPI Split Payments</td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-dash">✗</td><td class="compare-dash">✗</td><td class="compare-dash">✗</td></tr>
+            <tr><td>Bluetooth Printer Support</td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td></tr>
+            <tr><td>Free Tier (First Year)</td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-dash">✗</td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td></tr>
+            <tr><td>Owner Web Dashboard</td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td></tr>
+            <tr><td>Staff Android POS</td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td><td class="compare-tick"><span class="material-symbols-outlined">check</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HOW IT WORKS ═══════════════════════════════════════ -->
+  <section aria-labelledby="how-title">
+    <div class="section-inner">
+      <div style="text-align:center" data-reveal>
+        <div class="section-eyebrow" style="justify-content:center">How It Works</div>
+        <h2 class="section-title" id="how-title" style="text-align:center">
+          Bill in <span class="hl">5 steps.</span>
+        </h2>
+        <p class="section-sub" style="margin:0 auto 3.5rem;text-align:center">
+          Designed so any staff member can master it in minutes — no training required.
+        </p>
+      </div>
+      <div class="steps-grid" role="list">
+        <div class="step" data-reveal role="listitem">
+          <div class="step-num" aria-hidden="true">1</div>
+          <div class="step-title">Customer Info</div>
+          <div class="step-body">Add customer name in one tap.</div>
+        </div>
+        <div class="step" data-reveal data-reveal-delay="1" role="listitem">
+          <div class="step-num" aria-hidden="true">2</div>
+          <div class="step-title">Menu Selection</div>
+          <div class="step-body">Browse categories, search, or use voice to add items.</div>
+        </div>
+        <div class="step" data-reveal data-reveal-delay="2" role="listitem">
+          <div class="step-num" aria-hidden="true">3</div>
+          <div class="step-title">Review Order</div>
+          <div class="step-body">Confirm items, apply discounts, check GST — all in one screen.</div>
+        </div>
+        <div class="step" data-reveal data-reveal-delay="3" role="listitem">
+          <div class="step-num" aria-hidden="true">4</div>
+          <div class="step-title">Payment</div>
+          <div class="step-body">Cash, UPI QR, card split, or any combination.</div>
+        </div>
+        <div class="step" data-reveal data-reveal-delay="4" role="listitem">
+          <div class="step-num" aria-hidden="true">5</div>
+          <div class="step-title">Done ✓</div>
+          <div class="step-body">Bill printed & synced. Ready for the next order.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ═══════════════════════════════════════ -->
+  <section aria-labelledby="testimonials-title">
+    <div class="section-inner">
+      <div style="text-align:center" data-reveal>
+        <div class="section-eyebrow" style="justify-content:center">Loved by Restaurants</div>
+        <h2 class="section-title" id="testimonials-title" style="text-align:center">
+          What owners <span class="hl">are saying.</span>
+        </h2>
+      </div>
+      <div class="testimonials-grid" style="margin-top:3rem">
+
+        <!-- Rajesh Kumar -->
+        <div class="testimonial-card" data-reveal>
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <div class="testimonial-quote">We cut our billing time from 1 minute to under 10 seconds. Rush hour is no longer a nightmare — KhanaBook handles it effortlessly.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">RK</div>
+            <div>
+              <div class="testimonial-name">Rajesh Kumar</div>
+              <div class="testimonial-role">Owner, Spice Garden, Bengaluru</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Priya Menon -->
+        <div class="testimonial-card" data-reveal data-reveal-delay="1">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <div class="testimonial-quote">The AI menu import saved us two days of data entry. We uploaded our menu and it was done in minutes. Absolutely brilliant.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">PM</div>
+            <div>
+              <div class="testimonial-name">Priya Menon</div>
+              <div class="testimonial-role">Owner, Kerala Kitchen, Chennai</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arjun Singh -->
+        <div class="testimonial-card" data-reveal data-reveal-delay="2">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <div class="testimonial-quote">Power cuts used to kill our billing. Now we're 100% offline-capable. KhanaBook has been a game-changer for our roadside dhaba.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">AS</div>
+            <div>
+              <div class="testimonial-name">Arjun</div>
+              <div class="testimonial-role">Owner, Madurai Kitchen, Madurai</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA BANNER ═════════════════════════════════════════ -->
+  <div class="cta-banner" aria-labelledby="cta-title">
+    <div class="cta-banner-inner">
+      <div class="cta-banner-eyebrow" data-reveal>Launch Offer — Limited Time</div>
+      <h2 class="cta-banner-title" id="cta-title" data-reveal data-reveal-delay="1">
+        Your first year is<br><span class="hl">completely free.</span>
+      </h2>
+      <p class="cta-banner-sub" data-reveal data-reveal-delay="2">
+        Join 50+ Indian restaurants already running smarter. No credit card details needed before you start.
+      </p>
+      <div class="cta-banner-actions" data-reveal data-reveal-delay="3">
+        <a href="get-started.html" class="cta-btn-light">
+          🚀 Start First Year Free
+        </a>
+        <a href="pricing-plans.html" class="cta-btn-ghost">
+          <span class="material-symbols-outlined" style="font-size:1.1rem" aria-hidden="true">info</span>
+          See Pricing Details
+        </a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ══ FOOTER ═════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <img src="../assets/khanabook_logo.png" alt="KhanaBook" width="30" height="30">
+        KhanaBook
+      </div>
+      <div class="footer-brand">
+        <p>Precision POS for the Modern Era. Built for Indian restaurants, by people who understand hospitality.</p>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Product</div>
+      <ul class="footer-links" role="list">
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing-plans.html">Pricing</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links" role="list">
+        <li><a href="our-story.html">About Us</a></li>
+        <li><a href="help-center.html">Help Center</a></li>
+        <li><a href="get-started.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links" role="list">
+        <li><a href="mailto:kbook@pcts.tech">kbook@pcts.tech</a></li>
+        <li><a href="tel:+919471676935">+91 94716 76935</a></li>
+        <li><a href="https://wa.me/919471676935" target="_blank" rel="noopener">WhatsApp Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span class="copyright-year"></span> KhanaBook. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="legal-privacy.html">Privacy Policy</a>
+      <a href="legal-privacy.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/site.js"></script>
+<script src="../js/home.js"></script>
+</body>
+</html>

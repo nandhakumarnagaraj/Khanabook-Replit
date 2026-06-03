@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact KhanaBook POS — claim the first year free launch offer, book a demo, ask questions, or speak directly with our team.">
+  <meta property="og:title" content="Contact Us | KhanaBook">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/social_card.png">
+  <meta property="og:url" content="https://khanabook.com/get-started.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://khanabook.com/get-started.html">
+  <title>Contact Us | KhanaBook</title>
+  <link rel="icon" type="image/png" href="../assets/khanabook_logo_header.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/home-v2.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"KhanaBook","url":"https://khanabook.com","contactPoint":{"@type":"ContactPoint","telephone":"+91-94716-76935","email":"kbook@pcts.tech","contactType":"sales"}}
+  </script>
+  <script>
+    (function(){try{var t=localStorage.getItem('khana-theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}})();
+  </script>
+  <style>
+    .contact-page { padding: calc(var(--nav-h) + 2.5rem) 1.5rem 5rem; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 5fr 7fr; gap: 4rem; align-items: start; position: relative; }
+    .contact-page::before { content: ''; position: fixed; top: 0; left: 0; right: 0; height: 500px; background: radial-gradient(circle at 30% 30%, rgba(108,39,217,.1) 0%, transparent 65%); z-index: -1; pointer-events: none; }
+
+    .contact-left { position: sticky; top: calc(var(--nav-h) + 2rem); }
+    .contact-left h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.2rem,4vw,3.2rem); font-weight: 800; line-height: 1.1; letter-spacing: -.02em; margin: 1rem 0 1.25rem; }
+    .contact-left p { color: var(--text-muted); line-height: 1.7; max-width: 400px; margin-bottom: 2.5rem; }
+
+    .contact-info-list { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2.5rem; }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .contact-info-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-info-icon .material-symbols-outlined { font-size: 1.2rem; color: var(--violet); }
+    .contact-info-item h3 { font-size: .95rem; font-weight: 700; margin-bottom: .2rem; }
+    .contact-info-item p { font-size: .875rem; color: var(--text-muted); margin: 0; line-height: 1.55; }
+
+    .satisfaction-strip { display: flex; align-items: center; gap: 1rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .avatar-stack { display: flex; }
+    .avatar-stack img { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--surface-1); object-fit: cover; margin-right: -10px; }
+    .satisfaction-strip p { font-size: .875rem; color: var(--text-muted); }
+    .satisfaction-strip strong { color: var(--violet); }
+
+    .contact-form-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 28px; padding: 2.5rem; box-shadow: 0 8px 40px rgba(108,39,217,.08); }
+    .contact-form-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; font-weight: 800; margin-bottom: .4rem; }
+    .contact-form-card > p { font-size: .875rem; color: var(--text-muted); margin-bottom: 2rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); margin-bottom: .5rem; }
+    .form-group label .req { color: #ef4444; }
+    .form-input, .form-select, .form-textarea { width: 100%; background: var(--surface-3); border: 1px solid var(--border); border-radius: 12px; padding: .75rem 1rem; font-size: .95rem; color: var(--text-primary); outline: none; transition: border-color .2s; box-sizing: border-box; font-family: inherit; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--violet); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-muted); opacity: .5; }
+    .phone-input-wrap { position: relative; }
+    .phone-prefix { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: .95rem; pointer-events: none; }
+    .form-input.with-prefix { padding-left: 3rem; }
+    .form-select { cursor: pointer; }
+    .form-textarea { min-height: 130px; resize: vertical; }
+    .submit-btn { width: 100%; height: 52px; background: var(--violet); color: #fff; border: none; border-radius: 14px; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: .5rem; transition: all .2s; }
+    .submit-btn:hover { background: var(--violet-light); transform: translateY(-1px); }
+    .submit-btn:active { transform: none; }
+    .submit-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+    .form-success { display: none; text-align: center; padding: 3rem 2rem; }
+    .form-success .success-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(34,197,94,.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+    .form-success .success-icon .material-symbols-outlined { font-size: 2rem; color: #22c55e; }
+    .form-success h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; font-weight: 800; margin-bottom: .75rem; }
+    .form-success p { color: var(--text-muted); font-size: .95rem; }
+
+    @media (max-width: 900px) {
+      .contact-page { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-left { position: static; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body data-page-version="1.1.0">
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav class="nav" id="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="home.html" class="nav-brand" aria-label="KhanaBook home">
+      <img src="../assets/khanabook_logo.png" alt="KhanaBook logo" width="34" height="34">
+      KhanaBook
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="features.html">Features</a></li>
+      <li><a href="pricing-plans.html">Pricing</a></li>
+      <li><a href="our-story.html">About Us</a></li>
+      <li><a href="help-center.html">Help Center</a></li>
+      <li><a href="get-started.html" aria-current="page">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span class="material-symbols-outlined" id="theme-icon" style="font-size:1.1rem">light_mode</span>
+      </button>
+      <a href="get-started.html" class="nav-cta">Start First Year Free</a>
+      <button class="hamburger" id="hamburger-trigger" aria-expanded="false" aria-label="Open navigation menu">
+        <span class="material-symbols-outlined" id="mobile-menu-icon" style="font-size:1.25rem">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-drawer" data-open="false" aria-hidden="true" inert class="mobile-drawer">
+  <a href="home.html">Home</a>
+  <a href="features.html">Features</a>
+  <a href="pricing-plans.html">Pricing</a>
+  <a href="our-story.html">About Us</a>
+  <a href="help-center.html">Help Center</a>
+  <a href="get-started.html">Contact</a>
+  <a href="get-started.html" class="mobile-cta-btn">Start First Year Free →</a>
+</div>
+
+<main id="main-content">
+  <div class="contact-page">
+
+    <!-- Left: info -->
+    <div class="contact-left" data-reveal>
+      <div class="section-label" style="display:inline-flex;margin-bottom:.75rem">Get in Touch</div>
+      <h1>We'd love to<br><span style="color:var(--violet)">hear from you.</span></h1>
+      <p>Whether you have a question, need support, or want to explore how KhanaBook can help your restaurant thrive — our team is ready.</p>
+
+      <div class="contact-info-list">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+          </div>
+          <div>
+            <h3>Email Us</h3>
+            <p>Reach out at <strong>kbook@pcts.tech</strong><br>We'll respond within 24 hours.</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <span class="material-symbols-outlined" aria-hidden="true">call</span>
+          </div>
+          <div>
+            <h3>Call Us</h3>
+            <p>Speak with our team at <strong>+91 94716 76935</strong><br>Mon–Sat, 9 AM – 8 PM IST.</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <span class="material-symbols-outlined" aria-hidden="true">forum</span>
+          </div>
+          <div>
+            <h3>Live Chat</h3>
+            <p>Instant answers during business hours. Our team responds in minutes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="satisfaction-strip">
+        <div class="avatar-stack" aria-hidden="true">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAjGLjhWn72upcWEB7DBdqkeo6PIXBiaxNOVXZMIQ29_qgwGNE3g6RBx6TwZH6hO-ynNVgrBZY2FbhIM04PYTVWTG9srvfkZqBbk7TsW1MEiN-Kt85htC9AP53rvjYKzUh4KWVXgZxz1dn9s_OWnwmGDFV5MnHGGsD_iQoXPa6iWGE1233p-sJ2yJkYGItA2uIf1Ll-ofu_gaE2G50V2UYiJI75FfRo-gklhqIttLlqM9T5MULKYsP4XSQ2DJi8OLF8gFX7XFYt3w" alt="" width="36" height="36" loading="lazy">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyBR68cVwUP69TbiA4n5GIbHhlNep0dzBdE80pstgDahC0dboHUB8bOemQ1A1OIjIdcRYxPn21sENeikCZ3YbMvTvrDfBBVkZVQjRyTKufxIxmciB4K6g3n1HtagsAA8wUvqxEInRf22aNDFTvS_3tW6k-FJOmEshlHKDkOg_N6YmMUE8MxfXmp3UPsTtutUBk8XAwMCUtTuTb3tsQiPLabd_YgPaAuq0nrDh5cgdK9q_9e65ZhV1nnB1GppywvN2hEgEl8flbZgA" alt="" width="36" height="36" loading="lazy">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb9SnQ2I0sukb0ktamsYWBaxtMGE63ROJbJEqixtjDKmjMOypVkW5RtygqHTZWQxueTeUc7a7u3zB1z0TTLYjbirkx1Y-59bMU8Cs3VV3LuJ-rczbgJBDXRuOoyD9CfyQ3JQHlJ4-pWiZwjRkJkq9jDt26VTtY1XEH86pWAOUrws0-2shzAIkKn-DngSP7S_5TtMtoebud7haGswiNbcFLG3doenAHthtzX8APQi7-ADoWFMKdQSHb2G_RsgyUkdz3-sdoMBtemHQ" alt="" width="36" height="36" loading="lazy">
+        </div>
+        <p><strong>99%</strong> satisfaction rate from our customers</p>
+      </div>
+    </div>
+
+    <!-- Right: form -->
+    <div class="contact-form-card" data-reveal data-reveal-delay="1">
+      <h2>Send us a message</h2>
+      <p>Fill out the form and we'll get back to you within 24 hours.</p>
+
+      <div id="form-success" class="form-success" role="status" aria-live="polite">
+        <div class="success-icon">
+          <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
+        </div>
+        <h3>Message sent!</h3>
+        <p>We'll get back to you within 24 hours. You can also reach us directly at kbook@pcts.tech.</p>
+      </div>
+
+      <form id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="full_name">Full Name <span class="req" aria-label="required">*</span></label>
+            <input class="form-input" id="full_name" name="name" type="text" placeholder="e.g. Arjun Khanna" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <span class="req" aria-label="required">*</span></label>
+            <input class="form-input" id="email" name="email" type="email" placeholder="arjun@restaurant.com" required autocomplete="email">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <div class="phone-input-wrap">
+              <span class="phone-prefix" aria-hidden="true">+91</span>
+              <input class="form-input with-prefix" id="phone" name="phone" type="tel" placeholder="98765 43210" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="restaurant_name">Restaurant Name</label>
+            <input class="form-input" id="restaurant_name" name="restaurant_name" type="text" placeholder="e.g. The Spice Route" autocomplete="organization">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject <span class="req" aria-label="required">*</span></label>
+          <select class="form-select" id="subject" name="subject" required>
+            <option value="">Select a subject</option>
+            <option value="general">General Inquiry</option>
+            <option value="support">Technical Support</option>
+            <option value="sales">Sales & Pricing</option>
+            <option value="partnership">Partnership Opportunities</option>
+            <option value="feedback">Feedback & Suggestions</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message <span class="req" aria-label="required">*</span></label>
+          <textarea class="form-textarea" id="message" name="message" placeholder="Tell us how we can help…" rows="5" required></textarea>
+        </div>
+        <button class="submit-btn" id="submit-btn" type="submit">
+          <span class="material-symbols-outlined" style="font-size:1.1rem" aria-hidden="true">send</span>
+          Send Message
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="cta-banner" aria-labelledby="contact-cta-title">
+    <div class="cta-banner-inner">
+      <div class="cta-banner-eyebrow" data-reveal>Ready to get started?</div>
+      <h2 class="cta-banner-title" id="contact-cta-title" data-reveal data-reveal-delay="1">
+        First year free.<br><span class="hl">Claim it today.</span>
+      </h2>
+      <p class="cta-banner-sub" data-reveal data-reveal-delay="2">
+        Fill out the form above and we'll reach out within 24 hours to activate your free year.
+      </p>
+      <div class="cta-banner-actions" data-reveal data-reveal-delay="3">
+        <a href="mailto:kbook@pcts.tech" class="cta-btn-light">📧 Email Us Directly</a>
+        <a href="tel:+919471676935" class="cta-btn-ghost">
+          <span class="material-symbols-outlined" style="font-size:1.1rem" aria-hidden="true">call</span>
+          Call +91 94716 76935
+        </a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <img src="../assets/khanabook_logo.png" alt="KhanaBook" width="30" height="30">
+        KhanaBook
+      </div>
+      <div class="footer-brand">
+        <p>Precision POS for the Modern Era. Built for Indian restaurants, by people who understand hospitality.</p>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Product</div>
+      <ul class="footer-links" role="list">
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing-plans.html">Pricing</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links" role="list">
+        <li><a href="our-story.html">About Us</a></li>
+        <li><a href="help-center.html">Help Center</a></li>
+        <li><a href="get-started.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links" role="list">
+        <li><a href="mailto:kbook@pcts.tech">kbook@pcts.tech</a></li>
+        <li><a href="tel:+919471676935">+91 94716 76935</a></li>
+        <li><a href="https://wa.me/919471676935" target="_blank" rel="noopener">WhatsApp Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span class="copyright-year"></span> KhanaBook. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="legal-privacy.html">Privacy Policy</a>
+      <a href="legal-privacy.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/site.js"></script>
+<script src="../js/get-started.js" defer></script>
+</body>
+</html>
