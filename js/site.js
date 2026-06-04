@@ -63,18 +63,40 @@ function initScrollReveal() {
 
 function initCookieConsent() {
   if (safeStorage.get('khana-cookie-consent')) return;
-  const banner = document.getElementById('cookie-banner');
-  if (!banner) return;
-  banner.classList.remove('hidden');
+
+  const banner = document.createElement('div');
+  banner.id = 'cookie-banner';
+  banner.setAttribute('role', 'dialog');
+  banner.setAttribute('aria-label', 'Cookie consent');
+  banner.setAttribute('aria-live', 'polite');
+  banner.innerHTML = `
+    <div class="cookie-inner">
+      <div class="cookie-icon">🍪</div>
+      <div class="cookie-text">
+        <strong>We use cookies</strong>
+        <span>We use essential cookies to keep the site working and analytics cookies to understand how you use it. In line with India's DPDP Act, we ask for your consent before setting non-essential cookies.</span>
+      </div>
+      <div class="cookie-actions">
+        <button id="cookie-decline" class="cookie-btn cookie-btn-outline">Decline</button>
+        <button id="cookie-accept" class="cookie-btn cookie-btn-primary">Accept All</button>
+      </div>
+    </div>`;
+  document.body.appendChild(banner);
+
+  requestAnimationFrame(() => banner.classList.add('cookie-visible'));
+
   const hide = () => {
-    banner.classList.add('hidden');
-    document.querySelector('.whatsapp-float')?.style.setProperty('bottom', '24px');
+    banner.classList.remove('cookie-visible');
+    setTimeout(() => banner.remove(), 350);
   };
-  document.getElementById('cookie-accept')?.addEventListener('click', () => {
-    safeStorage.set('khana-cookie-consent', 'accepted'); hide();
+
+  document.getElementById('cookie-accept').addEventListener('click', () => {
+    safeStorage.set('khana-cookie-consent', 'accepted');
+    hide();
   });
-  document.getElementById('cookie-decline')?.addEventListener('click', () => {
-    safeStorage.set('khana-cookie-consent', 'declined'); hide();
+  document.getElementById('cookie-decline').addEventListener('click', () => {
+    safeStorage.set('khana-cookie-consent', 'declined');
+    hide();
   });
 }
 

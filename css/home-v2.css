@@ -1216,6 +1216,82 @@ section { padding: 6rem 1.5rem; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── Cookie consent banner ── */
+#cookie-banner {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  z-index: 9999;
+  width: calc(100% - 32px);
+  max-width: 780px;
+  opacity: 0;
+  transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .35s ease;
+  pointer-events: none;
+}
+#cookie-banner.cookie-visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.cookie-inner {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px rgba(13,10,26,.12), 0 2px 8px rgba(13,10,26,.06);
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.dark .cookie-inner {
+  background: var(--ink-soft);
+  border-color: rgba(255,255,255,.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,.4);
+}
+.cookie-icon { font-size: 1.5rem; flex-shrink: 0; }
+.cookie-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+.cookie-text strong {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.cookie-text span {
+  font-size: .8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.cookie-actions { display: flex; gap: .5rem; flex-shrink: 0; }
+.cookie-btn {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .82rem;
+  font-weight: 700;
+  padding: .5rem 1.1rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: opacity .18s, transform .18s;
+  white-space: nowrap;
+}
+.cookie-btn:hover { opacity: .85; transform: translateY(-1px); }
+.cookie-btn-primary { background: var(--violet); color: #fff; }
+.cookie-btn-outline {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1.5px solid var(--border);
+}
+.dark .cookie-btn-outline { border-color: rgba(255,255,255,.15); color: var(--text-light); }
+@media (max-width: 600px) {
+  .cookie-inner { flex-wrap: wrap; }
+  .cookie-actions { width: 100%; justify-content: flex-end; }
+}
+
 /* ── Team section (our-story page) ── */
 .team-section { max-width: 1200px; margin: 0 auto 5rem; padding: 0 1.5rem; }
 .team-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 800; text-align: center; margin-bottom: .5rem; }
