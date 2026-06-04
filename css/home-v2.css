@@ -338,6 +338,13 @@ a { text-decoration: none; color: inherit; }
   background: rgba(108,39,217,.04);
 }
 
+.btn-tertiary {
+  display: inline-flex; align-items: center; gap: .5rem;
+  color: var(--text-muted); font-weight: 600; font-size: .95rem;
+  transition: color .2s;
+}
+.btn-tertiary:hover { color: var(--violet); }
+
 .hero-trust {
   display: flex; flex-wrap: wrap; gap: 1.25rem 2rem; align-items: center;
 }
