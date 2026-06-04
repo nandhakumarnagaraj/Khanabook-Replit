@@ -13,11 +13,13 @@ function initPricingCalculator() {
   const terminalVal     = document.getElementById('calc-terminal-val');
   const locationVal     = document.getElementById('calc-location-val');
   function updatePricing() {
-    const terminals = parseInt(terminalsSlider.value);
-    const locations = parseInt(locationsSlider.value);
+    const terminals = parseInt(terminalsSlider.value) || 1;
+    const locations = parseInt(locationsSlider.value) || 1;
     const isAnnual  = billingToggle.checked;
     let total = Math.max(0, terminals - 1) * 499 + Math.max(0, locations - 1) * 999;
     if (isAnnual) total = Math.round(total * 12 * 0.8);
+    terminalsSlider.setAttribute('aria-valuetext', `${terminals} terminal${terminals > 1 ? 's' : ''}`);
+    locationsSlider.setAttribute('aria-valuetext', `${locations} location${locations > 1 ? 's' : ''}`);
     terminalVal.textContent = terminals;
     locationVal.textContent = locations;
     totalDisplay.textContent = '₹' + total.toLocaleString('en-IN') + (isAnnual ? '/yr' : '/mo');
