@@ -1125,3 +1125,108 @@ section { padding: 6rem 1.5rem; }
   *, [data-reveal] { animation: none !important; transition: none !important; transform: none !important; }
   [data-reveal] { opacity: 1; }
 }
+
+/* ============================================================
+   UI/UX IMPROVEMENTS v2.1
+   ============================================================ */
+
+/* ── Nav slim: hide Help Center + Contact on desktop ── */
+@media (min-width: 1024px) {
+  .nav-links li:nth-child(n+5) { display: none; }
+}
+
+/* ── Hero float card overflow fix ── */
+.hero-float-card-2 { right: -0.5rem; }
+.hero-visual { overflow: visible; }
+.hero-inner { overflow: visible; }
+
+/* ── WhatsApp floating button ── */
+.whatsapp-float {
+  position: fixed; bottom: 24px; right: 24px; z-index: 200;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #25D366;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.45);
+  transition: transform .2s, box-shadow .2s;
+  text-decoration: none;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(37,211,102,.6);
+}
+.whatsapp-float svg { width: 28px; height: 28px; fill: #fff; display: block; }
+
+/* ── Sticky mobile CTA bar ── */
+.sticky-cta-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 150;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: .75rem 1rem;
+  display: flex; gap: .625rem; align-items: center;
+  box-shadow: 0 -4px 24px rgba(108,39,217,.12);
+  transform: translateY(100%);
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+}
+.sticky-cta-bar.visible { transform: translateY(0); }
+.sticky-cta-btn {
+  flex: 1; background: var(--violet); color: #fff;
+  padding: .75rem 1rem; border-radius: var(--radius-full);
+  font-weight: 700; font-size: .875rem; text-align: center;
+  display: block; transition: background .2s;
+}
+.sticky-cta-btn:hover { background: var(--violet-dark); color: #fff; }
+.sticky-play-btn {
+  display: flex; align-items: center; gap: .35rem;
+  background: var(--surface-soft); color: var(--text-primary);
+  border: 1.5px solid var(--border); border-radius: var(--radius-full);
+  padding: .75rem .875rem; font-size: .8rem; font-weight: 600;
+  white-space: nowrap; flex-shrink: 0;
+  transition: border-color .2s;
+}
+.sticky-play-btn:hover { border-color: var(--violet); color: var(--violet); }
+@media (min-width: 1024px) {
+  .sticky-cta-bar { display: none !important; }
+}
+
+/* ── Compare table sticky header (vs-petpooja page) ── */
+.compare-full-table thead th {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 10;
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.dark .compare-full-table thead th { background: var(--surface); }
+
+/* ── Form success banner ── */
+.form-success-banner {
+  background: rgba(34,197,94,.1);
+  border: 1.5px solid rgba(34,197,94,.35);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  display: flex; align-items: center; gap: .75rem;
+  margin-bottom: 1.5rem;
+  color: #15803d;
+  font-weight: 600; font-size: .9rem;
+  animation: fadeInDown .35s ease;
+}
+.dark .form-success-banner { color: #4ade80; background: rgba(34,197,94,.08); border-color: rgba(34,197,94,.25); }
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Team section (our-story page) ── */
+.team-section { max-width: 1200px; margin: 0 auto 5rem; padding: 0 1.5rem; }
+.team-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 800; text-align: center; margin-bottom: .5rem; }
+.team-section .team-sub { text-align: center; color: var(--text-muted); margin-bottom: 3rem; }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.team-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center; transition: border-color .2s, transform .2s; }
+.team-card:hover { border-color: rgba(108,39,217,.4); transform: translateY(-3px); }
+.team-avatar { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--violet), var(--saffron)); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff; }
+.team-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--text-primary); margin-bottom: .2rem; }
+.team-role { font-size: .82rem; font-weight: 600; color: var(--violet); margin-bottom: .75rem; text-transform: uppercase; letter-spacing: .05em; }
+.team-bio { font-size: .875rem; color: var(--text-muted); line-height: 1.6; }
+@media (max-width: 768px) {
+  .team-grid { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
+}
