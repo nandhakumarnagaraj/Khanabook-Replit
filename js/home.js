@@ -8,14 +8,14 @@ function initPricingCalculator() {
   if (!calc) return;
   const terminalsSlider = document.getElementById('calc-terminals');
   const locationsSlider = document.getElementById('calc-locations');
-  const billingToggle   = document.getElementById('calc-billing');
-  const totalDisplay    = document.getElementById('calc-total');
-  const terminalVal     = document.getElementById('calc-terminal-val');
-  const locationVal     = document.getElementById('calc-location-val');
+  const billingToggle = document.getElementById('calc-billing');
+  const totalDisplay = document.getElementById('calc-total');
+  const terminalVal = document.getElementById('calc-terminal-val');
+  const locationVal = document.getElementById('calc-location-val');
   function updatePricing() {
     const terminals = parseInt(terminalsSlider.value) || 1;
     const locations = parseInt(locationsSlider.value) || 1;
-    const isAnnual  = billingToggle.checked;
+    const isAnnual = billingToggle.checked;
     let total = Math.max(0, terminals - 1) * 499 + Math.max(0, locations - 1) * 999;
     if (isAnnual) total = Math.round(total * 12 * 0.8);
     terminalsSlider.setAttribute('aria-valuetext', `${terminals} terminal${terminals > 1 ? 's' : ''}`);
@@ -33,12 +33,10 @@ function initPricingCalculator() {
 /* ─── Testimonials carousel (data-driven, 3-visible) ────────────────── */
 function initTestimonialsCarousel() {
   const DATA = [
-    { stars: '★★★★★', initials: 'RK', name: 'Rajesh Kumar',    role: 'Owner, Spice Garden · Bengaluru',   type: 'Fine Dine',    quote: 'We cut our billing time from 1 minute to under 10 seconds. Friday rush hour used to be chaos — now two staff handle 80 covers without breaking a sweat.' },
-    { stars: '★★★★★', initials: 'PM', name: 'Priya Menon',     role: 'Owner, Kerala Kitchen · Chennai',    type: 'Casual Dine',  quote: 'The AI menu import saved us an entire day of data entry. I photographed our hand-written menu and it was digitised in minutes. Absolutely brilliant.' },
-    { stars: '★★★★★', initials: 'AS', name: 'Arjun Suresh',    role: 'Owner, Madurai Mess · Madurai',      type: 'Dhaba',        quote: 'Power cuts used to kill our billing queue. Now we\'re 100% offline-capable. KhanaBook has been a true game-changer for our roadside dhaba.' },
-    { stars: '★★★★★', initials: 'NK', name: 'Nandhakumar',     role: 'Founder, KhanaBook · Chennai',       type: 'Cloud Kitchen', quote: 'My billing device got lost. I logged into another Android tablet and all data was there — continued from the exact same order ID like nothing happened.' },
-    { stars: '★★★★★', initials: 'SV', name: 'Suresh Venkat',   role: 'Owner, Saravana Bhavan · Pune',      type: 'QSR',          quote: 'GST auto-computation alone saved us ₹8,000/year in accountant fees. The UPI split payment feature is something no other POS in this price range offers.' },
-    { stars: '★★★★★', initials: 'DN', name: 'Deepa Nair',      role: 'Owner, The Malabar Café · Kochi',    type: 'Café',         quote: 'Set up in 20 minutes flat — no technician, no training. My staff of two picked it up the same evening. The offline mode gave me real peace of mind.' },
+    { stars: '★★★★★', initials: 'RK', name: 'Rajesh Kumar', role: 'Owner, Spice Garden, Bengaluru', quote: 'We cut our billing time from 1 minute to under 10 seconds. Rush hour is no longer a nightmare — KhanaBook handles it effortlessly.' },
+    { stars: '★★★★★', initials: 'PM', name: 'Priya Menon', role: 'Owner, Kerala Kitchen, Chennai', quote: 'The AI menu import saved us a full day of data entry. We uploaded our menu and it was done in minutes. Absolutely brilliant.' },
+    { stars: '★★★★★', initials: 'AS', name: 'Arjun', role: 'Owner, Madurai Kitchen, Madurai', quote: 'Power cuts used to kill our billing. Now we\'re 100% offline-capable. KhanaBook has been a game-changer for our roadside dhaba.' },
+    { stars: '★★★★★', initials: 'TK', name: 'Tharun Kumar', role: 'Founder, Avartana, Chennai', quote: 'I was using a device for billing and it got lost. I logged into another device and all my data was backed up — it continued from the existing order ID like nothing happened.' },
   ];
   const track = document.getElementById('testimonials-track');
   if (!track) return;
@@ -51,14 +49,10 @@ function initTestimonialsCarousel() {
 
   function cardHTML(t) {
     return '<div class="testimonial-card">'
-      + '<div class="testimonial-card-top">'
-      + '<span class="testimonial-type-tag">' + t.type + '</span>'
-      + '<span class="testimonial-verified" aria-label="Verified review">✔ Verified</span>'
-      + '</div>'
       + '<div class="testimonial-quote">' + t.quote + '</div>'
       + '<div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">' + t.initials + '</div>'
       + '<div><div class="testimonial-name">' + t.name + '</div><div class="testimonial-role">' + t.role + '</div></div></div>'
-      + '<div class="testimonial-stars" aria-label="5 out of 5 stars" style="margin-left:0;margin-top:.75rem">' + t.stars + '</div>'
+      + '<div class="testimonial-stars" aria-label="5 out of 5 stars">' + t.stars + '</div>'
       + '</div>';
   }
 
@@ -121,15 +115,15 @@ function initTestimonialsCarousel() {
 function initBillingToggle() {
   const toggle = document.getElementById('billing-toggle');
   if (!toggle) return;
-  const thumb   = document.getElementById('toggle-thumb');
-  const prices  = document.querySelectorAll('.plan-price');
+  const thumb = document.getElementById('toggle-thumb');
+  const prices = document.querySelectorAll('.plan-price');
   const periods = document.querySelectorAll('.plan-period');
   toggle.addEventListener('click', () => {
     const isAnnual = toggle.getAttribute('aria-checked') === 'true';
     const next = !isAnnual;
     toggle.setAttribute('aria-checked', String(next));
     if (next) { thumb.classList.remove('left-1'); thumb.classList.add('right-1', 'translate-x-6'); toggle.classList.replace('bg-outline-variant', 'bg-primary'); }
-    else       { thumb.classList.remove('right-1', 'translate-x-6'); thumb.classList.add('left-1'); toggle.classList.replace('bg-primary', 'bg-outline-variant'); }
+    else { thumb.classList.remove('right-1', 'translate-x-6'); thumb.classList.add('left-1'); toggle.classList.replace('bg-primary', 'bg-outline-variant'); }
     prices.forEach(el => {
       const m = el.getAttribute('data-monthly'), a = el.getAttribute('data-annual');
       if (m && a) el.textContent = '₹' + parseInt(next ? a : m).toLocaleString('en-IN');
@@ -170,8 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Modal handlers ── */
   const demoModal = document.getElementById('demo-modal');
   const leadModal = document.getElementById('lead-modal');
-  const demoBtn   = document.getElementById('watch-demo-btn');
-  let demoOpener  = null;
+  const demoBtn = document.getElementById('watch-demo-btn');
+  let demoOpener = null;
 
   window.closeDemoModal = function () {
     if (demoModal) {
