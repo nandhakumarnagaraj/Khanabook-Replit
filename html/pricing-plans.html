@@ -77,13 +77,6 @@
     .compare-tick { color: var(--violet); font-size: 1.1rem; }
     .compare-dash { color: var(--text-muted); }
 
-    .faq-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 800; text-align: center; margin-bottom: 2.5rem; }
-    .faq-list { display: flex; flex-direction: column; gap: 1rem; }
-    .faq-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
-    .faq-q { width: 100%; background: none; border: none; padding: 1.25rem 1.5rem; font-size: .95rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; text-align: left; }
-    .faq-q:hover { color: var(--violet); }
-    .faq-a { padding: 0 1.5rem 1.25rem; font-size: .9rem; color: var(--text-muted); line-height: 1.65; }
-
     @media (max-width: 900px) {
       .pricing-cards { grid-template-columns: 1fr; }
       .price-card.featured { transform: none; }
@@ -129,6 +122,7 @@
       <a href="pricing-plans.html">Pricing</a>
       <a href="vs-petpooja.html">Compare</a>
       <a href="blog.html">Blog</a>
+      <a href="https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite" target="_blank" rel="noopener">Android App</a>
     </div>
     <div class="mobile-drawer-col">
       <div class="mobile-drawer-heading">Company</div>
@@ -244,31 +238,61 @@
     </div>
 
     <!-- FAQ -->
-    <div class="faq-section" id="faq" data-reveal>
-      <h2>Common questions</h2>
+    <section class="faq-wrap" id="faq">
+      <div class="faq-bg" aria-hidden="true">
+        <div class="faq-blob faq-blob-1"></div>
+        <div class="faq-blob faq-blob-2"></div>
+      </div>
+      <div class="section-eyebrow" style="justify-content:center">FAQ</div>
+      <h2 class="faq-heading">Common <span class="hl">questions.</span></h2>
       <div class="faq-list">
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">What does "first year free" actually mean?<span class="material-symbols-outlined" style="font-size:1.1rem;flex-shrink:0" aria-hidden="true">expand_more</span></button>
-          <div class="faq-a" hidden>Eligible launch customers pay ₹0 for all KhanaBook software for 12 full months. No credit card required. After year one, it's just ₹99/month.</div>
+          <button class="faq-q" aria-expanded="false">
+            <span>What does "first year free" actually mean?</span>
+            <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Eligible launch customers pay ₹0 for all KhanaBook software for 12 full months. No credit card required. After year one, it's just ₹99/month.</div>
+          </div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">Is hardware included in the free year?<span class="material-symbols-outlined" style="font-size:1.1rem;flex-shrink:0" aria-hidden="true">expand_more</span></button>
-          <div class="faq-a" hidden>The software is free. If you need a KhanaBook-certified Android tablet or thermal printer, those are available to purchase separately. Your existing Android device works from day one.</div>
+          <button class="faq-q" aria-expanded="false">
+            <span>Is hardware included in the free year?</span>
+            <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">The software is free. If you need a KhanaBook-certified Android tablet or thermal printer, those are available to purchase separately. Your existing Android device works from day one.</div>
+          </div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">Can I cancel during the free year?<span class="material-symbols-outlined" style="font-size:1.1rem;flex-shrink:0" aria-hidden="true">expand_more</span></button>
-          <div class="faq-a" hidden>Yes. There's no lock-in and no cancellation needed — we don't ask for credit card details before you start. You keep your data and can export it anytime.</div>
+          <button class="faq-q" aria-expanded="false">
+            <span>Can I cancel during the free year?</span>
+            <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Yes. There's no lock-in and no cancellation needed — we don't ask for credit card details before you start. You keep your data and can export it anytime.</div>
+          </div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">What happens after the free year?<span class="material-symbols-outlined" style="font-size:1.1rem;flex-shrink:0" aria-hidden="true">expand_more</span></button>
-          <div class="faq-a" hidden>We'll reach out 30 days before your year ends. After that, it's just ₹99/month — same all-features-included plan. No surprises.</div>
+          <button class="faq-q" aria-expanded="false">
+            <span>What happens after the free year?</span>
+            <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">We'll reach out 30 days before your year ends. After that, it's just ₹99/month — same all-features-included plan. No surprises.</div>
+          </div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">Are all features available in the free year?<span class="material-symbols-outlined" style="font-size:1.1rem;flex-shrink:0" aria-hidden="true">expand_more</span></button>
-          <div class="faq-a" hidden">Yes — every feature is unlocked during your free year. AI menu import, analytics, compliance alerts — everything. Same for ₹99/month after year one.</div>
+          <button class="faq-q" aria-expanded="false">
+            <span>Are all features available in the free year?</span>
+            <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Yes — every feature is unlocked during your free year. AI menu import, analytics, compliance alerts — everything. Same for ₹99/month after year one.</div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
   </div>
 
@@ -295,31 +319,30 @@
 
 <footer class="footer" role="contentinfo">
   <div class="footer-inner">
-    <div>
+    <div class="footer-brand-col">
       <div class="footer-logo">
-        <img src="../assets/khanabook_logo.png" alt="KhanaBook" width="30" height="30">
+        <img src="../assets/khanabook_logo.png" alt="KhanaBook" width="28" height="28">
         KhanaBook
       </div>
-      <div class="footer-brand">
-        <p>Precision POS for the Modern Era. Built for Indian restaurants, by people who understand hospitality.</p>
-      </div>
+      <p>Precision POS for the Modern Era. Built for Indian restaurants, by people who understand hospitality.</p>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">Product</div>
       <ul class="footer-links" role="list">
         <li><a href="features.html">Features</a></li>
         <li><a href="pricing-plans.html">Pricing</a></li>
         <li><a href="blog.html">Blog</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite" target="_blank" rel="noopener">Android App</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">Tools</div>
       <ul class="footer-links" role="list">
         <li><a href="roi-calculator.html">ROI Calculator</a></li>
         <li><a href="vs-petpooja.html">Compare POS</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul class="footer-links" role="list">
         <li><a href="our-story.html">About Us</a></li>
@@ -327,34 +350,43 @@
         <li><a href="get-started.html">Contact</a></li>
       </ul>
     </div>
-    <div>
-      <div class="footer-col-title">Contact</div>
-      <ul class="footer-links" role="list">
-        <li><a href="mailto:kbook@pcts.tech">kbook@pcts.tech</a></li>
-        <li><a href="tel:+919471676935">+91 94716 76935</a></li>
-        <li><a href="https://wa.me/919471676935" target="_blank" rel="noopener">WhatsApp Us</a></li>
-      </ul>
-    </div>
   </div>
   <div class="footer-bottom">
-    <span>© <span class="copyright-year"></span> KhanaBook. All rights reserved.</span>
-    <div class="footer-bottom-links">
-      <a href="legal-privacy.html">Privacy Policy</a>
-      <a href="legal-privacy.html">Terms of Service</a>
-    </div>
+    <span>&copy; <span class="copyright-year"></span> KhanaBook. All rights reserved.</span>
+    <a href="legal-privacy.html">Privacy Policy</a>
   </div>
 </footer>
 
 <script src="../js/site.js?v=2"></script>
 <script>
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !expanded);
-      const ans = btn.nextElementSibling;
-      if (expanded) { ans.hidden = true; } else { ans.hidden = false; }
+  function initFAQ() {
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.closest('.faq-item');
+        var ans = this.nextElementSibling;
+        var isOpen = item.classList.contains('open');
+        item.classList.toggle('open');
+        ans.classList.toggle('open');
+        this.setAttribute('aria-expanded', String(!isOpen));
+        ans.querySelector('.faq-a-inner').classList.toggle('open');
+      });
     });
-  });
+  }
+  function observeFAQ() {
+    var wrap = document.querySelector('.faq-wrap');
+    if (!wrap) return;
+    wrap.setAttribute('data-visible', 'false');
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.setAttribute('data-visible', 'true');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    io.observe(wrap);
+  }
+  document.addEventListener('DOMContentLoaded', function() { initFAQ(); observeFAQ(); });
 </script>
 </body>
 </html>

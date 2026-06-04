@@ -52,7 +52,7 @@
 
 <a class="skip-link" href="#main-content">Skip to content</a>
 
-<nav class="nav" aria-label="Main navigation">
+<nav class="nav" id="site-nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="home.html" class="nav-brand" aria-label="KhanaBook home">
       <img src="../assets/khanabook_logo.png" alt="KhanaBook logo" width="34" height="34">
@@ -61,6 +61,7 @@
     <ul class="nav-links" role="list">
       <li><a href="features.html">Features</a></li>
       <li><a href="pricing-plans.html">Pricing</a></li>
+      <li><a href="vs-petpooja.html" aria-current="page">Compare</a></li>
       <li><a href="our-story.html">About Us</a></li>
       <li><a href="help-center.html">Help Center</a></li>
       <li><a href="get-started.html">Contact</a></li>
@@ -84,6 +85,7 @@
       <a href="features.html">Features</a>
       <a href="pricing-plans.html">Pricing</a>
       <a href="blog.html">Blog</a>
+      <a href="https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite" target="_blank" rel="noopener">Android App</a>
     </div>
     <div class="mobile-drawer-col">
       <div class="mobile-drawer-heading">Company</div>
@@ -152,7 +154,7 @@
 
         <tr><td class="compare-cat" colspan="5">Integrations</td></tr>
         <tr><td>Swiggy &amp; Zomato Integration</td><td class="compare-soon">Coming soon</td><td class="compare-check"><span class="material-symbols-outlined">check</span></td><td class="compare-check"><span class="material-symbols-outlined">check</span></td><td class="compare-dash">✗</td></tr>
-        <tr><td>Easebuzz Payment Gateway</td><td class="compare-check"><span class="material-symbols-outlined">check</span></td><td class="compare-dash">✗</td><td class="compare-dash">✗</td><td class="compare-dash">✗</td></tr>
+        <tr><td>Payment Gateway</td><td class="compare-check"><span class="material-symbols-outlined">check</span></td><td class="compare-dash">✗</td><td class="compare-dash">✗</td><td class="compare-dash">✗</td></tr>
         <tr><td>Razorpay / Cashfree Support</td><td class="compare-check"><span class="material-symbols-outlined">check</span></td><td class="compare-check"><span class="material-symbols-outlined">check</span></td><td class="compare-check"><span class="material-symbols-outlined">check</span></td><td class="compare-dash">✗</td></tr>
         <tr><td>Accounting Export</td><td class="compare-check"><span class="material-symbols-outlined">check</span></td><td class="compare-check"><span class="material-symbols-outlined">check</span></td><td class="compare-check"><span class="material-symbols-outlined">check</span></td><td class="compare-check"><span class="material-symbols-outlined">check</span></td></tr>
 
@@ -179,17 +181,49 @@
     </a>
   </section>
 
-  <section class="features-section" aria-labelledby="faq-title" style="padding-bottom:4rem">
-    <div class="section-inner" style="max-width:720px">
-      <div style="text-align:center" data-reveal>
-        <div class="section-eyebrow" style="justify-content:center">FAQ</div>
-        <h2 class="section-title" id="faq-title" style="text-align:center">Comparison <span class="hl">questions.</span></h2>
+  <section class="faq-wrap" id="faq" aria-labelledby="faq-title">
+    <div class="faq-bg" aria-hidden="true">
+      <div class="faq-blob faq-blob-1"></div>
+      <div class="faq-blob faq-blob-2"></div>
+    </div>
+    <div class="section-eyebrow" style="justify-content:center">FAQ</div>
+    <h2 class="faq-heading" id="faq-title">Comparison <span class="hl">questions.</span></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How is KhanaBook different from Petpooja?</span>
+          <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">KhanaBook is offline-first — Petpooja requires internet for most features. KhanaBook also offers AI OCR menu import (upload a photo, done in seconds), UPI split payments, and SQLCipher encrypted local storage. Plus, your first year is completely free with no contract.</div>
+        </div>
       </div>
-      <div style="margin-top:2rem">
-        <details class="faq-item"><summary>How is KhanaBook different from Petpooja?</summary><p class="faq-body">KhanaBook is offline-first — Petpooja requires internet for most features. KhanaBook also offers AI OCR menu import (upload a photo, done in seconds), UPI split payments, and SQLCipher encrypted local storage. Plus, your first year is completely free with no contract.</p></details>
-        <details class="faq-item"><summary>Is KhanaBook suitable for a single restaurant?</summary><p class="faq-body">Absolutely. KhanaBook is designed for independent Indian restaurants. Setup takes minutes, staff learn it in one shift, and there's no hardware investment. Start with one device, add more as you grow.</p></details>
-        <details class="faq-item"><summary>Does KhanaBook work without internet?</summary><p class="faq-body">Yes — billing, menu access, and printer support all work fully offline. Data syncs to the cloud automatically when connectivity returns. Your restaurant never stops.</p></details>
-        <details class="faq-item"><summary>Can I switch from Petpooja or Posist?</summary><p class="faq-body">Yes. We'll help you migrate your menu and master data. Since KhanaBook is free for the first year, you can run both systems in parallel during the transition.</p></details>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is KhanaBook suitable for a single restaurant?</span>
+          <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Absolutely. KhanaBook is designed for independent Indian restaurants. Setup takes minutes, staff learn it in one shift, and there's no hardware investment. Start with one device, add more as you grow.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Does KhanaBook work without internet?</span>
+          <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Yes — billing, menu access, and printer support all work fully offline. Data syncs to the cloud automatically when connectivity returns. Your restaurant never stops.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I switch from Petpooja or Posist?</span>
+          <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Yes. We'll help you migrate your menu and master data. Since KhanaBook is free for the first year, you can run both systems in parallel during the transition.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -198,39 +232,30 @@
 
 <footer class="footer" role="contentinfo">
   <div class="footer-inner">
-    <div>
+    <div class="footer-brand-col">
       <div class="footer-logo">
-        <img src="../assets/khanabook_logo.png" alt="KhanaBook" width="30" height="30">
+        <img src="../assets/khanabook_logo.png" alt="KhanaBook" width="28" height="28">
         KhanaBook
       </div>
-      <div class="footer-brand">
-        <p>Precision POS for the Modern Era. Built for Indian restaurants, by people who understand hospitality.</p>
-      </div>
+      <p>Precision POS for the Modern Era. Built for Indian restaurants, by people who understand hospitality.</p>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">Product</div>
       <ul class="footer-links" role="list">
         <li><a href="features.html">Features</a></li>
         <li><a href="pricing-plans.html">Pricing</a></li>
         <li><a href="blog.html">Blog</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite" target="_blank" rel="noopener">Android App</a></li>
       </ul>
     </div>
-    <div>
-      <div class="footer-col-title">Compare</div>
-      <ul class="footer-links" role="list">
-        <li><a href="vs-petpooja.html">vs Petpooja</a></li>
-        <li><a href="vs-petpooja.html">vs Posist</a></li>
-        <li><a href="vs-petpooja.html">vs Loyverse</a></li>
-      </ul>
-    </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">Tools</div>
       <ul class="footer-links" role="list">
         <li><a href="roi-calculator.html">ROI Calculator</a></li>
         <li><a href="vs-petpooja.html">Compare POS</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul class="footer-links" role="list">
         <li><a href="our-story.html">About Us</a></li>
@@ -246,5 +271,34 @@
 </footer>
 
 <script src="../js/site.js?v=2"></script>
+<script>
+  function initFAQ() {
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.closest('.faq-item');
+        var ans = this.nextElementSibling;
+        var isOpen = item.classList.contains('open');
+        item.classList.toggle('open');
+        ans.classList.toggle('open');
+        this.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+  }
+  function observeFAQ() {
+    var wrap = document.querySelector('.faq-wrap');
+    if (!wrap) return;
+    wrap.setAttribute('data-visible', 'false');
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.setAttribute('data-visible', 'true');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    io.observe(wrap);
+  }
+  document.addEventListener('DOMContentLoaded', function() { initFAQ(); observeFAQ(); });
+</script>
 </body>
 </html>

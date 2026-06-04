@@ -35,12 +35,6 @@
     .city-card .material-symbols-outlined { color: var(--violet); font-size: 1.5rem; margin-bottom: .75rem; }
     .city-card h3 { font-weight: 700; margin-bottom: .5rem; font-size: 1.05rem; }
     .city-card p { font-size: .9rem; color: var(--text-muted); line-height: 1.6; }
-    .city-faq { max-width: 700px; margin: 0 auto; padding: 4rem 1.5rem; }
-    .city-faq details { border-bottom: 1px solid var(--border); padding: 1rem 0; }
-    .city-faq summary { font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-    .city-faq summary::after { content: '+'; font-size: 1.2rem; color: var(--violet); }
-    .city-faq details[open] summary::after { content: '−'; }
-    .city-faq details p { margin-top: .75rem; font-size: .9rem; color: var(--text-muted); line-height: 1.6; }
   </style>
   <script>
     (function(){try{var t=localStorage.getItem('khana-theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}})();
@@ -50,7 +44,7 @@
 
 <a class="skip-link" href="#main-content">Skip to content</a>
 
-<nav class="nav" aria-label="Main navigation">
+<nav class="nav" id="site-nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="home.html" class="nav-brand" aria-label="KhanaBook home">
       <img src="../assets/khanabook_logo.png" alt="KhanaBook logo" width="34" height="34">
@@ -84,6 +78,7 @@
       <a href="pricing-plans.html">Pricing</a>
       <a href="vs-petpooja.html">Compare</a>
       <a href="blog.html">Blog</a>
+      <a href="https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite" target="_blank" rel="noopener">Android App</a>
     </div>
     <div class="mobile-drawer-col">
       <div class="mobile-drawer-heading">Company</div>
@@ -157,55 +152,81 @@
   </div>
 </section>
 
-<section class="city-faq" aria-label="Frequently asked questions about KhanaBook in Bengaluru">
-  <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:2rem;text-align:center">FAQs for Bengaluru Restaurants</h2>
-  <details>
-    <summary>Is KhanaBook suitable for a small darshini or tiffin centre?</summary>
-    <p>Absolutely. KhanaBook is designed for all sizes — from single-counter tiffin centres to multi-outlet restaurants. The free first year is perfect for small eateries testing a digital POS for the first time.</p>
-  </details>
-  <details>
-    <summary>Can I use KhanaBook on my existing phone or tablet?</summary>
-    <p>Yes. KhanaBook works on any smartphone, tablet, or computer with a modern browser. No proprietary hardware required. You can start billing within minutes.</p>
-  </details>
-  <details>
-    <summary>Does it support UPI and card payments?</summary>
-    <p>Yes. KhanaBook integrates with all major payment gateways for UPI, credit/debit cards, and net banking. You can use your existing payment provider.</p>
-  </details>
-  <details>
-    <summary>What if I need help setting up?</summary>
-    <p>Our team provides free onboarding support. Call us at +91 94716 76935 or email kbook@pcts.tech. We can even do a remote walkthrough in 30 minutes.</p>
-  </details>
+<section class="faq-wrap" aria-label="Frequently asked questions about KhanaBook in Bengaluru">
+  <div class="faq-bg" aria-hidden="true">
+    <div class="faq-blob faq-blob-1"></div>
+    <div class="faq-blob faq-blob-2"></div>
+  </div>
+  <div class="section-eyebrow" style="justify-content:center">FAQ</div>
+  <h2 class="faq-heading">Bengaluru <span class="hl">questions.</span></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>Is KhanaBook suitable for a small darshini or tiffin centre?</span>
+        <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">Absolutely. KhanaBook is designed for all sizes — from single-counter tiffin centres to multi-outlet restaurants. The free first year is perfect for small eateries testing a digital POS for the first time.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>Can I use KhanaBook on my existing phone or tablet?</span>
+        <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">Yes. KhanaBook works on any smartphone, tablet, or computer with a modern browser. No proprietary hardware required. You can start billing within minutes.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>Does it support UPI and card payments?</span>
+        <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">Yes. KhanaBook integrates with all major payment gateways for UPI, credit/debit cards, and net banking. You can use your existing payment provider.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>What if I need help setting up?</span>
+        <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">Our team provides free onboarding support. Call us at +91 94716 76935 or email kbook@pcts.tech. We can even do a remote walkthrough in 30 minutes.</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 </main>
 
 <footer class="footer" role="contentinfo">
   <div class="footer-inner">
-    <div>
+    <div class="footer-brand-col">
       <div class="footer-logo">
-        <img src="../assets/khanabook_logo.png" alt="KhanaBook" width="30" height="30">
+        <img src="../assets/khanabook_logo.png" alt="KhanaBook" width="28" height="28">
         KhanaBook
       </div>
-      <div class="footer-brand">
-        <p>Precision POS for the Modern Era. Built for Indian restaurants, by people who understand hospitality.</p>
-      </div>
+      <p>Precision POS for the Modern Era. Built for Indian restaurants, by people who understand hospitality.</p>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">Product</div>
       <ul class="footer-links" role="list">
         <li><a href="features.html">Features</a></li>
         <li><a href="pricing-plans.html">Pricing</a></li>
         <li><a href="blog.html">Blog</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite" target="_blank" rel="noopener">Android App</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">Tools</div>
       <ul class="footer-links" role="list">
         <li><a href="roi-calculator.html">ROI Calculator</a></li>
         <li><a href="vs-petpooja.html">Compare POS</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul class="footer-links" role="list">
         <li><a href="our-story.html">About Us</a></li>
@@ -221,5 +242,34 @@
 </footer>
 
 <script src="../js/site.js?v=2"></script>
+<script>
+  function initFAQ() {
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.closest('.faq-item');
+        var ans = this.nextElementSibling;
+        var isOpen = item.classList.contains('open');
+        item.classList.toggle('open');
+        ans.classList.toggle('open');
+        this.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+  }
+  function observeFAQ() {
+    var wrap = document.querySelector('.faq-wrap');
+    if (!wrap) return;
+    wrap.setAttribute('data-visible', 'false');
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.setAttribute('data-visible', 'true');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    io.observe(wrap);
+  }
+  document.addEventListener('DOMContentLoaded', function() { initFAQ(); observeFAQ(); });
+</script>
 </body>
 </html>
