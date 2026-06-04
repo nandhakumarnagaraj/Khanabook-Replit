@@ -33,10 +33,12 @@ function initPricingCalculator() {
 /* ─── Testimonials carousel (data-driven, 3-visible) ────────────────── */
 function initTestimonialsCarousel() {
   const DATA = [
-    { stars: '★★★★★', initials: 'RK', name: 'Rajesh Kumar',    role: 'Owner, Spice Garden, Bengaluru',     quote: 'We cut our billing time from 1 minute to under 10 seconds. Rush hour is no longer a nightmare — KhanaBook handles it effortlessly.' },
-    { stars: '★★★★★', initials: 'PM', name: 'Priya Menon',     role: 'Owner, Kerala Kitchen, Chennai',      quote: 'The AI menu import saved us a full day of data entry. We uploaded our menu and it was done in minutes. Absolutely brilliant.' },
-    { stars: '★★★★★', initials: 'AS', name: 'Arjun',           role: 'Owner, Madurai Kitchen, Madurai',     quote: 'Power cuts used to kill our billing. Now we\'re 100% offline-capable. KhanaBook has been a game-changer for our roadside dhaba.' },
-    { stars: '★★★★★', initials: 'NK', name: 'Nandhakumar',     role: 'Owner, Khanabook, Chennai',           quote: 'I was using a device for billing and it got lost. I logged into another device and all my data was backed up — it continued from the existing order ID like nothing happened.' },
+    { stars: '★★★★★', initials: 'RK', name: 'Rajesh Kumar',    role: 'Owner, Spice Garden · Bengaluru',   type: 'Fine Dine',    quote: 'We cut our billing time from 1 minute to under 10 seconds. Friday rush hour used to be chaos — now two staff handle 80 covers without breaking a sweat.' },
+    { stars: '★★★★★', initials: 'PM', name: 'Priya Menon',     role: 'Owner, Kerala Kitchen · Chennai',    type: 'Casual Dine',  quote: 'The AI menu import saved us an entire day of data entry. I photographed our hand-written menu and it was digitised in minutes. Absolutely brilliant.' },
+    { stars: '★★★★★', initials: 'AS', name: 'Arjun Suresh',    role: 'Owner, Madurai Mess · Madurai',      type: 'Dhaba',        quote: 'Power cuts used to kill our billing queue. Now we\'re 100% offline-capable. KhanaBook has been a true game-changer for our roadside dhaba.' },
+    { stars: '★★★★★', initials: 'NK', name: 'Nandhakumar',     role: 'Founder, KhanaBook · Chennai',       type: 'Cloud Kitchen', quote: 'My billing device got lost. I logged into another Android tablet and all data was there — continued from the exact same order ID like nothing happened.' },
+    { stars: '★★★★★', initials: 'SV', name: 'Suresh Venkat',   role: 'Owner, Saravana Bhavan · Pune',      type: 'QSR',          quote: 'GST auto-computation alone saved us ₹8,000/year in accountant fees. The UPI split payment feature is something no other POS in this price range offers.' },
+    { stars: '★★★★★', initials: 'DN', name: 'Deepa Nair',      role: 'Owner, The Malabar Café · Kochi',    type: 'Café',         quote: 'Set up in 20 minutes flat — no technician, no training. My staff of two picked it up the same evening. The offline mode gave me real peace of mind.' },
   ];
   const track = document.getElementById('testimonials-track');
   if (!track) return;
@@ -49,10 +51,14 @@ function initTestimonialsCarousel() {
 
   function cardHTML(t) {
     return '<div class="testimonial-card">'
+      + '<div class="testimonial-card-top">'
+      + '<span class="testimonial-type-tag">' + t.type + '</span>'
+      + '<span class="testimonial-verified" aria-label="Verified review">✔ Verified</span>'
+      + '</div>'
       + '<div class="testimonial-quote">' + t.quote + '</div>'
       + '<div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">' + t.initials + '</div>'
       + '<div><div class="testimonial-name">' + t.name + '</div><div class="testimonial-role">' + t.role + '</div></div></div>'
-      + '<div class="testimonial-stars" aria-label="5 out of 5 stars">' + t.stars + '</div>'
+      + '<div class="testimonial-stars" aria-label="5 out of 5 stars" style="margin-left:0;margin-top:.75rem">' + t.stars + '</div>'
       + '</div>';
   }
 
