@@ -641,14 +641,17 @@ section { padding: 6rem 1.5rem; }
    ============================================================ */
 /* ── Testimonials Carousel ── */
 .testimonials-carousel { position: relative; }
-.testimonials-clip { overflow: hidden; width: 100%; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+
+.testimonials-clip { overflow: hidden; width: 100%; padding: 0 .75rem; box-sizing: border-box; }
 .testimonials-track {
-  display: flex; width: 100%;
-  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex; width: 100%; gap: 1.5rem;
 }
 .testimonials-track .testimonial-card {
-  flex: 0 0 33.333%; min-width: 33.333%;
-  padding: 0 .75rem; box-sizing: border-box;
+  flex: 0 0 calc((100% - 3rem) / 3); min-width: 0; box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .testimonials-track .testimonial-card { flex: 0 0 100%; min-width: 0; }
 }
 .testimonial-card {
   background: var(--surface); border: 1.5px solid var(--border);
@@ -657,7 +660,7 @@ section { padding: 6rem 1.5rem; }
 }
 .testimonial-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
 .dark .testimonial-card { background: var(--surface-soft); }
-.testimonial-stars { color: var(--saffron); font-size: 1rem; letter-spacing: .1em; margin-bottom: 1rem; }
+.testimonial-stars { color: var(--saffron); font-size: 1rem; letter-spacing: .1em; margin-top: .75rem; display: block; }
 .testimonial-quote { font-size: .95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; }
 .testimonial-quote::before { content: '\201C'; color: var(--violet); font-size: 1.5rem; line-height: 0; vertical-align: -.3em; margin-right: .1em; }
 .testimonial-author { display: flex; align-items: center; gap: .75rem; }
@@ -691,10 +694,6 @@ section { padding: 6rem 1.5rem; }
   transition: width .35s cubic-bezier(.34,1.56,.64,1), background-color .25s;
 }
 .testimonial-dot.active { width: 1.5rem; background-color: var(--violet); }
-
-@media (max-width: 768px) {
-  .testimonials-track .testimonial-card { flex: 0 0 100%; min-width: 100%; }
-}
 
 /* ============================================================
    CTA BANNER

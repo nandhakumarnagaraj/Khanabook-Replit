@@ -28,107 +28,85 @@ function initPricingCalculator() {
   updatePricing();
 }
 
-/* ─── Testimonials carousel ──────────────────────────────────────────── */
+/* ─── Testimonials carousel (data-driven, 3-visible) ────────────────── */
 function initTestimonialsCarousel() {
+  const DATA = [
+    { stars: '★★★★★', initials: 'RK', name: 'Rajesh Kumar',    role: 'Owner, Spice Garden, Bengaluru',     quote: 'We cut our billing time from 1 minute to under 10 seconds. Rush hour is no longer a nightmare — KhanaBook handles it effortlessly.' },
+    { stars: '★★★★★', initials: 'PM', name: 'Priya Menon',     role: 'Owner, Kerala Kitchen, Chennai',      quote: 'The AI menu import saved us a full day of data entry. We uploaded our menu and it was done in minutes. Absolutely brilliant.' },
+    { stars: '★★★★★', initials: 'AS', name: 'Arjun',           role: 'Owner, Madurai Kitchen, Madurai',     quote: 'Power cuts used to kill our billing. Now we\'re 100% offline-capable. KhanaBook has been a game-changer for our roadside dhaba.' },
+    { stars: '★★★★★', initials: 'NK', name: 'Nandhakumar',     role: 'Owner, Khanabook, Chennai',           quote: 'I was using a device for billing and it got lost. I logged into another device and all my data was backed up — it continued from the existing order ID like nothing happened.' },
+  ];
   const track = document.getElementById('testimonials-track');
   if (!track) return;
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const items = Array.from(track.querySelectorAll('.testimonial-card'));
-  if (items.length === 0) return;
   const prevBtn = document.getElementById('testimonial-prev');
   const nextBtn = document.getElementById('testimonial-next');
   const dotsContainer = document.getElementById('carousel-dots');
-  let dots = [];
-  const carousel = track.closest('.testimonials-carousel');
-  let visibleCount = window.innerWidth <= 768 ? 1 : 3;
-  let currentIndex = 0;
-  let interval = null;
+  let idx = 0, timer = null;
 
-  function getItemPercent() { return 100 / visibleCount; }
-  const slideCount = items.length;
-  let maxIndex = slideCount;
+  function getVisible() { return window.innerWidth <= 768 ? 1 : 3; }
 
-  function setupClones() {
-    const clones = track.querySelectorAll('.testimonial-clone');
-    clones.forEach(c => c.remove());
-    for (let i = 0; i < visibleCount; i++) {
-      const clone = items[i].cloneNode(true);
-      clone.classList.add('testimonial-clone');
-      track.appendChild(clone);
-    }
+  function cardHTML(t) {
+    return '<div class="testimonial-card">'
+      + '<div class="testimonial-quote">' + t.quote + '</div>'
+      + '<div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">' + t.initials + '</div>'
+      + '<div><div class="testimonial-name">' + t.name + '</div><div class="testimonial-role">' + t.role + '</div></div></div>'
+      + '<div class="testimonial-stars" aria-label="5 out of 5 stars">' + t.stars + '</div>'
+      + '</div>';
   }
 
-  function setupDots() {
-    dotsContainer.innerHTML = '';
-    dots = [];
-    for (let i = 0; i < slideCount; i++) {
-      const dot = document.createElement('button');
-      dot.className = 'testimonial-dot';
-      dot.setAttribute('aria-label', `Slide ${i + 1}`);
-      if (i === 0) { dot.classList.add('active'); dot.setAttribute('aria-current', 'true'); }
-      dot.addEventListener('click', () => { goTo(i); resetInterval(); });
-      dotsContainer.appendChild(dot);
-      dots.push(dot);
+  function render() {
+    const v = getVisible();
+    let html = '';
+    for (let i = 0; i < v; i++) {
+      html += cardHTML(DATA[(idx + i) % DATA.length]);
     }
-  }
-  setupClones();
-  setupDots();
-
-  function goTo(index, instant) {
-    if (index < 0) index = slideCount - 1;
-    const wrap = index >= slideCount;
-    if (wrap) index = 0;
-    currentIndex = index;
-    const pos = currentIndex * getItemPercent();
-    track.style.transition = (instant || wrap || prefersReducedMotion) ? 'none' : 'transform 500ms cubic-bezier(0.4, 0, 0.2, 1)';
-    track.style.transform = `translateX(-${pos}%)`;
-    dots.forEach((dot, i) => {
-      const active = i === currentIndex;
-      dot.classList.toggle('active', active);
-      dot.setAttribute('aria-current', active ? 'true' : 'false');
+    track.innerHTML = html;
+    dotsContainer.querySelectorAll('.testimonial-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+      d.setAttribute('aria-current', i === idx ? 'true' : 'false');
     });
   }
 
-  function startInterval() {
-    if (prefersReducedMotion) return;
-    interval = setInterval(() => goTo(currentIndex + 1), 3000);
-  }
-  function stopInterval() { if (interval) { clearInterval(interval); interval = null; } }
-  function resetInterval() { stopInterval(); startInterval(); }
+  function next() { idx = (idx + 1) % DATA.length; render(); }
+  function prev() { idx = (idx - 1 + DATA.length) % DATA.length; render(); }
+  function start() { timer = setInterval(next, 5000); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  function restart() { stop(); start(); }
 
-  prevBtn?.addEventListener('click', () => { goTo(currentIndex - 1); resetInterval(); });
-  nextBtn?.addEventListener('click', () => { goTo(currentIndex + 1); resetInterval(); });
+  dotsContainer.innerHTML = '';
+  DATA.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+    if (i === 0) dot.setAttribute('aria-current', 'true');
+    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+    dot.addEventListener('click', function () { idx = i; render(); restart(); });
+    dotsContainer.appendChild(dot);
+  });
 
-  carousel?.addEventListener('mouseenter', stopInterval);
-  carousel?.addEventListener('mouseleave', startInterval);
-  carousel?.addEventListener('focusin', stopInterval);
-  carousel?.addEventListener('focusout', startInterval);
+  prevBtn?.addEventListener('click', function () { prev(); restart(); });
+  nextBtn?.addEventListener('click', function () { next(); restart(); });
+  const carousel = track.closest('.testimonials-carousel');
+  carousel?.addEventListener('mouseenter', stop);
+  carousel?.addEventListener('mouseleave', start);
+  carousel?.addEventListener('focusin', stop);
+  carousel?.addEventListener('focusout', start);
 
   let startX = 0;
-  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-  track.addEventListener('touchend', e => {
+  track.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', function (e) {
     const dx = e.changedTouches[0].clientX - startX;
-    if (dx > 50) { goTo(currentIndex - 1); resetInterval(); }
-    else if (dx < -50) { goTo(currentIndex + 1); resetInterval(); }
+    if (dx > 50) { prev(); restart(); }
+    else if (dx < -50) { next(); restart(); }
   }, { passive: true });
 
-  goTo(0, true);
-  startInterval();
-}
-
-/* ─── Blog search ────────────────────────────────────────────────────── */
-function initBlogSearch() {
-  const searchInput = document.getElementById('blog-search');
-  const cards = document.querySelectorAll('.blog-card');
-  if (!searchInput || cards.length === 0) return;
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
-    cards.forEach(card => {
-      const title = card.querySelector('h3')?.textContent?.toLowerCase() || '';
-      const desc  = card.querySelector('p')?.textContent?.toLowerCase() || '';
-      card.style.display = (title.includes(query) || desc.includes(query)) ? '' : 'none';
-    });
+  let resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(render, 100);
   });
+
+  render();
+  start();
 }
 
 /* ─── Billing toggle ─────────────────────────────────────────────────── */
@@ -161,7 +139,6 @@ function initBillingToggle() {
 document.addEventListener('DOMContentLoaded', () => {
   initPricingCalculator();
   initTestimonialsCarousel();
-  initBlogSearch();
   initBillingToggle();
 
   /* ── Hero gradient via CSS custom props ── */
