@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/home-v2.css">
+  <link rel="stylesheet" href="../css/home-v2.css?v=2">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"KhanaBook","url":"https://khanabook.com","contactPoint":{"@type":"ContactPoint","telephone":"+91-94716-76935","email":"kbook@pcts.tech","contactType":"sales"}}
   </script>
@@ -108,13 +108,27 @@
 </nav>
 
 <div id="mobile-drawer" data-open="false" aria-hidden="true" inert class="mobile-drawer">
-  <a href="home.html">Home</a>
-  <a href="features.html">Features</a>
-  <a href="pricing-plans.html">Pricing</a>
-  <a href="our-story.html">About Us</a>
-  <a href="help-center.html">Help Center</a>
-  <a href="get-started.html">Contact</a>
-  <a href="get-started.html" class="mobile-cta-btn">Start First Year Free →</a>
+  <div class="mobile-drawer-grid">
+    <div class="mobile-drawer-col">
+      <div class="mobile-drawer-heading">Product</div>
+      <a href="features.html">Features</a>
+      <a href="pricing-plans.html">Pricing</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div class="mobile-drawer-col">
+      <div class="mobile-drawer-heading">Company</div>
+      <a href="our-story.html">About Us</a>
+      <a href="help-center.html">Help Center</a>
+      <a href="get-started.html">Contact</a>
+    </div>
+    <div class="mobile-drawer-col">
+      <div class="mobile-drawer-heading">Contact</div>
+      <a href="mailto:kbook@pcts.tech">kbook@pcts.tech</a>
+      <a href="tel:+919471676935">+91 94716 76935</a>
+      <a href="https://wa.me/919471676935" target="_blank" rel="noopener">WhatsApp Us</a>
+    </div>
+  </div>
+  <a href="get-started.html" class="mobile-cta-btn">Start First Year Free</a>
 </div>
 
 <main id="main-content">
@@ -294,7 +308,7 @@
   </div>
 </footer>
 
-<script src="../js/site.js"></script>
+<script src="../js/site.js?v=2"></script>
 <script src="../js/get-started.js" defer></script>
 </body>
 </html>

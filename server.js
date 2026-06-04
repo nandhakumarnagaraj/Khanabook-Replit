@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 
 const PORT = 5000;
 const HOST = '0.0.0.0';
@@ -46,6 +47,10 @@ const server = http.createServer((req, res) => {
   const ext = path.extname(resolvedPath).toLowerCase();
   const contentType = mimeTypes[ext] || 'application/octet-stream';
 
+  const compressibleExts = ['.html', '.css', '.js', '.json', '.svg', '.xml', '.txt'];
+  const acceptsGzip = req.headers['accept-encoding'] && req.headers['accept-encoding'].includes('gzip');
+  const shouldCompress = acceptsGzip && compressibleExts.includes(ext);
+
   fs.readFile(resolvedPath, (err, data) => {
     if (err) {
       if (err.code === 'ENOENT') {
@@ -67,12 +72,20 @@ const server = http.createServer((req, res) => {
     }
 
     const cacheExts = ['.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.webp', '.woff', '.woff2', '.ttf'];
-    const cacheControl = cacheExts.includes(ext) ? 'public, max-age=86400' : 'public, max-age=3600';
-    res.writeHead(200, {
+    const cacheControl = cacheExts.includes(ext) ? 'public, max-age=300' : 'public, max-age=300';
+    const headers = {
       'Content-Type': contentType,
       'Cache-Control': cacheControl
-    });
-    res.end(data);
+    };
+
+    if (shouldCompress) {
+      headers['Content-Encoding'] = 'gzip';
+      res.writeHead(200, headers);
+      zlib.gzip(data, (_, compressed) => res.end(compressed));
+    } else {
+      res.writeHead(200, headers);
+      res.end(data);
+    }
   });
 });
 

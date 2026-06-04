@@ -1,0 +1,10 @@
+{
+  "name": "khanabook-pos",
+  "version": "1.0.0",
+  "description": "KhanaBook POS — Marketing website for Indian restaurant POS system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT"
+}
