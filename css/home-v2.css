@@ -136,6 +136,13 @@ a { text-decoration: none; color: inherit; }
 
 .nav-actions { display: flex; align-items: center; gap: .75rem; flex-shrink: 0; }
 
+.nav-login {
+  font-size: .875rem; font-weight: 600; color: var(--text-muted);
+  padding: .4rem .75rem; border-radius: var(--radius-full);
+  transition: color .2s, background .2s; white-space: nowrap;
+}
+.nav-login:hover { color: var(--violet); background: var(--surface-soft); }
+
 .nav-theme-btn {
   width: 40px; height: 40px; border-radius: var(--radius-full);
   border: 1.5px solid var(--border);
