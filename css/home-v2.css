@@ -192,7 +192,7 @@ a { text-decoration: none; color: inherit; }
   transition: opacity .2s, transform .2s, visibility .2s;
   box-shadow: 0 8px 32px rgba(0,0,0,.1);
 }
-.mobile-drawer[data-open="true"] {
+.mobile-drawer.is-active, .mobile-drawer[data-open="true"] {
   opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
 }
 .mobile-drawer-grid {
