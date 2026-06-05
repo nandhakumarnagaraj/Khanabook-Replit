@@ -186,7 +186,7 @@ a { text-decoration: none; color: inherit; }
   position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 99;
   background: var(--surface);
   border-bottom: 1px solid var(--border);
-  padding: 1.25rem 1.5rem 1.75rem;
+  padding: 1rem 1.5rem;
   opacity: 0; visibility: hidden; pointer-events: none;
   transform: translateY(-10px);
   transition: opacity .2s, transform .2s, visibility .2s;
@@ -195,19 +195,14 @@ a { text-decoration: none; color: inherit; }
 .mobile-drawer.is-active, .mobile-drawer[data-open="true"] {
   opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
 }
-.mobile-drawer-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+.mobile-drawer-links {
+  display: flex; flex-direction: column; gap: .75rem;
 }
-.mobile-drawer-col { display: flex; flex-direction: column; gap: .35rem; }
-.mobile-drawer-heading {
-  font-size: .75rem; font-weight: 800; text-transform: uppercase;
-  letter-spacing: .08em; color: var(--text-muted); margin-bottom: .25rem;
+.mobile-drawer-links a {
+  font-size: 1rem; font-weight: 500; color: var(--text-primary);
+  padding: .5rem 0; transition: color .2s;
 }
-.mobile-drawer-col a {
-  font-size: .9rem; font-weight: 500; color: var(--text-primary);
-  transition: color .2s;
-}
-.mobile-drawer-col a:hover { color: var(--violet); }
+.mobile-drawer-links a:hover { color: var(--violet); }
 .mobile-drawer .mobile-cta-btn {
   margin-top: 1rem; background: var(--violet); color: #fff;
   padding: .875rem 1.5rem; border-radius: var(--radius-full);
