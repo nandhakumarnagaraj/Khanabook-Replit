@@ -1131,11 +1131,6 @@ section { padding: 6rem 1.5rem; }
    UI/UX IMPROVEMENTS v2.1
    ============================================================ */
 
-/* ── Nav slim: hide Help Center + Contact on desktop ── */
-@media (min-width: 1024px) {
-  .nav-links li:nth-child(n+5) { display: none; }
-}
-
 /* ── Hero float card overflow fix ── */
 .hero-float-card-2 { right: -0.5rem; }
 .hero-visual { overflow: visible; }
