@@ -70,24 +70,13 @@ function initCookieConsent() {
   banner.setAttribute('aria-label', 'Cookie consent');
   banner.setAttribute('aria-live', 'polite');
   banner.innerHTML = `
-    <div class="cookie-card">
-      <div class="cookie-header">
-        <div class="cookie-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2a10 10 0 1 0 10 10h-4a6 6 0 0 1-6-6V2z"/>
-            <line x1="2" y1="12" x2="8" y2="12"/>
-            <line x1="12" y1="2" x2="12" y2="6"/>
-            <circle cx="9" cy="9" r=".5" fill="currentColor"/>
-            <circle cx="14" cy="14" r=".5" fill="currentColor"/>
-            <circle cx="12" cy="16" r=".5" fill="currentColor"/>
-          </svg>
+    <div class="cookie-bar">
+      <div class="cookie-bar-inner">
+        <p class="cookie-bar-text">This site uses cookies to improve your experience. <strong>In line with India's DPDP Act</strong>, we ask for your consent before setting non-essential cookies.</p>
+        <div class="cookie-bar-actions">
+          <button id="cookie-decline" class="cookie-bar-btn cookie-bar-btn-ghost">Decline</button>
+          <button id="cookie-accept" class="cookie-bar-btn cookie-bar-btn-primary">Accept All</button>
         </div>
-        <h3>This site uses cookies</h3>
-      </div>
-      <p class="cookie-body">We use essential cookies to keep the site working and analytics cookies to understand how you use it. In line with India's DPDP Act, we ask for your consent before setting non-essential cookies.</p>
-      <div class="cookie-actions">
-        <button id="cookie-decline" class="cookie-btn cookie-btn-outline">Decline</button>
-        <button id="cookie-accept" class="cookie-btn cookie-btn-primary">Accept All</button>
       </div>
     </div>`;
   document.body.appendChild(banner);
@@ -96,7 +85,7 @@ function initCookieConsent() {
 
   const hide = () => {
     banner.classList.remove('cookie-visible');
-    setTimeout(() => banner.remove(), 400);
+    setTimeout(() => banner.remove(), 500);
   };
 
   document.getElementById('cookie-accept').addEventListener('click', () => {
