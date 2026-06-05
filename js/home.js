@@ -33,10 +33,10 @@ function initPricingCalculator() {
 /* ─── Testimonials carousel (data-driven, 3-visible) ────────────────── */
 function initTestimonialsCarousel() {
   const DATA = [
-    { stars: '★★★★★', initials: 'RK', name: 'Rajesh Kumar', role: 'Owner, Spice Garden, Bengaluru', quote: 'We cut our billing time from 1 minute to under 10 seconds. Rush hour is no longer a nightmare — KhanaBook handles it effortlessly.' },
-    { stars: '★★★★★', initials: 'PM', name: 'Priya Menon', role: 'Owner, Kerala Kitchen, Chennai', quote: 'The AI menu import saved us a full day of data entry. We uploaded our menu and it was done in minutes. Absolutely brilliant.' },
-    { stars: '★★★★★', initials: 'AS', name: 'Arjun', role: 'Owner, Madurai Kitchen, Madurai', quote: 'Power cuts used to kill our billing. Now we\'re 100% offline-capable. KhanaBook has been a game-changer for our roadside dhaba.' },
-    { stars: '★★★★★', initials: 'TK', name: 'Tharun Kumar', role: 'Founder, Avartana, Chennai', quote: 'I was using a device for billing and it got lost. I logged into another device and all my data was backed up — it continued from the existing order ID like nothing happened.' },
+    { initials: 'RK', name: 'Rajesh Kumar', role: 'Owner, Spice Garden, Bengaluru', quote: 'We cut our billing time from 1 minute to under 10 seconds. Rush hour is no longer a nightmare — KhanaBook handles it effortlessly.' },
+    { initials: 'PM', name: 'Priya Menon', role: 'Owner, Kerala Kitchen, Chennai', quote: 'The AI menu import saved us a full day of data entry. We uploaded our menu and it was done in minutes. Absolutely brilliant.' },
+    { initials: 'AS', name: 'Arjun', role: 'Owner, Madurai Kitchen, Madurai', quote: 'Power cuts used to kill our billing. Now we\'re 100% offline-capable. KhanaBook has been a game-changer for our roadside dhaba.' },
+    { initials: 'TK', name: 'Tharun Kumar', role: 'Founder, Avartana, Chennai', quote: 'I was using a device for billing and it got lost. I logged into another device and all my data was backed up — it continued from the existing order ID like nothing happened.' },
   ];
   const track = document.getElementById('testimonials-track');
   if (!track) return;
@@ -52,7 +52,6 @@ function initTestimonialsCarousel() {
       + '<div class="testimonial-quote">' + t.quote + '</div>'
       + '<div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">' + t.initials + '</div>'
       + '<div><div class="testimonial-name">' + t.name + '</div><div class="testimonial-role">' + t.role + '</div></div></div>'
-      + '<div class="testimonial-stars" aria-label="5 out of 5 stars">' + t.stars + '</div>'
       + '</div>';
   }
 
