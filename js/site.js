@@ -189,6 +189,60 @@ function injectWhatsAppButton() {
   document.body.appendChild(btn);
 }
 
+function injectCalendlyBadge() {
+  if (document.querySelector('.calendly-badge-widget')) return;
+  var link = document.createElement('link');
+  link.href = 'https://assets.calendly.com/assets/external/widget.css';
+  link.rel = 'stylesheet';
+  document.head.appendChild(link);
+  var script = document.createElement('script');
+  script.src = 'https://assets.calendly.com/assets/external/widget.js';
+  script.async = true;
+  script.onload = function() {
+    function tryInit(attempts) {
+      if (window.Calendly) {
+        Calendly.initBadgeWidget({
+          url: 'https://calendly.com/YOUR-CALENDLY-LINK',
+          text: '📅 Book a Demo',
+          color: '#6C27D9',
+          textColor: '#ffffff',
+          branding: false
+        });
+      } else if (attempts < 10) {
+        setTimeout(function() { tryInit(attempts + 1); }, 200);
+      }
+    }
+    tryInit(0);
+  };
+  document.body.appendChild(script);
+}
+
+function openCalendlyPopup() {
+  var link = document.querySelector('link[href*="calendly"]');
+  var script = document.querySelector('script[src*="calendly"]');
+  if (window.Calendly) {
+    Calendly.initPopupWidget({ url: 'https://calendly.com/YOUR-CALENDLY-LINK' });
+    return;
+  }
+  if (!script) {
+    link = document.createElement('link');
+    link.href = 'https://assets.calendly.com/assets/external/widget.css';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+    script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }
+  var check = setInterval(function() {
+    if (window.Calendly) {
+      clearInterval(check);
+      Calendly.initPopupWidget({ url: 'https://calendly.com/YOUR-CALENDLY-LINK' });
+    }
+  }, 100);
+  setTimeout(function() { clearInterval(check); }, 5000);
+}
+
 function injectStickyCTABar() {
   if (document.querySelector('.sticky-cta-bar')) return;
   const bar = document.createElement('div');
@@ -274,6 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   injectWhatsAppButton();
   injectStickyCTABar();
+  injectCalendlyBadge();
 
   const trigger = document.getElementById('hamburger-trigger');
   const drawer  = document.getElementById('mobile-drawer');
