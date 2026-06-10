@@ -37,6 +37,12 @@ const server = http.createServer((req, res) => {
     urlPath = '/html/sitemap.xml';
   }
 
+  if (urlPath === '/html/vs-petpooja.html' || urlPath === '/vs-petpooja.html') {
+    res.writeHead(301, { 'Location': '/html/compare.html' });
+    res.end();
+    return;
+  }
+
   const resolvedPath = path.resolve(WEB_ROOT, '.' + urlPath);
   if (!resolvedPath.startsWith(WEB_ROOT + path.sep) && resolvedPath !== WEB_ROOT) {
     res.writeHead(403, { 'Content-Type': 'text/plain' });
