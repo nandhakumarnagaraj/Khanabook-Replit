@@ -190,57 +190,11 @@ function injectWhatsAppButton() {
 }
 
 function injectCalendlyBadge() {
-  if (document.querySelector('.calendly-badge-widget')) return;
-  var link = document.createElement('link');
-  link.href = 'https://assets.calendly.com/assets/external/widget.css';
-  link.rel = 'stylesheet';
-  document.head.appendChild(link);
-  var script = document.createElement('script');
-  script.src = 'https://assets.calendly.com/assets/external/widget.js';
-  script.async = true;
-  script.onload = function() {
-    function tryInit(attempts) {
-      if (window.Calendly) {
-        Calendly.initBadgeWidget({
-          url: 'https://calendly.com/YOUR-CALENDLY-LINK',
-          text: '📅 Book a Demo',
-          color: '#6C27D9',
-          textColor: '#ffffff',
-          branding: false
-        });
-      } else if (attempts < 10) {
-        setTimeout(function() { tryInit(attempts + 1); }, 200);
-      }
-    }
-    tryInit(0);
-  };
-  document.body.appendChild(script);
+  // The site now uses the contact form and direct contact links instead of an embedded booking widget.
 }
 
 function openCalendlyPopup() {
-  var link = document.querySelector('link[href*="calendly"]');
-  var script = document.querySelector('script[src*="calendly"]');
-  if (window.Calendly) {
-    Calendly.initPopupWidget({ url: 'https://calendly.com/YOUR-CALENDLY-LINK' });
-    return;
-  }
-  if (!script) {
-    link = document.createElement('link');
-    link.href = 'https://assets.calendly.com/assets/external/widget.css';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
-    script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    document.body.appendChild(script);
-  }
-  var check = setInterval(function() {
-    if (window.Calendly) {
-      clearInterval(check);
-      Calendly.initPopupWidget({ url: 'https://calendly.com/YOUR-CALENDLY-LINK' });
-    }
-  }, 100);
-  setTimeout(function() { clearInterval(check); }, 5000);
+  window.location.href = 'get-started.html#contact-form';
 }
 
 function injectStickyCTABar() {
@@ -264,6 +218,42 @@ function injectStickyCTABar() {
       rafPending = false;
     });
   }, { passive: true });
+}
+
+function injectFooterSocialLinks() {
+  if (document.querySelector('.footer-socials')) return;
+  const footerBrand = document.querySelector('.footer-brand-col');
+  if (!footerBrand) return;
+  const footerText = footerBrand.querySelector('p');
+  const insertBeforeNode = footerText ? footerText.nextSibling : null;
+
+  const socials = document.createElement('div');
+  socials.className = 'footer-socials';
+  socials.setAttribute('aria-label', 'KhanaBook social links');
+  socials.innerHTML = [
+    {
+      label: 'Instagram',
+      svg: '<path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5Zm9.25 2.25a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm-5 1.5a4.75 4.75 0 1 1 0 9.5a4.75 4.75 0 0 1 0-9.5Zm0 1.5a3.25 3.25 0 1 0 0 6.5a3.25 3.25 0 0 0 0-6.5Z"/>'
+    },
+    {
+      label: 'Facebook',
+      svg: '<path d="M13.5 8.25V7.1c0-.7.47-1.05 1.06-1.05H16V3.5h-1.88C11.93 3.5 10.5 4.8 10.5 7v1.25H8.75v2.5h1.75V20h3v-9.25h2.18l.32-2.5H13.5Z"/>'
+    },
+    {
+      label: 'LinkedIn',
+      svg: '<path d="M6.5 8.5H3.75V20H6.5V8.5ZM5.12 3.5a1.58 1.58 0 1 0 0 3.16 1.58 1.58 0 0 0 0-3.16ZM20.25 20v-6.2c0-3.03-1.61-4.43-3.76-4.43-1.73 0-2.5.95-2.93 1.62V8.5H10.8V20h2.76v-6.2c0-1.64.31-3.22 2.07-3.22 1.74 0 1.76 1.62 1.76 3.31V20h2.86Z"/>'
+    },
+    {
+      label: 'YouTube',
+      svg: '<path d="M21.6 8.2a3 3 0 0 0-2.12-2.12C17.62 5.6 12 5.6 12 5.6s-5.62 0-7.48.48A3 3 0 0 0 2.4 8.2 31.9 31.9 0 0 0 2 12a31.9 31.9 0 0 0 .4 3.8 3 3 0 0 0 2.12 2.12c1.86.48 7.48.48 7.48.48s5.62 0 7.48-.48a3 3 0 0 0 2.12-2.12A31.9 31.9 0 0 0 22 12a31.9 31.9 0 0 0-.4-3.8ZM10 15.25v-6.5L15.5 12 10 15.25Z"/>'
+    }
+  ].map(item => `
+    <a class="footer-social-link" href="https://khanabook.com/" target="_blank" rel="noopener noreferrer" aria-label="${item.label}">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${item.svg}</svg>
+    </a>
+  `).join('');
+
+  footerBrand.insertBefore(socials, insertBeforeNode);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -328,6 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   injectWhatsAppButton();
   injectStickyCTABar();
+  injectFooterSocialLinks();
   injectCalendlyBadge();
 
   const trigger = document.getElementById('hamburger-trigger');

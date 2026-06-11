@@ -825,6 +825,36 @@ section { padding: 6rem 1.5rem; }
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
   font-size: .75rem; color: rgba(255,255,255,.4);
 }
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-top: 1.25rem;
+  margin-bottom: .25rem;
+}
+.footer-social-link {
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.68);
+  background: rgba(255,255,255,.02);
+  transition: transform .2s, color .2s, border-color .2s, background .2s;
+}
+.footer-social-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+.footer-social-link:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,.24);
+  background: rgba(255,255,255,.06);
+  transform: translateY(-1px);
+}
 .footer-bottom a { color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
 .footer-bottom a:hover { color: #fff; }
 
@@ -1112,6 +1142,9 @@ section { padding: 6rem 1.5rem; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; gap: 2rem; }
   .footer-bottom { flex-direction: column; text-align: center; }
+  .footer-socials { justify-content: center; flex-wrap: wrap; }
+  .footer-brand-col { text-align: center; }
+  .footer-logo { justify-content: center; }
   .hero-float-card-1, .hero-float-card-2, .hero-float-card-3, .hero-float-badge { display: none; }
 }
 
@@ -1380,6 +1413,10 @@ section { padding: 6rem 1.5rem; }
     flex: 1;
     text-align: center;
     padding: .625rem 1rem;
+  }
+  .whatsapp-float {
+    right: 16px;
+    bottom: 96px;
   }
 }
 

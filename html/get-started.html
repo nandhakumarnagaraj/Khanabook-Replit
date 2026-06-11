@@ -71,13 +71,23 @@
     .form-success h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; font-weight: 800; margin-bottom: .75rem; }
     .form-success p { color: var(--text-muted); font-size: .95rem; }
 
-    .calendly-embed-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 28px; padding: 2rem 2.5rem; box-shadow: 0 8px 40px rgba(108,39,217,.08); }
-    .calendly-embed-header { display: flex; align-items: center; gap: .875rem; margin-bottom: 1rem; }
-    .calendly-embed-header p { margin: 0; }
+    .booking-panel { background: var(--surface-2); border: 1px solid var(--border); border-radius: 28px; padding: 2rem 2.5rem; box-shadow: 0 8px 40px rgba(108,39,217,.08); }
+    .booking-panel-header { display: flex; align-items: center; gap: .875rem; margin-bottom: 1rem; }
+    .booking-panel-header p { margin: 0; }
+    .booking-actions { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: 1.5rem; }
+    .booking-link {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      padding: .85rem 1rem; border-radius: 14px; font-weight: 700; border: 1px solid var(--border);
+      background: var(--surface-3); color: var(--text-primary); transition: border-color .2s, color .2s, transform .2s;
+    }
+    .booking-link:hover { border-color: var(--violet); color: var(--violet); transform: translateY(-1px); }
     @media (max-width: 900px) {
       .contact-page { grid-template-columns: 1fr; gap: 3rem; }
       .contact-left { position: static; }
+      .contact-left h1 { font-size: clamp(1.9rem, 8vw, 2.8rem); max-width: 100%; overflow-wrap: anywhere; }
+      .contact-left p { max-width: 100%; }
       .form-row { grid-template-columns: 1fr; }
+      .booking-actions { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -170,16 +180,28 @@
 
     <!-- Right: form -->
     <div class="contact-right-col" data-reveal data-reveal-delay="1">
-      <!-- Calendly Inline Embed -->
-      <div class="calendly-embed-card">
-        <div class="calendly-embed-header">
+      <!-- Booking options -->
+      <div class="booking-panel">
+        <div class="booking-panel-header">
           <span class="material-symbols-outlined" style="color:var(--violet);font-size:1.5rem" aria-hidden="true">calendar_month</span>
           <div>
             <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:0">Book a Demo</h2>
-            <p style="font-size:.85rem;color:var(--text-muted);margin:0">Pick a time that works for you</p>
+            <p style="font-size:.85rem;color:var(--text-muted);margin:0">Choose the contact method that suits you best</p>
           </div>
         </div>
-        <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-CALENDLY-LINK" style="min-width:320px;height:630px;"></div>
+        <p style="font-size:.92rem;color:var(--text-muted);line-height:1.7;margin:0">
+          We no longer depend on a booking widget here. Reach out directly and we’ll help you get a walkthrough or activation slot quickly.
+        </p>
+        <div class="booking-actions">
+          <a class="booking-link" href="mailto:kbook@pcts.tech">
+            <span class="material-symbols-outlined" aria-hidden="true" style="font-size:1.1rem">mail</span>
+            Email the team
+          </a>
+          <a class="booking-link" href="tel:+919471676935">
+            <span class="material-symbols-outlined" aria-hidden="true" style="font-size:1.1rem">call</span>
+            Call now
+          </a>
+        </div>
       </div>
 
       <div style="display:flex;align-items:center;gap:.75rem;margin:2rem 0">
