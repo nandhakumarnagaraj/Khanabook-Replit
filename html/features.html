@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore KhanaBook POS features: AI OCR menu import, offline-first billing, UPI split payments, GST tools, printer support, and FSSAI compliance alerts.">
-  <meta property="og:title" content="Features | KhanaBook POS">
+  <meta name="description" content="Explore KhanaBook platform features: AI OCR menu import, KOT management, offline-first billing, UPI split payments, GST reconciliation, printer support, and compliance.">
+  <meta property="og:title" content="Features | KhanaBook Restaurant Platform">
   <meta property="og:type" content="website">
   <meta property="og:description" content="Every feature you need to run a modern Indian restaurant — built into one Android POS.">
   <meta property="og:image" content="../assets/social_card.png">
@@ -12,7 +12,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://khanabook.com/features.html">
-  <title>Features | KhanaBook POS</title>
+  <title>Features | KhanaBook Restaurant Platform</title>
   <link rel="icon" type="image/png" href="../assets/khanabook_logo_header.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -128,10 +128,10 @@
         <span aria-hidden="true">●</span> Full Feature Set
       </div>
       <h1 data-reveal data-reveal-delay="1">
-        Every tool your restaurant<br>
-        <span style="color:var(--violet)">needs to grow.</span>
+        Billing → Payments → GST → Compliance<br>
+        <span style="color:var(--violet)">in one platform.</span>
       </h1>
-      <p data-reveal data-reveal-delay="2">From AI-powered menu imports to offline-first billing — KhanaBook packs enterprise-grade features into a simple Android POS.</p>
+      <p data-reveal data-reveal-delay="2">From AI-powered OCR menu scanning and KOT management to Easebuzz payment gateway and automated GST reconciliation — KhanaBook packs enterprise-grade features into a single free Android POS.</p>
       <div data-reveal data-reveal-delay="3" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
         <a href="get-started.html" class="btn-primary">
           <span class="material-symbols-outlined" style="font-size:1.1rem" aria-hidden="true">rocket_launch</span>
@@ -156,12 +156,12 @@
             <span class="material-symbols-outlined" aria-hidden="true">document_scanner</span>
           </div>
           <h3>AI OCR Menu Import</h3>
-          <p>Photograph any printed menu — paper, PDF, or screenshot — and our AI turns it into a fully categorised digital menu in seconds. No manual data entry.</p>
+          <p>Photograph any printed menu — paper, PDF, or screenshot — and our AI turns it into a fully categorised digital menu in seconds. Uses Google ML Kit text recognition with spatial parsing for accurate item detection. Review, edit, and confirm detected items before publishing.</p>
           <div class="tag-row">
-            <span class="tag tag-violet">Live Camera</span>
-            <span class="tag tag-violet">Gallery Import</span>
-            <span class="tag tag-violet">PDF Support</span>
-            <span class="tag">Zero manual entry</span>
+            <span class="tag tag-violet">Live Camera Capture</span>
+            <span class="tag tag-violet">Spatial OCR Parsing</span>
+            <span class="tag tag-violet">Review Overlay</span>
+            <span class="tag">Manual Entry Mode</span>
           </div>
         </div>
       </div>
@@ -172,10 +172,25 @@
           <span class="material-symbols-outlined" aria-hidden="true">wifi_off</span>
         </div>
         <h3>Offline-First SQLCipher</h3>
-        <p>Full billing and payments work without internet. SQLCipher encrypts all local data. Auto-syncs the moment you're back online.</p>
+        <p>Full billing and payments work without internet. SQLCipher encrypts all local data (AES-256). Background WorkManager sync engine auto-syncs the moment you're back online.</p>
         <div class="tag-row">
-          <span class="tag">AES-256</span>
-          <span class="tag">Auto-sync</span>
+          <span class="tag">AES-256 Encrypted</span>
+          <span class="tag">WorkManager Sync</span>
+          <span class="tag">Foreground Service</span>
+        </div>
+      </div>
+
+      <!-- Multi-Step Billing -->
+      <div class="feat-card" data-reveal>
+        <div class="feat-icon">
+          <span class="material-symbols-outlined" aria-hidden="true">receipt_long</span>
+        </div>
+        <h3>5-Step Billing Flow</h3>
+        <p>Customer info (name, table, order type) → Menu selection with variants → Cart with quantity & notes → Multi-mode payment → Animated success with receipt. Dine-in, takeaway, and delivery supported.</p>
+        <div class="tag-row">
+          <span class="tag">Order Types</span>
+          <span class="tag">Item Variants</span>
+          <span class="tag">Veg/Non-Veg Indicator</span>
         </div>
       </div>
 
@@ -184,40 +199,140 @@
         <div class="feat-icon">
           <span class="material-symbols-outlined" aria-hidden="true">payments</span>
         </div>
-        <h3>UPI & Split Payments</h3>
-        <p>Accept cash, UPI, card, or split any bill across multiple payment methods. Real-time settlement tracking included.</p>
+        <h3>UPI, Card & Split Payments</h3>
+        <p>Accept cash, UPI, card, or split any bill across multiple payment methods. Dynamic UPI QR generation during payment. Easebuzz gateway integration with KYC onboarding and sub-merchant management.</p>
         <div class="tag-row">
-          <span class="tag">UPI</span>
+          <span class="tag">UPI QR</span>
           <span class="tag">Card</span>
-          <span class="tag">Cash</span>
           <span class="tag">Split Bills</span>
+          <span class="tag">Partial Payments</span>
         </div>
       </div>
 
-      <!-- GST Tools -->
+      <!-- Easebuzz Payment Gateway -->
+      <div class="feat-card" data-reveal>
+        <div class="feat-icon" style="background:rgba(245,158,11,.1)">
+          <span class="material-symbols-outlined" style="color:var(--saffron-dark)" aria-hidden="true">account_balance</span>
+        </div>
+        <h3>Easebuzz Integration</h3>
+        <p>Full payment gateway with order creation, verification, refunds, and status polling. Multi-step KYC onboarding with document upload. Browser-based UPI deep-link flow for WhatsApp, GPay, PhonePe, Paytm, BHIM, Amazon Pay.</p>
+        <div class="tag-row">
+          <span class="tag">KYC Flow</span>
+          <span class="tag">UPI Deep Link</span>
+          <span class="tag">Sub-merchant API</span>
+        </div>
+      </div>
+
+      <!-- GST Reconciliation -->
       <div class="feat-card" data-reveal>
         <div class="feat-icon">
           <span class="material-symbols-outlined" aria-hidden="true">gavel</span>
         </div>
-        <h3>GST & FSSAI Auto-Lookup</h3>
-        <p>Enter a GSTIN or FSSAI number and KhanaBook fetches all legal business details directly from government databases — zero manual entry.</p>
+        <h3>GST Reconciliation & Filing</h3>
+        <p>Automated GST reconciliation from billing data — powered by India Advocacy's compliance expertise. Tax config section with GST rate management. Supports downstream GST filing workflows to reduce manual accounting.</p>
         <div class="tag-row">
-          <span class="tag">Govt API</span>
-          <span class="tag">Auto-fill</span>
+          <span class="tag tag-violet">Auto Reconcile</span>
+          <span class="tag tag-violet">Configurable Tax Rates</span>
+          <span class="tag tag-violet">Filing Support</span>
         </div>
       </div>
 
-      <!-- Thermal Printing -->
+      <!-- KOT Management -->
+      <div class="feat-card" data-reveal>
+        <div class="feat-icon">
+          <span class="material-symbols-outlined" aria-hidden="true">restaurant</span>
+        </div>
+        <h3>Kitchen Order Ticket (KOT)</h3>
+        <p>Send orders directly to the kitchen with instant KOT printing. Track order status — pending, accepted, ready. KDS (Kitchen Display System) reprint screen with bill card queue management. Smart print routing to correct printer.</p>
+        <div class="tag-row">
+          <span class="tag tag-violet">KOT Print</span>
+          <span class="tag tag-violet">KDS Reprint</span>
+          <span class="tag">Status Tracking</span>
+        </div>
+      </div>
+
+      <!-- Order Lifecycle -->
+      <div class="feat-card" data-reveal>
+        <div class="feat-icon">
+          <span class="material-symbols-outlined" aria-hidden="true">workflow</span>
+        </div>
+        <h3>Order Lifecycle Management</h3>
+        <p>Tabbed orders screen with Today/Week/Month filters. Split-pane order details on tablets. Marketplace orders tab for Zomato/Swiggy with accept/reject/ready actions. Order status chips with colour coding. Cancel & partial settlement dialogs.</p>
+        <div class="tag-row">
+          <span class="tag">Dine-in</span>
+          <span class="tag">Takeaway</span>
+          <span class="tag">Delivery</span>
+          <span class="tag">Marketplace</span>
+        </div>
+      </div>
+
+      <!-- Bluetooth Printing -->
       <div class="feat-card" data-reveal>
         <div class="feat-icon">
           <span class="material-symbols-outlined" aria-hidden="true">print</span>
         </div>
-        <h3>Universal Thermal Printing</h3>
-        <p>Supports all major Bluetooth thermal printers. Switch between 80mm and 58mm receipt layouts instantly. Zero wait time during peak hours.</p>
+        <h3>Multi-Printer Profiles</h3>
+        <p>Supports multiple Bluetooth ESC/POS thermal printers. Assign printer roles (KDS, receipt, etc.) per profile. Invoice formatter with restaurant logo and receipt layout. PDF generation via Apache PdfBox for reports.</p>
         <div class="tag-row">
-          <span class="tag">80mm</span>
-          <span class="tag">58mm</span>
-          <span class="tag">BT 5.0</span>
+          <span class="tag">80mm / 58mm</span>
+          <span class="tag">Printer Profiles</span>
+          <span class="tag">Role Assignment</span>
+        </div>
+      </div>
+
+      <!-- Security & Lock -->
+      <div class="feat-card" data-reveal>
+        <div class="feat-icon" style="background:rgba(16,185,129,.1)">
+          <span class="material-symbols-outlined" style="color:#10b981" aria-hidden="true">lock</span>
+        </div>
+        <h3>App Lock & Security</h3>
+        <p>PIN numpad lock screen with biometric (fingerprint/face) unlock. Keystore-backed encrypted preferences for secure credential storage. JWT session management with auto-expiry detection.</p>
+        <div class="tag-row">
+          <span class="tag">PIN Lock</span>
+          <span class="tag">Biometric</span>
+          <span class="tag">Encrypted Storage</span>
+        </div>
+      </div>
+
+      <!-- Reports & Analytics -->
+      <div class="feat-card" data-reveal>
+        <div class="feat-icon">
+          <span class="material-symbols-outlined" aria-hidden="true">bar_chart</span>
+        </div>
+        <h3>Reports & Analytics</h3>
+        <p>Daily and monthly sales reports with revenue charts. Popular items ranking, payment mode breakdown (cash/UPI/card/split), and part-payment details. PDF export with download bottom bar. Filter chips by date range.</p>
+        <div class="tag-row">
+          <span class="tag">Revenue Charts</span>
+          <span class="tag">Popular Items</span>
+          <span class="tag">PDF Export</span>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <div class="feat-card" data-reveal>
+        <div class="feat-icon">
+          <span class="material-symbols-outlined" aria-hidden="true">search</span>
+        </div>
+        <h3>Full-Text Search</h3>
+        <p>Search across all orders, bills, and menu items from a single search screen. Inline lookup with contextual result panel — find any transaction in seconds.</p>
+        <div class="tag-row">
+          <span class="tag">Orders</span>
+          <span class="tag">Bills</span>
+          <span class="tag">Menu Items</span>
+        </div>
+      </div>
+
+      <!-- Settings -->
+      <div class="feat-card" data-reveal>
+        <div class="feat-icon" style="background:rgba(168,85,247,.1)">
+          <span class="material-symbols-outlined" style="color:#a855f7" aria-hidden="true">settings</span>
+        </div>
+        <h3>Configurable Settings</h3>
+        <p>Shop configuration (name, logo, address), printer setup with Bluetooth pairing, payment method toggles, GST tax rates, app lock PIN/biometric settings, display scale, and support sections with FAQ.</p>
+        <div class="tag-row">
+          <span class="tag">Shop Config</span>
+          <span class="tag">Logo Upload</span>
+          <span class="tag">Display Scale</span>
         </div>
       </div>
 
@@ -226,36 +341,85 @@
         <div class="feat-icon" style="background:rgba(239,68,68,.1)">
           <span class="material-symbols-outlined" style="color:#ef4444" aria-hidden="true">notification_important</span>
         </div>
-        <h3>License & Compliance Alerts</h3>
-        <p>Automatic reminders for GST filing deadlines and FSSAI licence expiry. Never miss a renewal that could shut your restaurant down.</p>
+        <h3>GST & License Compliance</h3>
+        <p>Compliance banner on the dashboard for GST/regulatory alerts. Powered by India Advocacy's compliance engine — helps you track FSSAI licence expiry, GST deadlines, and trade licence renewals.</p>
         <div class="tag-row">
+          <span class="tag">Compliance Banner</span>
           <span class="tag">GST Alerts</span>
-          <span class="tag">FSSAI Expiry</span>
+          <span class="tag">FSSAI Tracking</span>
         </div>
       </div>
 
-      <!-- Cloud Reporting - Wide -->
-      <div class="feat-card" data-reveal>
-        <div class="feat-text">
-          <div class="feat-icon">
-            <span class="material-symbols-outlined" aria-hidden="true">bar_chart</span>
-          </div>
-          <h3>Advanced Reports & Analytics</h3>
-          <p>Track your daily sales, popular items, and earnings from anywhere.</p>
-          <div class="tag-row">
-            <span class="tag">Daily Sales</span>
-            <span class="tag">Item Analytics</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Multi-location -->
+      <!-- Customer Engagement -->
       <div class="feat-card" data-reveal>
         <div class="feat-icon">
-          <span class="material-symbols-outlined" aria-hidden="true">store</span>
+          <span class="material-symbols-outlined" aria-hidden="true">groups</span>
         </div>
-        <h3>Multi-Location Sync</h3>
-        <p>Manage multiple outlets from a single dashboard. Real-time sales and staff data across all your locations, always in sync.</p>
+        <h3>Customer Engagement</h3>
+        <p>Build customer profiles with order history. Click-to-call from any order. Send digital receipts. Track customer preferences and buying patterns across visits.</p>
+        <div class="tag-row">
+          <span class="tag">Profiles</span>
+          <span class="tag">Call Customer</span>
+          <span class="tag">Order History</span>
+        </div>
+      </div>
+
+      <!-- Dashboard -->
+      <div class="feat-card" data-reveal>
+        <div class="feat-icon">
+          <span class="material-symbols-outlined" aria-hidden="true">dashboard</span>
+        </div>
+        <h3>Smart Dashboard</h3>
+        <p>Today's sales summary with revenue and order count. Top selling items widget. Sync status header for cloud connectivity. Metric cards and action grid for quick navigation to billing, orders, and reports.</p>
+        <div class="tag-row">
+          <span class="tag">Sales KPIs</span>
+          <span class="tag">Top Items</span>
+          <span class="tag">Sync Status</span>
+        </div>
+      </div>
+
+      <!-- Menu Management -->
+      <div class="feat-card" data-reveal>
+        <div class="feat-icon" style="background:rgba(251,191,36,.1)">
+          <span class="material-symbols-outlined" style="color:#fbbf24" aria-hidden="true">menu_book</span>
+        </div>
+        <h3>Full Menu Management</h3>
+        <p>Complete CRUD for menu items with two modes: manual entry or AI-assisted OCR. Manage categories, item variants, prices, food type (veg/non-veg flags), and conflict resolution for sync. QR code management included.</p>
+        <div class="tag-row">
+          <span class="tag">CRUD Items</span>
+          <span class="tag">Variants</span>
+          <span class="tag">Categories</span>
+          <span class="tag">QR Codes</span>
+        </div>
+      </div>
+
+      <!-- Online Marketplace -->
+      <div class="feat-card" data-reveal style="position:relative">
+        <div style="position:absolute;top:1rem;right:1rem;background:var(--saffron-dark);color:#fff;padding:.2rem .6rem;border-radius:99px;font-size:.7rem;font-weight:700;letter-spacing:.05em">ACTIVE</div>
+        <div class="feat-icon">
+          <span class="material-symbols-outlined" aria-hidden="true">delivery_dining</span>
+        </div>
+        <h3>Online Order Sync</h3>
+        <p>Marketplace orders pane with filter chips (pending, accepted, ready). Accept/reject with reason dialog. Merchant customer order detail view. Direct sync for aggregator orders.</p>
+        <div class="tag-row">
+          <span class="tag tag-violet">Marketplace Tab</span>
+          <span class="tag tag-violet">Accept / Reject</span>
+          <span class="tag">Status Filters</span>
+        </div>
+      </div>
+
+      <!-- Responsive Design -->
+      <div class="feat-card" data-reveal>
+        <div class="feat-icon">
+          <span class="material-symbols-outlined" aria-hidden="true">devices</span>
+        </div>
+        <h3>Phone & Tablet Optimised</h3>
+        <p>Adaptive layout using WindowSizeClass and WindowWidthTier. Split-pane order details on tablets. Responsive navigation and billing stepper. Built with Jetpack Compose & Material 3.</p>
+        <div class="tag-row">
+          <span class="tag">Phone</span>
+          <span class="tag">Tablet</span>
+          <span class="tag">Adaptive UI</span>
+        </div>
       </div>
 
     </div>
@@ -300,14 +464,15 @@
     <div class="compliance-inner">
       <div class="compliance-text">
         <h3>Enterprise-grade security,<br>restaurant-grade simplicity.</h3>
-        <p>KhanaBook is built on AES-256 encryption and government API integrations — so your data and your customers' payments stay safe, always.</p>
+        <p>KhanaBook is built on AES-256 SQLCipher encryption, Keystore-backed credentials, and government API integrations — so your data and payments stay safe, always.</p>
         <div style="margin-top:1.5rem">
           <a href="get-started.html" class="btn-primary">Start Free Today</a>
         </div>
       </div>
       <div class="compliance-badges">
-        <div class="compliance-badge">AES-256<span>Data Encrypted</span></div>
-        <div class="compliance-badge">GST API<span>Govt Verified</span></div>
+        <div class="compliance-badge">SQLCipher<span>AES-256 Encrypted</span></div>
+        <div class="compliance-badge">Easebuzz<span>Payment Gateway</span></div>
+        <div class="compliance-badge">GST API<span>Govt Integrated</span></div>
         <div class="compliance-badge">Offline<span>100% Capable</span></div>
       </div>
     </div>
@@ -342,7 +507,7 @@
         <img src="../assets/khanabook_logo.png" alt="KhanaBook" width="28" height="28">
         KhanaBook
       </div>
-      <p>Precision POS for the Modern Era. Built for Indian restaurants, by people who understand hospitality.</p>
+      <p>India's first integrated restaurant operating platform. Built by India Advocacy for Indian restaurants.</p>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Product</div>
