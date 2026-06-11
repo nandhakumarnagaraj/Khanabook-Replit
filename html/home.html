@@ -3,29 +3,28 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="KhanaBook is an integrated restaurant operating platform for Indian restaurants — POS billing, payments, GST reconciliation, AI menu import, KOT, and reports.">
-  <meta property="og:title" content="KhanaBook | Android POS for Indian Restaurants">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta name="description"
+    content="KhanaBook — India's first integrated restaurant operating platform. Billing, payments, KOT, GST compliance, and analytics — completely free forever.">
+  <meta property="og:title" content="KhanaBook | Restaurant Operating Platform for Indian Restaurants">
   <meta property="og:type" content="website">
   <meta property="og:description"
-    content="KhanaBook is an integrated restaurant operating platform for Indian restaurants — POS billing, payments, GST reconciliation, AI menu import, KOT, and reports.">
+    content="India's first integrated restaurant operating platform. Billing, payments, KOT, GST compliance, and analytics — completely free forever.">
   <meta property="og:image" content="../assets/social_card.png">
   <meta property="og:url" content="https://khanabook.com/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="../assets/social_card.png">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://khanabook.com/">
-  <title>KhanaBook | Android POS for Indian Restaurants</title>
+  <title>KhanaBook | Restaurant Operating Platform for Indian Restaurants</title>
   <link rel="icon" type="image/png" href="../assets/khanabook_logo_header.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="../css/home-v2.css?v=5">
+  <link rel="stylesheet" href="../css/home-v2.css?v=6">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"KhanaBook POS","operatingSystem":"Android","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","ratingCount":"50"}}
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"KhanaBook","operatingSystem":"Android","applicationCategory":"BusinessApplication","description":"India's first integrated restaurant operating platform — Billing, Payments, KOT, GST Compliance, and Analytics","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","ratingCount":"50"}}
   </script>
   <script>
     (function () { try { var t = localStorage.getItem('khana-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); } catch (e) { } })();
@@ -46,7 +45,7 @@
       <ul class="nav-links" role="list">
         <li><a href="features.html">Features</a></li>
         <li><a href="pricing-plans.html">Pricing</a></li>
-        <li><a href="vs-petpooja.html">Compare</a></li>
+        <li><a href="compare.html">Compare</a></li>
         <li><a href="our-story.html">About Us</a></li>
       </ul>
       <div class="nav-actions">
@@ -66,7 +65,7 @@
     <div class="mobile-drawer-links">
       <a href="features.html">Features</a>
       <a href="pricing-plans.html">Pricing</a>
-      <a href="vs-petpooja.html">Compare</a>
+      <a href="compare.html">Compare</a>
       <a href="our-story.html">About Us</a>
     </div>
     <a href="https://kbook.iadv.cloud/login" class="mobile-cta-btn" target="_blank" rel="noopener">Login</a>
@@ -87,16 +86,15 @@
         <div class="hero-content">
           <div class="hero-badge" data-reveal>
             <span class="hero-badge-dot" aria-hidden="true"></span>
-            Now with AI Menu Import
+            India's First Restaurant Operating Platform
           </div>
           <h1 class="hero-title" data-reveal data-reveal-delay="1">
-            <span style="display:block;white-space:nowrap"><span class="hl">AI-Powered</span> POS for</span>
-            <span style="display:block;white-space:nowrap"><span class="accent-violet">Indian</span> <span
-                class="accent-saffron">Restaurants</span></span>
+            <span style="display:block;white-space:nowrap"><span class="hl">Billing → Payments →</span></span>
+            <span style="display:block;white-space:nowrap"><span class="accent-violet">GST → </span><span
+                class="accent-saffron">Compliance</span></span>
           </h1>
           <p class="hero-body" data-reveal data-reveal-delay="2">
-            Upload your menu once, bill in seconds, collect payments, and keep GST reconciliation connected to the
-            transaction journey. Built for restaurants, cafes, cloud kitchens, bakeries, and food businesses.
+            Not just POS. KhanaBook unifies restaurant billing, KOT management, real-time payments, GST reconciliation, and compliance into one platform — <strong>Billing → Payments → GST → Compliance</strong>. Completely free, forever.
           </p>
           <div class="hero-actions" data-reveal data-reveal-delay="3">
             <a href="https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite" target="_blank"
@@ -108,7 +106,7 @@
               </svg>
               Get it on Google Play
             </a>
-            <a href="get-started.html#contact-form" class="btn-secondary">
+            <a href="get-started.html" class="btn-secondary" onclick="event.preventDefault();openCalendlyPopup();">
               <span class="material-symbols-outlined" style="font-size:1.1rem" aria-hidden="true">calendar_month</span>
               Book a Demo
             </a>
@@ -120,12 +118,16 @@
               <div class="hero-stat-label">Average Billing Time</div>
             </div>
             <div>
+              <div class="hero-stat-value">1.5L+</div>
+              <div class="hero-stat-label">Businesses Served by India Advocacy</div>
+            </div>
+            <div>
               <div class="hero-stat-value">100%</div>
               <div class="hero-stat-label">Offline Capable</div>
             </div>
             <div>
-              <div class="hero-stat-value">50+</div>
-              <div class="hero-stat-label">Happy Restaurants</div>
+              <div class="hero-stat-value">3</div>
+              <div class="hero-stat-label">Billing → GST → Compliance</div>
             </div>
           </div>
         </div>
@@ -154,12 +156,15 @@
             <div class="hero-float-card hero-float-card-3" aria-hidden="true">
               <span class="hero-float-icon">☁️</span>
               <div>
-                <div class="hero-float-label">Auto Backup</div>
-                <div class="hero-float-sub">Cloud sync</div>
+                <div class="hero-float-label">GST Compliance</div>
+                <div class="hero-float-sub">Auto reconciliation</div>
               </div>
             </div>
             <div class="hero-float-badge" aria-hidden="true">
               ⚡ AI OCR<br>Menu Import
+            </div>
+            <div class="hero-float-badge" style="bottom:2rem;right:3rem;background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.35);color:#10b981" aria-hidden="true">
+              🔐 Biometric<br>App Lock
             </div>
           </div>
         </div>
@@ -233,14 +238,14 @@
                 <td class="compare-dash">✗</td>
               </tr>
               <tr>
-                <td>GST Reconciliation Support</td>
+                <td>GST Auto-Compliance</td>
                 <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
                 <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
                 <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
                 <td class="compare-dash">✗</td>
               </tr>
               <tr>
-                <td>Easebuzz Payment Infrastructure</td>
+                <td>Payment Gateway Integrated</td>
                 <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
                 <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
                 <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
@@ -248,6 +253,27 @@
               </tr>
               <tr>
                 <td>UPI Split Payments</td>
+                <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
+                <td class="compare-dash">✗</td>
+                <td class="compare-dash">✗</td>
+                <td class="compare-dash">✗</td>
+              </tr>
+              <tr>
+                <td>Biometric App Lock</td>
+                <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
+                <td class="compare-dash">✗</td>
+                <td class="compare-dash">✗</td>
+                <td class="compare-dash">✗</td>
+              </tr>
+              <tr>
+                <td>KDS Reprint Queue</td>
+                <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
+                <td class="compare-dash">✗</td>
+                <td class="compare-dash">✗</td>
+                <td class="compare-dash">✗</td>
+              </tr>
+              <tr>
+                <td>Easebuzz Payment Gateway</td>
                 <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
                 <td class="compare-dash">✗</td>
                 <td class="compare-dash">✗</td>
@@ -317,8 +343,8 @@
               </svg>
             </div>
             <h3 class="step-title">Start Billing Instantly</h3>
-            <p class="step-body">Select items, take payment (UPI, cash, card, or split). Payment gateways integrated.
-              GST computed automatically. Bill in under 5 seconds.</p>
+            <p class="step-body">Select items with variants, take payment (UPI, cash, card, or split via Easebuzz).
+              GST computed automatically. Print receipt or WhatsApp it. Bill in under 5 seconds.</p>
           </article>
           <article class="step" data-reveal data-reveal-delay="2" role="listitem">
             <div class="step-num" aria-hidden="true">3</div>
@@ -328,9 +354,8 @@
                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
               </svg>
             </div>
-            <h3 class="step-title">Grow with Insights</h3>
-            <p class="step-body">Access your owner dashboard from any browser. See top-selling items, peak hours, daily
-              revenue, and inventory — all synced in real time. <a
+            <h3 class="step-title">Stay Compliant & Grow</h3>
+            <p class="step-body">Automated GST reconciliation from every bill. Compliance alerts for deadlines and renewals. Access reports from your owner dashboard — top-selling items, peak hours, daily revenue. <a
                 href="https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite" target="_blank"
                 rel="noopener"
                 style="color:var(--violet-light);text-decoration:underline;text-underline-offset:2px">Download Android
@@ -378,7 +403,7 @@
             <span class="hl">Forever.</span>
         </h2>
         <p class="cta-banner-sub" data-reveal data-reveal-delay="2">
-          Join 50+ Indian restaurants already running smarter. No credit card details needed before you start.
+          Join Indian restaurants already running smarter with Billing → Payments → GST Reconciliation → Compliance — all in one platform. No credit card needed.
         </p>
         <div class="cta-banner-actions" data-reveal data-reveal-delay="3">
           <a href="get-started.html" class="cta-btn-light">
@@ -402,7 +427,7 @@
           <img src="../assets/khanabook_logo.png" alt="KhanaBook" width="28" height="28">
           KhanaBook
         </div>
-        <p>Precision POS for the Modern Era. Built for Indian restaurants, by people who understand hospitality.</p>
+        <p><strong>Billing → Payments → GST → Compliance</strong> — India's first integrated restaurant operating platform. Built by India Advocacy for Indian restaurants.</p>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Product</div>
@@ -417,7 +442,7 @@
         <div class="footer-col-title">Tools</div>
         <ul class="footer-links" role="list">
           <li><a href="roi-calculator.html">ROI Calculator</a></li>
-          <li><a href="vs-petpooja.html">Compare POS</a></li>
+          <li><a href="compare.html">Compare POS</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -435,8 +460,8 @@
     </div>
   </footer>
 
-  <script src="../js/site.js?v=5"></script>
-  <script src="../js/home.js?v=5"></script>
+  <script src="../js/site.js?v=6"></script>
+  <script src="../js/home.js?v=6"></script>
 </body>
 
 </html>
