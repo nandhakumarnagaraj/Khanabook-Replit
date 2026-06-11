@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /home-modern.html
+
+Sitemap: https://khanabook.com/sitemap.xml

@@ -203,7 +203,7 @@ function injectStickyCTABar() {
   bar.className = 'sticky-cta-bar';
   bar.id = 'sticky-cta-bar';
   bar.innerHTML = `
-    <a href="get-started.html" class="sticky-cta-btn">🚀 Start Free Year</a>
+    <a href="get-started.html" class="sticky-cta-btn">Start Free Forever</a>
     <a href="https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite" target="_blank" rel="noopener" class="sticky-play-btn">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.31.18.67.22 1.01.13l11.96-6.9-2.7-2.7-10.27 9.47zm-1.24-19.5A1.73 1.73 0 001.5 5.5v13c0 .48.15.92.44 1.24l.07.07 7.28-7.28v-.17L1.94 4.26zm16.14 8.5l-2.56-2.57-2.57 2.57 2.57 2.56 2.56-2.56zm-13.9-8.32L16.14 11.5 13.57 9 2.18 2.24c-.3-.18-.64-.23-.98-.14l10.27 9.47-7.27-7.28-.12-.07z"/></svg>
       Google Play
