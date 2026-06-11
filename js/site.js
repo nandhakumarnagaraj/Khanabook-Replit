@@ -225,7 +225,6 @@ function injectFooterSocialLinks() {
   const footerBrand = document.querySelector('.footer-brand-col');
   if (!footerBrand) return;
   const footerText = footerBrand.querySelector('p');
-  const insertBeforeNode = footerText ? footerText.nextSibling : null;
 
   const socials = document.createElement('div');
   socials.className = 'footer-socials';
@@ -253,7 +252,8 @@ function injectFooterSocialLinks() {
     </a>
   `).join('');
 
-  footerBrand.insertBefore(socials, insertBeforeNode);
+  if (footerText) footerText.insertAdjacentElement('afterend', socials);
+  else footerBrand.appendChild(socials);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
