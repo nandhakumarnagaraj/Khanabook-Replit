@@ -38,6 +38,10 @@
     .story-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem; }
     .story-card p { color: var(--text-muted); line-height: 1.75; margin: 0; }
     .story-card p + p { margin-top: 1rem; }
+    .story-list { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: .65rem; }
+    .story-list li { display: flex; align-items: flex-start; gap: .65rem; color: var(--text-muted); line-height: 1.6; }
+    .story-list li::before { content: '•'; color: var(--violet); font-weight: 800; line-height: 1; margin-top: .05rem; }
+    .story-highlight { margin-top: 1.25rem; padding: 1rem 1.15rem; border-radius: 14px; background: var(--surface-3); border: 1px solid var(--border); color: var(--text-primary); line-height: 1.7; }
     .story-img { border-radius: 24px; overflow: hidden; min-height: 260px; }
     .story-img img { width: 100%; height: 100%; object-fit: cover; min-height: 260px; }
     .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
@@ -149,15 +153,18 @@
       <div class="story-card">
         <h2>Born from India Advocacy.</h2>
         <p><strong>India Advocacy</strong> is a leading legal-tech and business enablement platform focused on helping Indian businesses simplify compliance, operations, and digital growth at scale. Over the years, we've built deep relationships with businesses across India through a service ecosystem covering:</p>
-        <p style="font-size:.9rem;line-height:1.8">
-          • GST, ITR & TDS Compliance<br>
-          • FSSAI Licensing & Regulatory Support<br>
-          • Shop & Trade Licensing<br>
-          • Labour Registrations & Business Compliance<br>
-          • Business Operations & Digital Enablement
-        </p>
+        <ul class="story-list">
+          <li>GST, ITR & TDS compliance</li>
+          <li>FSSAI licensing and regulatory support</li>
+          <li>Shop and trade licensing</li>
+          <li>Labour registrations and business compliance</li>
+          <li>Business operations and digital enablement</li>
+        </ul>
         <p>Today, through our merchant network, we have served and supported <strong>1.5 lakh+ shops and businesses</strong> across India — including a rapidly growing restaurant and food-service segment. With deep operational understanding of merchant pain points, we built <strong>KhanaBook</strong>.</p>
         <p>KhanaBook is not a conventional billing software. It is <strong>India's first integrated restaurant operating platform</strong> — designed to unify <strong>Billing + Payments + GST Compliance</strong> into a single ecosystem. Built specifically for restaurants, cafes, cloud kitchens, bakeries, and food businesses.</p>
+        <div class="story-highlight">
+          From merchant onboarding to compliance support, our ecosystem was designed around the realities of running a business in India. KhanaBook brings that same operational thinking into a faster, simpler restaurant workflow.
+        </div>
         <div class="stat-grid">
           <div class="stat-box"><div class="num">1.5L+</div><div class="lbl">Businesses Served</div></div>
           <div class="stat-box"><div class="num">₹0</div><div class="lbl">Free Forever</div></div>
