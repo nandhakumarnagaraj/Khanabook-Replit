@@ -43,6 +43,13 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // Type check to prevent type confusion vulnerability
+  if (typeof urlPath !== 'string') {
+    res.writeHead(400, { 'Content-Type': 'text/plain' });
+    res.end('400 Bad Request');
+    return;
+  }
+
   const resolvedPath = path.resolve(WEB_ROOT, '.' + urlPath);
   if (!resolvedPath.startsWith(WEB_ROOT + path.sep) && resolvedPath !== WEB_ROOT) {
     res.writeHead(403, { 'Content-Type': 'text/plain' });
