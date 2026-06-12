@@ -68,7 +68,7 @@
       <a href="compare.html">Compare</a>
       <a href="our-story.html">About Us</a>
     </div>
-    <a href="https://kbook.iadv.cloud/login" class="mobile-cta-btn" target="_blank" rel="noopener">Login</a>
+    <a href="https://kbook.iadv.cloud/login" class="mobile-cta-btn" target="_blank" rel="noopener noreferrer">Login</a>
   </div>
 
   <main id="main-content">
@@ -281,7 +281,7 @@
                 <td class="compare-dash">✗</td>
               </tr>
               <tr>
-                <td>Easebuzz Payment Gateway</td>
+                <td>Payment Gateway</td>
                 <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
                 <td class="compare-dash">✗</td>
                 <td class="compare-dash">✗</td>
@@ -295,7 +295,7 @@
                 <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
               </tr>
               <tr>
-                <td>Owner Web Dashboard</td>
+                <td>Web Dashboard</td>
                 <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
                 <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
                 <td class="compare-tick"><span class="material-symbols-outlined">check</span></td>
@@ -395,6 +395,87 @@
       </div>
     </section>
 
+    <!-- ══ FAQ ════════════════════════════════════════════════ -->
+    <section class="faq-wrap" id="faq" aria-labelledby="faq-title">
+      <div class="faq-bg" aria-hidden="true">
+        <div class="faq-blob faq-blob-1"></div>
+        <div class="faq-blob faq-blob-2"></div>
+      </div>
+      <div class="section-inner">
+        <div style="text-align:center" data-reveal>
+          <div class="section-eyebrow" style="justify-content:center">FAQ</div>
+          <h2 class="section-title" id="faq-title" style="text-align:center">
+            Common <span class="hl">questions.</span>
+          </h2>
+        </div>
+        <div class="faq-list" style="max-width:800px;margin:3rem auto 0">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Is KhanaBook really free?</span>
+              <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">Yes — completely free forever. No trials, no tiers, no credit card required. You get offline-first billing, AI OCR menu import, UPI split payments, GST reconciliation, and a web dashboard at no cost.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Does KhanaBook work without internet?</span>
+              <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">Yes — billing, menu access, KDS reprint queue, and Bluetooth printer support all work fully offline. Data syncs to the cloud automatically when connectivity returns.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>How does the AI OCR menu import work?</span>
+              <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">Take a photo of your paper menu or upload a PDF. KhanaBook's AI uses Google ML Kit to extract items, prices, and categories in seconds. No manual data entry — you're ready to bill in under 5 minutes.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Is my restaurant data secure?</span>
+              <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">Yes. KhanaBook uses SQLCipher AES-256 encryption for local data storage — the same standard used by enterprise apps. You also get biometric app lock and optional PIN protection.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Does KhanaBook handle GST compliance?</span>
+              <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">Yes. Every bill automatically computes GST, and KhanaBook provides reconciliation and compliance alerts — leveraging India Advocacy's compliance expertise. Deadline reminders are built in.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Can I accept UPI split payments?</span>
+              <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">Yes. Split a single bill across multiple UPI IDs or payment methods. Most competitors only support basic UPI collection without split capability.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>What hardware do I need?</span>
+              <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">Just an Android phone or tablet. Optionally pair a Bluetooth thermal printer for receipts. No expensive POS terminals, no internet dependency, no contracts.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ══ CTA BANNER ═════════════════════════════════════════ -->
     <div class="cta-banner" aria-labelledby="cta-title">
       <div class="cta-banner-inner">
@@ -433,7 +514,7 @@
       <div class="footer-col">
         <div class="footer-col-title">Product</div>
         <ul class="footer-links" role="list">
-          <li><a href="https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite" target="_blank" rel="noopener">Android App</a></li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite" target="_blank" rel="noopener noreferrer">Android App</a></li>
           <li><a href="features.html">Features</a></li>
           <li><a href="pricing-plans.html">Pricing</a></li>
           <li><a href="blog.html">Blog</a></li>
@@ -463,6 +544,18 @@
 
   <script src="../js/site.js?v=8"></script>
   <script src="../js/home.js?v=8"></script>
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.closest('.faq-item');
+        var ans = this.nextElementSibling;
+        var isOpen = item.classList.contains('open');
+        item.classList.toggle('open');
+        ans.classList.toggle('open');
+        this.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+  </script>
 </body>
 
 </html>
