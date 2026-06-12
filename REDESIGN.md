@@ -64,7 +64,7 @@ Complete modern redesign of the KhanaBook POS marketing website with enhanced UI
 ## ⚡ Performance Optimizations
 
 1. **CSS**
-   - Modular CSS files (home-v2.css + modern-redesign.css)
+   - Modular CSS files (home-v2.css)
    - CSS custom properties for theming
    - Efficient selectors and minimal specificity
 
@@ -77,7 +77,7 @@ Complete modern redesign of the KhanaBook POS marketing website with enhanced UI
 3. **Assets**
    - Optimized image loading (eager for hero, lazy for below-fold)
    - Preconnect to font providers
-   - Version cache busting (?v=7)
+   - Version cache busting (?v=8)
 
 ## 🎯 Accessibility Improvements
 
@@ -93,15 +93,30 @@ Complete modern redesign of the KhanaBook POS marketing website with enhanced UI
 ```
 khanabook/
 ├── css/
-│   ├── home-v2.css                 # Base styles (existing)
-│   └── modern-redesign.css         # New modern design system
+│   └── home-v2.css                 # Base styles
 ├── html/
-│   ├── home.html                   # Original (updated security)
-│   └── home-modern.html            # New modern redesign
+│   ├── home.html                   # Homepage
+│   ├── features.html               # Features page
+│   ├── pricing-plans.html          # Pricing
+│   ├── compare.html                # Comparison
+│   ├── our-story.html              # About Us
+│   ├── help-center.html            # Help Center
+│   ├── get-started.html            # Contact
+│   ├── blog.html                   # Blog index
+│   ├── legal-privacy.html          # Legal & Privacy
+│   ├── roi-calculator.html         # ROI Calculator
+│   ├── bengaluru-pos.html          # City landing page
+│   ├── article-offline-first.html  # Blog article
+│   └── 404.html                    # 404 page
 ├── js/
-│   ├── site.js                     # Shared utilities (existing)
-│   └── home.js                     # Home page logic (security fixed)
-└── server.js                       # Node server (security fixed)
+│   ├── site.js                     # Shared utilities
+│   ├── home.js                     # Home page logic
+│   ├── blog.js                     # Blog logic
+│   └── pricing-plans.js            # Pricing page logic
+├── assets/
+│   └── (images, icons, social cards)
+├── robots.txt
+└── server.js                       # Node server
 ```
 
 ## 🎨 Color Palette
@@ -136,8 +151,7 @@ npm start
 Server runs at `http://localhost:5000`
 
 ### View Pages
-- Original: `http://localhost:5000/html/home.html`
-- Modern: `http://localhost:5000/html/home-modern.html`
+- Homepage: `http://localhost:5000/html/home.html`
 
 ## 📊 Key Metrics
 
@@ -181,11 +195,12 @@ Server runs at `http://localhost:5000`
 - Type safety checks added to prevent injection attacks
 - Responsive design tested on major devices
 - Dark mode fully supported throughout
+- Removed dead code: `home-modern.html`, `modern-redesign.css`, `attached_assets/`, `frontend/`, `.emergent/`, `memory/`, `.gitconfig`
 
 ## 🤝 Contributing
 
 When adding new features:
-1. Follow the design system in `modern-redesign.css`
+1. Follow the design system in `home-v2.css`
 2. Maintain accessibility standards
 3. Test on mobile devices
 4. Update this documentation
