@@ -17,9 +17,13 @@
   <link rel="icon" type="image/png" href="../assets/favicon-64.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preload hero image for faster LCP -->
+  <link rel="preload" href="../assets/pos_phone_billing_mockup.webp" as="image" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/home-v2.css?v=9">
-  <link rel="stylesheet" href="../css/modern-redesign.css?v=9">
+  <!-- Defer non-critical modern redesign styles -->
+  <link rel="stylesheet" href="../css/modern-redesign.css?v=9" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="../css/modern-redesign.css?v=9"></noscript>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"KhanaBook","operatingSystem":"Android","applicationCategory":"BusinessApplication","description":"AI OCR menu import, offline billing, KOT management, UPI split payments, GST reconciliation, reporting, and printer support for Indian restaurants.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","ratingCount":"150"}}
   </script>
@@ -131,7 +135,7 @@
       <div class="hero-visual animate-fade-in-up animate-delay-2" data-reveal data-reveal-delay="2">
         <div class="hero-mockup-wrap">
           <div class="hero-mockup-card glass-card">
-            <img src="../assets/pos_phone_billing_mockup.webp" alt="KhanaBook POS billing screen on an Android device" loading="eager">
+            <img src="../assets/pos_phone_billing_mockup.webp" alt="KhanaBook POS billing screen on an Android device" loading="eager" fetchpriority="high">
           </div>
           <div class="hero-float-card hero-float-card-1" aria-hidden="true">
             <span class="hero-float-icon">🧾</span>

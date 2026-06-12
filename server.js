@@ -102,8 +102,12 @@ const server = http.createServer((req, res) => {
       return;
     }
 
-    // HTML changes often; static assets are cache-busted via ?v= so cache longer.
-    const cacheControl = ext === '.html' ? 'public, max-age=300' : 'public, max-age=86400';
+    // HTML changes often; static assets are cache-busted via ?v= so cache aggressively.
+    const cacheControl = ext === '.html' ? 'public, max-age=600' : (
+      ['.css', '.js'].includes(ext) ? 'public, max-age=31536000, immutable' :
+      ext === '.webp' || ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.svg' || ext === '.ico' ? 'public, max-age=604800' :
+      'public, max-age=86400'
+    );
     const headers = {
       'Content-Type': contentType,
       'Cache-Control': cacheControl,
