@@ -221,7 +221,7 @@
         <span>January 15, 2025</span>
       </div>
       <h1 class="article-title">The Future of Restaurant POS: Why Offline-First Matters</h1>
-      <p class="article-excerpt">Internet outages shouldn't cost you sales. Learn why offline-first architecture is revolutionizing how Indian restaurants handle billing.</p>
+      <p class="article-excerpt">Your internet goes down. Your POS shouldn't. Here's why offline-first is the only way to build a POS for Indian restaurants.</p>
       <div class="article-meta">
         <span>By KhanaBook Team</span>
       </div>
@@ -232,9 +232,9 @@
     
     <p>It's 1:30 PM on a Saturday. Your restaurant is packed. Orders are flying in. And then it happens — your internet goes down.</p>
 
-    <p>With a traditional cloud-based POS, you're stuck. Bills can't be printed. Payments can't be processed. Customers are waiting. Your staff is panicking. And you're losing money with every passing minute.</p>
+    <p>With a regular cloud POS, you're stuck. No bills. No payments. Customers waiting. Staff panicking. Money bleeding out by the minute.</p>
 
-    <p><strong>This is exactly why offline-first architecture is the future of restaurant POS systems.</strong></p>
+    <p><strong>This is exactly why offline-first matters.</strong></p>
 
     <div class="article-stats">
       <div class="article-stat">
@@ -251,39 +251,39 @@
       </div>
     </div>
 
-    <h2>What is Offline-First Architecture?</h2>
+    <h2>What is Offline-First?</h2>
 
-    <p>Offline-first means your POS system is designed to work <strong>without internet by default</strong> — not as a backup plan, but as the primary design philosophy.</p>
+    <p>Offline-first means your POS is designed to work <strong>without internet by default</strong> — not as a fallback, but as the core design.</p>
 
-    <p>Here's how it works:</p>
-
-    <ul>
-      <li><strong>Local database:</strong> All your menu items, orders, and customer data are stored locally on your device using SQLCipher encryption (AES-256)</li>
-      <li><strong>Instant billing:</strong> Every transaction is processed locally first — no waiting for cloud servers to respond</li>
-      <li><strong>Background sync:</strong> When internet is available, data syncs automatically to the cloud using Android WorkManager</li>
-      <li><strong>Conflict resolution:</strong> Smart algorithms handle any data conflicts that might occur during offline periods</li>
-    </ul>
-
-    <h2>Why Traditional Cloud-First POS Fails</h2>
-
-    <p>Most modern POS systems are built cloud-first. This means:</p>
+    <p>How it works:</p>
 
     <ul>
-      <li>Every action requires internet connectivity</li>
-      <li>Menu data must be fetched from servers before billing</li>
-      <li>Transaction processing depends on API calls</li>
-      <li>Payment verification needs real-time server response</li>
+      <li><strong>Local storage:</strong> Menu, orders, customer data — all stored on your device with AES-256 encryption</li>
+      <li><strong>Instant billing:</strong> Every transaction processes locally. No waiting for servers.</li>
+      <li><strong>Background sync:</strong> When you're back online, data syncs automatically</li>
+      <li><strong>Conflict handling:</strong> Smart logic resolves any conflicts that come up</li>
     </ul>
 
-    <p>In India, where internet reliability varies significantly across cities and neighborhoods, this approach is a recipe for disaster.</p>
+    <h2>Why Cloud-First POS Fails</h2>
+
+    <p>Most POS systems are built cloud-first. That means:</p>
+
+    <ul>
+      <li>Everything needs internet</li>
+      <li>Menu data has to be fetched from servers</li>
+      <li>Transactions need API calls</li>
+      <li>Payment verification needs server response</li>
+    </ul>
+
+    <p>In India, where internet is patchy at best, this is a recipe for lost sales.</p>
 
     <div class="article-callout">
-      <p>"We lost ₹15,000 in sales during a 2-hour internet outage last month. Our old POS just showed 'connecting...' while customers walked out. Never again." — Rajesh Kumar, Spice Garden, Bengaluru</p>
+      <p>"We lost ₹15,000 during a 2-hour outage. Our old POS just showed 'connecting...' while customers walked out." — Rajesh Kumar, Bengaluru</p>
     </div>
 
-    <h2>The KhanaBook Approach: True Offline-First</h2>
+    <h2>How KhanaBook does it</h2>
 
-    <p>KhanaBook is built on a fundamentally different architecture:</p>
+    <p>KhanaBook is built differently:</p>
 
     <h3>1. SQLCipher Local Storage</h3>
     <p>Your entire menu, customer database, and transaction history are stored locally using SQLCipher — an encrypted extension of SQLite. This means:</p>
@@ -312,54 +312,52 @@
       <li>Flags critical conflicts for manual review</li>
     </ul>
 
-    <h2>Real-World Impact: The Numbers Don't Lie</h2>
+    <h2>Real-World Impact</h2>
 
-    <p>After switching to KhanaBook's offline-first architecture, our restaurant partners report:</p>
-
-    <ul>
-      <li><strong>Zero downtime:</strong> Billing continues regardless of internet status</li>
-      <li><strong>5-second billing:</strong> No network latency = faster transactions</li>
-      <li><strong>100% data retention:</strong> Nothing is lost during offline periods</li>
-      <li><strong>Stress-free operations:</strong> Staff confidence even during outages</li>
-    </ul>
-
-    <h2>Beyond Just Billing: Full Offline Capabilities</h2>
-
-    <p>KhanaBook's offline-first approach extends to every feature:</p>
+    <p>Restaurants using KhanaBook report:</p>
 
     <ul>
-      <li><strong>Menu management:</strong> Add items, update prices, manage variants — all offline</li>
-      <li><strong>Order tracking:</strong> KOT generation, order status updates work locally</li>
-      <li><strong>Printing:</strong> Bluetooth printers work without internet</li>
-      <li><strong>Reports:</strong> View today's sales, popular items, payment breakdown</li>
-      <li><strong>Customer data:</strong> Search order history, track preferences</li>
+      <li><strong>Zero downtime:</strong> Billing keeps running, internet or not</li>
+      <li><strong>5-second billing:</strong> No waiting for servers</li>
+      <li><strong>100% data safety:</strong> Nothing lost during outages</li>
+      <li><strong>Peace of mind:</strong> Staff stay calm when the internet doesn't</li>
     </ul>
 
-    <h2>How to Choose an Offline-First POS</h2>
+    <h2>Everything Works Offline</h2>
 
-    <p>Not all POS systems claiming "offline mode" are truly offline-first. Here's what to look for:</p>
+    <p>KhanaBook's offline approach covers every feature:</p>
+
+    <ul>
+      <li><strong>Menu:</strong> Add items, update prices, manage variants — all offline</li>
+      <li><strong>Orders:</strong> KOT generation, status updates — local</li>
+      <li><strong>Printing:</strong> Bluetooth printers don't need the cloud</li>
+      <li><strong>Reports:</strong> View sales, popular items, payment breakdown</li>
+      <li><strong>Customers:</strong> Search history, track preferences</li>
+    </ul>
+
+    <h2>What to Look for in an Offline-First POS</h2>
+
+    <p>Not every POS that claims "offline mode" really means it. Here's how to tell:</p>
 
     <ol>
-      <li><strong>Local database:</strong> Does it store all critical data on the device?</li>
-      <li><strong>Full feature access:</strong> Can you access every feature without internet?</li>
-      <li><strong>Automatic sync:</strong> Does data sync happen seamlessly in the background?</li>
-      <li><strong>Conflict handling:</strong> How does it resolve data conflicts?</li>
-      <li><strong>Testing:</strong> Ask for a demo with internet disconnected</li>
+      <li><strong>Local storage:</strong> Are menu and orders stored on the device?</li>
+      <li><strong>Full access:</strong> Can you use every feature without internet?</li>
+      <li><strong>Auto sync:</strong> Does it sync in the background when online?</li>
+      <li><strong>Conflict handling:</strong> What happens when two devices make changes offline?</li>
+      <li><strong>Test it:</strong> Ask for a demo with the WiFi turned off</li>
     </ol>
 
-    <h2>The Future is Offline-First</h2>
+    <h2>The Bottom Line</h2>
 
-    <p>As restaurants embrace technology, the paradox is clear: the more we rely on digital systems, the more vulnerable we become to connectivity issues.</p>
+    <p>The more you rely on digital systems, the more vulnerable you are to connectivity issues. Offline-first fixes that. You get the benefits of the cloud — reporting, multi-device sync, backups — without depending on it for every transaction.</p>
 
-    <p>Offline-first architecture solves this paradox. It gives you all the benefits of cloud-based systems (centralized reporting, multi-device sync, automatic backups) while ensuring your core operations never depend on internet connectivity.</p>
-
-    <p><strong>Your restaurant should work when the internet doesn't.</strong></p>
+    <p><strong>Your restaurant shouldn't stop working just because the internet does.</strong></p>
 
     <div class="article-cta">
-      <h3>Experience True Offline-First Billing</h3>
-      <p>KhanaBook works 100% offline with SQLCipher encryption, background sync, and automatic conflict resolution. Free forever.</p>
+      <h3>Try it yourself</h3>
+      <p>KhanaBook works 100% offline. Encrypted, synced, free. Download it and see.</p>
       <a href="get-started.html" class="btn-modern btn-modern-primary" style="background: white; color: var(--primary-violet);">
-        Get Started Free
+        Try it Free
         <span class="material-symbols-outlined" style="font-size:1.1rem">arrow_forward</span>
       </a>
     </div>
@@ -374,7 +372,7 @@
           <span class="material-symbols-outlined">lock</span>
         </div>
         <h3>SQLCipher Encryption: How Your Data Stays Secure</h3>
-        <p>Learn how AES-256 encryption protects your restaurant data even when stored locally.</p>
+        <p>How AES-256 keeps your restaurant data safe — even on the device itself.</p>
         <a href="blog.html" style="color:var(--primary-violet);font-weight:700;margin-top:1rem;display:inline-flex;align-items:center;gap:0.5rem">
           Read More <span class="material-symbols-outlined" style="font-size:1rem">arrow_forward</span>
         </a>
@@ -383,8 +381,8 @@
         <div class="feature-icon-modern">
           <span class="material-symbols-outlined">sync</span>
         </div>
-        <h3>Understanding Data Sync: How KhanaBook Keeps Everything in Order</h3>
-        <p>A deep dive into our background sync engine and conflict resolution algorithms.</p>
+        <h3>How Sync Works: Keeping Everything in Order</h3>
+        <p>A look at how KhanaBook syncs data across devices — even when they've been offline.</p>
         <a href="blog.html" style="color:var(--primary-violet);font-weight:700;margin-top:1rem;display:inline-flex;align-items:center;gap:0.5rem">
           Read More <span class="material-symbols-outlined" style="font-size:1rem">arrow_forward</span>
         </a>
@@ -393,8 +391,8 @@
         <div class="feature-icon-modern">
           <span class="material-symbols-outlined">speed</span>
         </div>
-        <h3>5-Second Billing: The Engineering Behind KhanaBook's Speed</h3>
-        <p>How we optimized every millisecond to deliver the fastest POS in India.</p>
+        <h3>The Engineering Behind 5-Second Billing</h3>
+        <p>How we got billing down to 5 seconds — the tech behind the speed.</p>
         <a href="blog.html" style="color:var(--primary-violet);font-weight:700;margin-top:1rem;display:inline-flex;align-items:center;gap:0.5rem">
           Read More <span class="material-symbols-outlined" style="font-size:1rem">arrow_forward</span>
         </a>
@@ -411,7 +409,7 @@
         <img src="../assets/khanabook_logo_small.webp" alt="KhanaBook" width="28" height="28">
         KhanaBook
       </div>
-      <p>India's first integrated restaurant operating platform. Built by India Advocacy for Indian restaurants.</p>
+      <p>Built for Indian restaurants, by people who understand what running one actually takes.</p>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Product</div>
