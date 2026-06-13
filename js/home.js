@@ -47,11 +47,17 @@ function initTestimonialsCarousel() {
 
   function getVisible() { return window.innerWidth <= 768 ? 1 : 3; }
 
+  function escapeHTML(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   function cardHTML(t) {
     return '<div class="testimonial-card">'
-      + '<div class="testimonial-quote">' + t.quote + '</div>'
-      + '<div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">' + t.initials + '</div>'
-      + '<div><div class="testimonial-name">' + t.name + '</div><div class="testimonial-role">' + t.role + '</div></div></div>'
+      + '<div class="testimonial-quote">' + escapeHTML(t.quote) + '</div>'
+      + '<div class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">' + escapeHTML(t.initials) + '</div>'
+      + '<div><div class="testimonial-name">' + escapeHTML(t.name) + '</div><div class="testimonial-role">' + escapeHTML(t.role) + '</div></div></div>'
       + '</div>';
   }
 
