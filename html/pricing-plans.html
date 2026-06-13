@@ -475,34 +475,6 @@ section{padding:4rem 1.25rem}
 </footer>
 
 <script src="../js/site.js?v=9"></script>
-<script>
-  function initFAQ() {
-    document.querySelectorAll('.faq-q').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var item = this.closest('.faq-item');
-        var ans = this.nextElementSibling;
-        var isOpen = item.classList.contains('open');
-        item.classList.toggle('open');
-        ans.classList.toggle('open');
-        this.setAttribute('aria-expanded', String(!isOpen));
-      });
-    });
-  }
-  function observeFAQ() {
-    var wrap = document.querySelector('.faq-wrap');
-    if (!wrap) return;
-    wrap.setAttribute('data-visible', 'false');
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.setAttribute('data-visible', 'true');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    io.observe(wrap);
-  }
-  document.addEventListener('DOMContentLoaded', function() { initFAQ(); observeFAQ(); });
-</script>
+
 </body>
 </html>

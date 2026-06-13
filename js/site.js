@@ -45,7 +45,7 @@ function setActiveNavLink() {
   };
   document.querySelectorAll('nav a, #mobile-drawer a').forEach(link => {
     const linkFile = getFilename(link.getAttribute('href'));
-    link.classList.toggle('nav-link-active', linkFile === page);
+    link.classList.toggle('active', linkFile === page);
   });
 }
 
@@ -197,6 +197,34 @@ function openCalendlyPopup() {
   window.location.href = 'get-started.html#contact-form';
 }
 
+function initFAQ() {
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = this.closest('.faq-item');
+      var ans = this.nextElementSibling;
+      var isOpen = item.classList.contains('open');
+      item.classList.toggle('open');
+      ans.classList.toggle('open');
+      this.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+}
+
+function observeFAQ() {
+  var wrap = document.querySelector('.faq-wrap');
+  if (!wrap) return;
+  wrap.setAttribute('data-visible', 'false');
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.setAttribute('data-visible', 'true');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  io.observe(wrap);
+}
+
 function injectStickyCTABar() {
   if (document.querySelector('.sticky-cta-bar')) return;
   const bar = document.createElement('div');
@@ -285,7 +313,8 @@ document.addEventListener('DOMContentLoaded', () => {
   injectWhatsAppButton();
   injectStickyCTABar();
   //
-  injectCalendlyBadge();
+  initFAQ();
+  observeFAQ();
 
   const trigger = document.getElementById('hamburger-trigger');
   const drawer  = document.getElementById('mobile-drawer');
