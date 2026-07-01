@@ -21,24 +21,10 @@
   <script>
     (function(){try{var t=localStorage.getItem('khana-theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}})();
   </script>
-  <style>
-    .calc-wrap { max-width: 800px; margin: 0 auto; padding: 0 1.5rem 4rem; }
-    .calc-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; }
-    .calc-row { display: flex; flex-direction: column; gap: .5rem; margin-bottom: 2rem; }
-    .calc-row label { font-weight: 700; font-size: .95rem; display: flex; justify-content: space-between; align-items: center; }
-    .calc-row label span { color: var(--violet); font-weight: 800; font-size: 1.1rem; }
-    .calc-row input[type="range"] { width: 100%; accent-color: var(--violet); height: 6px; }
-    .calc-row .hint { font-size: .8rem; color: var(--text-muted); }
-    .calc-results { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
-    .calc-result-card { background: var(--surface-1); border-radius: 16px; padding: 1.5rem; text-align: center; }
-    .calc-result-card .value { font-size: 2rem; font-weight: 800; color: var(--violet); font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
-    .calc-result-card .label { font-size: .85rem; color: var(--text-muted); margin-top: .25rem; }
-    .calc-result-card.highlight { background: rgba(108,39,217,.1); border: 1px solid rgba(108,39,217,.25); }
-    .calc-result-card.highlight .value { color: var(--violet-dark); }
-    @media (max-width: 640px) { .calc-results { grid-template-columns: 1fr; } }
-  </style>
+  <link rel="stylesheet" href="../css/pages.css?v=1" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="../css/pages.css?v=1"></noscript>
 </head>
-<body>
+<body class="page-roi">
 
 <a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -222,6 +208,6 @@ document.addEventListener('DOMContentLoaded', function() {
   update();
 });
 </script>
-<script src="../js/site.js?v=9"></script>
+<script defer src="../js/site.js?v=9"></script>
 </body>
 </html>

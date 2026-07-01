@@ -2,34 +2,6 @@
  * KhanaBook POS — Home Page Logic v4 (site.js shared functions removed)
  */
 
-/* ─── Pricing calculator ─────────────────────────────────────────────── */
-function initPricingCalculator() {
-  const calc = document.getElementById('pricing-calculator');
-  if (!calc) return;
-  const terminalsSlider = document.getElementById('calc-terminals');
-  const locationsSlider = document.getElementById('calc-locations');
-  const billingToggle = document.getElementById('calc-billing');
-  const totalDisplay = document.getElementById('calc-total');
-  const terminalVal = document.getElementById('calc-terminal-val');
-  const locationVal = document.getElementById('calc-location-val');
-  function updatePricing() {
-    const terminals = parseInt(terminalsSlider.value) || 1;
-    const locations = parseInt(locationsSlider.value) || 1;
-    const isAnnual = billingToggle.checked;
-    let total = Math.max(0, terminals - 1) * 499 + Math.max(0, locations - 1) * 999;
-    if (isAnnual) total = Math.round(total * 12 * 0.8);
-    terminalsSlider.setAttribute('aria-valuetext', `${terminals} terminal${terminals > 1 ? 's' : ''}`);
-    locationsSlider.setAttribute('aria-valuetext', `${locations} location${locations > 1 ? 's' : ''}`);
-    terminalVal.textContent = terminals;
-    locationVal.textContent = locations;
-    totalDisplay.textContent = '₹' + total.toLocaleString('en-IN') + (isAnnual ? '/yr' : '/mo');
-  }
-  terminalsSlider.addEventListener('input', updatePricing);
-  locationsSlider.addEventListener('input', updatePricing);
-  billingToggle.addEventListener('change', updatePricing);
-  updatePricing();
-}
-
 /* ─── Testimonials carousel (data-driven, 3-visible) ────────────────── */
 function initTestimonialsCarousel() {
   const DATA = [
@@ -247,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const originalText = leadSubmit.textContent;
       leadSubmit.textContent = 'Joining...';
       try {
-        const response = await fetch('https://formspree.io/f/mlgvyknl', {
+        const response = await fetch(FORMSPREE_URL, {
           method: 'POST',
           body: JSON.stringify({ phone: value }),
           headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
@@ -272,8 +244,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function showLeadError(msg) {
       leadPhone.classList.add('border-error', 'error-border');
       const err = document.createElement('p');
-      err.className = 'lead-error text-error text-label-sm mt-1 flex items-center gap-1';
-      err.innerHTML = '<span class="material-symbols-outlined text-xs">error</span> ' + msg;
+      err.className = 'lead-error';
+      err.style.cssText = 'color:var(--violet-dark);font-size:.85rem;margin-top:.25rem;display:flex;align-items:center;gap:.25rem';
+      err.innerHTML = '<span class="material-symbols-outlined" style="font-size:.85rem">error</span> ' + msg;
       leadPhone.parentNode.insertBefore(err, leadSubmit);
     }
 

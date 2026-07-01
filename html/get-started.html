@@ -25,75 +25,10 @@
   <script>
     (function(){try{var t=localStorage.getItem('khana-theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}})();
   </script>
-  <style>
-    .contact-page { padding: calc(var(--nav-h) + 2.5rem) 1.5rem 5rem; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 5fr 7fr; gap: 4rem; align-items: start; position: relative; }
-    .contact-page::before { content: ''; position: fixed; top: 0; left: 0; right: 0; height: 500px; background: radial-gradient(circle at 30% 30%, rgba(108,39,217,.1) 0%, transparent 65%); z-index: -1; pointer-events: none; }
-
-    .contact-left { position: sticky; top: calc(var(--nav-h) + 2rem); }
-    .contact-left h1 { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: clamp(2.2rem,4vw,3.2rem); font-weight: 800; line-height: 1.1; letter-spacing: -.02em; margin: 1rem 0 1.25rem; }
-    .contact-left p { color: var(--text-muted); line-height: 1.7; max-width: 400px; margin-bottom: 2.5rem; }
-
-    .contact-info-list { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2.5rem; }
-    .contact-info-item { display: flex; align-items: flex-start; gap: 1rem; }
-    .contact-info-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .contact-info-icon .material-symbols-outlined { font-size: 1.2rem; color: var(--violet); }
-    .contact-info-item h3 { font-size: .95rem; font-weight: 700; margin-bottom: .2rem; }
-    .contact-info-item p { font-size: .875rem; color: var(--text-muted); margin: 0; line-height: 1.55; }
-
-    .satisfaction-strip { display: flex; align-items: center; gap: 1rem; padding-top: 2rem; border-top: 1px solid var(--border); }
-    .avatar-stack { display: flex; }
-    .avatar-stack img { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--surface-1); object-fit: cover; margin-right: -10px; }
-    .satisfaction-strip p { font-size: .875rem; color: var(--text-muted); }
-    .satisfaction-strip strong { color: var(--violet); }
-
-    .contact-form-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 28px; padding: 2.5rem; box-shadow: 0 8px 40px rgba(108,39,217,.08); }
-    .contact-form-card h2 { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 1.4rem; font-weight: 800; margin-bottom: .4rem; }
-    .contact-form-card > p { font-size: .875rem; color: var(--text-muted); margin-bottom: 2rem; }
-
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .form-group { margin-bottom: 1.25rem; }
-    .form-group label { display: block; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); margin-bottom: .5rem; }
-    .form-group label .req { color: #ef4444; }
-    .form-input, .form-select, .form-textarea { width: 100%; background: var(--surface-3); border: 1px solid var(--border); border-radius: 12px; padding: .75rem 1rem; font-size: .95rem; color: var(--text-primary); outline: none; transition: border-color .2s; box-sizing: border-box; font-family: inherit; }
-    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--violet); }
-    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-muted); opacity: .5; }
-    .phone-input-wrap { position: relative; }
-    .phone-prefix { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: .95rem; pointer-events: none; }
-    .form-input.with-prefix { padding-left: 3rem; }
-    .form-select { cursor: pointer; }
-    .form-textarea { min-height: 130px; resize: vertical; }
-    .submit-btn { width: 100%; height: 52px; background: var(--violet); color: #fff; border: none; border-radius: 14px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: .5rem; transition: all .2s; }
-    .submit-btn:hover { background: var(--violet-light); transform: translateY(-1px); }
-    .submit-btn:active { transform: none; }
-    .submit-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
-
-    .form-success { display: none; text-align: center; padding: 3rem 2rem; }
-    .form-success .success-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(34,197,94,.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
-    .form-success .success-icon .material-symbols-outlined { font-size: 2rem; color: #22c55e; }
-    .form-success h3 { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 1.4rem; font-weight: 800; margin-bottom: .75rem; }
-    .form-success p { color: var(--text-muted); font-size: .95rem; }
-
-    .booking-panel { background: var(--surface-2); border: 1px solid var(--border); border-radius: 28px; padding: 2rem 2.5rem; box-shadow: 0 8px 40px rgba(108,39,217,.08); }
-    .booking-panel-header { display: flex; align-items: center; gap: .875rem; margin-bottom: 1rem; }
-    .booking-panel-header p { margin: 0; }
-    .booking-actions { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: 1.5rem; }
-    .booking-link {
-      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-      padding: .85rem 1rem; border-radius: 14px; font-weight: 700; border: 1px solid var(--border);
-      background: var(--surface-3); color: var(--text-primary); transition: border-color .2s, color .2s, transform .2s;
-    }
-    .booking-link:hover { border-color: var(--violet); color: var(--violet); transform: translateY(-1px); }
-    @media (max-width: 900px) {
-      .contact-page { grid-template-columns: 1fr; gap: 3rem; }
-      .contact-left { position: static; }
-      .contact-left h1 { font-size: clamp(1.9rem, 8vw, 2.8rem); max-width: 100%; overflow-wrap: anywhere; }
-      .contact-left p { max-width: 100%; }
-      .form-row { grid-template-columns: 1fr; }
-      .booking-actions { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="../css/pages.css?v=1" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="../css/pages.css?v=1"></noscript>
 </head>
-<body data-page-version="1.1.0">
+<body class="page-contact" data-page-version="1.1.0">
 
 <a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -342,7 +277,7 @@
   </div>
 </footer>
 
-<script src="../js/site.js?v=9"></script>
+<script defer src="../js/site.js?v=9"></script>
 
 </body>
 </html>

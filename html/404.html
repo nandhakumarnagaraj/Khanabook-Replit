@@ -16,29 +16,10 @@
   <script>
     (function(){try{var t=localStorage.getItem('khana-theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}})();
   </script>
-  <style>
-    .error-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 6rem 1.5rem; text-align: center; position: relative; overflow: hidden; }
-    .error-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-    .error-bg-blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .3; }
-    .error-bg-blob-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(108,39,217,.25) 0%, transparent 70%); top: -150px; right: -100px; }
-    .error-bg-blob-2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(245,158,11,.2) 0%, transparent 70%); bottom: -100px; left: -100px; }
-    .error-inner { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; }
-    .error-code { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: clamp(6rem,15vw,10rem); font-weight: 900; line-height: 1; color: var(--violet); opacity: .15; margin-bottom: -1.5rem; }
-    .error-icon { width: 80px; height: 80px; border-radius: 20px; background: rgba(108,39,217,.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
-    .error-icon .material-symbols-outlined { font-size: 2.5rem; color: var(--violet); }
-    .error-page h1 { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: clamp(1.6rem,3.5vw,2.4rem); font-weight: 800; line-height: 1.15; margin-bottom: .75rem; }
-    .error-page p { font-size: 1rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem; }
-    .error-actions { display: flex; flex-wrap: wrap; gap: .875rem; justify-content: center; }
-    .error-search { display: flex; gap: .5rem; max-width: 400px; margin: 0 auto 2rem; }
-    .error-search input { flex: 1; padding: .75rem 1rem; border-radius: 12px; border: 1px solid var(--border); background: var(--surface-2); color: inherit; font-size: .95rem; }
-    .error-search input:focus { outline: 2px solid var(--violet); outline-offset: 2px; }
-    .error-search button { padding: .75rem 1.25rem; border-radius: 12px; border: none; background: var(--violet); color: #fff; font-weight: 600; cursor: pointer; }
-    .popular-links { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin-top: 1.5rem; }
-    .popular-links a { font-size: .875rem; color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; }
-    .popular-links a:hover { color: var(--violet); }
-  </style>
+  <link rel="stylesheet" href="../css/pages.css?v=1" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="../css/pages.css?v=1"></noscript>
 </head>
-<body data-page-version="1.2.0">
+<body class="page-404" data-page-version="1.2.0">
   <main id="main-content">
     <div class="error-page">
       <div class="error-bg" aria-hidden="true">
@@ -108,6 +89,6 @@
       });
     });
   </script>
-  <script src="../js/site.js?v=9"></script>
+  <script defer src="../js/site.js?v=9"></script>
 </body>
 </html>

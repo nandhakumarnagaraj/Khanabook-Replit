@@ -26,53 +26,10 @@
   <script>
     (function(){try{var t=localStorage.getItem('khana-theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}})();
   </script>
-  <style>
-    .page-hero { padding: calc(var(--nav-h) + 3rem) 1.5rem 3rem; text-align: center; position: relative; overflow: hidden; }
-    .page-hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(circle at 50% 0%, rgba(108,39,217,.12) 0%, transparent 65%); pointer-events: none; }
-    .page-hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-    .page-hero h1 { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: clamp(2.2rem,5vw,3.8rem); font-weight: 800; line-height: 1.08; letter-spacing: -.02em; margin: 1rem 0 1.25rem; }
-    .page-hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 540px; margin: 0 auto 2rem; line-height: 1.7; }
-
-
-
-    .blog-wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .blog-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s, transform .2s; }
-    .blog-card:hover { border-color: rgba(108,39,217,.4); transform: translateY(-3px); }
-    .blog-card-img { height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    .blog-card-img .material-symbols-outlined { font-size: 3.5rem; transition: transform .3s; }
-    .blog-card:hover .blog-card-img .material-symbols-outlined { transform: scale(1.1); }
-    .blog-card-body { padding: 1.75rem; display: flex; flex-direction: column; flex: 1; }
-    .blog-tag-row { display: flex; align-items: center; gap: .75rem; margin-bottom: .75rem; }
-    .blog-tag { display: inline-block; padding: .2rem .7rem; border-radius: 99px; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
-    .blog-tag-tech { background: rgba(108,39,217,.1); color: var(--violet); }
-    .blog-tag-payments { background: rgba(108,39,217,.1); color: var(--violet); }
-    .blog-tag-compliance { background: rgba(245,158,11,.1); color: var(--saffron-dark); }
-    .blog-tag-hardware { background: rgba(108,39,217,.1); color: var(--violet); }
-    .blog-tag-business { background: rgba(245,158,11,.1); color: var(--saffron-dark); }
-    .blog-tag-tips { background: rgba(108,39,217,.1); color: var(--violet); }
-    .blog-read-time { font-size: .78rem; color: var(--text-muted); }
-    .blog-card h3 { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; color: var(--text-primary); transition: color .2s; }
-    .blog-card:hover h3 { color: var(--violet); }
-    .blog-card p { font-size: .875rem; color: var(--text-muted); line-height: 1.65; flex: 1; margin: 0; }
-    .blog-read-link { margin-top: 1rem; color: var(--violet); font-weight: 700; font-size: .875rem; display: flex; align-items: center; gap: .35rem; }
-    .blog-read-link:hover { gap: .6rem; }
-
-    .newsletter-section { margin-top: 5rem; }
-    .newsletter-inner { background: var(--surface-2); border: 1px solid var(--border); border-radius: 32px; padding: 4rem 2rem; text-align: center; position: relative; overflow: hidden; }
-    .newsletter-inner h2 { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 800; margin-bottom: .75rem; }
-    .newsletter-inner p { color: var(--text-muted); max-width: 520px; margin: 0 auto 2rem; line-height: 1.7; }
-    .newsletter-form { display: flex; gap: .75rem; max-width: 440px; margin: 0 auto; }
-    .newsletter-form input { flex: 1; height: 52px; padding: 0 1.25rem; border-radius: 12px; border: 1px solid var(--border); background: var(--surface-3); color: var(--text-primary); font-size: .95rem; outline: none; transition: border-color .2s; }
-    .newsletter-form input:focus { border-color: var(--violet); }
-    .newsletter-form button { padding: 0 1.75rem; border-radius: 12px; border: none; background: var(--violet); color: #fff; font-weight: 700; font-size: .9rem; cursor: pointer; transition: brightness .2s; white-space: nowrap; }
-    .newsletter-form button:hover { filter: brightness(1.1); }
-
-    @media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 640px) { .blog-grid { grid-template-columns: 1fr; } .newsletter-form { flex-direction: column; } }
-  </style>
+  <link rel="stylesheet" href="../css/pages.css?v=1" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="../css/pages.css?v=1"></noscript>
 </head>
-<body data-page-version="1.1.0">
+<body class="page-blog" data-page-version="1.1.0">
 
 <a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -274,8 +231,8 @@
   </div>
 </footer>
 
-<script src="../js/site.js?v=9"></script>
-<script src="../js/blog.js?v=9"></script>
+<script defer src="../js/site.js?v=9"></script>
+<script defer src="../js/blog.js?v=9"></script>
 <script>
   document.addEventListener('keydown', function(e) {
     if ((e.metaKey || e.ctrlKey) && e.key === 'k') {

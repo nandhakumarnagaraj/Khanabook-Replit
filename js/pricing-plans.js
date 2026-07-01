@@ -2,52 +2,6 @@
  * KhanaBook POS — Pricing Page Specific Logic
  */
 
-function initPricingCalculator() {
-  const calc = document.getElementById('pricing-calculator');
-  if (!calc) return;
-  const terminalsSlider = document.getElementById('calc-terminals');
-  const locationsSlider = document.getElementById('calc-locations');
-  const billingToggle = document.getElementById('calc-billing');
-  const totalDisplay = document.getElementById('calc-total');
-  const terminalVal = document.getElementById('calc-terminal-val');
-  const locationVal = document.getElementById('calc-location-val');
-  
-  if (!terminalsSlider || !locationsSlider || !billingToggle || !totalDisplay || !terminalVal || !locationVal) {
-    console.warn('Pricing calculator elements are missing from the DOM.');
-    return;
-  }
-
-  function updatePricing() {
-    const terminals = parseInt(terminalsSlider.value) || 1;
-    const locations = parseInt(locationsSlider.value) || 1;
-    const isAnnual = billingToggle.checked;
-    
-    const basePrice = 0;
-    const paidTerminals = Math.max(0, terminals - 1);
-    const paidLocations = Math.max(0, locations - 1);
-    const terminalPrice = paidTerminals * 499;
-    const locationPrice = paidLocations * 999;
-    let total = basePrice + terminalPrice + locationPrice;
-    
-    if (isAnnual) {
-      total = Math.round(total * 12 * 0.8);
-    }
-    
-    // Accessibility: Set screen reader labels
-    terminalsSlider.setAttribute('aria-valuetext', `${terminals} terminal${terminals > 1 ? 's' : ''}`);
-    locationsSlider.setAttribute('aria-valuetext', `${locations} location${locations > 1 ? 's' : ''}`);
-
-    terminalVal.textContent = terminals;
-    locationVal.textContent = locations;
-    totalDisplay.textContent = isAnnual ? '₹' + total.toLocaleString('en-IN') + '/yr' : '₹' + total.toLocaleString('en-IN') + '/mo';
-  }
-
-  terminalsSlider.addEventListener('input', updatePricing);
-  locationsSlider.addEventListener('input', updatePricing);
-  billingToggle.addEventListener('change', updatePricing);
-  updatePricing();
-}
-
 function initPricingBillingToggle() {
   const toggle = document.getElementById('billing-annual-toggle');
   const labelMonthly = document.getElementById('billing-label-monthly');

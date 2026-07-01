@@ -25,70 +25,10 @@
   <script>
     (function(){try{var t=localStorage.getItem('khana-theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}})();
   </script>
-  <style>
-    .page-hero { padding: calc(var(--nav-h) + 3rem) 1.5rem 3rem; text-align: center; position: relative; overflow: hidden; }
-    .page-hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(circle at 50% 0%, rgba(108,39,217,.1) 0%, transparent 65%); pointer-events: none; }
-    .page-hero-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
-    .page-hero h1 { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: clamp(2rem,5vw,3.4rem); font-weight: 800; line-height: 1.1; letter-spacing: -.02em; margin: 1rem 0 1.25rem; }
-    .page-hero p { font-size: 1.05rem; color: var(--text-muted); max-width: 520px; margin: 0 auto 1.75rem; line-height: 1.7; }
-
-
-
-    .help-wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-
-    .help-bento { display: grid; grid-template-columns: 8fr 4fr 4fr; gap: 1.5rem; margin-bottom: 1.5rem; }
-    .help-bento-b { display: grid; grid-template-columns: 4fr 8fr; gap: 1.5rem; margin-bottom: 4rem; }
-    .help-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 24px; padding: 2rem; transition: border-color .2s, transform .2s; }
-    .help-card:hover { border-color: rgba(108,39,217,.35); transform: translateY(-2px); }
-    .help-card.wide { display: flex; gap: 2rem; align-items: center; }
-    .help-icon { width: 52px; height: 52px; border-radius: 14px; background: rgba(108,39,217,.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; flex-shrink: 0; }
-    .help-icon .material-symbols-outlined { font-size: 1.4rem; color: var(--violet); }
-    .help-card h3 { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
-    .help-card p { font-size: .875rem; color: var(--text-muted); line-height: 1.6; margin: 0 0 1rem; }
-    .help-link { color: var(--violet); font-size: .875rem; font-weight: 600; display: inline-flex; align-items: center; gap: .25rem; }
-    .help-link:hover { text-decoration: underline; }
-    .help-list { list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: .5rem; }
-    .help-list li { display: flex; align-items: center; gap: .5rem; font-size: .875rem; color: var(--text-muted); }
-    .help-list li .material-symbols-outlined { font-size: .9rem; color: var(--violet); }
-    .chart-bars { display: flex; align-items: flex-end; gap: .5rem; height: 80px; padding-top: 1rem; }
-    .chart-bars span { flex: 1; border-radius: 6px 6px 0 0; background: var(--violet); opacity: .3; }
-    .chart-bars span:nth-child(2) { opacity: .5; height: 70% !important; }
-    .chart-bars span:nth-child(3) { opacity: .6; height: 50% !important; }
-    .chart-bars span:last-child { opacity: 1; height: 90% !important; }
-
-    .contact-section { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 5rem; }
-    .contact-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 24px; padding: 2.5rem; }
-    .contact-card h2 { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 1.3rem; font-weight: 800; margin-bottom: .5rem; }
-    .contact-card > p { color: var(--text-muted); font-size: .9rem; margin-bottom: 1.75rem; }
-    .contact-row { display: flex; align-items: center; justify-content: space-between; padding: 1rem; background: var(--surface-3); border: 1px solid var(--border); border-radius: 14px; margin-bottom: .75rem; text-decoration: none; color: inherit; transition: border-color .2s; }
-    .contact-row:hover { border-color: rgba(108,39,217,.4); }
-    .contact-row-left { display: flex; align-items: center; gap: .875rem; }
-    .contact-row-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .contact-row-icon.green { background: rgba(34,197,94,.1); }
-    .contact-row-icon.violet { background: rgba(108,39,217,.1); }
-    .contact-row-icon .material-symbols-outlined { font-size: 1.1rem; }
-    .contact-row-icon.green .material-symbols-outlined { color: #22c55e; }
-    .contact-row-icon.violet .material-symbols-outlined { color: var(--violet); }
-    .contact-row h4 { font-size: .9rem; font-weight: 700; margin-bottom: .1rem; }
-    .contact-row p { font-size: .8rem; color: var(--text-muted); margin: 0; }
-    .community-card { background: linear-gradient(135deg, var(--surface-2) 0%, rgba(108,39,217,.06) 100%); border: 1px solid rgba(108,39,217,.2); border-radius: 24px; padding: 2.5rem; display: flex; flex-direction: column; }
-    .community-card h2 { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 1.3rem; font-weight: 800; margin-bottom: .5rem; }
-    .community-card > p { color: var(--text-muted); font-size: .9rem; margin-bottom: 1.25rem; flex: 1; }
-    .avatar-row { display: flex; margin-bottom: 1.25rem; }
-    .avatar-row img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--surface-1); object-fit: cover; margin-right: -10px; }
-    .avatar-count { width: 40px; height: 40px; border-radius: 50%; background: rgba(108,39,217,.2); border: 2px solid var(--surface-1); display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 800; color: var(--violet); margin-right: -10px; }
-    .community-note { font-size: .85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
-    .community-note strong { color: var(--violet); }
-
-    @media (max-width: 900px) {
-      .help-bento { grid-template-columns: 1fr; }
-      .help-bento-b { grid-template-columns: 1fr; }
-      .help-card.wide { flex-direction: column; }
-      .contact-section { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="../css/pages.css?v=1" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="../css/pages.css?v=1"></noscript>
 </head>
-<body data-page-version="1.1.0">
+<body class="page-help" data-page-version="1.1.0">
 
 <a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -352,7 +292,7 @@
   </div>
 </footer>
 
-<script src="../js/site.js?v=9"></script>
+<script defer src="../js/site.js?v=9"></script>
 <script>
   document.addEventListener('keydown', function(e) {
     if ((e.metaKey || e.ctrlKey) && e.key === 'k') {

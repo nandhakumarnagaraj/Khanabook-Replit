@@ -98,8 +98,40 @@ function initCookieConsent() {
   });
 }
 
+const FORMSPREE_URL = 'https://formspree.io/f/mlgvyknl';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^\+?[0-9\s]{10,15}$/;
+
+function initPricingCalculator() {
+  const calc = document.getElementById('pricing-calculator');
+  if (!calc) return;
+  const terminalsSlider = document.getElementById('calc-terminals');
+  const locationsSlider = document.getElementById('calc-locations');
+  const billingToggle = document.getElementById('calc-billing');
+  const totalDisplay = document.getElementById('calc-total');
+  const terminalVal = document.getElementById('calc-terminal-val');
+  const locationVal = document.getElementById('calc-location-val');
+
+  if (!terminalsSlider || !locationsSlider || !billingToggle || !totalDisplay || !terminalVal || !locationVal) return;
+
+  function updatePricing() {
+    const terminals = parseInt(terminalsSlider.value) || 1;
+    const locations = parseInt(locationsSlider.value) || 1;
+    const isAnnual = billingToggle.checked;
+    let total = Math.max(0, terminals - 1) * 499 + Math.max(0, locations - 1) * 999;
+    if (isAnnual) total = Math.round(total * 12 * 0.8);
+    terminalsSlider.setAttribute('aria-valuetext', `${terminals} terminal${terminals > 1 ? 's' : ''}`);
+    locationsSlider.setAttribute('aria-valuetext', `${locations} location${locations > 1 ? 's' : ''}`);
+    terminalVal.textContent = terminals;
+    locationVal.textContent = locations;
+    totalDisplay.textContent = '₹' + total.toLocaleString('en-IN') + (isAnnual ? '/yr' : '/mo');
+  }
+
+  terminalsSlider.addEventListener('input', updatePricing);
+  locationsSlider.addEventListener('input', updatePricing);
+  billingToggle.addEventListener('change', updatePricing);
+  updatePricing();
+}
 
 function setupContactForm(formId) {
   const form = document.getElementById(formId);
@@ -130,9 +162,9 @@ function setupContactForm(formId) {
       return;
     }
     btn.disabled = true;
-    btn.innerHTML = '<svg class="animate-spin h-5 w-5 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
+    btn.innerHTML = '<svg class="spin" style="width:20px;height:20px;margin:0 auto;display:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle style="opacity:.25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path style="opacity:.75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
     try {
-      const response = await fetch('https://formspree.io/f/mlgvyknl', {
+      const response = await fetch(FORMSPREE_URL, {
         method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' }
       });
       btn.innerHTML = response.ok
@@ -161,8 +193,9 @@ function showFormSuccess(form) {
 function showFieldError(field, message) {
   field.classList.add('error-border', 'border-error');
   const error = document.createElement('p');
-  error.className = 'field-error text-error text-label-sm mt-1 flex items-center gap-1';
-  error.innerHTML = '<span class="material-symbols-outlined text-xs">error</span> ' + message;
+  error.className = 'field-error';
+  error.style.cssText = 'color:var(--violet-dark);font-size:.85rem;margin-top:.25rem;display:flex;align-items:center;gap:.25rem';
+  error.innerHTML = '<span class="material-symbols-outlined" style="font-size:.85rem">error</span> ' + message;
   field.parentNode.appendChild(error);
 }
 
@@ -231,7 +264,7 @@ function injectStickyCTABar() {
   bar.className = 'sticky-cta-bar';
   bar.id = 'sticky-cta-bar';
   bar.innerHTML = `
-    <a href="get-started.html" class="sticky-cta-btn">🚀 Start Free Forever</a>
+    <a href="get-started.html" class="sticky-cta-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M12 4v12"/><path d="M8 8l4-4 4 4"/></svg> Start Free Forever</a>
     <a href="https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite" target="_blank" rel="noopener" class="sticky-play-btn">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.31.18.67.22 1.01.13l11.96-6.9-2.7-2.7-10.27 9.47zm-1.24-19.5A1.73 1.73 0 001.5 5.5v13c0 .48.15.92.44 1.24l.07.07 7.28-7.28v-.17L1.94 4.26zm16.14 8.5l-2.56-2.57-2.57 2.57 2.57 2.56 2.56-2.56zm-13.9-8.32L16.14 11.5 13.57 9 2.18 2.24c-.3-.18-.64-.23-.98-.14l10.27 9.47-7.27-7.28-.12-.07z"/></svg>
       Google Play
@@ -294,20 +327,22 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    let rafParallax = false;
-    document.addEventListener('mousemove', e => {
-      if (rafParallax) return;
-      rafParallax = true;
-      requestAnimationFrame(() => {
-        const xOff = (window.innerWidth  / 2 - e.clientX) / 45;
-        const yOff = (window.innerHeight / 2 - e.clientY) / 45;
-        document.querySelectorAll('[data-depth]').forEach(layer => {
-          const d = parseFloat(layer.getAttribute('data-depth')) || 1;
-          layer.style.transform = `translate3d(${xOff * d}px, ${yOff * d}px, 0)`;
+    if (document.querySelector('[data-depth]')) {
+      let rafParallax = false;
+      document.addEventListener('mousemove', e => {
+        if (rafParallax) return;
+        rafParallax = true;
+        requestAnimationFrame(() => {
+          const xOff = (window.innerWidth  / 2 - e.clientX) / 45;
+          const yOff = (window.innerHeight / 2 - e.clientY) / 45;
+          document.querySelectorAll('[data-depth]').forEach(layer => {
+            const d = parseFloat(layer.getAttribute('data-depth')) || 1;
+            layer.style.transform = `translate3d(${xOff * d}px, ${yOff * d}px, 0)`;
+          });
+          rafParallax = false;
         });
-        rafParallax = false;
       });
-    });
+    }
   }
 
   injectWhatsAppButton();
