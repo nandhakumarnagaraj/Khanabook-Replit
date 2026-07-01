@@ -877,6 +877,8 @@ section { padding: 6rem 1.5rem; }
 }
 .footer-bottom a { color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
 .footer-bottom a:hover { color: #fff; }
+.footer-bottom-links { display: flex; align-items: center; gap: 1rem; }
+.footer-bottom-links a + a::before { content: '·'; margin-right: 1rem; color: rgba(255,255,255,.2); }
 
 /* ── Scroll Reveal ── */
 [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .65s var(--ease-out), transform .65s var(--ease-out); }
