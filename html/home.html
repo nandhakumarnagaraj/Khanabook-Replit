@@ -17,14 +17,13 @@
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
   <link rel="apple-touch-icon" href="../assets/favicon-64.png">
-  <!-- Preload hero image for faster LCP -->
   <link rel="preload" href="../assets/pos_phone_billing_mockup.webp" as="image" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"></noscript>
   <link rel="stylesheet" href="../css/critical.css">
-  <link rel="stylesheet" href="../css/home-v2.css?v=9" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="../css/home-v2.css?v=9"></noscript>
+  <link rel="stylesheet" href="../css/home-v2.css?v=10" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="../css/home-v2.css?v=10"></noscript>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"KhanaBook","operatingSystem":"Android","applicationCategory":"BusinessApplication","description":"AI OCR menu import, offline billing, KOT management, UPI split payments, GST reconciliation, reporting, and printer support for Indian restaurants.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","ratingCount":"150"}}
   </script>
@@ -33,18 +32,17 @@
   </script>
 </head>
 
-<body data-page-version="2.0.0">
+<body data-page-version="2.1.0">
 
 <a class="skip-link" href="#main-content">Skip to content</a>
 
-<!-- Modern Navigation -->
 <nav class="nav" id="site-nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="home.html" class="nav-brand" aria-label="KhanaBook home">
       <img src="../assets/khanabook_logo_small.webp" alt="KhanaBook logo" width="34" height="34">
       KhanaBook
     </a>
-    <ul class="nav-links" role="list">
+    <ul class="nav-links">
       <li><a href="features.html">Features</a></li>
       <li><a href="pricing-plans.html">Pricing</a></li>
       <li><a href="compare.html">Compare</a></li>
@@ -52,17 +50,16 @@
     </ul>
     <div class="nav-actions">
       <button class="nav-theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
-        <span class="material-symbols-outlined" id="theme-icon" style="font-size:1.1rem">light_mode</span>
+        <span class="material-symbols-outlined" id="theme-icon">light_mode</span>
       </button>
       <a href="https://kbook.iadv.cloud/login" class="nav-cta" target="_blank" rel="noopener noreferrer">Login</a>
       <button class="hamburger" id="hamburger-trigger" aria-expanded="false" aria-label="Open navigation menu">
-        <span class="material-symbols-outlined" id="mobile-menu-icon" style="font-size:1.25rem">menu</span>
+        <span class="material-symbols-outlined" id="mobile-menu-icon">menu</span>
       </button>
     </div>
   </div>
 </nav>
 
-<!-- Mobile Drawer -->
 <div id="mobile-drawer" data-open="false" aria-hidden="true" inert class="mobile-drawer">
   <div class="mobile-drawer-links">
     <a href="features.html">Features</a>
@@ -75,49 +72,47 @@
 
 <main id="main-content">
 
-  <!-- Modern Hero Section -->
   <section class="hero hero-modern" aria-label="Hero">
     <div class="hero-modern-background" aria-hidden="true">
       <div class="hero-modern-gradient hero-modern-gradient-1"></div>
       <div class="hero-modern-gradient hero-modern-gradient-2"></div>
     </div>
-    
+
     <div class="hero-modern-content">
-      <!-- Left: Text Content -->
       <div class="hero-modern-text">
         <div class="hero-badge animate-fade-in-up" data-reveal>
           <span class="hero-badge-dot" aria-hidden="true"></span>
           AI OCR, Billing, Payments & GST in one app
         </div>
-        
+
         <h1 class="animate-fade-in-up animate-delay-1" data-reveal data-reveal-delay="1">
-          <span style="display:block">AI-Powered POS for</span>
-          <span style="display:block">
-            <span style="color:var(--violet)">Indian</span> 
-            <span style="color:var(--saffron)">Restaurants</span>
+          <span>AI-Powered POS for</span>
+          <span>
+            <span class="text-red">Indian</span>
+            <span class="accent-gold"> Restaurants</span>
           </span>
         </h1>
-        
+
         <p class="animate-fade-in-up animate-delay-2" data-reveal data-reveal-delay="2">
-          Not just POS. KhanaBook unifies restaurant billing, KOT management, real-time payments, GST reconciliation, and compliance into one platform. 
+          Not just POS. KhanaBook unifies restaurant billing, KOT management, real-time payments, GST reconciliation, and compliance into one platform.
           <strong>Completely free, forever.</strong>
         </p>
-        
-        <div class="hero-actions animate-fade-in-up animate-delay-3" data-reveal data-reveal-delay="3" style="gap:1rem;display:flex;flex-wrap:wrap">
+
+        <div class="hero-actions animate-fade-in-up animate-delay-3" data-reveal data-reveal-delay="3">
           <a href="https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Download Khanabook from Google Play">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M22.014 11.249c.563.28.563.98 0 1.258l-17.514 8.757c-.547.274-1.22-.069-1.22-.629V3.122c0-.56.673-.903 1.22-.629l17.514 8.756z"/>
             </svg>
             Get it on Google Play
           </a>
           <a href="get-started.html#contact-form" id="watch-demo-btn" class="btn-secondary" aria-label="Watch a 60-second demo">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polygon points="5 3 19 12 5 21 5 3"/>
             </svg>
             Watch 60-sec Demo
           </a>
         </div>
-        
+
         <div class="hero-modern-stats animate-fade-in-up" data-reveal data-reveal-delay="4">
           <div class="hero-stat">
             <div class="hero-stat-value">5s</div>
@@ -133,8 +128,7 @@
           </div>
         </div>
       </div>
-      
-      <!-- Right: Visual -->
+
       <div class="hero-visual animate-fade-in-up animate-delay-2" data-reveal data-reveal-delay="2">
         <div class="hero-mockup-wrap">
           <div class="hero-mockup-card glass-card">
@@ -174,9 +168,8 @@
     </div>
   </section>
 
-  <!-- Modern Features Grid -->
   <section class="features-modern" aria-labelledby="features-title">
-    <div class="section-inner" style="max-width:1280px;margin:0 auto">
+    <div class="section-inner">
       <div class="text-center mb-4" data-reveal>
         <div class="section-eyebrow eyebrow-center">Core Features</div>
         <h2 class="section-title text-center" id="features-title">
@@ -186,7 +179,7 @@
           From menu to receipt in under 5 seconds. Built for the speed and complexity of Indian restaurants.
         </p>
       </div>
-      
+
       <div class="features-grid-modern">
         <div class="feature-card-modern animate-fade-in-up" data-reveal>
           <div class="feature-icon-modern">
@@ -195,7 +188,7 @@
           <h3>AI OCR Menu Import</h3>
           <p>Photograph any printed menu and our AI turns it into a digital menu in seconds. No manual entry needed.</p>
         </div>
-        
+
         <div class="feature-card-modern animate-fade-in-up animate-delay-1" data-reveal>
           <div class="feature-icon-modern">
             <span class="material-symbols-outlined" aria-hidden="true">wifi_off</span>
@@ -203,7 +196,7 @@
           <h3>Offline-First Billing</h3>
           <p>Full billing and payments work without internet. SQLCipher AES-256 encryption keeps all data secure.</p>
         </div>
-        
+
         <div class="feature-card-modern animate-fade-in-up animate-delay-2" data-reveal>
           <div class="feature-icon-modern">
             <span class="material-symbols-outlined" aria-hidden="true">payments</span>
@@ -211,7 +204,7 @@
           <h3>UPI Split Payments</h3>
           <p>Accept cash, UPI, card, or split any bill across multiple payment methods. Full payment gateway integration included.</p>
         </div>
-        
+
         <div class="feature-card-modern animate-fade-in-up" data-reveal>
           <div class="feature-icon-modern">
             <span class="material-symbols-outlined" aria-hidden="true">gavel</span>
@@ -219,7 +212,7 @@
           <h3>GST Reconciliation</h3>
           <p>Automated GST reconciliation from billing data. Tax config with GST rate management and filing support.</p>
         </div>
-        
+
         <div class="feature-card-modern animate-fade-in-up animate-delay-1" data-reveal>
           <div class="feature-icon-modern">
             <span class="material-symbols-outlined" aria-hidden="true">restaurant</span>
@@ -227,7 +220,7 @@
           <h3>KOT Management</h3>
           <p>Send orders to kitchen with instant KOT printing. Track order status with KDS reprint queue management.</p>
         </div>
-        
+
         <div class="feature-card-modern animate-fade-in-up animate-delay-2" data-reveal>
           <div class="feature-icon-modern">
             <span class="material-symbols-outlined" aria-hidden="true">bar_chart</span>
@@ -236,32 +229,31 @@
           <p>Daily and monthly sales reports, popular items ranking, payment breakdown, and PDF export.</p>
         </div>
       </div>
-      
+
       <div class="text-center mt-3" data-reveal>
-        <a href="features.html" class="btn-modern-ghost">
+        <a href="features.html" class="btn-secondary">
           <span>View All Features</span>
-          <span class="material-symbols-outlined" aria-hidden="true" style="font-size:1.1rem">arrow_forward</span>
+          <span class="material-symbols-outlined icon-lg" aria-hidden="true">arrow_forward</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Comparison Table -->
   <section class="features-section" aria-labelledby="compare-title">
     <div class="section-inner">
-      <div class="text-center" style="margin-bottom:3rem" data-reveal>
+      <div class="text-center mb-4" data-reveal>
         <div class="section-eyebrow eyebrow-center">Why KhanaBook</div>
         <h2 class="section-title text-center" id="compare-title">
           See how we <span class="hl">compare.</span>
         </h2>
       </div>
 
-      <div style="overflow-x:auto;margin-top:2rem" data-reveal>
+      <div class="flex-center" data-reveal>
         <table class="compare-table" aria-label="KhanaBook vs competitors">
           <thead>
             <tr>
               <th>Feature</th>
-              <th style="color:var(--violet);font-weight:800">KhanaBook</th>
+              <th class="text-red fw-800">KhanaBook</th>
               <th>Competitor A</th>
               <th>Competitor B</th>
               <th>Competitor C</th>
@@ -309,7 +301,6 @@
     </div>
   </section>
 
-  <!-- How It Works -->
   <section class="how-section" aria-labelledby="how-title">
     <div class="how-bg" aria-hidden="true">
       <div class="how-blob how-blob-1"></div>
@@ -321,8 +312,8 @@
         <h2 class="how-heading" id="how-title">Go from Menu to <span class="hl">Billing in Under 5 Minutes</span></h2>
         <p class="how-sub">No hardware, no training, no delays. Just three simple steps.</p>
       </div>
-      <div class="steps-grid" role="list">
-        <article class="step" data-reveal role="listitem">
+      <div class="steps-grid">
+        <article class="step" data-reveal>
           <div class="step-num" aria-hidden="true">1</div>
           <div class="step-icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -334,7 +325,7 @@
           <h3 class="step-title">Upload Your Menu</h3>
           <p class="step-body">Take a photo or upload a PDF. Our AI OCR converts it into a digital menu in seconds.</p>
         </article>
-        <article class="step" data-reveal data-reveal-delay="1" role="listitem">
+        <article class="step" data-reveal data-reveal-delay="1">
           <div class="step-num" aria-hidden="true">2</div>
           <div class="step-icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -345,7 +336,7 @@
           <h3 class="step-title">Start Billing Instantly</h3>
           <p class="step-body">Select items, take payment (UPI, cash, card, or split). GST computed automatically.</p>
         </article>
-        <article class="step" data-reveal data-reveal-delay="2" role="listitem">
+        <article class="step" data-reveal data-reveal-delay="2">
           <div class="step-num" aria-hidden="true">3</div>
           <div class="step-icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -358,23 +349,22 @@
       </div>
       <div class="text-center mt-3" data-reveal data-reveal-delay="3">
         <a href="get-started.html" class="btn-primary">
-          <span class="material-symbols-outlined" aria-hidden="true" style="font-size:1.1rem">rocket_launch</span>
+          <span class="material-symbols-outlined icon-lg" aria-hidden="true">rocket_launch</span>
           Start Free Forever
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
   <section aria-labelledby="testimonials-title">
     <div class="section-inner">
-      <div style="text-align:center" data-reveal>
-        <div class="section-eyebrow" style="justify-content:center">Loved by Restaurants</div>
-        <h2 class="section-title" id="testimonials-title" style="text-align:center">
+      <div class="text-center" data-reveal>
+        <div class="section-eyebrow eyebrow-center">Loved by Restaurants</div>
+        <h2 class="section-title text-center" id="testimonials-title">
           What owners <span class="hl">are saying.</span>
         </h2>
       </div>
-      <div class="testimonials-carousel" style="margin-top:3rem">
+      <div class="testimonials-carousel" data-reveal>
         <div class="testimonials-clip">
           <div class="testimonials-track" id="testimonials-track">
             <div class="testimonial-card is-skeleton"><div class="skeleton-line skeleton-line-60"></div><div class="skeleton-line skeleton-line-80"></div><div class="skeleton-line skeleton-line-40"></div><div class="skeleton-author"><div class="skeleton-avatar"></div><div><div class="skeleton-line skeleton-line-30"></div><div class="skeleton-line skeleton-line-20"></div></div></div></div>
@@ -391,26 +381,25 @@
     </div>
   </section>
 
-  <!-- FAQ Section -->
   <section class="faq-wrap" id="faq" aria-labelledby="faq-title">
     <div class="faq-bg" aria-hidden="true">
       <div class="faq-blob faq-blob-1"></div>
       <div class="faq-blob faq-blob-2"></div>
     </div>
     <div class="section-inner">
-      <div style="text-align:center" data-reveal>
-        <div class="section-eyebrow" style="justify-content:center">FAQ</div>
-        <h2 class="section-title" id="faq-title" style="text-align:center">
+      <div data-reveal>
+        <div class="section-eyebrow eyebrow-center">FAQ</div>
+        <h2 class="section-title text-center" id="faq-title">
           Common <span class="hl">questions.</span>
         </h2>
       </div>
-      <div class="faq-list" style="max-width:800px;margin:3rem auto 0">
+      <div class="faq-list" data-reveal>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false" aria-controls="faq-panel-home-1">
             <span>Is KhanaBook really free?</span>
             <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
           </button>
-          <div class="faq-a" id="faq-panel-home-1" role="region">
+          <div class="faq-a" id="faq-panel-home-1">
             <div class="faq-a-inner">Yes — completely free forever. No trials, no tiers, no credit card required. You get offline-first billing, AI OCR menu import, UPI split payments, GST reconciliation, and a web dashboard at no cost.</div>
           </div>
         </div>
@@ -419,7 +408,7 @@
             <span>Does KhanaBook work without internet?</span>
             <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
           </button>
-          <div class="faq-a" id="faq-panel-home-2" role="region">
+          <div class="faq-a" id="faq-panel-home-2">
             <div class="faq-a-inner">Yes — billing, menu access, KDS reprint queue, and Bluetooth printer support all work fully offline. Data syncs to the cloud automatically when connectivity returns.</div>
           </div>
         </div>
@@ -428,7 +417,7 @@
             <span>How does the AI OCR menu import work?</span>
             <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
           </button>
-          <div class="faq-a" id="faq-panel-home-3" role="region">
+          <div class="faq-a" id="faq-panel-home-3">
             <div class="faq-a-inner">Take a photo of your paper menu or upload a PDF. KhanaBook's AI uses Google ML Kit to extract items, prices, and categories in seconds. No manual data entry — you're ready to bill in under 5 minutes.</div>
           </div>
         </div>
@@ -437,7 +426,7 @@
             <span>Is my restaurant data secure?</span>
             <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
           </button>
-          <div class="faq-a" id="faq-panel-home-4" role="region">
+          <div class="faq-a" id="faq-panel-home-4">
             <div class="faq-a-inner">Yes. KhanaBook uses SQLCipher AES-256 encryption for local data storage — the same standard used by enterprise apps. You also get biometric app lock and optional PIN protection.</div>
           </div>
         </div>
@@ -446,7 +435,7 @@
             <span>Does KhanaBook handle GST compliance?</span>
             <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
           </button>
-          <div class="faq-a" id="faq-panel-home-5" role="region">
+          <div class="faq-a" id="faq-panel-home-5">
             <div class="faq-a-inner">Yes. Every bill automatically computes GST, and KhanaBook provides reconciliation and compliance alerts — leveraging India Advocacy's compliance expertise. Deadline reminders are built in.</div>
           </div>
         </div>
@@ -455,7 +444,7 @@
             <span>Can I accept UPI split payments?</span>
             <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
           </button>
-          <div class="faq-a" id="faq-panel-home-6" role="region">
+          <div class="faq-a" id="faq-panel-home-6">
             <div class="faq-a-inner">Yes. Split a single bill across multiple UPI IDs or payment methods. Most competitors only support basic UPI collection without split capability.</div>
           </div>
         </div>
@@ -464,7 +453,7 @@
             <span>What hardware do I need?</span>
             <span class="faq-arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
           </button>
-          <div class="faq-a" id="faq-panel-home-7" role="region">
+          <div class="faq-a" id="faq-panel-home-7">
             <div class="faq-a-inner">Just an Android phone or tablet. Optionally pair a Bluetooth thermal printer for receipts. No expensive POS terminals, no internet dependency, no contracts.</div>
           </div>
         </div>
@@ -472,7 +461,6 @@
     </div>
   </section>
 
-  <!-- CTA Banner -->
   <div class="cta-banner" aria-labelledby="cta-title">
     <div class="cta-banner-inner">
       <div class="cta-banner-eyebrow" data-reveal>No setup cost. No hidden fees.</div>
@@ -484,14 +472,14 @@
       </p>
       <div class="cta-banner-actions" data-reveal data-reveal-delay="3">
         <a href="get-started.html" class="cta-btn-light">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
             <line x1="4" y1="22" x2="4" y2="15"/>
           </svg>
           Start Free Forever
         </a>
         <a href="pricing-plans.html" class="cta-btn-ghost">
-          <span class="material-symbols-outlined" style="font-size:1.1rem" aria-hidden="true">info</span>
+          <span class="material-symbols-outlined icon-lg" aria-hidden="true">info</span>
           See Pricing Details
         </a>
       </div>
@@ -500,8 +488,7 @@
 
 </main>
 
-<!-- Footer -->
-<footer class="footer" role="contentinfo">
+<footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand-col">
       <div class="footer-logo">
@@ -512,7 +499,7 @@
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Product</div>
-      <ul class="footer-links" role="list">
+      <ul class="footer-links">
         <li><a href="https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite" target="_blank" rel="noopener noreferrer">Android App</a></li>
         <li><a href="features.html">Features</a></li>
         <li><a href="pricing-plans.html">Pricing</a></li>
@@ -521,14 +508,14 @@
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Tools</div>
-      <ul class="footer-links" role="list">
+      <ul class="footer-links">
         <li><a href="roi-calculator.html">ROI Calculator</a></li>
         <li><a href="compare.html">Compare POS</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
-      <ul class="footer-links" role="list">
+      <ul class="footer-links">
         <li><a href="our-story.html">About Us</a></li>
         <li><a href="help-center.html">Help Center</a></li>
         <li><a href="contact-us.html">Contact Us</a></li>
@@ -546,8 +533,8 @@
   </div>
 </footer>
 
-<script defer src="../js/site.js?v=9"></script>
-<script defer src="../js/home.js?v=9"></script>
+<script defer src="../js/site.js?v=10"></script>
+<script defer src="../js/home.js?v=10"></script>
 
 </body>
 </html>
