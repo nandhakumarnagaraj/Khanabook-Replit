@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
           headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
         });
         if (response.ok) {
-          leadSubmit.innerHTML = 'Success! Joined 🚀';
+          leadSubmit.innerHTML = 'Success! Joined <span class="material-symbols-outlined" style="font-size:1.1rem;vertical-align:middle">rocket_launch</span>';
           leadPhone.value = '';
           setTimeout(() => { window.closeLead(); }, 1500);
         } else {
