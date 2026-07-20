@@ -1,13 +1,80 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import posPhone from "@/assets/pos-phone.webp";
+import {
+  IndianRupee,
+  Wifi,
+  Smartphone,
+  ReceiptText,
+  Layers,
+  Printer,
+  WifiOff,
+  UtensilsCrossed,
+  BarChart3,
+  MonitorSmartphone,
+  ShieldCheck,
+  ArrowRight,
+} from "lucide-react";
 import posTerminal from "@/assets/pos-terminal.webp";
 import chefHandshake from "@/assets/chef-handshake.webp";
 import serverRoom from "@/assets/server-room.webp";
+import appHome from "@/assets/app-home.png";
+import appBilling from "@/assets/app-billing.png";
 import { Section } from "@/components/site/Section";
 import { FAQ } from "@/components/site/FAQ";
+import { ProductTabs } from "@/components/site/ProductTabs";
 import { BUSINESS, DISCLAIMERS, absUrl } from "@/lib/business-config";
+import { RESTAURANT_TYPES, FAQS } from "@/lib/home-data";
+import { FEATURE_GROUPS } from "@/lib/features-data";
+import { PUBLISHED_POSTS } from "@/lib/blog-posts";
 
+const FEATURE_ICONS = [ReceiptText, Layers, Printer, WifiOff, UtensilsCrossed, BarChart3];
 
+const STORY_BLOCKS = [
+  {
+    title: "Billing that keeps up with service",
+    body: "Create dine-in, takeaway and manually recorded online orders in a few taps. Use pay-before or pay-after workflows, record cash, UPI, card or split payments, and create a PDF invoice for sharing through WhatsApp or SMS.",
+    image: appBilling,
+    alt: "KhanaBook new-bill screen for selecting menu items and creating an order",
+    icon: ReceiptText,
+    reverse: false,
+    portrait: true,
+  },
+  {
+    title: "One restaurant, up to five terminals",
+    body: "Every approved terminal gets its own identity, invoice series and daily order counter. Active orders stay on the device handling them, while finalised records become available in restaurant-level reports after synchronisation.",
+    image: posTerminal,
+    alt: "KhanaBook POS terminal on a restaurant counter",
+    icon: Layers,
+    reverse: true,
+    portrait: false,
+  },
+  {
+    title: "A dedicated printer for each job",
+    body: "Connect up to two compatible Bluetooth thermal printers—one for customer receipts and one for KOTs. Update, cancel or reprint KOTs when an active order changes.",
+    image: chefHandshake,
+    alt: "Restaurant kitchen staff coordinating on orders",
+    icon: Printer,
+    reverse: false,
+    portrait: false,
+  },
+  {
+    title: "Offline at the counter, synced when connected",
+    body: "Billing, menu access and KOT printing continue during temporary connectivity interruptions. Eligible pending records synchronise when connectivity is available, and the app shows their status.",
+    image: serverRoom,
+    alt: "Cloud infrastructure syncing restaurant data",
+    icon: WifiOff,
+    reverse: true,
+    portrait: false,
+  },
+];
+
+const SETUP_STRIP = [
+  { icon: WifiOff, label: "Core operations during connectivity interruptions" },
+  { icon: Smartphone, label: "Supported Android phones & tablets" },
+  { icon: MonitorSmartphone, label: "Touchscreen or keyboard billing" },
+  { icon: Printer, label: "Up to two compatible Bluetooth printers" },
+  { icon: ReceiptText, label: "Tax-computed bills and invoice sharing" },
+  { icon: ShieldCheck, label: "Terminal-level access control" },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -16,13 +83,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "KhanaBook is an Android restaurant POS for billing, KOT management, payments, menus, inventory, multi-terminal operations and offline-first synchronisation.",
+          "KhanaBook is an offline-first Android restaurant POS for billing, KOT management, payment recording, menus, inventory and up to five synchronised terminals.",
       },
       { property: "og:title", content: "KhanaBook — Offline-First Restaurant POS" },
       {
         property: "og:description",
         content:
-          "Billing, KOT, payments and multi-terminal operations that work even when the internet is unstable.",
+          "Billing, KOT, payment recording and up to five terminals that work even when the internet is unstable.",
       },
       { property: "og:url", content: absUrl("/") },
     ],
@@ -37,7 +104,7 @@ export const Route = createFileRoute("/")({
           applicationCategory: "BusinessApplication",
           operatingSystem: "Android",
           description:
-            "Offline-first Android restaurant POS for billing, KOT, payments, menus, inventory and multi-terminal operations.",
+            "Offline-first Android restaurant POS for billing, KOT, payment recording, menus, inventory and up to five synchronised terminals.",
           publisher: {
             "@type": "Organization",
             name: BUSINESS.legalName,
@@ -61,66 +128,9 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-
-const FEATURES = [
-  {
-    title: "Billing & Payments",
-    body: "Dine-in, takeaway and online-order workflows. Record cash, UPI, card and split payments. Automatic tax calculation on every bill.",
-  },
-  {
-    title: "Multi-Terminal Operations",
-    body: "Each terminal has its own identity and invoice series. Active orders stay isolated; completed data rolls up to restaurant-level reports.",
-  },
-  {
-    title: "Kitchen Operations",
-    body: "Generate and print KOTs to Bluetooth or supported printers. Route KOTs across multiple printers. Reprint and update active orders.",
-  },
-  {
-    title: "Offline-First Reliability",
-    body: "Billing continues even when the internet is unstable. Data is stored on the device and synchronised automatically when connectivity returns.",
-  },
-  {
-    title: "Menu & Inventory",
-    body: "Manage categories, items, prices and variants. Track inventory and get low-stock alerts.",
-  },
-  {
-    title: "Reports & Administration",
-    body: "Daily and monthly sales reports, payment-mode breakdown, item-level reports and terminal-aware views.",
-  },
-];
-
-const RESTAURANT_TYPES = ["Restaurants", "Cafés", "Bakeries", "Cloud kitchens", "Food courts", "Takeaway counters"];
-
-const WORKFLOW = ["Create Order", "Print KOT", "Take Payment", "Generate Bill", "Sync Securely"];
-
-const FAQS = [
-  {
-    q: "Is KhanaBook free to use?",
-    a: DISCLAIMERS.pricing,
-  },
-  {
-    q: "Does KhanaBook work without internet?",
-    a: "Yes. Billing, menu access and KOT printing work even when the internet is unstable. Your data is saved locally and synchronises automatically when connectivity returns.",
-  },
-  {
-    q: "How does multi-terminal billing work?",
-    a: "Each terminal has its own identity and invoice series. Active orders stay isolated to the terminal handling them, while completed business data becomes available in restaurant-level reports.",
-  },
-  {
-    q: "What hardware do I need?",
-    a: "An Android phone or tablet is enough to start. You can optionally pair a supported Bluetooth thermal printer for KOTs and receipts.",
-  },
-  {
-    q: "Does KhanaBook help with GST?",
-    a: "Every bill computes tax based on your configured rates. Advanced GST filing and reconciliation are on our roadmap and may be offered as optional services through India Advocacy.",
-  },
-  {
-    q: "Who operates KhanaBook?",
-    a: `KhanaBook is developed and operated by ${BUSINESS.legalName}. ${BUSINESS.siblingPlatform} is the company's ${BUSINESS.siblingPlatformDescription}.`,
-  },
-];
-
 function Home() {
+  const latestPosts = PUBLISHED_POSTS.slice(0, 3);
+
   return (
     <>
       {/* HERO */}
@@ -130,20 +140,25 @@ function Home() {
           className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full blur-3xl opacity-30"
           style={{ background: "radial-gradient(circle, var(--brand), transparent 70%)" }}
         />
+        <div
+          aria-hidden
+          className="absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full blur-3xl opacity-20"
+          style={{ background: "radial-gradient(circle, var(--gold), transparent 70%)" }}
+        />
         <div className="container-page pt-20 pb-24 md:pt-28 md:pb-32 grid md:grid-cols-[1.15fr_1fr] gap-12 items-center relative">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-bold text-muted-foreground">
-              <span className="h-2 w-2 rounded-full bg-brand" />
-              Billing · KOT · Payments · Multi-terminal — offline-first
+              <Wifi aria-hidden className="h-3.5 w-3.5 text-brand" />
+              Billing · KOT · Payment recording · Up to 5 terminals — offline-first
             </span>
             <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl leading-[1.05] font-black max-w-2xl">
-              Offline-First Restaurant POS{" "}
-              <span className="text-brand">Built for</span>{" "}
-              <span className="hl whitespace-nowrap">Multi-Terminal</span> Billing
+              Offline-First Restaurant POS <span className="text-brand">Built for</span>{" "}
+              <span className="hl">Indian Restaurants</span>
             </h1>
 
             <p className="mt-6 text-lg text-muted-foreground max-w-xl">
-              Create bills, print KOTs, accept cash, UPI and card payments, manage menus and keep every restaurant terminal synchronised — even when the internet is unstable.
+              Create bills, print KOTs, record cash, UPI and card payments, manage menus and keep up
+              to five restaurant terminals synchronised — even when the internet is unstable.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/get-started" className="btn-primary">
@@ -154,9 +169,7 @@ function Home() {
               </Link>
             </div>
 
-            <p className="mt-6 text-xs text-muted-foreground max-w-md">
-              {DISCLAIMERS.pricing}
-            </p>
+            <p className="mt-6 text-xs text-muted-foreground max-w-md">{DISCLAIMERS.pricing}</p>
           </div>
 
           <div className="relative">
@@ -164,132 +177,236 @@ function Home() {
               aria-hidden
               className="absolute inset-0 -m-8 rounded-[2.5rem] bg-gradient-to-br from-brand/10 via-transparent to-gold/10 blur-2xl"
             />
-            <div className="relative rounded-3xl border border-border bg-surface p-3 shadow-2xl overflow-hidden">
+            <div className="relative flex justify-center overflow-hidden rounded-3xl border border-border bg-surface-soft p-4 shadow-2xl">
               <img
-                src={posPhone}
-                alt="KhanaBook billing screen shown on an Android phone in a busy Indian restaurant"
-                width={800}
-                height={800}
+                src={appHome}
+                alt="KhanaBook Android app home screen"
+                width={720}
+                height={1600}
                 loading="eager"
-                className="w-full h-auto rounded-2xl"
+                className="max-h-[42rem] w-auto max-w-full rounded-2xl object-contain"
               />
-              <div className="mt-3 mb-1 text-[11px] text-muted-foreground text-center">
-                Illustrative product mockup — final in-app screenshots coming soon.
-              </div>
             </div>
-
+            <div
+              aria-hidden
+              className="hidden md:flex absolute -left-8 top-8 items-center gap-2 rounded-2xl border border-border bg-surface px-4 py-3 shadow-xl"
+            >
+              <WifiOff className="h-4 w-4 text-brand" />
+              <span className="text-xs font-bold">Billing stays on, network or not</span>
+            </div>
+            <div
+              aria-hidden
+              className="hidden md:flex absolute -right-6 bottom-10 items-center gap-2 rounded-2xl border border-border bg-surface px-4 py-3 shadow-xl"
+            >
+              <IndianRupee className="h-4 w-4 text-gold-dark" />
+              <span className="text-xs font-bold">₹0 to start</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* RESTAURANT TYPES */}
-      <Section
-        eyebrow="Who it's for"
-        title={<>Built for Indian <span className="hl">food businesses.</span></>}
-        desc="Designed for restaurants, cafés, bakeries, cloud kitchens, food courts and takeaway businesses across India."
-      >
-        <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-          {RESTAURANT_TYPES.map((t) => (
-            <span key={t} className="rounded-full border border-border bg-surface px-4 py-2 text-sm font-semibold">
-              {t}
-            </span>
-          ))}
-        </div>
-      </Section>
-
-      {/* WORKFLOW */}
-      <section className="bg-surface-soft py-24">
+      {/* WHO IT'S FOR — compact strip */}
+      <section className="py-10 border-b border-border">
         <div className="container-page">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="eyebrow mb-3">Workflow</div>
-            <h2 className="text-3xl md:text-5xl font-black">
-              From order to <span className="hl">sync.</span>
-            </h2>
-            <p className="mt-3 text-muted-foreground">Fast restaurant billing, from the first tap to the final sync.</p>
-          </div>
-          <ol className="grid gap-4 md:grid-cols-5">
-            {WORKFLOW.map((step, i) => (
-              <li key={step} className="card-surface text-center">
-                <div className="text-xs font-black text-brand">Step {i + 1}</div>
-                <div className="mt-2 font-black">{step}</div>
-              </li>
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5">
+            Built for restaurants, cafés, cloud kitchens and more
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {RESTAURANT_TYPES.map((t) => (
+              <span
+                key={t}
+                className="rounded-full border border-border bg-surface px-4 py-2 text-sm font-semibold"
+              >
+                {t}
+              </span>
             ))}
-          </ol>
+          </div>
         </div>
       </section>
 
-      {/* MULTI-TERMINAL */}
-      <Section
-        eyebrow="Multi-Terminal"
-        title={<>One restaurant. <span className="hl">Many terminals.</span></>}
-      >
-        <div className="grid gap-10 md:grid-cols-2 items-center max-w-5xl mx-auto">
-          <div className="text-lg text-muted-foreground leading-relaxed">
-            Each terminal has its own identity and invoice series. Active orders remain isolated to the terminal handling them, while completed business data becomes available in restaurant-level reports.
-          </div>
-          <div className="rounded-3xl overflow-hidden border border-border shadow-xl">
-            <img
-              src={posTerminal}
-              alt="Branded KhanaBook POS terminal on a restaurant counter"
-              width={800}
-              height={800}
-              loading="lazy"
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-      </Section>
-
-      {/* IN THE RESTAURANT */}
+      {/* AN ALL-ROUNDER RESTAURANT POS — alternating story blocks */}
       <section className="py-24">
         <div className="container-page">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="eyebrow mb-3">In the restaurant</div>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="eyebrow mb-3">What it does</div>
             <h2 className="text-3xl md:text-5xl font-black">
-              Built for real <span className="hl">service floors.</span>
+              An all-rounder <span className="hl">restaurant POS.</span>
             </h2>
+            <p className="mt-3 text-muted-foreground">
+              Everything that happens between an order landing and the bill closing — handled in one
+              app.
+            </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
-            <figure className="rounded-3xl overflow-hidden border border-border">
-              <img src={chefHandshake} alt="Restaurant staff and chef partnering on service" width={800} height={800} loading="lazy" className="w-full h-auto" />
-              <figcaption className="p-4 text-sm text-muted-foreground">Designed with restaurant teams, for restaurant teams.</figcaption>
-            </figure>
-            <figure className="rounded-3xl overflow-hidden border border-border">
-              <img src={serverRoom} alt="Cloud infrastructure that quietly synchronises when connectivity returns" width={800} height={800} loading="lazy" className="w-full h-auto" />
-              <figcaption className="p-4 text-sm text-muted-foreground">Offline-first at the counter, cloud-backed for reports.</figcaption>
-            </figure>
+
+          <div className="space-y-16 md:space-y-20">
+            {STORY_BLOCKS.map((block) => {
+              const Icon = block.icon;
+              return (
+                <div
+                  key={block.title}
+                  className={`grid md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto ${
+                    block.reverse ? "md:[&>*:first-child]:order-2" : ""
+                  }`}
+                >
+                  <div>
+                    <span className="icon-badge h-12 w-12 mb-4">
+                      <Icon aria-hidden className="h-5 w-5" />
+                    </span>
+                    <h3 className="text-2xl font-black mb-3">{block.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed text-lg">{block.body}</p>
+                  </div>
+                  <div
+                    className={`rounded-3xl overflow-hidden border border-border shadow-xl ${
+                      block.portrait
+                        ? "flex min-h-[34rem] items-center justify-center bg-surface-soft p-4"
+                        : ""
+                    }`}
+                  >
+                    <img
+                      src={block.image}
+                      alt={block.alt}
+                      width={block.portrait ? 720 : 800}
+                      height={block.portrait ? 1600 : 800}
+                      loading="lazy"
+                      className={
+                        block.portrait
+                          ? "max-h-[38rem] w-auto max-w-full rounded-xl object-contain"
+                          : "h-auto w-full"
+                      }
+                    />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-
-      {/* FEATURES */}
+      {/* WORKS WITH YOUR SETUP */}
       <section className="bg-surface-soft py-24">
         <div className="container-page">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="eyebrow mb-3">Core Features</div>
+            <div className="eyebrow mb-3">Quick & simple</div>
             <h2 className="text-3xl md:text-5xl font-black">
-              Everything to run a <span className="hl">modern restaurant.</span>
+              Works with the setup <span className="hl">you already have.</span>
             </h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {FEATURES.map((f) => (
-              <div key={f.title} className="card-surface hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="text-lg font-black mb-2">{f.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{f.body}</p>
+          <div className="grid gap-4 grid-cols-2 md:grid-cols-3 max-w-4xl mx-auto">
+            {SETUP_STRIP.map(({ icon: Icon, label }) => (
+              <div
+                key={label}
+                className="card-surface flex flex-col items-center text-center gap-3 py-8"
+              >
+                <span className="icon-badge h-12 w-12 rounded-full">
+                  <Icon aria-hidden className="h-5 w-5" />
+                </span>
+                <p className="text-sm font-bold">{label}</p>
               </div>
             ))}
           </div>
-          <div className="text-center mt-12">
-            <Link to="/features" className="btn-secondary">View all features →</Link>
-          </div>
         </div>
       </section>
+
+      {/* DO MORE WITH KHANABOOK — links into /features */}
+      <Section
+        eyebrow="Do more"
+        title={
+          <>
+            Do more with <span className="hl">one restaurant app.</span>
+          </>
+        }
+        desc="Every area of KhanaBook, in one place. Click through for the full capability list."
+      >
+        <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+          {FEATURE_GROUPS.filter((group) => group.id !== "compliance").map((g, i) => {
+            const Icon = FEATURE_ICONS[i % FEATURE_ICONS.length];
+            return (
+              <Link
+                key={g.id}
+                to="/features"
+                hash={g.id}
+                className="card-surface group flex flex-col"
+              >
+                <span className="icon-badge h-12 w-12 mb-4">
+                  <Icon aria-hidden className="h-5 w-5" />
+                </span>
+                <h3 className="text-lg font-black mb-2">{g.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                  {g.items[0]?.body}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-brand">
+                  Explore all features
+                  <ArrowRight
+                    aria-hidden
+                    className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
+                  />
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </Section>
+
+      {/* PRODUCT TABS */}
+      <Section
+        eyebrow="See it in action"
+        title={
+          <>
+            What KhanaBook <span className="hl">looks like.</span>
+          </>
+        }
+        desc="Click a feature to see how it works in the app."
+        className="bg-surface-soft"
+      >
+        <ProductTabs />
+      </Section>
+
+      {/* BLOG PREVIEW */}
+      {latestPosts.length > 0 && (
+        <Section
+          eyebrow="Grow your restaurant"
+          title={
+            <>
+              From the <span className="hl">KhanaBook blog.</span>
+            </>
+          }
+        >
+          <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+            {latestPosts.map((post) => (
+              <Link
+                key={post.slug}
+                to="/blog/$slug"
+                params={{ slug: post.slug }}
+                className="card-surface flex flex-col"
+              >
+                <span className="eyebrow mb-3">{post.category}</span>
+                <h3 className="font-black text-lg mb-2 leading-snug">{post.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                  {post.description}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-brand">
+                  Read more
+                  <ArrowRight aria-hidden className="h-3.5 w-3.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link to="/blog" className="btn-secondary">
+              Visit the blog →
+            </Link>
+          </div>
+        </Section>
+      )}
 
       {/* FAQ */}
       <Section
         eyebrow="FAQ"
-        title={<>Common <span className="hl">questions.</span></>}
+        title={
+          <>
+            Common <span className="hl">questions.</span>
+          </>
+        }
       >
         <div id="faq">
           <FAQ items={FAQS} />
@@ -303,22 +420,26 @@ function Home() {
             <div
               aria-hidden
               className="absolute inset-0 opacity-20"
-              style={{ background: "radial-gradient(circle at 30% 30%, var(--brand), transparent 60%)" }}
+              style={{
+                background: "radial-gradient(circle at 30% 30%, var(--brand), transparent 60%)",
+              }}
             />
             <div className="relative">
               <h2 className="text-4xl md:text-6xl font-black">
                 Ready to run <span className="hl">smarter?</span>
               </h2>
               <p className="mt-4 text-background/70 max-w-xl mx-auto">
-                Get KhanaBook set up for your restaurant — billing, KOT, payments and multi-terminal operations in one Android app.
+                Get KhanaBook set up for your restaurant — billing, KOT, payments and up to five
+                terminals in one Android app.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <Link to="/get-started" className="btn-primary">Get KhanaBook</Link>
-                <Link to="/blog" className="btn-secondary">Read Our Blog</Link>
+                <Link to="/get-started" className="btn-primary">
+                  Get KhanaBook
+                </Link>
+                <Link to="/blog" className="btn-secondary">
+                  Read Our Blog
+                </Link>
               </div>
-              <p className="mt-6 text-xs text-background/60 max-w-lg mx-auto">
-                KhanaBook is a product of {BUSINESS.legalName}.
-              </p>
             </div>
           </div>
         </div>

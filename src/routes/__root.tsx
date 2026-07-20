@@ -10,9 +10,12 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import khanabookLogo from "../assets/khanabook-logo.webp";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header as SiteHeader } from "../components/site/Header";
 import { Footer as SiteFooter } from "../components/site/Footer";
+import { FloatingCtas } from "../components/site/FloatingCtas";
+import { OfflineIndicator } from "../components/site/OfflineIndicator";
 
 function NotFoundComponent() {
   return (
@@ -83,13 +86,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "KhanaBook is an Android restaurant POS for billing, KOT management, payments, menus, inventory, multi-terminal operations and offline-first synchronisation.",
+          "KhanaBook is an offline-first Android restaurant POS for billing, KOT management, payment recording, menus, inventory and up to five synchronised terminals.",
       },
       { property: "og:title", content: "KhanaBook — Offline-First Restaurant POS" },
       {
         property: "og:description",
         content:
-          "Billing, KOT, payments and multi-terminal operations that work even when the internet is unstable.",
+          "Billing, KOT, payment recording and up to five terminals that work even when the internet is unstable.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "KhanaBook" },
@@ -97,10 +100,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-      { rel: "alternate icon", type: "image/png", sizes: "64x64", href: "/favicon-64.png" },
-      { rel: "shortcut icon", href: "/favicon.ico" },
-      { rel: "apple-touch-icon", href: "/favicon-64.png" },
+      { rel: "preload", href: "https://fonts.gstatic.com/s/karla/v30/qkBIXvYC6trAT55ZBi1ueQ.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+      { rel: "icon", type: "image/webp", href: khanabookLogo },
+      { rel: "shortcut icon", type: "image/webp", href: khanabookLogo },
+      { rel: "apple-touch-icon", href: khanabookLogo },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -148,10 +151,12 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen flex flex-col">
         <SiteHeader />
+        <OfflineIndicator />
         <main className="flex-1">
           <Outlet />
         </main>
         <SiteFooter />
+        <FloatingCtas />
       </div>
     </QueryClientProvider>
   );

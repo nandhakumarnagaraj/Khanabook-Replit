@@ -20,6 +20,9 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# Tool outputs
+graphify-out/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

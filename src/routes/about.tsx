@@ -38,7 +38,7 @@ function AboutPage() {
         <div>
           <h2 className="text-xl font-black text-foreground mb-3">What KhanaBook solves</h2>
           <p>
-            KhanaBook brings billing, KOT management, payments recording, menu, inventory and multi-terminal operations into one Android app that keeps working even when the internet is unstable, and quietly synchronises when it isn't.
+            KhanaBook brings billing, KOT management, payment recording, menu, inventory and up to five synchronised terminals into one Android app that keeps working even when the internet is unstable, and quietly synchronises when it isn't.
           </p>
         </div>
 

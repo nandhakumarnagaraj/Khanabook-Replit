@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import { Loader2 } from "lucide-react";
 import { Section } from "@/components/site/Section";
 import { BUSINESS, DISCLAIMERS, absUrl } from "@/lib/business-config";
 
@@ -29,11 +30,23 @@ type Errors = Partial<Record<
 >>;
 
 const INDIAN_PHONE = /^(\+?91[\s-]?)?[6-9]\d{9}$/;
+const FORMSPREE_URL = "https://formspree.io/f/mlgvyknl";
 
-// TODO: Wire this to an actual backend endpoint or CRM integration before launch.
-// Until then, submissions are NOT stored anywhere.
-async function submitLead(_payload: Record<string, unknown>): Promise<{ ok: false; reason: "not-connected" }> {
-  return { ok: false, reason: "not-connected" };
+async function submitLead(payload: Record<string, unknown>): Promise<{ ok: boolean }> {
+  const response = await fetch(FORMSPREE_URL, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      source: "khanabook.com/get-started",
+      product: BUSINESS.productName,
+      ...payload,
+    }),
+  });
+
+  return { ok: response.ok };
 }
 
 function GetStartedPage() {
@@ -41,6 +54,23 @@ function GetStartedPage() {
   const [submitting, setSubmitting] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
   const [submittedOnce, setSubmittedOnce] = useState(false);
+
+  const validateField = useCallback((name: string, value: string) => {
+    const trimmed = value.trim();
+    setErrors((prev) => {
+      const next = { ...prev };
+      if (name === "name" && !trimmed) next.name = "Please enter your name.";
+      else if (name === "name") delete next.name;
+      if (name === "restaurant" && !trimmed) next.restaurant = "Please enter your restaurant name.";
+      else if (name === "restaurant") delete next.restaurant;
+      if (name === "phone") {
+        if (!trimmed) next.phone = "Please enter your phone number.";
+        else if (!INDIAN_PHONE.test(trimmed)) next.phone = "Please enter a valid 10-digit Indian mobile number.";
+        else delete next.phone;
+      }
+      return next;
+    });
+  }, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -82,8 +112,9 @@ function GetStartedPage() {
     try {
       const res = await submitLead(payload);
       if (res.ok) {
-        // Only mark as submitted on a genuine successful backend response.
         setSubmittedOnce(true);
+        setNotice("Thanks. We have received your request and will contact you soon.");
+        form.reset();
       } else {
         setNotice(DISCLAIMERS.formNotConnected);
       }
@@ -114,9 +145,9 @@ function GetStartedPage() {
             aria-hidden="true"
           />
 
-          <Field name="name" label="Your name" required error={errors.name} />
-          <Field name="restaurant" label="Restaurant name" required error={errors.restaurant} />
-          <Field name="phone" label="Phone number" type="tel" required error={errors.phone} placeholder="10-digit Indian mobile" />
+          <Field name="name" label="Your name" required error={errors.name} onBlurValidate={validateField} />
+          <Field name="restaurant" label="Restaurant name" required error={errors.restaurant} onBlurValidate={validateField} />
+          <Field name="phone" label="Phone number" type="tel" required error={errors.phone} placeholder="10-digit Indian mobile" onBlurValidate={validateField} />
           <Field name="city" label="City" error={errors.city} />
           <Field name="terminals" label="Number of terminals" type="number" error={errors.terminals} min={1} />
 
@@ -126,7 +157,7 @@ function GetStartedPage() {
             </div>
             <select
               name="type"
-              className="w-full rounded-xl border border-border bg-background px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand"
+              className="w-full rounded-xl border border-input bg-background px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand"
               aria-invalid={!!errors.type}
               defaultValue=""
             >
@@ -141,7 +172,7 @@ function GetStartedPage() {
             <textarea
               name="message"
               rows={4}
-              className="w-full rounded-xl border border-border bg-background px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand"
+              className="w-full rounded-xl border border-input bg-background px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand"
             />
           </label>
 
@@ -157,9 +188,10 @@ function GetStartedPage() {
           <button
             type="submit"
             disabled={submitting || submittedOnce}
-            className="btn-primary w-full justify-center disabled:opacity-60"
+            className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            {submitting ? "Submitting…" : submittedOnce ? "Submitted" : "Request a call →"}
+            {submitting && <Loader2 aria-hidden className="h-4 w-4 animate-spin" />}
+            {submitting ? "Submitting…" : submittedOnce ? "✓ Submitted" : "Request a call →"}
           </button>
 
           {notice && (
@@ -184,9 +216,6 @@ function GetStartedPage() {
             >
               Get it on Google Play
             </a>
-            <p className="mt-3 text-[11px] text-muted-foreground">
-              Play Store link pending final verification.
-            </p>
           </div>
 
           <div className="card-surface">
@@ -228,6 +257,7 @@ function Field({
   error,
   placeholder,
   min,
+  onBlurValidate,
 }: {
   name: string;
   label: string;
@@ -236,6 +266,7 @@ function Field({
   error?: string;
   placeholder?: string;
   min?: number;
+  onBlurValidate?: (name: string, value: string) => void;
 }) {
   const id = `field-${name}`;
   return (
@@ -252,10 +283,14 @@ function Field({
         min={min}
         aria-invalid={!!error}
         aria-describedby={error ? `${id}-err` : undefined}
-        className="w-full rounded-xl border border-border bg-background px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand"
+        className={`w-full rounded-xl border bg-background px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand transition-colors ${error ? "border-brand bg-brand/[0.02]" : "border-input"}`}
+        onBlur={(e) => onBlurValidate?.(name, e.target.value)}
       />
-
-      {error && <p id={`${id}-err`} role="alert" className="mt-1 text-xs text-brand">{error}</p>}
+      {error && (
+        <p id={`${id}-err`} role="alert" className="mt-1 text-xs text-brand flex items-center gap-1">
+          <span aria-hidden>•</span> {error}
+        </p>
+      )}
     </label>
   );
 }

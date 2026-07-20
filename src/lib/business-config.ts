@@ -12,21 +12,24 @@ export const BUSINESS = {
   // production domain once confirmed by the business.
   siteUrl: "https://khanabook.com",
 
-  // TODO: replace with verified values before launch.
-  registeredAddress: "[REGISTERED_BUSINESS_ADDRESS]",
-  supportPhone: "[SUPPORT_PHONE]",
-  supportEmail: "[SUPPORT_EMAIL]",
-  cin: "[CIN]",
-  grievanceOfficer: "[GRIEVANCE_OFFICER]",
-  workingHours: "Mon–Sat, 10:00–19:00 IST",
+  // Values migrated from the previous static site. Verify legal identifiers
+  // below before launch.
+  registeredAddress: "2nd Floor, Sathyabama Startup Cell, Semmancheri, Chennai, Tamil Nadu 600119",
+  supportPhone: "+91 94716 76935",
+  supportEmail: "kbook@pcts.tech",
+  // Keep unpublished identifiers empty until verified by the business.
+  cin: "",
+  grievanceOfficer: "",
+  workingHours: "Monday - Saturday, 9:00 AM - 8:00 PM IST",
 
-  // TODO: confirm before enabling. Kept in config until verified.
+  // Verified customer access URLs.
+  loginUrl: "https://kbook.iadv.cloud/login",
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite",
 
   // Legal
-  governingLawCity: "[GOVERNING_LAW_CITY]",
-  effectiveDate: "[EFFECTIVE_DATE]",
-  lastUpdatedDate: "[LAST_UPDATED_DATE]",
+  governingLawCity: "Pune, Maharashtra",
+  effectiveDate: "July 1, 2026",
+  lastUpdatedDate: "July 1, 2026",
 } as const;
 
 // Build an absolute URL from a site-relative path (e.g. "/features").
@@ -38,13 +41,12 @@ export function absUrl(path: string): string {
 
 export const DISCLAIMERS = {
   pricing:
-    "KhanaBook software is currently available without a subscription fee. Payment gateway, hardware and optional service charges may apply.",
+    "KhanaBook software currently has no subscription fee. Payment gateway, hardware and optional service charges may apply. Pricing may change in the future.",
   formNotConnected:
-    "Form submission is not yet connected. Please contact us directly using the details on the right.",
+    "We could not submit the form right now. Please contact us directly using the details on the right.",
   security:
     "We use appropriate technical and organisational safeguards designed to protect your data.",
   compareDisclaimer:
     "This table describes KhanaBook's approach and lists what to check in any other POS. It does not make claims about specific competing products — capabilities vary by provider, plan, hardware and configuration.",
-  roi:
-    "Results are indicative operational value based on the values you enter. KhanaBook may not eliminate all paper or operational costs, and staff time saved does not automatically translate to direct cash savings. Actual outcomes depend on your restaurant's operations, hardware, payment provider rates and optional services.",
+  roi: "Results are indicative operational value based on the values you enter. KhanaBook may not eliminate all paper or operational costs, and staff time saved does not automatically translate to direct cash savings. Actual outcomes depend on your restaurant's operations, hardware, payment provider rates and optional services.",
 } as const;

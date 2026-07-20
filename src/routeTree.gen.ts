@@ -16,6 +16,7 @@ import { Route as RefundCancellationPolicyRouteImport } from './routes/refund-ca
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as LegalRouteImport } from './routes/legal'
+import { Route as HelpCenterRouteImport } from './routes/help-center'
 import { Route as HelpRouteImport } from './routes/help'
 import { Route as GetStartedRouteImport } from './routes/get-started'
 import { Route as FeaturesRouteImport } from './routes/features'
@@ -60,6 +61,11 @@ const PricingRoute = PricingRouteImport.update({
 const LegalRoute = LegalRouteImport.update({
   id: '/legal',
   path: '/legal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpCenterRoute = HelpCenterRouteImport.update({
+  id: '/help-center',
+  path: '/help-center',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HelpRoute = HelpRouteImport.update({
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/features': typeof FeaturesRoute
   '/get-started': typeof GetStartedRoute
   '/help': typeof HelpRoute
+  '/help-center': typeof HelpCenterRoute
   '/legal': typeof LegalRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -135,6 +142,7 @@ export interface FileRoutesByTo {
   '/features': typeof FeaturesRoute
   '/get-started': typeof GetStartedRoute
   '/help': typeof HelpRoute
+  '/help-center': typeof HelpCenterRoute
   '/legal': typeof LegalRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -154,6 +162,7 @@ export interface FileRoutesById {
   '/features': typeof FeaturesRoute
   '/get-started': typeof GetStartedRoute
   '/help': typeof HelpRoute
+  '/help-center': typeof HelpCenterRoute
   '/legal': typeof LegalRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -174,6 +183,7 @@ export interface FileRouteTypes {
     | '/features'
     | '/get-started'
     | '/help'
+    | '/help-center'
     | '/legal'
     | '/pricing'
     | '/privacy-policy'
@@ -192,6 +202,7 @@ export interface FileRouteTypes {
     | '/features'
     | '/get-started'
     | '/help'
+    | '/help-center'
     | '/legal'
     | '/pricing'
     | '/privacy-policy'
@@ -210,6 +221,7 @@ export interface FileRouteTypes {
     | '/features'
     | '/get-started'
     | '/help'
+    | '/help-center'
     | '/legal'
     | '/pricing'
     | '/privacy-policy'
@@ -229,6 +241,7 @@ export interface RootRouteChildren {
   FeaturesRoute: typeof FeaturesRoute
   GetStartedRoute: typeof GetStartedRoute
   HelpRoute: typeof HelpRoute
+  HelpCenterRoute: typeof HelpCenterRoute
   LegalRoute: typeof LegalRoute
   PricingRoute: typeof PricingRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
@@ -287,6 +300,13 @@ declare module '@tanstack/react-router' {
       path: '/legal'
       fullPath: '/legal'
       preLoaderRoute: typeof LegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help-center': {
+      id: '/help-center'
+      path: '/help-center'
+      fullPath: '/help-center'
+      preLoaderRoute: typeof HelpCenterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/help': {
@@ -374,6 +394,7 @@ const rootRouteChildren: RootRouteChildren = {
   FeaturesRoute: FeaturesRoute,
   GetStartedRoute: GetStartedRoute,
   HelpRoute: HelpRoute,
+  HelpCenterRoute: HelpCenterRoute,
   LegalRoute: LegalRoute,
   PricingRoute: PricingRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
