@@ -18,7 +18,7 @@ export const Route = createFileRoute("/contact-us")({
 function ContactUs() {
   return (
     <Section eyebrow="Contact" title={<>Contact <span className="hl">Us.</span></>}>
-      <div className="max-w-2xl mx-auto card-surface space-y-4 text-muted-foreground">
+      <div className="max-w-4xl mx-auto w-full card-surface space-y-4 text-muted-foreground">
         <Row label="Legal company" value={BUSINESS.legalName} />
         <Row label="Product" value={BUSINESS.productName} />
         <Row label="Registered office" value={BUSINESS.registeredAddress} />

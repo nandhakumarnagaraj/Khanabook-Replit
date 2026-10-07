@@ -132,9 +132,20 @@
 
 
 @utility container-page {
-  max-width: 80rem;
+  width: 100%;
+  max-width: 90rem;
   margin-inline: auto;
-  padding-inline: 1.5rem;
+  padding-inline: 1.25rem;
+
+  @media (min-width: 640px) {
+    padding-inline: 2rem;
+  }
+  @media (min-width: 1024px) {
+    padding-inline: 2.5rem;
+  }
+  @media (min-width: 1440px) {
+    padding-inline: 3rem;
+  }
 }
 
 @utility hl {
@@ -576,7 +587,8 @@
 
 .blog-grid-premium {
   display: grid;
-  max-width: 70rem;
+  max-width: 82rem;
+  width: 100%;
   margin: 0 auto;
   gap: 1.5rem;
 }
@@ -714,6 +726,12 @@
   .contact-row:first-of-type {
     border-top: 0;
     padding-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-grid-premium {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

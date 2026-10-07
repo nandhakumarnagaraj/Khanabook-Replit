@@ -30,7 +30,7 @@ const INCLUDED = [
   "Pay-before and pay-after service workflows",
   "Cash, UPI, card and split-payment recording",
   "PDF invoice creation and WhatsApp/SMS sharing",
-  "KOT and receipt printing with up to two compatible Bluetooth thermal printers",
+  "KOT and receipt printing with up to two compatible USB, Wi-Fi or Bluetooth thermal printers",
   "Up to 5 approved Android terminals per restaurant",
   "Terminal-specific invoice series and daily order counters",
   "Menu management with categories, items and variants",
@@ -58,8 +58,8 @@ const EXTRA_COSTS = [
     price: "Third-party cost",
   },
   {
-    title: "Compatible Bluetooth thermal printer",
-    desc: "Optional. KhanaBook supports up to two compatible printers: one for customer receipts and one for KOTs. We don't sell hardware directly.",
+    title: "Compatible USB, Wi-Fi or Bluetooth thermal printer",
+    desc: "Optional. KhanaBook supports up to two compatible printers (USB, Wi-Fi, or Bluetooth): one for customer receipts and one for KOTs. We don't sell hardware directly.",
     price: "Third-party cost",
   },
   {
@@ -85,7 +85,7 @@ const PRICING_FAQS = [
   },
   {
     q: "Do I need to buy hardware from you?",
-    a: "No. Use a supported Android phone or tablet. If you need printing, confirm compatibility before buying up to two Bluetooth thermal printers—one for customer receipts and one for KOTs. KhanaBook does not sell hardware directly.",
+    a: "No. Use a supported Android phone or tablet. If you need printing, confirm compatibility before connecting up to two thermal printers (USB, Wi-Fi, or Bluetooth)—one for customer receipts and one for KOTs. KhanaBook does not sell hardware directly.",
   },
   {
     q: "Does KhanaBook charge payment-gateway fees?",
@@ -169,33 +169,39 @@ function PricingPage() {
             </p>
           </div>
 
-          <div className="max-w-2xl mx-auto card-surface">
-            <ul className="space-y-4">
-              {INCLUDED.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <Check aria-hidden className="h-5 w-5 mt-0.5 text-green-600 shrink-0" />
-                  <span className="font-semibold">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto w-full items-start">
+            <div className="card-surface h-full">
+              <h3 className="font-black text-lg mb-4 flex items-center gap-2 text-foreground">
+                <Check aria-hidden className="h-5 w-5 text-green-600 shrink-0" />
+                Included Capabilities
+              </h3>
+              <ul className="space-y-4">
+                {INCLUDED.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Check aria-hidden className="h-5 w-5 mt-0.5 text-green-600 shrink-0" />
+                    <span className="font-semibold">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="max-w-2xl mx-auto mt-8 card-surface">
-            <h3 className="font-black text-lg mb-4 flex items-center gap-2">
-              <HelpCircle aria-hidden className="h-5 w-5 text-muted-foreground" />
-              Not yet available
-            </h3>
-            <ul className="space-y-4">
-              {NOT_INCLUDED.map((row) => (
-                <li key={row.item} className="flex items-start gap-3">
-                  <X aria-hidden className="h-5 w-5 mt-0.5 text-muted-foreground shrink-0" />
-                  <div>
-                    <span className="font-semibold">{row.item}</span>
-                    <p className="text-sm text-muted-foreground mt-0.5">{row.note}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <div className="card-surface h-full">
+              <h3 className="font-black text-lg mb-4 flex items-center gap-2 text-muted-foreground">
+                <HelpCircle aria-hidden className="h-5 w-5 text-muted-foreground" />
+                Not yet available
+              </h3>
+              <ul className="space-y-4">
+                {NOT_INCLUDED.map((row) => (
+                  <li key={row.item} className="flex items-start gap-3">
+                    <X aria-hidden className="h-5 w-5 mt-0.5 text-muted-foreground shrink-0" />
+                    <div>
+                      <span className="font-semibold">{row.item}</span>
+                      <p className="text-sm text-muted-foreground mt-0.5">{row.note}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -210,7 +216,7 @@ function PricingPage() {
         }
         desc="These are not KhanaBook charges — they're third-party costs you should budget for."
       >
-        <div className="grid gap-4 md:grid-cols-2 max-w-4xl mx-auto">
+        <div className="grid gap-6 md:grid-cols-2 max-w-6xl mx-auto w-full">
           {EXTRA_COSTS.map((item) => (
             <div key={item.title} className="card-surface">
               <div className="flex items-start justify-between gap-3">
@@ -234,7 +240,7 @@ function PricingPage() {
               What you should <span className="hl">know.</span>
             </h2>
           </div>
-          <div className="max-w-3xl mx-auto overflow-x-auto rounded-2xl border border-border">
+          <div className="max-w-5xl mx-auto w-full overflow-x-auto rounded-2xl border border-border">
             <table className="w-full">
               <thead className="bg-surface">
                 <tr className="text-left">
@@ -290,6 +296,8 @@ function PricingPage() {
 
       {/* FAQ */}
       <Section
+        id="pricing-faq"
+        containerClassName="w-[92vw] md:w-[75vw] mx-auto"
         eyebrow="Pricing FAQ"
         title={
           <>
@@ -297,14 +305,12 @@ function PricingPage() {
           </>
         }
       >
-        <div id="pricing-faq">
-          <FAQ items={PRICING_FAQS} />
-        </div>
+        <FAQ items={PRICING_FAQS} className="w-full" />
       </Section>
 
       {/* CTA */}
       <section className="pb-24">
-        <div className="container-page">
+        <div className="w-[92vw] md:w-[75vw] mx-auto">
           <div className="rounded-3xl bg-foreground text-background p-10 md:p-16 text-center relative overflow-hidden">
             <div
               aria-hidden

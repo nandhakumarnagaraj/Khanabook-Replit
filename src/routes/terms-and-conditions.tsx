@@ -41,7 +41,7 @@ const SECTIONS = [
   ],
   [
     "Supported hardware",
-    "KhanaBook runs on supported Android phones and tablets and can connect to up to two compatible Bluetooth thermal printers: one for customer receipts and one for KOTs.",
+    "KhanaBook runs on supported Android phones and tablets and can connect to up to two compatible USB, Wi-Fi or Bluetooth thermal printers: one for customer receipts and one for KOTs.",
   ],
   [
     "Third-party services",
@@ -89,7 +89,7 @@ function Terms() {
         </>
       }
     >
-      <div className="max-w-3xl mx-auto space-y-6 text-muted-foreground leading-relaxed">
+      <div className="max-w-4xl mx-auto w-full space-y-6 text-muted-foreground leading-relaxed">
         <p>
           These Terms and Conditions govern the use of the KhanaBook restaurant POS product provided
           by <strong className="text-foreground">{BUSINESS.legalName}</strong>.

@@ -52,7 +52,7 @@ function ROIPage() {
       title={<>Estimate operational <span className="hl">value.</span></>}
       desc="An indicative estimate based on the values you enter. Optional inputs default to zero — set only the ones you want to model."
     >
-      <div className="grid gap-8 md:grid-cols-[1fr_1fr] max-w-4xl mx-auto">
+      <div className="grid gap-8 md:grid-cols-[1fr_1fr] max-w-5xl mx-auto w-full">
         <div className="card-surface space-y-5">
           <Field label={`Current POS monthly subscription (₹): ${posCost}`}>
             <input type="range" min={0} max={10000} step={100} value={posCost} onChange={(e) => setPosCost(+e.target.value)} className="w-full accent-brand" />
@@ -90,7 +90,7 @@ function ROIPage() {
         </div>
       </div>
 
-      <p className="mt-8 text-sm text-muted-foreground max-w-3xl mx-auto text-center">
+      <p className="mt-8 text-sm text-muted-foreground max-w-4xl mx-auto text-center">
         {DISCLAIMERS.roi}
       </p>
     </Section>

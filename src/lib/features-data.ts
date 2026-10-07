@@ -73,11 +73,11 @@ export const FEATURE_GROUPS: { id: string; title: string; items: FeatureItem[] }
       { name: "KOT generation", body: "Create Kitchen Order Tickets from the order screen." },
       {
         name: "Dedicated KOT printer",
-        body: "Print KOTs on a configured compatible Bluetooth thermal printer.",
+        body: "Print KOTs on a configured compatible USB, Wi-Fi or Bluetooth thermal printer.",
       },
       {
         name: "Dual-printer support",
-        body: "Connect up to two compatible Bluetooth thermal printers: one for customer receipts and one for KOTs.",
+        body: "Connect up to two compatible USB, Wi-Fi or Bluetooth thermal printers: one for customer receipts and one for KOTs.",
       },
       {
         name: "KOT updates and reprints",

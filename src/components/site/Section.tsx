@@ -10,6 +10,7 @@ export function Section({
   center = true,
   id,
   animate = true,
+  containerClassName = "container-page",
 }: {
   eyebrow?: string;
   title?: ReactNode;
@@ -20,6 +21,7 @@ export function Section({
   id?: string;
   /** Set false to disable entrance animation for this section */
   animate?: boolean;
+  containerClassName?: string;
 }) {
   const { ref, isInView } = useInView({ threshold: 0.1 });
 
@@ -33,9 +35,9 @@ export function Section({
       ref={ref as React.RefObject<HTMLElement>}
       className={`py-20 md:py-28 ${className}`}
     >
-      <div className={`container-page ${animClass}`}>
+      <div className={`${containerClassName} ${animClass}`}>
         {(eyebrow || title || desc) && (
-          <div className={`max-w-3xl ${center ? "mx-auto text-center" : ""} mb-14`}>
+          <div className={`max-w-4xl ${center ? "mx-auto text-center" : ""} mb-14`}>
             {eyebrow && <div className="eyebrow mb-4">{eyebrow}</div>}
             {title && (
               <h2 className="text-3xl md:text-5xl font-black leading-tight">{title}</h2>

@@ -12,9 +12,9 @@ export const HELP_TOPICS = [
   },
   {
     title: "Hardware Setup",
-    desc: "Connect up to two compatible Bluetooth thermal printers: one for receipts and one for KOTs.",
+    desc: "Connect up to two compatible USB, Wi-Fi or Bluetooth thermal printers: one for receipts and one for KOTs.",
     icon: Printer,
-    items: ["Printer compatibility", "Receipt and KOT tests", "Paper and battery checks"],
+    items: ["Printer compatibility", "Receipt and KOT tests", "Paper and connection checks"],
     cta: { label: "View guides", to: "/get-started" },
   },
   {
@@ -47,8 +47,8 @@ export const HELP_FAQS = [
     a: "Download the Android app from Google Play, open it and follow the guided setup to create your restaurant account.",
   },
   {
-    q: "How do I connect Bluetooth printers?",
-    a: "KhanaBook supports up to two compatible Bluetooth thermal printers: one assigned to customer receipts and one assigned to KOTs. Pair each printer with Android, assign its role in KhanaBook and run the relevant test print.",
+    q: "How do I connect printers (USB, Wi-Fi, Bluetooth)?",
+    a: "KhanaBook supports up to two compatible thermal printers connected via USB, Wi-Fi, or Bluetooth: one assigned to customer receipts and one assigned to KOTs. Connect each printer with Android, assign its role in KhanaBook and run the relevant test print.",
   },
   {
     q: "Can multiple staff use the same account?",

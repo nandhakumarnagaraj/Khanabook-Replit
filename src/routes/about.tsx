@@ -27,7 +27,7 @@ function AboutPage() {
       title={<>Built for Indian <span className="hl">restaurants.</span></>}
       desc="Because restaurants deserve technology that just works — even when the internet doesn't."
     >
-      <div className="max-w-3xl mx-auto space-y-10 text-lg leading-relaxed text-muted-foreground">
+      <div className="max-w-4xl mx-auto w-full space-y-10 text-lg leading-relaxed text-muted-foreground">
         <div>
           <h2 className="text-xl font-black text-foreground mb-3">Why KhanaBook exists</h2>
           <p>

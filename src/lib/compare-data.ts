@@ -17,7 +17,7 @@ export const COMPARE_ROWS: [string, string, string][] = [
   ],
   [
     "KOT and receipt printing",
-    "Up to two compatible Bluetooth thermal printers: one for customer receipts and one for KOTs",
+    "Up to two compatible USB, Wi-Fi or Bluetooth thermal printers: one for customer receipts and one for KOTs",
     "Supported printer models, printer roles and reprint handling",
   ],
   [

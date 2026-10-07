@@ -25,7 +25,7 @@ const TABS = [
     image: chefHandshake,
     alt: "Restaurant kitchen staff coordinating order preparation",
     description:
-      "Generate KOTs and print them on the designated compatible Bluetooth KOT printer. Reprint and update active orders without confusion.",
+      "Generate KOTs and print them on the designated compatible USB, Wi-Fi or Bluetooth KOT printer. Reprint and update active orders without confusion.",
     portrait: false,
     illustrative: true,
   },
@@ -69,7 +69,7 @@ export function ProductTabs() {
   const current = TABS[active];
 
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className="max-w-6xl mx-auto w-full">
       {/* Tab buttons */}
       <div
         role="tablist"

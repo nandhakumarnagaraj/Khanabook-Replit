@@ -11,7 +11,7 @@ export const FEATURES = [
   },
   {
     title: "Kitchen Operations",
-    body: "Generate, update and reprint KOTs. Connect up to two compatible Bluetooth thermal printers—one for customer receipts and one for KOTs.",
+    body: "Generate, update and reprint KOTs. Connect up to two compatible USB, Wi-Fi or Bluetooth thermal printers—one for customer receipts and one for KOTs.",
   },
   {
     title: "Offline-First Reliability",
@@ -59,7 +59,7 @@ export const FAQS = [
   },
   {
     q: "What hardware do I need?",
-    a: "Start with a supported Android phone or tablet. For printing, you can connect up to two compatible Bluetooth thermal printers—one for customer receipts and one for KOTs. Confirm device and printer compatibility before purchasing hardware.",
+    a: "Start with a supported Android phone or tablet. For printing, you can connect up to two compatible USB, Wi-Fi or Bluetooth thermal printers—one for customer receipts and one for KOTs. Confirm device and printer compatibility before purchasing hardware.",
   },
   {
     q: "Can I share invoices and export reports?",

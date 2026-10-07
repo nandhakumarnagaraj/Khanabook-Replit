@@ -48,7 +48,7 @@ function FeaturesPage() {
       title={<>Product-accurate <span className="hl">capabilities.</span></>}
       desc="Grouped by how a restaurant actually uses them. Roadmap items are clearly labelled."
     >
-      <div className="space-y-14 max-w-5xl mx-auto">
+      <div className="space-y-16 max-w-7xl mx-auto w-full">
         {FEATURE_GROUPS.map((g) => {
           const Icon = GROUP_ICONS[g.id] ?? ReceiptText;
           return (
@@ -59,7 +59,7 @@ function FeaturesPage() {
                 </span>
                 <h2 className="text-2xl font-black">{g.title}</h2>
               </div>
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {g.items.map((f) => (
                   <div key={f.name} className="card-surface">
                     <div className="flex items-start justify-between gap-3">

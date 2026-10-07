@@ -16,6 +16,9 @@ import { Header as SiteHeader } from "../components/site/Header";
 import { Footer as SiteFooter } from "../components/site/Footer";
 import { FloatingCtas } from "../components/site/FloatingCtas";
 import { OfflineIndicator } from "../components/site/OfflineIndicator";
+import { CustomCursor } from "../components/motion/CustomCursor";
+import { SmoothLoader } from "../components/motion/SmoothLoader";
+import { ParallaxBackground } from "../components/motion/ParallaxBackground";
 
 function NotFoundComponent() {
   return (
@@ -149,6 +152,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <SmoothLoader />
+      <CustomCursor />
+      <ParallaxBackground />
       <div className="min-h-screen flex flex-col">
         <SiteHeader />
         <OfflineIndicator />

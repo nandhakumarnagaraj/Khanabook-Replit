@@ -189,7 +189,7 @@ function HelpPage() {
         title={<>Common <span className="hl">questions.</span></>}
         desc="Search the most common setup and support questions below."
       >
-        <div className="max-w-3xl mx-auto space-y-3">
+        <div className="max-w-5xl mx-auto w-full space-y-3">
           {filteredFaqs.length > 0 ? (
             filteredFaqs.map((item) => (
               <details key={item.q} className="rounded-xl border border-border bg-surface">

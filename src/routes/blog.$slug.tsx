@@ -66,7 +66,7 @@ function PostPage() {
       title={<>{post.title}</>}
       desc={post.description}
     >
-      <article className="max-w-3xl mx-auto space-y-5 text-lg text-muted-foreground leading-relaxed">
+      <article className="max-w-4xl mx-auto space-y-5 text-lg text-muted-foreground leading-relaxed">
         {isDraft && (
           <div className="rounded-xl border border-border bg-surface-soft p-4 text-sm">
             <strong className="text-foreground">Draft preview.</strong> This article is under editorial review and is not yet published.

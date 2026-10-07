@@ -133,7 +133,7 @@ function GetStartedPage() {
       title={<>Get KhanaBook for your <span className="hl">restaurant.</span></>}
       desc="Tell us a bit about your restaurant and our team will reach out. Or download the Android app directly."
     >
-      <div className="grid gap-8 md:grid-cols-[1.2fr_1fr] max-w-5xl mx-auto">
+      <div className="grid gap-8 md:grid-cols-[1.2fr_1fr] max-w-6xl mx-auto w-full">
         <form onSubmit={onSubmit} noValidate className="card-surface space-y-4" aria-describedby="form-status">
           {/* Honeypot */}
           <input

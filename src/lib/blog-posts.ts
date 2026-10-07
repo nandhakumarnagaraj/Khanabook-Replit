@@ -128,7 +128,7 @@ export const POSTS: BlogPost[] = [
     status: "published",
     content: [
       "A restaurant POS setup does not have to start with expensive dedicated hardware. For many small restaurants, an Android phone or tablet is enough to begin billing, managing orders and recording payments.",
-      "Add a Bluetooth thermal printer when the kitchen or counter needs printed KOTs and receipts. Before buying, check paper width, battery life, print speed and whether the printer is easy for staff to pair during service.",
+      "Add a USB, Wi-Fi, or Bluetooth thermal printer when the kitchen or counter needs printed KOTs and receipts. Before buying, check paper width, interface options (USB, Wi-Fi or Bluetooth), print speed and whether the printer is easy for staff to connect during service.",
       "For multi-terminal restaurants, keep each device's role clear. One terminal might handle takeaway billing, another may handle dine-in orders, and each should be labelled so staff know which counter produced which invoice.",
     ],
   },

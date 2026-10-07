@@ -27,7 +27,7 @@ function Refund() {
         </>
       }
     >
-      <div className="max-w-3xl mx-auto space-y-6 text-muted-foreground leading-relaxed">
+      <div className="max-w-4xl mx-auto w-full space-y-6 text-muted-foreground leading-relaxed">
         <p>
           This policy explains how refunds and cancellations are handled for KhanaBook, a product of{" "}
           <strong className="text-foreground">{BUSINESS.legalName}</strong>.

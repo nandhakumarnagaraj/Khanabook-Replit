@@ -8,13 +8,13 @@ export type HelpGuide = {
 export const SETUP_GUIDES: HelpGuide[] = [
   {
     id: "printer-pairing",
-    title: "Pair Bluetooth Printers",
-    description: "Connect compatible thermal printers for customer receipts and KOTs.",
+    title: "Connect Printers (USB, Wi-Fi & Bluetooth)",
+    description: "Connect compatible thermal printers via USB cable, Wi-Fi network, or Bluetooth for customer receipts and KOTs.",
     steps: [
       "Confirm that each printer is compatible with KhanaBook before purchasing or configuring hardware.",
-      "Turn on the Bluetooth thermal printer and place it in pairing mode.",
-      "In Android Settings → Bluetooth, pair the printer with the device.",
-      "Open KhanaBook, go to Settings → Printers, and select the paired device.",
+      "Connect your thermal printer via USB OTG cable, connect it to your local Wi-Fi router, or place it in Bluetooth pairing mode.",
+      "In Android Settings or your local network, ensure the printer is connected or paired with the device.",
+      "Open KhanaBook, go to Settings → Printers, and select the connected USB, Wi-Fi, or Bluetooth device.",
       "Assign the printer as either the customer-receipt printer or the KOT printer. KhanaBook supports up to one printer for each role.",
       "Run the relevant test print and confirm that text, paper width and feed are correct.",
     ],

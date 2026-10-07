@@ -27,7 +27,7 @@ function PrivacyPolicy() {
         </>
       }
     >
-      <div className="max-w-3xl mx-auto space-y-6 text-muted-foreground leading-relaxed">
+      <div className="max-w-4xl mx-auto w-full space-y-6 text-muted-foreground leading-relaxed">
         <p>
           This Privacy Policy describes how{" "}
           <strong className="text-foreground">{BUSINESS.legalName}</strong> ("we", "us") handles

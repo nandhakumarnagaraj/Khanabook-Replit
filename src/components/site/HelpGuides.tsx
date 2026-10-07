@@ -10,7 +10,7 @@ export function HelpGuides() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto space-y-3">
+    <div className="max-w-5xl mx-auto w-full space-y-3">
       <div className="flex items-center gap-2 mb-6">
         <BookOpen aria-hidden className="h-5 w-5 text-brand" />
         <h3 className="text-xl font-black">Setup Guides</h3>

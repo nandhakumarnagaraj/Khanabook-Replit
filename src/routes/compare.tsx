@@ -29,7 +29,7 @@ function ComparePage() {
       title={<>KhanaBook's approach — and what to <span className="hl">check elsewhere.</span></>}
       desc="This table describes how KhanaBook approaches each capability, and lists what to verify in any other POS you are considering."
     >
-      <div className="overflow-x-auto rounded-2xl border border-border shadow-sm max-w-5xl mx-auto">
+      <div className="overflow-x-auto rounded-2xl border border-border shadow-sm max-w-6xl mx-auto w-full">
         <table className="w-full min-w-[720px]">
           <thead className="bg-surface-soft">
             <tr className="text-left">
@@ -55,7 +55,7 @@ function ComparePage() {
         </table>
       </div>
 
-      <p className="mt-8 text-sm text-muted-foreground max-w-3xl mx-auto text-center">
+      <p className="mt-8 text-sm text-muted-foreground max-w-4xl mx-auto text-center">
         {DISCLAIMERS.compareDisclaimer}
       </p>
     </Section>
