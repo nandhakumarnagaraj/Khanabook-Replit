@@ -107,7 +107,7 @@ export function VerticalHeroSwiper() {
       opacity: 1,
       scale: 1,
       transition: {
-        y: { type: "spring", stiffness: 320, damping: 28 },
+        y: { type: "spring" as const, stiffness: 320, damping: 28 },
         opacity: { duration: 0.3 },
         scale: { duration: 0.3 },
       },
@@ -117,7 +117,7 @@ export function VerticalHeroSwiper() {
       opacity: 0,
       scale: 0.94,
       transition: {
-        y: { type: "spring", stiffness: 320, damping: 28 },
+        y: { type: "spring" as const, stiffness: 320, damping: 28 },
         opacity: { duration: 0.25 },
         scale: { duration: 0.25 },
       },

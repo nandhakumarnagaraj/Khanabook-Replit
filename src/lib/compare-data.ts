@@ -160,7 +160,7 @@ export const BATTLECARD_CATEGORIES: BattlecardCategory[] = [
         desktopPos: "3–7 days — Windows technician installation on site",
         desktopPosStatus: "bad",
         cloudSaas: "1–2 days — Cloud menu builder and payment config",
-        cloudSaasStatus: "neutral",
+        cloudSaasStatus: "warning",
         description: "How quickly you can switch over and start serving customers.",
       },
       {
