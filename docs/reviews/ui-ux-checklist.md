@@ -13,7 +13,7 @@
       unchunked pricing list ✖.
 - [ ] **Jakob's Law** — match existing web conventions. _Site:_ external dashboard login ✔;
       double-cursor ✖.
-- [ ] **Doherty Threshold** — <400 ms feels instant. _Site:_ "0ms SQLite" pitch ✔; fake loader ✖.
+- [ ] **Doherty Threshold** — <400 ms feels instant. _Site:_ "50ms SQLite" pitch ✔; fake loader ✖.
 - [ ] **Von Restorff effect** — the distinct item is remembered. _Site:_ TextShimmer hero phrase ✔.
 - [ ] **Serial Position Effect** — first and last positions stick. _Site:_ hero + closing CTA carry
       the message; middle 16 sections waste prime slots.

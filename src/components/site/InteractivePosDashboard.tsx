@@ -150,7 +150,7 @@ export function InteractivePosDashboard() {
           <span className="hidden sm:inline-block h-3.5 w-px bg-border" />
 
           <div className="flex items-center gap-1.5 text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400">
-            <span>Instant Local Response</span>
+            <span>50ms Local Response</span>
           </div>
         </div>
 

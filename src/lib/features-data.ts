@@ -106,7 +106,7 @@ export const FEATURE_GROUPS: { id: string; title: string; items: FeatureItem[] }
       },
       {
         name: "Embedded Local SQLite WAL Storage",
-        body: "All transactions and operational data commit directly to the Android device's native database instantly with zero network dependency.",
+        body: "All transactions and operational data commit directly to the Android device's native database in ~50ms with zero network dependency.",
       },
       {
         name: "Resilient Conflict-Free Peer Mesh",

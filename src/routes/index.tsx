@@ -153,7 +153,7 @@ const ARCH_COMPARISON = [
   },
   {
     feature: "Speed during Peak Rush",
-    khanabook: "Instant local SQLite write",
+    khanabook: "50ms local SQLite write",
     cloud: "800ms – 3s cloud API lag",
     legacy: "Slow Windows OS disk lag",
   },
@@ -337,7 +337,7 @@ function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="flex flex-col items-center text-center p-3 rounded-2xl bg-surface/80 border border-border/60 shadow-sm">
               <div className="text-2xl md:text-3xl font-black text-brand font-mono flex items-center">
-                <NumberTicker value={0} />
+                <NumberTicker value={50} />
                 <span>ms</span>
               </div>
               <div className="text-xs font-bold text-foreground mt-1">Local Transaction Write</div>
@@ -430,8 +430,8 @@ function Home() {
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400 shrink-0 mt-0.5" />
                       <span>
-                        <strong>Instant Local SQLite Writes:</strong> Zero spinner delay during peak
-                        lunch and dinner rushes.
+                        <strong>50ms Local Transaction Writes:</strong> Zero spinner delay during
+                        peak lunch and dinner rushes.
                       </span>
                     </li>
                     <li className="flex items-start gap-3">

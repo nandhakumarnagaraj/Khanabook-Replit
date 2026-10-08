@@ -77,7 +77,12 @@ const ROW_ONE = [
 ];
 
 const ROW_TWO = [
-  { label: "Instant Local SQLite", icon: Zap, color: "text-amber-500", bg: "bg-amber-500/10" },
+  {
+    label: "50ms Local Transaction Writes",
+    icon: Zap,
+    color: "text-amber-500",
+    bg: "bg-amber-500/10",
+  },
   {
     label: "USB, Wi-Fi & Bluetooth Printers",
     icon: Printer,

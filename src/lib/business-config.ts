@@ -38,6 +38,7 @@ export const PRODUCT_SPECS = {
   maxPrinters: 2,
   printerTypes: "ESC/POS USB, Bluetooth, or Wi-Fi thermal printers (58mm / 80mm)",
   localDatabase: "Local SQLite WAL mode",
+  localWriteLatency: "50ms",
   subscriptionPrice: "₹0",
 } as const;
 
