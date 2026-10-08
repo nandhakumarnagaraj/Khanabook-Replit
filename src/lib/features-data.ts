@@ -7,171 +7,199 @@ export type FeatureItem = {
 export const FEATURE_GROUPS: { id: string; title: string; items: FeatureItem[] }[] = [
   {
     id: "billing-payments",
-    title: "Billing & Payments",
+    title: "High-Speed Billing & Payment Operations",
     items: [
       {
-        name: "Dine-in, takeaway and manual online-order recording",
-        body: "Handle common restaurant order types in one flow. Online orders are recorded manually as an order source.",
+        name: "3-Second Fast Billing & Smart Search",
+        body: "Punch orders in seconds with rapid touch search, category grids, barcode scanning, and customizable item modifier groups.",
       },
       {
-        name: "Pay-before and pay-after workflows",
-        body: "Use the service flow that fits your counter or table operation.",
+        name: "Dine-In, Takeaway & Delivery Workflows",
+        body: "Handle dine-in table mapping, quick-service counter tokens, and delivery orders with customized pay-before or pay-after workflows.",
       },
       {
-        name: "Cash, UPI, card and split-payment recording",
-        body: "Record each payment mode on a bill, including split payments.",
+        name: "Table Operations & Bill Splitting",
+        body: "Shift tables, merge running bills, apply customer discounts, and split payments by item, seat, or custom amounts right at the counter.",
       },
       {
-        name: "Automatic tax calculation",
-        body: "Tax is computed automatically from the rates configured for each item.",
+        name: "Dynamic UPI QR & Split Payments",
+        body: "Print dynamic UPI payment QR codes on customer bills and record split payments across Cash, UPI, Card, and Customer Credit with zero manual math.",
       },
       {
-        name: "Invoice sharing",
-        body: "Create a PDF invoice and share it through WhatsApp or SMS using services available on the device.",
+        name: "Automated GST Calculation (CGST/SGST)",
+        body: "Configurable tax slabs compute GST automatically for food, beverages, and AC dining, complete with HSN/SAC code compliance.",
       },
       {
-        name: "Integrated payment collection",
-        body: "Direct payment-gateway processing and verification from within the app.",
+        name: "Paperless WhatsApp & SMS Invoice Sharing",
+        body: "Generate professional digital PDF invoices and share them instantly via WhatsApp or SMS, saving expensive thermal paper rolls.",
+      },
+      {
+        name: "Integrated Payment Gateway Collection",
+        body: "Direct in-app bank gateway processing and real-time payment status verification from within the POS terminal.",
         status: "coming-soon",
       },
     ],
   },
   {
     id: "multi-terminal",
-    title: "Multi-Terminal Operations",
+    title: "Multi-Terminal Wi-Fi Mesh Synchronization",
     items: [
       {
-        name: "Up to five approved Android terminals",
-        body: "Each approved device operates as its own terminal with its own settings.",
+        name: "Up to 5 Synchronized Android Terminals",
+        body: "Connect up to 5 Android phones or tablets per restaurant simultaneously—allowing stewards to take orders table-side while the cashier bills at the counter.",
       },
       {
-        name: "Terminal-specific invoice series",
-        body: "Invoice numbers remain separate across terminals.",
+        name: "Local Wi-Fi Mesh (Zero Broadband Dependency)",
+        body: "Terminals synchronize orders locally over your Wi-Fi router in real time, even if the external broadband internet connection is completely down.",
       },
       {
-        name: "Per-terminal daily order counters",
-        body: "Each terminal maintains its own daily order sequence.",
+        name: "Independent GST Invoice Series per Terminal",
+        body: "Each terminal maintains its own sequence of invoice numbers and daily order counters, eliminating duplicate bill numbers and tax audit issues.",
       },
       {
-        name: "Isolated active orders and drafts",
-        body: "Draft and active orders stay on the terminal handling them.",
+        name: "Isolated Draft Orders & Collision Prevention",
+        body: "Running drafts and active table orders stay isolated on the handling terminal until committed, preventing cashier and steward order overwrites.",
       },
       {
-        name: "Background synchronisation with visible status",
-        body: "Eligible completed records sync when connectivity is available, with status shown in the app.",
+        name: "Background Cloud Sync with Live Telemetry",
+        body: "Settled orders silently upload to the cloud infrastructure when internet connectivity is active, displaying visible sync telemetry in the app.",
       },
       {
-        name: "Restaurant-level reporting",
-        body: "Consolidated reports include finalised records after terminals synchronise.",
+        name: "Outlet-Level Consolidated Reporting",
+        body: "The Web Dashboard consolidates sales, taxes, and item velocities across all terminals into unified management summaries.",
       },
     ],
   },
   {
     id: "kitchen",
-    title: "Kitchen Operations",
+    title: "Kitchen Management & Dual ESC/POS Routing",
     items: [
-      { name: "KOT generation", body: "Create Kitchen Order Tickets from the order screen." },
       {
-        name: "Dedicated KOT printer",
-        body: "Print KOTs on a configured compatible USB, Wi-Fi or Bluetooth thermal printer.",
+        name: "Instant Kitchen Order Ticket (KOT) Generation",
+        body: "Generate and fire KOTs to the kitchen in under a second from the billing screen or captain steward handheld terminal.",
       },
       {
-        name: "Dual-printer support",
-        body: "Connect up to two compatible USB, Wi-Fi or Bluetooth thermal printers: one for customer receipts and one for KOTs.",
+        name: "Dual Thermal Printer Routing",
+        body: "Connect up to two standard 58mm or 80mm ESC/POS thermal printers via USB, Bluetooth, or Wi-Fi—one for counter receipts and one for kitchen KOTs.",
       },
       {
-        name: "KOT updates and reprints",
-        body: "Update, cancel or reprint tickets when an active order changes.",
+        name: "Multi-Station Kitchen Routing",
+        body: "Route food items automatically to designated preparation stations (e.g. Tandoor vs Main Kitchen vs Chinese vs Bar) without waiter confusion.",
       },
-      { name: "Active-order tracking", body: "Review open orders during service." },
+      {
+        name: "KOT Updates, Reprints & Item Voids",
+        body: "Modify active orders, print add-on running KOTs, or void items with mandatory steward PIN authorization to eliminate kitchen theft.",
+      },
+      {
+        name: "Active Order & Pipeline Visualizer",
+        body: "Track live orders currently being prepared in the kitchen, monitor elapsed preparation times, and maintain table turn speed.",
+      },
     ],
   },
   {
     id: "offline-first",
-    title: "Offline-First Reliability",
+    title: "100% Offline-First Architecture (SQLite WAL)",
     items: [
       {
-        name: "Billing during connectivity interruptions",
-        body: "Continue core counter operations when the internet is temporarily unavailable.",
+        name: "Zero-Downtime Billing Counter",
+        body: "Continue billing, searching menus, opening tables, and printing thermal KOTs without a single glitch during fiber cuts or power drops.",
       },
       {
-        name: "Local database storage",
-        body: "Bills, menus and related operational records are stored on the Android device.",
+        name: "Embedded Local SQLite WAL Storage",
+        body: "All transactions and operational data commit directly to the Android device's native database at 0ms latency with zero network dependency.",
       },
       {
-        name: "Automatic synchronisation",
-        body: "Eligible pending data synchronises when connectivity is available.",
+        name: "Resilient Conflict-Free Peer Mesh",
+        body: "Terminals queue updates safely and resolve local sync states gracefully without race conditions or data loss during peak dinner rushes.",
       },
       {
-        name: "Retry and sync-status handling",
-        body: "Use the visible status to identify pending or failed synchronisation.",
+        name: "Automatic Cloud Sync & Retry Mechanism",
+        body: "The app monitors network health continuously and automatically uploads backlogged transaction batches as soon as broadband returns.",
       },
     ],
   },
   {
     id: "menu-inventory",
-    title: "Menu & Inventory",
+    title: "Centralized Menu Engineering & Inventory Control",
     items: [
       {
-        name: "Categories, items, prices and variants",
-        body: "Structure the menu around the restaurant's categories and item options.",
-      },
-      { name: "Inventory tracking", body: "Track stock levels tied to menu items." },
-      {
-        name: "Low-stock alerts",
-        body: "Identify items that have reached configured low-stock levels.",
+        name: "Remote Menu Management via Web Dashboard",
+        body: "Create, edit, and organize categories, items, prices, and tax rates from any browser on the Web Dashboard; updates push to all terminals.",
       },
       {
-        name: "On-device menu photo import",
-        body: "Use Android on-device OCR to suggest item names and prices from a menu photo, then review them before saving.",
+        name: "Custom Modifiers, Variants & Add-ons",
+        body: "Configure portion sizes (Half/Full), crust options, spice levels, toppings, and combo selections with dynamic price adjustments.",
+      },
+      {
+        name: "Instant '86' Out-of-Stock Toggle",
+        body: "Mark sold-out dishes out of stock with one tap from the counter or Web Dashboard to stop stewards from punching unavailable items.",
+      },
+      {
+        name: "Raw Material Recipe Bill of Materials (BOM)",
+        body: "Tie dishes to ingredient recipes (e.g. flour, cheese, paneer) to automatically deduct raw inventory upon billing and track true food costs.",
+      },
+      {
+        name: "Low-Stock Alerts & Wastage Tracking",
+        body: "Receive automatic notifications when critical inventory reaches minimum thresholds and log spoilage or kitchen wastage for auditing.",
+      },
+      {
+        name: "On-Device Menu Photo OCR Import",
+        body: "Snap a photo of any physical printed menu and let Android on-device OCR suggest item names and prices for quick onboarding.",
         status: "beta",
       },
     ],
   },
   {
     id: "reports",
-    title: "Reports & Administration",
+    title: "Real-Time Reports & Web Dashboard Telemetry",
     items: [
       {
-        name: "Daily and monthly sales reports",
-        body: "Review restaurant performance by supported reporting period.",
+        name: "Live Owner Telemetry on Web Dashboard",
+        body: "Check live daily sales, settled receipts, average order values, and table occupancy remotely from anywhere on your phone or laptop.",
       },
       {
-        name: "Payment-mode breakdown",
-        body: "Review the recorded mix across cash, UPI and card.",
-      },
-      { name: "Item-level reports", body: "Compare sales performance across menu items." },
-      {
-        name: "Terminal-aware reporting",
-        body: "Attribute finalised sales to the terminal that handled them after synchronisation.",
+        name: "End-of-Day Register Reconciliation (Z-Report)",
+        body: "Audit opening cash float, total cash collected, UPI settlements, card transactions, and cash withdrawals at daily closing.",
       },
       {
-        name: "PDF and CSV exports",
-        body: "Export supported report data for sharing or further analysis.",
+        name: "Payment-Mode Settlement Breakdown",
+        body: "Review exact collections across Cash, UPI QR, Card, and Split payments to simplify bank account matching and cashier audits.",
       },
       {
-        name: "Restaurant settings",
-        body: "Manage tax rates, printer assignments, terminal identity and related configuration.",
+        name: "Item-Level Velocity & Margin Analysis",
+        body: "Identify bestsellers, high-margin signature dishes, and slow-moving items to engineer more profitable seasonal menus.",
+      },
+      {
+        name: "Terminal & Steward Sales Attribution",
+        body: "Review sales volume generated by each approved terminal and steward to monitor staff productivity and tipping distributions.",
+      },
+      {
+        name: "One-Click Excel, CSV & PDF Exports",
+        body: "Export comprehensive daily and monthly sales registers, item breakdowns, and tax summaries in format-ready spreadsheet files.",
       },
     ],
   },
   {
     id: "compliance",
-    title: "Compliance & Partner Services",
+    title: "Tax Compliance, Accountant Access & Partner Services",
     items: [
       {
-        name: "GST reconciliation and filing support",
-        body: "Optional assistance with reconciling sales data and GST returns.",
+        name: "Accountant Read-Only Web Portal",
+        body: "Grant your chartered accountant or tax consultant dedicated read-only access to download tax reports via the Web Dashboard.",
+      },
+      {
+        name: "GST-Ready B2B & B2C Sales Registers",
+        body: "Generate tax-compliant sales reports structured for GSTR-1 and GSTR-3B filings with accurate HSN/SAC classification.",
+      },
+      {
+        name: "GST Reconciliation & Filing Support",
+        body: "Optional assistance with reconciling sales books with GST returns through India Advocacy professional services.",
         status: "optional",
       },
       {
-        name: "FSSAI and licence assistance",
-        body: "Optional support with FSSAI and other applicable registrations.",
+        name: "FSSAI Registration & Licensing Assistance",
+        body: "Optional professional guidance on FSSAI license procurement, renewal compliance, and food safety standards documentation.",
         status: "optional",
-      },
-      {
-        name: "Accountant web login",
-        body: "Give an accountant read-only web access to supported restaurant reports through the KhanaBook web portal at kbook.iadv.cloud.",
       },
     ],
   },
@@ -179,6 +207,6 @@ export const FEATURE_GROUPS: { id: string; title: string; items: FeatureItem[] }
 
 export const STATUS_LABEL: Record<NonNullable<FeatureItem["status"]>, string> = {
   "coming-soon": "Coming soon",
-  beta: "Beta",
+  beta: "Beta feature",
   optional: "Optional service",
 };

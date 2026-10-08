@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Section } from "@/components/site/Section";
 import { BUSINESS, absUrl } from "@/lib/business-config";
+import { EntranceReveal } from "@/components/motion/EntranceReveal";
 
 export const Route = createFileRoute("/terms-and-conditions")({
   head: () => ({
     meta: [
-      { title: "Terms & Conditions — KhanaBook" },
+      { title: "Terms & Conditions — KhanaBook Restaurant POS" },
       {
         name: "description",
-        content: `Terms and Conditions for KhanaBook, a product of ${BUSINESS.legalName}.`,
+        content: `Terms and Conditions for KhanaBook offline-first restaurant POS, a product of ${BUSINESS.legalName}.`,
       },
       { property: "og:url", content: absUrl("/terms-and-conditions") },
     ],
@@ -20,92 +20,99 @@ export const Route = createFileRoute("/terms-and-conditions")({
 const SECTIONS = [
   [
     "Eligibility",
-    "You must be legally competent to enter into a contract and operate a restaurant business in India to use KhanaBook.",
+    "You must be legally competent to enter into a contract and operate a food and beverage business in India to use KhanaBook.",
   ],
   [
-    "Account responsibility",
-    "You are responsible for maintaining the confidentiality of your account credentials and for all activity under your account.",
-  ],
-  ["Restaurant data", "You retain ownership of the restaurant data you enter into KhanaBook."],
-  [
-    "Billing and tax responsibility",
-    "You are responsible for the accuracy of the bills, tax rates and returns filed by your restaurant.",
+    "Account Responsibility",
+    "You are responsible for maintaining the confidentiality of your account credentials and for all billing activity under your account.",
   ],
   [
-    "Offline operation",
-    "KhanaBook is designed to support billing, menu access and KOT printing during temporary connectivity interruptions. Cloud synchronisation and some account features require internet access.",
+    "Restaurant Data Ownership",
+    "You retain complete ownership of all restaurant data, menus, customer records, and bills created inside KhanaBook.",
   ],
   [
-    "Synchronisation",
-    "Eligible records are synchronised to our cloud when connectivity is available. Synchronisation status should be checked before relying on consolidated multi-terminal reports.",
+    "Billing and Tax Responsibility",
+    "You are solely responsible for configuring accurate tax rates (GST, VAT, Service Charge) and filing statutory returns for your restaurant.",
   ],
   [
-    "Supported hardware",
-    "KhanaBook runs on supported Android phones and tablets and can connect to up to two compatible USB, Wi-Fi or Bluetooth thermal printers: one for customer receipts and one for KOTs.",
+    "Offline Operation & Data Sync",
+    "KhanaBook is designed to support core counter billing, menu access, and dual thermal KOT printing during temporary connectivity interruptions. Cloud synchronisation to the Web Dashboard requires periodic internet access.",
   ],
   [
-    "Third-party services",
-    "Some features rely on third-party services. Your use of those services is subject to the third party's own terms.",
+    "Supported Hardware",
+    "KhanaBook operates on supported Android phones and tablets (Android 8.0+) and connects with up to two standard ESC/POS USB, Wi-Fi, or Bluetooth thermal printers.",
   ],
   [
-    "Payment recording",
-    "KhanaBook currently records payment modes and references entered by the restaurant. It does not currently process or verify payments through an integrated payment gateway.",
+    "Third-Party Services",
+    "Optional third-party integrations and services are subject to the third party's respective terms and conditions.",
   ],
   [
-    "Unavailable integrations",
-    "Automated Zomato and Swiggy order ingestion and a customer ordering storefront are not currently generally available.",
+    "Payment Mode Recording",
+    "KhanaBook records payment modes (Cash, UPI QR, Card, Split) and reference identifiers. Direct integrated in-app bank settlement is currently under development.",
   ],
   [
-    "Acceptable use",
-    "You will not misuse the service, attempt to reverse engineer it, or use it for unlawful activity.",
+    "Acceptable Use",
+    "You agree not to reverse engineer, disrupt, or utilize the software for unlawful restaurant billing practices.",
   ],
   [
-    "Intellectual property",
-    `All KhanaBook software and content is owned by ${BUSINESS.legalName} or its licensors.`,
+    "Intellectual Property",
+    `All KhanaBook software, logos, trademarks, and design systems are the intellectual property of ${BUSINESS.legalName}.`,
   ],
   [
-    "Service availability",
-    "We do our best to keep the service available but do not guarantee uninterrupted operation.",
+    "Limitation of Liability",
+    "To the maximum extent permitted by applicable Indian law, liability is governed by these terms.",
   ],
   [
-    "Limitation of liability",
-    "To the maximum extent permitted by applicable law, liability is governed by these terms and any specific written agreement between you and us.",
-  ],
-  ["Termination", "We may suspend or terminate access for material breach of these terms."],
-  ["Governing law", "These terms are governed by the laws of India."],
-  [
-    "Jurisdiction",
-    `Courts at ${BUSINESS.governingLawCity} will have exclusive jurisdiction over any disputes.`,
+    "Governing Law & Jurisdiction",
+    `These terms are governed by the laws of India. Courts at ${BUSINESS.governingLawCity} will have exclusive jurisdiction over any disputes.`,
   ],
 ];
 
 function Terms() {
   return (
-    <Section
-      eyebrow="Legal"
-      title={
-        <>
-          Terms & <span className="hl">Conditions.</span>
-        </>
-      }
-    >
-      <div className="max-w-4xl mx-auto w-full space-y-6 text-muted-foreground leading-relaxed">
-        <p>
-          These Terms and Conditions govern the use of the KhanaBook restaurant POS product provided
-          by <strong className="text-foreground">{BUSINESS.legalName}</strong>.
-        </p>
-        <p>
-          <em>
-            Effective date: {BUSINESS.effectiveDate}. Last updated: {BUSINESS.lastUpdatedDate}.
-          </em>
-        </p>
-        {SECTIONS.map(([title, body]) => (
-          <div key={title}>
-            <h2 className="text-lg font-black text-foreground mb-2">{title}</h2>
-            <p>{body}</p>
+    <div className="bg-[#131314] text-white min-h-screen font-['Google_Sans',_sans-serif] selection:bg-brand/30 selection:text-white">
+      {/* 1. HERO */}
+      <section className="relative overflow-hidden pt-16 pb-12 md:pt-20 md:pb-16 border-b border-[#28292A]">
+        <div className="w-[92vw] md:w-[75vw] mx-auto relative z-10">
+          <EntranceReveal direction="up" delay={0.05}>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#1E1F20] px-4 py-1.5 text-xs font-semibold text-gray-300 shadow-sm mb-4">
+              STATUTORY AGREEMENT
+            </div>
+          </EntranceReveal>
+
+          <EntranceReveal direction="up" delay={0.15}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+              Terms & <span className="hl">Conditions.</span>
+            </h1>
+          </EntranceReveal>
+
+          <EntranceReveal direction="up" delay={0.25}>
+            <p className="mt-4 text-sm text-gray-400">
+              Effective date: {BUSINESS.effectiveDate} · Last updated: {BUSINESS.lastUpdatedDate}
+            </p>
+          </EntranceReveal>
+        </div>
+      </section>
+
+      {/* 2. BODY CONTENT */}
+      <section className="py-12 md:py-16">
+        <div className="w-[92vw] md:w-[75vw] mx-auto">
+          <div className="max-w-4xl space-y-6 text-sm sm:text-base text-gray-300 leading-relaxed">
+            <p className="text-gray-400">
+              These Terms and Conditions govern the use of the KhanaBook offline-first restaurant POS Android app and Cloud Web Dashboard provided by <strong className="text-white">{BUSINESS.legalName}</strong>.
+            </p>
+
+            <div className="space-y-4">
+              {SECTIONS.map(([title, body]) => (
+                <div key={title} className="rounded-2xl border border-white/10 bg-[#1E1F20] p-6">
+                  <h2 className="text-base sm:text-lg font-bold text-white mb-2">{title}</h2>
+                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </Section>
+        </div>
+      </section>
+    </div>
   );
 }

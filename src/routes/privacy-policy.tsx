@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Section } from "@/components/site/Section";
 import { BUSINESS, DISCLAIMERS, absUrl } from "@/lib/business-config";
+import { EntranceReveal } from "@/components/motion/EntranceReveal";
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — KhanaBook" },
+      { title: "Privacy Policy — KhanaBook Restaurant POS" },
       {
         name: "description",
-        content: `Privacy Policy for KhanaBook, a product of ${BUSINESS.legalName}.`,
+        content: `Privacy Policy for KhanaBook offline-first restaurant POS, a product of ${BUSINESS.legalName}.`,
       },
       { property: "og:url", content: absUrl("/privacy-policy") },
     ],
@@ -19,92 +19,87 @@ export const Route = createFileRoute("/privacy-policy")({
 
 function PrivacyPolicy() {
   return (
-    <Section
-      eyebrow="Legal"
-      title={
-        <>
-          Privacy <span className="hl">Policy.</span>
-        </>
-      }
-    >
-      <div className="max-w-4xl mx-auto w-full space-y-6 text-muted-foreground leading-relaxed">
-        <p>
-          This Privacy Policy describes how{" "}
-          <strong className="text-foreground">{BUSINESS.legalName}</strong> ("we", "us") handles
-          personal information in relation to the KhanaBook restaurant POS product.
-        </p>
-        <p>
-          <em>
-            Effective date: {BUSINESS.effectiveDate}. Last updated: {BUSINESS.lastUpdatedDate}.
-          </em>
-        </p>
+    <div className="bg-[#131314] text-white min-h-screen font-['Google_Sans',_sans-serif] selection:bg-brand/30 selection:text-white">
+      {/* 1. HERO */}
+      <section className="relative overflow-hidden pt-16 pb-12 md:pt-20 md:pb-16 border-b border-[#28292A]">
+        <div className="w-[92vw] md:w-[75vw] mx-auto relative z-10">
+          <EntranceReveal direction="up" delay={0.05}>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#1E1F20] px-4 py-1.5 text-xs font-semibold text-gray-300 shadow-sm mb-4">
+              LEGAL & PRIVACY POLICIES
+            </div>
+          </EntranceReveal>
 
-        <Block title="Data we collect">
-          We collect restaurant and account information such as business name, contact details and
-          staff login details; customer details entered by the restaurant, such as a name or phone
-          number; bills, orders, invoices, menu, inventory and payment-mode records; and device,
-          synchronisation and diagnostic information needed to operate and support KhanaBook.
-        </Block>
-        <Block title="Local device storage and offline use">
-          KhanaBook stores operational records on the Android device so billing, menu access and KOT
-          printing can continue during temporary connectivity interruptions. Anyone with authorised
-          access to the device may be able to access data available to their KhanaBook role.
-        </Block>
-        <Block title="Cloud synchronisation">
-          When connectivity is available, eligible records are synchronised to our cloud
-          infrastructure for backup, account operation and restaurant-level reporting across
-          approved terminals.
-        </Block>
-        <Block title="Menu photo import">
-          When you choose the menu-photo import feature, the selected image is processed on the
-          Android device to suggest menu text. You should review extracted names and prices before
-          saving them.
-        </Block>
-        <Block title="Invoice sharing and exports">
-          When you choose to share an invoice through WhatsApp, SMS or another installed service,
-          recipient information and the shared content are handled by that service under its own
-          privacy terms. PDF or CSV files exported from KhanaBook are controlled by the restaurant
-          after export.
-        </Block>
-        <Block title="Payment information">
-          KhanaBook currently records payment modes and references entered by the restaurant. It
-          does not currently process or verify customer payments through an integrated payment
-          gateway.
-        </Block>
-        <Block title="Service providers">
-          We may use hosting, communications, diagnostics, support and form-processing providers to
-          operate KhanaBook and this website. We share only the information reasonably needed for
-          the requested service and require providers to handle it under applicable terms and law.
-        </Block>
-        <Block title="Retention">
-          We retain information while an account is active and afterward only for legitimate
-          operational, security, backup or legal requirements. The exact period depends on the
-          record and applicable law. You may contact us to request deletion; some records may need
-          to be retained where the law requires it.
-        </Block>
-        <Block title="Security">
-          {DISCLAIMERS.security} No storage or transmission method can be guaranteed to be
-          completely secure.
-        </Block>
-        <Block title="Your choices and rights">
-          You may request access, correction, export or deletion of personal information by
-          contacting us. We may need to verify the request and may retain information where required
-          by law or needed to protect legitimate rights.
-        </Block>
-        <Block title="Privacy and grievance contact">
-          {BUSINESS.grievanceOfficer ? <>Grievance Officer: {BUSINESS.grievanceOfficer}. </> : null}
-          Email: {BUSINESS.supportEmail}. Address: {BUSINESS.registeredAddress}.
-        </Block>
-      </div>
-    </Section>
+          <EntranceReveal direction="up" delay={0.15}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+              Privacy <span className="hl">Policy.</span>
+            </h1>
+          </EntranceReveal>
+
+          <EntranceReveal direction="up" delay={0.25}>
+            <p className="mt-4 text-sm text-gray-400">
+              Effective date: {BUSINESS.effectiveDate} · Last updated: {BUSINESS.lastUpdatedDate}
+            </p>
+          </EntranceReveal>
+        </div>
+      </section>
+
+      {/* 2. BODY CONTENT */}
+      <section className="py-12 md:py-16">
+        <div className="w-[92vw] md:w-[75vw] mx-auto">
+          <div className="max-w-4xl space-y-8 text-sm sm:text-base text-gray-300 leading-relaxed">
+            <p className="text-gray-400">
+              This Privacy Policy describes how <strong className="text-white">{BUSINESS.legalName}</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;) handles personal information in relation to the KhanaBook offline-first restaurant POS Android app and Cloud Web Dashboard.
+            </p>
+
+            <div className="space-y-6">
+              <Block title="Data We Collect">
+                We collect restaurant account information such as business name, phone number, email address and staff login details; customer order records entered by the restaurant (e.g. table number, bill details); bills, invoices, menu items, inventory logs and payment mode references (cash, UPI, card, split); and diagnostic device information needed to ensure offline sync integrity.
+              </Block>
+
+              <Block title="Local Device Storage and Offline Use">
+                KhanaBook stores operational billing and order records locally on the Android device using SQLite WAL mode so billing, menu access, and dual thermal KOT printing continue uninterrupted during network failures. Authorized device users have access to data corresponding to their assigned roles.
+              </Block>
+
+              <Block title="Cloud Synchronisation">
+                When connectivity is available, completed records are synchronized to our cloud infrastructure for encrypted backup, account administration, and restaurant-wide consolidated reporting across approved terminals and the Web Dashboard.
+              </Block>
+
+              <Block title="Menu Photo Import">
+                When using the on-device menu photo import feature, image text recognition is performed securely to recommend item names and rates. The restaurant operator reviews all extracted items before confirming.
+              </Block>
+
+              <Block title="Invoice Sharing and Exports">
+                When sharing PDF bills via WhatsApp or SMS, recipient numbers and message content are handled through the installed communication application under its respective privacy terms. Exported CSV and Excel reports are fully controlled by the restaurant administrator.
+              </Block>
+
+              <Block title="Payment Data">
+                KhanaBook records payment modes and reference notes entered by the cashier. It does not process cardholder PINs or sensitive banking credentials directly.
+              </Block>
+
+              <Block title="Data Retention & Security">
+                Data is retained while the restaurant account remains active and thereafter as required by statutory, tax, or legal retention requirements. {DISCLAIMERS.security}
+              </Block>
+
+              <Block title="Privacy & Grievance Contact">
+                Grievance Officer: {BUSINESS.grievanceOfficer}. Support Email:{" "}
+                <a href={`mailto:${BUSINESS.supportEmail}`} className="text-brand hover:underline">
+                  {BUSINESS.supportEmail}
+                </a>
+                . Registered Address: {BUSINESS.registeredAddress}.
+              </Block>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
 
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div>
-      <h2 className="text-lg font-black text-foreground mb-2">{title}</h2>
-      <p>{children}</p>
+    <div className="rounded-2xl border border-white/10 bg-[#1E1F20] p-6 sm:p-7">
+      <h2 className="text-base sm:text-lg font-bold text-white mb-2">{title}</h2>
+      <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">{children}</p>
     </div>
   );
 }

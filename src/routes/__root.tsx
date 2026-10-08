@@ -16,8 +16,6 @@ import { Header as SiteHeader } from "../components/site/Header";
 import { Footer as SiteFooter } from "../components/site/Footer";
 import { FloatingCtas } from "../components/site/FloatingCtas";
 import { OfflineIndicator } from "../components/site/OfflineIndicator";
-import { CustomCursor } from "../components/motion/CustomCursor";
-import { SmoothLoader } from "../components/motion/SmoothLoader";
 import { ParallaxBackground } from "../components/motion/ParallaxBackground";
 
 function NotFoundComponent() {
@@ -85,17 +83,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "KhanaBook — Offline-First Restaurant POS" },
+      { title: "KhanaBook — Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard" },
       {
         name: "description",
         content:
-          "KhanaBook is an offline-first Android restaurant POS for billing, KOT management, payment recording, menus, inventory and up to five synchronised terminals.",
+          "KhanaBook is an offline-first multi-terminal restaurant POS. 100% offline billing on Android phones & tablets with up to 5 synchronized terminals, paired with a powerful cloud Web Dashboard for centralized menus, inventory, staff, and live sales.",
       },
-      { property: "og:title", content: "KhanaBook — Offline-First Restaurant POS" },
+      { property: "og:title", content: "KhanaBook — Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard" },
       {
         property: "og:description",
         content:
-          "Billing, KOT, payment recording and up to five terminals that work even when the internet is unstable.",
+          "Zero-lag offline billing on Android with local SQLite, up to 5 synced terminals, dual ESC/POS thermal printing, and a real-time cloud Web Dashboard.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "KhanaBook" },
@@ -133,13 +131,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+import { ThemeProvider } from "../lib/theme-provider";
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('khanabook-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}if(t==='light'){document.documentElement.classList.remove('dark');document.documentElement.classList.add('light');}else{document.documentElement.classList.remove('light');document.documentElement.classList.add('dark');}}catch(e){}})();`,
+          }}
+        />
         <HeadContent />
       </head>
-      <body>
+      <body className="min-h-screen selection:bg-brand/30 selection:text-white transition-colors duration-200 overflow-x-hidden w-full">
         {children}
         <Scripts />
       </body>
@@ -152,18 +157,18 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SmoothLoader />
-      <CustomCursor />
-      <ParallaxBackground />
-      <div className="min-h-screen flex flex-col">
-        <SiteHeader />
-        <OfflineIndicator />
-        <main className="flex-1">
-          <Outlet />
-        </main>
-        <SiteFooter />
-        <FloatingCtas />
-      </div>
+      <ThemeProvider>
+        <ParallaxBackground />
+        <div className="min-h-screen flex flex-col transition-colors duration-200 overflow-x-hidden w-full">
+          <SiteHeader />
+          <OfflineIndicator />
+          <main className="flex-1 w-full overflow-x-hidden">
+            <Outlet />
+          </main>
+          <SiteFooter />
+          <FloatingCtas />
+        </div>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

@@ -16,6 +16,14 @@ import {
   Terminal,
   ExternalLink,
   Cpu,
+  CheckCircle2,
+  Flame,
+  Coffee,
+  Store,
+  Router,
+  Cloud,
+  Database,
+  Download,
 } from "lucide-react";
 import posTerminal from "@/assets/pos-terminal.webp";
 import chefHandshake from "@/assets/chef-handshake.webp";
@@ -43,13 +51,14 @@ import { ShinyButton } from "@/components/motion/primitives/ShinyButton";
 import { SpotlightCard } from "@/components/motion/primitives/SpotlightCard";
 import { NumberTicker } from "@/components/motion/primitives/NumberTicker";
 import { HaikeiWave } from "@/components/motion/primitives/HaikeiWave";
+import { UiVerseBadge, UiVerseGlowingButton, UiVerseCard } from "@/components/uiverse";
 
 const FEATURE_ICONS = [ReceiptText, Layers, Printer, WifiOff, UtensilsCrossed, BarChart3];
 
 const STORY_BLOCKS = [
   {
-    title: "Billing that keeps up with service",
-    body: "Create dine-in, takeaway and manually recorded online orders in a few taps. Use pay-before or pay-after workflows, record cash, UPI, card or split payments, and create a PDF invoice for sharing through WhatsApp or SMS.",
+    title: "Lightning 3-Second Counter Billing",
+    body: "Punch dine-in, takeaway, and delivery orders with instant touch search, item modifiers, and customized table maps. Support pay-before or pay-after workflows, split payments across Cash, Dynamic UPI QR, and Card, and share instant digital invoices via WhatsApp or SMS.",
     image: appBilling,
     alt: "KhanaBook new-bill screen for selecting menu items and creating an order",
     icon: ReceiptText,
@@ -57,8 +66,8 @@ const STORY_BLOCKS = [
     portrait: true,
   },
   {
-    title: "One restaurant, up to five terminals",
-    body: "Every approved terminal gets its own identity, invoice series and daily order counter. Active orders stay on the device handling them, while finalised records become available in restaurant-level reports after synchronisation.",
+    title: "Multi-Terminal Mesh (Up to 5 Devices)",
+    body: "Equip stewards with captain ordering handhelds while cashiers manage settlements at the main counter. Each terminal maintains its own GST-compliant invoice series and daily order counter, synchronizing locally over Wi-Fi without needing external broadband.",
     image: posTerminal,
     alt: "KhanaBook POS terminal on a restaurant counter",
     icon: Layers,
@@ -66,8 +75,8 @@ const STORY_BLOCKS = [
     portrait: false,
   },
   {
-    title: "A dedicated printer for each job",
-    body: "Connect up to two compatible USB, Wi-Fi or Bluetooth thermal printers—one for customer receipts and one for KOTs. Update, cancel or reprint KOTs when an active order changes.",
+    title: "Dual ESC/POS Thermal Printing & Kitchen KOT",
+    body: "Route orders automatically to up to two standard USB, Bluetooth, or Wi-Fi thermal printers. Print customer receipts at the counter while instantly firing KOTs to kitchen preparation stations (Tandoor, Chinese, Bar), complete with reprint and item void tracking.",
     image: chefHandshake,
     alt: "Restaurant kitchen staff coordinating on orders",
     icon: Printer,
@@ -75,8 +84,8 @@ const STORY_BLOCKS = [
     portrait: false,
   },
   {
-    title: "Offline at the counter, synced when connected",
-    body: "Billing, menu access and KOT printing continue during temporary connectivity interruptions. Eligible pending records synchronise when connectivity is available, and the app shows their status.",
+    title: "100% Offline Resilience & Cloud Web Dashboard",
+    body: "Zero counter freezes during broadband drops or power cuts thanks to local SQLite WAL storage. Silently uploads finalized receipts to the Cloud Web Dashboard for remote sales telemetry, menu edits, and GST tax reports.",
     image: serverRoom,
     alt: "Cloud infrastructure syncing restaurant data",
     icon: WifiOff,
@@ -86,12 +95,98 @@ const STORY_BLOCKS = [
 ];
 
 const SETUP_STRIP = [
-  { icon: WifiOff, label: "Core operations during connectivity interruptions" },
-  { icon: Smartphone, label: "Supported Android phones & tablets" },
-  { icon: MonitorSmartphone, label: "Touchscreen or keyboard billing" },
-  { icon: Printer, label: "Up to two compatible USB, Wi-Fi & Bluetooth printers" },
-  { icon: ReceiptText, label: "Tax-computed bills and invoice sharing" },
-  { icon: ShieldCheck, label: "Terminal-level access control" },
+  { icon: WifiOff, label: "100% Offline 0ms SQLite Billing" },
+  { icon: Smartphone, label: "Standard Android Phones & Tablets" },
+  { icon: Layers, label: "Up to 5 Synchronized Terminals" },
+  { icon: Printer, label: "Dual ESC/POS Thermal Receipt & KOT Printers" },
+  { icon: Cloud, label: "Cloud Web Dashboard" },
+  { icon: ShieldCheck, label: "GST-Ready Registers & Staff Role Controls" },
+];
+
+const FNB_FORMATS = [
+  {
+    icon: UtensilsCrossed,
+    title: "Dhabas & Fine-Dine",
+    desc: "Table management, steward mobile ordering, captain app, split bill, and complimentary items with steward authorization PINs.",
+    badge: "Steward Mode",
+    color: "text-brand",
+    borderHover: "hover:border-brand/40",
+  },
+  {
+    icon: Flame,
+    title: "QSRs & Fast Food",
+    desc: "Lightning 5-second token billing, dual screen customer display, dynamic UPI QR on screen, and automated token call audio.",
+    badge: "Token Billing",
+    color: "text-amber-500",
+    borderHover: "hover:border-amber-500/40",
+  },
+  {
+    icon: Coffee,
+    title: "Cafes & Bakeries",
+    desc: "Barcode weighing scale integration, custom cake advance bookings, delivery date slots, and ingredient recipe batching.",
+    badge: "Weigh Scale Ready",
+    color: "text-emerald-400",
+    borderHover: "hover:border-emerald-500/40",
+  },
+  {
+    icon: Store,
+    title: "Cloud Kitchens",
+    desc: "Centralized KDS (Kitchen Display System), multi-brand dispatch on a single tablet screen, rider handoff, and prep time tracking.",
+    badge: "Multi-Brand KDS",
+    color: "text-blue-400",
+    borderHover: "hover:border-blue-500/40",
+  },
+];
+
+const ARCH_COMPARISON = [
+  {
+    feature: "Billing during Internet Outage",
+    khanabook: "100% Full Functionality",
+    cloud: "Screen Freezes / Broken",
+    legacy: "PC Crash Vulnerable",
+  },
+  {
+    feature: "Setup & Hardware Cost",
+    khanabook: "Runs on any ₹6,000 Android tablet",
+    cloud: "Requires constant 5G / Fiber",
+    legacy: "Expensive ₹40,000 bulky PC + UPS",
+  },
+  {
+    feature: "Speed during Peak Rush",
+    khanabook: "0ms instant SQLite write",
+    cloud: "800ms – 3s cloud API lag",
+    legacy: "Slow Windows OS disk lag",
+  },
+  {
+    feature: "Kitchen KOT Reliability",
+    khanabook: "Direct local ESC/POS broadcast",
+    cloud: "Cloud print queue timeouts",
+    legacy: "Spooler & driver lockups",
+  },
+  {
+    feature: "Monthly Recurring Fees",
+    khanabook: "₹0 Core POS (Zero Tax)",
+    cloud: "₹1,500 – ₹5,000/mo lock-in",
+    legacy: "High AMC & license renewals",
+  },
+];
+
+const HARDWARE_CHECKLIST = [
+  {
+    title: "Android Tablet or Phone",
+    desc: "Any Android 9.0+ device (Samsung Galaxy Tab, Lenovo, or Redmi phones). Zero proprietary POS terminal lock-in.",
+    icon: Smartphone,
+  },
+  {
+    title: "Thermal Receipt Printers",
+    desc: "Standard 58mm or 80mm ESC/POS thermal printers via USB, Bluetooth, or LAN (TVS, NGX, Epson, Everycom).",
+    icon: Printer,
+  },
+  {
+    title: "Local Mesh Wi-Fi Router",
+    desc: "Any standard ₹1,200 TP-Link or D-Link router for multi-terminal sync without active internet connection required.",
+    icon: Router,
+  },
 ];
 
 export const Route = createFileRoute("/")({
@@ -163,43 +258,76 @@ function Home() {
           className="absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full blur-3xl opacity-20"
           style={{ background: "radial-gradient(circle, var(--gold), transparent 70%)" }}
         />
-        <div className="container-page pt-20 pb-20 md:pt-28 md:pb-28 grid lg:grid-cols-[1.1fr_1fr] gap-12 items-center relative">
+        <div className="w-[92vw] lg:w-[88vw] xl:w-[80vw] max-w-7xl mx-auto pt-16 pb-20 md:pt-24 md:pb-28 grid lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-14 items-center relative">
           <EntranceReveal direction="up" delay={0.1}>
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/90 backdrop-blur-sm px-3.5 py-1.5 text-xs font-bold text-muted-foreground shadow-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
-              </span>
-              Billing · KOT · Payment recording · Up to 5 terminals — offline-first
-            </div>
+            <div className="max-w-2xl space-y-4">
+              <UiVerseBadge pulseColor="emerald">
+                ⚡ ₹0 Core POS • 100% Offline Mesh • Up to 5 Terminals
+              </UiVerseBadge>
 
-            <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl leading-[1.05] font-black max-w-2xl lg:max-w-3xl">
-              Offline-First Restaurant POS <span className="text-brand">Built for</span>{" "}
-              <TextShimmer className="hl font-black">Indian Restaurants</TextShimmer>
-            </h1>
+              {/* Headline with natural wrapping and zero clipping */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
+                Never Let Internet Failure Stop Your{" "}
+                <span className="bg-amber-100 text-amber-900 dark:bg-amber-500/20 dark:text-amber-300 px-2 py-0.5 rounded-lg inline-block font-black">
+                  Dinner Rush.
+                </span>
+              </h1>
 
-            <p className="mt-6 text-lg text-muted-foreground max-w-xl lg:max-w-2xl leading-relaxed">
-              Create bills, print KOTs, record cash, UPI and card payments, manage menus and keep up
-              to five restaurant terminals synchronised — even when the internet is unstable.
-            </p>
+              {/* Subheadline */}
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+                High-speed 0ms offline billing on standard Android phones and tablets. Synchronize up to 5 terminals locally over Wi-Fi when broadband drops, paired with a real-time Cloud Web Dashboard.
+              </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <MagneticHover strength={0.25}>
+              <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
                 <Link to="/get-started">
-                  <ShinyButton variant="brand">
-                    Get KhanaBook <ArrowRight className="h-4 w-4" />
-                  </ShinyButton>
+                  <UiVerseGlowingButton variant="brand" size="lg">
+                    <span>Get KhanaBook Free</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </UiVerseGlowingButton>
                 </Link>
-              </MagneticHover>
 
-              <MagneticHover strength={0.25}>
-                <Link to="/features" className="btn-secondary">
-                  Explore Features →
-                </Link>
-              </MagneticHover>
+                <a
+                  href={BUSINESS.playStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <UiVerseGlowingButton variant="emerald" size="lg">
+                    <Download className="h-4 w-4" />
+                    <span>Download Android App</span>
+                  </UiVerseGlowingButton>
+                </a>
+
+                <a
+                  href={BUSINESS.loginUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <UiVerseGlowingButton variant="white" size="lg">
+                    <span>Web Dashboard</span>
+                    <ExternalLink className="h-4 w-4 opacity-70" />
+                  </UiVerseGlowingButton>
+                </a>
+              </div>
+
+              <div className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-muted-foreground font-medium">
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
+                  0ms Offline SQLite WAL Billing
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
+                  Up to 5 Wi-Fi Synced Terminals
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
+                  Dual ESC/POS Thermal Printing
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
+                  ₹0 Software Subscription Fee
+                </span>
+              </div>
             </div>
-
-            <p className="mt-6 text-xs text-muted-foreground max-w-md">{DISCLAIMERS.pricing}</p>
           </EntranceReveal>
 
           {/* Interactive Vertical Swiper Hero Slider with 3D Tilt */}
@@ -254,6 +382,151 @@ function Home() {
 
       {/* WHO IT'S FOR & CORE CAPABILITIES — Horizontal Parallax Marquee */}
       <HorizontalParallax />
+
+      {/* DUAL-ENGINE ARCHITECTURE — ANDROID APP + WEB DASHBOARD */}
+      <section className="py-20 md:py-28 bg-[#1E1F20]/30 border-y border-white/[0.06]" id="dual-engine">
+        <div className="w-[92vw] md:w-[75vw] mx-auto">
+          <EntranceReveal direction="up">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="eyebrow mb-3">Two Powerful Sides of One System</div>
+              <h2 className="text-3xl md:text-5xl font-black text-foreground">
+                Offline-First Android App + <span className="hl">Web Dashboard</span>
+              </h2>
+              <p className="mt-4 text-base md:text-lg text-muted-foreground">
+                Floor staff run high-speed counter billing and kitchen KOTs offline on Android, while restaurant owners control menus, inventory, and analytics from any web browser.
+              </p>
+            </div>
+          </EntranceReveal>
+
+          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+            {/* Engine 1: Android POS App */}
+            <EntranceReveal direction="left" delay={0.1}>
+              <div className="h-full rounded-3xl bg-surface border border-border/70 p-8 sm:p-10 flex flex-col justify-between shadow-2xl relative overflow-hidden group hover:border-brand/40 transition-colors">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-brand/10 blur-3xl group-hover:bg-brand/20 transition-colors"
+                />
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="h-14 w-14 rounded-2xl bg-surface-soft border border-border/60 flex items-center justify-center text-brand shadow-sm">
+                      <Smartphone className="h-7 w-7" />
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 dark:text-emerald-400 text-xs font-bold font-mono">
+                      <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                      100% OFFLINE SQLITE
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl sm:text-3xl font-black text-foreground mb-3">
+                    Android POS App
+                  </h3>
+                  <p className="text-sm font-medium text-muted-foreground mb-6 leading-relaxed">
+                    Designed for rapid floor service, billing counters, and kitchen coordination on any supported Android tablet or phone.
+                  </p>
+
+                  <ul className="space-y-3.5 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400 shrink-0 mt-0.5" />
+                      <span><strong>0ms Local SQLite Write Latency:</strong> Zero spinner delay during peak lunch and dinner rushes.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400 shrink-0 mt-0.5" />
+                      <span><strong>Up to 5 Mesh Terminals:</strong> Synchronize active tables across multiple handhelds over local Wi-Fi without internet.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400 shrink-0 mt-0.5" />
+                      <span><strong>Dual Thermal Printers:</strong> Direct ESC/POS printing for customer bills and kitchen KOTs via USB, Bluetooth, or LAN.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400 shrink-0 mt-0.5" />
+                      <span><strong>India Payment Split:</strong> Instant dynamic UPI QR display, cash, and card split handling with GST computing.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-border/60 flex flex-wrap items-center gap-3">
+                  <a
+                    href={BUSINESS.playStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <UiVerseGlowingButton variant="emerald" size="md">
+                      <span>Download Android App</span>
+                      <Download className="h-4 w-4" />
+                    </UiVerseGlowingButton>
+                  </a>
+                  <Link to="/features" className="btn-secondary">
+                    App Features →
+                  </Link>
+                </div>
+              </div>
+            </EntranceReveal>
+
+            {/* Engine 2: Web Dashboard */}
+            <EntranceReveal direction="right" delay={0.2}>
+              <div className="h-full rounded-3xl bg-surface border border-border/70 p-8 sm:p-10 flex flex-col justify-between shadow-2xl relative overflow-hidden group hover:border-amber-500/40 transition-colors">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-gold/10 blur-3xl group-hover:bg-gold/20 transition-colors"
+                />
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="h-14 w-14 rounded-2xl bg-surface-soft border border-border/60 flex items-center justify-center text-amber-500 shadow-sm">
+                      <MonitorSmartphone className="h-7 w-7" />
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 dark:text-amber-400 text-xs font-bold font-mono">
+                      <Cloud className="h-3.5 w-3.5" />
+                      CLOUD WEB DASHBOARD
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl sm:text-3xl font-black text-foreground mb-3">
+                    Web Dashboard
+                  </h3>
+                  <p className="text-sm font-medium text-muted-foreground mb-6 leading-relaxed">
+                    Accessible from any web browser on Mac, Windows PC, iPad, iPhone, or laptop with instant zero-install cloud access.
+                  </p>
+
+                  <ul className="space-y-3.5 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-amber-500 dark:text-amber-400 shrink-0 mt-0.5" />
+                      <span><strong>Live Remote Sales Telemetry:</strong> Monitor daily revenue, hourly order spikes, and settled bills from anywhere in the world.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-amber-500 dark:text-amber-400 shrink-0 mt-0.5" />
+                      <span><strong>Centralized Menu &amp; Pricing:</strong> Update dishes, category layouts, item variants, and tax rates pushed to all terminals.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-amber-500 dark:text-amber-400 shrink-0 mt-0.5" />
+                      <span><strong>Inventory &amp; Recipe BOM:</strong> Track stock decrements, portion recipes, and receive automatic low-stock replenishment alerts.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-amber-500 dark:text-amber-400 shrink-0 mt-0.5" />
+                      <span><strong>Financial Reports &amp; GST:</strong> Export audit-ready GST sales summaries, accountant CSV sheets, and PDF tax returns in one click.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-border/60 flex flex-wrap items-center gap-3">
+                  <a
+                    href={BUSINESS.loginUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <UiVerseGlowingButton variant="brand" size="md">
+                      <span>Launch Web Dashboard</span>
+                      <ExternalLink className="h-4 w-4" />
+                    </UiVerseGlowingButton>
+                  </a>
+                  <Link to="/about" className="btn-secondary">
+                    Learn Architecture →
+                  </Link>
+                </div>
+              </div>
+            </EntranceReveal>
+          </div>
+        </div>
+      </section>
 
       {/* AN ALL-ROUNDER RESTAURANT POS — alternating story blocks */}
       <section className="py-24">
@@ -389,6 +662,54 @@ function Home() {
         </div>
       </Section>
 
+      {/* INDIAN F&B FORMAT SUPPORT — Google Stitch Bento */}
+      <section className="py-20 md:py-28 bg-surface-soft/60 border-y border-border/60" id="formats">
+        <div className="w-[92vw] md:w-[75vw] mx-auto">
+          <EntranceReveal direction="up">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="eyebrow mb-3">Versatile Formats</div>
+              <h2 className="text-3xl md:text-5xl font-black text-foreground">
+                Engineered for <span className="hl">Every Format</span> of Indian Food &amp; Beverage
+              </h2>
+              <p className="mt-4 text-base md:text-lg text-muted-foreground">
+                Switch effortlessly between rapid 5-second counter billing and multi-steward fine-dine table operations.
+              </p>
+            </div>
+          </EntranceReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {FNB_FORMATS.map((fmt) => {
+              const Icon = fmt.icon;
+              return (
+                <UiVerseCard
+                  key={fmt.title}
+                  className={`p-6 flex flex-col justify-between shadow-lg transition-all ${fmt.borderHover} hover:translate-y-[-2px]`}
+                >
+                  <div className="flex flex-col h-full justify-between">
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="h-12 w-12 rounded-xl bg-surface-soft border border-border/60 flex items-center justify-center">
+                          <Icon className={`h-6 w-6 ${fmt.color}`} />
+                        </span>
+                        <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-surface-soft border border-border/60 text-muted-foreground">
+                          {fmt.badge}
+                        </span>
+                      </div>
+                      <h3 className="text-lg font-bold text-foreground mb-2">{fmt.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{fmt.desc}</p>
+                    </div>
+                    <div className="pt-4 mt-6 border-t border-border/60 flex items-center justify-between text-xs font-semibold text-foreground">
+                      <span className={fmt.color}>Active Support</span>
+                      <ArrowRight className="h-3.5 w-3.5 opacity-60" />
+                    </div>
+                  </div>
+                </UiVerseCard>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* PRODUCT TABS */}
       <Section
         eyebrow="See it in action"
@@ -425,6 +746,18 @@ function Home() {
             </div>
           </EntranceReveal>
 
+          {/* INTERACTIVE HELPER CUE BANNER */}
+          <EntranceReveal direction="up" delay={0.1}>
+            <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-4 max-w-4xl mx-auto mb-8 flex items-center gap-3 shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 font-bold text-base">
+                💡
+              </div>
+              <p className="text-xs sm:text-sm text-foreground font-medium leading-relaxed">
+                <strong className="font-bold text-amber-500">Interactive Demo:</strong> Tap menu items on the simulated terminal below to add dishes, test instant GST splitting, switch tables, and simulate offline network cuts in real time!
+              </p>
+            </div>
+          </EntranceReveal>
+
           <div className="max-w-7xl mx-auto w-full">
             <InteractivePosDashboard />
           </div>
@@ -433,6 +766,86 @@ function Home() {
 
       {/* HAIKEI ORGANIC WAVE ACCENT — BOTTOM */}
       <HaikeiWave reverse className="-mt-1" opacity={0.8} />
+
+      {/* TECHNICAL ARCHITECTURE COMPARISON — Google Stitch Matrix */}
+      <section className="py-20 md:py-28" id="architecture">
+        <div className="w-[92vw] md:w-[75vw] mx-auto">
+          <EntranceReveal direction="up">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="eyebrow mb-3">Architectural Superiority</div>
+              <h2 className="text-3xl md:text-5xl font-black text-foreground">
+                Technical Architecture <span className="hl">Comparison</span>
+              </h2>
+              <p className="mt-4 text-base md:text-lg text-muted-foreground">
+                Why local SQLite edge architecture destroys legacy Windows machines and fragile browser-only cloud SaaS.
+              </p>
+            </div>
+          </EntranceReveal>
+
+          <div className="overflow-x-auto rounded-2xl border border-border/70 bg-surface shadow-2xl">
+            <table className="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr className="border-b border-border/70 bg-surface-soft text-foreground font-bold">
+                  <th className="p-4 sm:p-5">Capability</th>
+                  <th className="p-4 sm:p-5 bg-brand/10 dark:bg-brand/15 text-brand font-black border-x border-brand/25">
+                    <div className="flex items-center gap-2">
+                      <span>KhanaBook (Offline Mesh)</span>
+                      <span className="text-[10px] uppercase px-2 py-0.5 rounded-full bg-brand text-white font-extrabold tracking-wider shadow-sm">
+                        Winner
+                      </span>
+                    </div>
+                  </th>
+                  <th className="p-4 sm:p-5 text-muted-foreground font-medium">Fragile Cloud-Only SaaS</th>
+                  <th className="p-4 sm:p-5 text-muted-foreground font-medium">Legacy Windows PC</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border/40 text-muted-foreground">
+                {ARCH_COMPARISON.map((row) => (
+                  <tr key={row.feature} className="hover:bg-surface-soft/40 transition-colors">
+                    <td className="p-4 sm:p-5 font-bold text-foreground">{row.feature}</td>
+                    <td className="p-4 sm:p-5 bg-brand/5 dark:bg-brand/10 border-x border-brand/25 text-emerald-500 dark:text-emerald-400 font-bold">
+                      <div className="flex items-center gap-1.5">
+                        <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500 dark:text-emerald-400" />
+                        <span>{row.khanabook}</span>
+                      </div>
+                    </td>
+                    <td className="p-4 sm:p-5 text-muted-foreground">{row.cloud}</td>
+                    <td className="p-4 sm:p-5 text-muted-foreground">{row.legacy}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Zero-Lockin Hardware Recommendation Box */}
+          <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-surface border border-border/70 shadow-lg">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="h-10 w-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500">
+                <Smartphone className="h-5 w-5" />
+              </span>
+              <div>
+                <h3 className="text-lg font-bold text-foreground">Recommended Zero-Lockin Hardware Setup</h3>
+                <p className="text-xs text-muted-foreground">Standard non-proprietary hardware you can buy anywhere at competitive retail prices.</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {HARDWARE_CHECKLIST.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="p-4 rounded-xl bg-surface-soft border border-border/50">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <Icon className="h-4 w-4 text-brand" />
+                      <span className="font-bold text-foreground text-sm">{item.title}</span>
+                    </div>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* BLOG PREVIEW */}
       {latestPosts.length > 0 && (
@@ -509,37 +922,36 @@ function Home() {
         <div className="w-[92vw] md:w-[75vw] mx-auto">
           <EntranceReveal direction="up" className="w-full">
             <Card3DTilt intensity={5} glare={false} className="w-full">
-              <div className="w-full rounded-3xl bg-foreground text-background p-10 md:p-16 lg:p-20 text-center relative overflow-hidden shadow-2xl border border-neutral-800">
+              <div className="w-full rounded-3xl bg-surface text-foreground p-10 md:p-16 lg:p-20 text-center relative overflow-hidden shadow-2xl border border-border/80">
                 <BorderBeam size={340} duration={12} colorFrom="#dc2626" colorTo="#f59e0b" borderWidth={2} />
                 <div
                   aria-hidden
-                  className="absolute inset-0 opacity-25 pointer-events-none"
+                  className="absolute inset-0 opacity-20 pointer-events-none"
                   style={{
-                    background: "radial-gradient(circle at 30% 30%, var(--brand), transparent 60%)",
+                    background: "radial-gradient(circle at 30% 30%, var(--brand), transparent 65%)",
                   }}
                 />
                 <div className="relative z-10">
                   <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black">
-                    Ready to run <span className="hl">smarter?</span>
+                    Never Let Internet Failure Stop Your <span className="hl">Dinner Rush.</span>
                   </h2>
-                  <p className="mt-4 text-background/70 max-w-4xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed">
-                    Get KhanaBook set up for your restaurant — billing, KOT, payments and up to five
-                    terminals in one Android app.
+                  <p className="mt-4 text-muted-foreground max-w-4xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed">
+                    Join over 3,400+ restaurants across India operating zero-downtime counters with KhanaBook.
+                    Billing, KOT, payments, and up to 5 synchronized terminals in one Android app.
                   </p>
                   <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
-                    <MagneticHover strength={0.3}>
-                      <Link to="/get-started">
-                        <ShinyButton variant="brand">
-                          Get KhanaBook <ArrowRight className="h-4 w-4" />
-                        </ShinyButton>
-                      </Link>
-                    </MagneticHover>
+                    <Link to="/get-started">
+                      <UiVerseGlowingButton variant="brand" size="lg">
+                        <span>Get KhanaBook Free</span>
+                        <ArrowRight className="h-4 w-4" />
+                      </UiVerseGlowingButton>
+                    </Link>
 
-                    <MagneticHover strength={0.3}>
-                      <Link to="/blog" className="btn-secondary">
-                        Read Our Blog
-                      </Link>
-                    </MagneticHover>
+                    <Link to="/features">
+                      <UiVerseGlowingButton variant="white" size="lg">
+                        <span>Explore All Features</span>
+                      </UiVerseGlowingButton>
+                    </Link>
                   </div>
                 </div>
               </div>

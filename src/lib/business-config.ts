@@ -4,7 +4,7 @@
 export const BUSINESS = {
   legalName: "PIQUANT CONSULTANCY SERVICES PRIVATE LIMITED",
   productName: "KhanaBook",
-  productTagline: "Offline-First Restaurant POS",
+  productTagline: "Offline-First Multi-Terminal Restaurant POS — Android App & Web Dashboard",
   siblingPlatform: "India Advocacy",
   siblingPlatformDescription: "legal-tech and business-compliance platform",
 

@@ -9,8 +9,10 @@ const FOOTER_GROUPS = [
     links: [
       { to: "/features", label: "Features" },
       { to: "/pricing", label: "Pricing" },
-      { to: "/compare", label: "Compare" },
+      { to: "/compare", label: "Compare Architectures" },
       { to: "/get-started", label: "Get Started" },
+      { href: BUSINESS.playStoreUrl, label: "Android POS App (Play Store)" },
+      { href: BUSINESS.loginUrl, label: "Web Dashboard" },
     ],
   },
   {
@@ -36,7 +38,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-[#131314] text-white border-t border-[#28292A]">
+    <footer className="relative overflow-hidden bg-background text-foreground border-t border-border/70">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-brand/10 blur-3xl"
@@ -48,7 +50,7 @@ export function Footer() {
 
       <div className="w-[92vw] md:w-[75vw] mx-auto relative pt-16 pb-12 font-['Google_Sans',_sans-serif]">
         {/* Google Stitch Elevated Brand & Contact Card */}
-        <div className="bg-[#28292A] rounded-2xl border border-white/[0.06] p-6 sm:p-8 lg:p-10 mb-12 shadow-xl">
+        <div className="bg-surface rounded-2xl border border-border/70 p-6 sm:p-8 lg:p-10 mb-12 shadow-xl">
           <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12 items-center">
             <div>
               <div className="flex items-center gap-3.5">
@@ -57,21 +59,22 @@ export function Footer() {
                   alt="KhanaBook Logo"
                   width={56}
                   height={56}
-                  className="h-14 w-14 rounded-2xl border border-white/10 shadow-sm"
+                  className="h-14 w-14 rounded-2xl border border-border/60 shadow-sm"
                 />
                 <div>
-                  <div className="text-2xl font-bold tracking-tight text-white">KhanaBook</div>
+                  <div className="text-2xl font-bold tracking-tight text-foreground">KhanaBook</div>
                   <div className="mt-1 flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand/15 border border-brand/30 text-[10px] font-semibold text-red-300 uppercase tracking-wider">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand/15 border border-brand/30 text-[10px] font-semibold text-brand uppercase tracking-wider">
                       <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-                      Offline-First Restaurant POS
+                      Offline-First Multi-Terminal POS • Android App &amp; Web Dashboard
                     </span>
                   </div>
                 </div>
               </div>
-              <p className="mt-4 text-sm sm:text-base leading-relaxed text-gray-100/65 max-w-2xl">
-                Engineered for high-tempo Indian restaurants, cafes, cloud kitchens and QSRs. Fast billing,
-                USB, Wi-Fi & Bluetooth KOT printing, and synchronized terminals without internet dependency.
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground max-w-2xl">
+                Engineered for high-tempo Indian restaurants, cafes, cloud kitchens and QSRs.
+                100% offline multi-terminal Android POS app for high-speed counter billing and dual KOT printing,
+                paired with a powerful Web Dashboard for remote sales, inventory, and menu analytics.
               </p>
             </div>
 
@@ -79,20 +82,20 @@ export function Footer() {
             <div className="flex flex-col gap-2.5 sm:grid sm:grid-cols-2 lg:flex lg:flex-col">
               <a
                 href={`mailto:${BUSINESS.supportEmail}`}
-                className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#1E1F20] hover:bg-[#333538] border border-white/5 text-gray-200 hover:text-white transition-all text-xs sm:text-sm group"
+                className="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-soft hover:bg-surface border border-border/60 text-foreground transition-all text-xs sm:text-sm group shadow-sm"
               >
-                <Mail aria-hidden="true" className="h-4 w-4 text-red-400 group-hover:scale-110 transition-transform shrink-0" />
+                <Mail aria-hidden="true" className="h-4 w-4 text-brand group-hover:scale-110 transition-transform shrink-0" />
                 <span className="truncate">{BUSINESS.supportEmail}</span>
               </a>
               <a
                 href={`tel:${BUSINESS.supportPhone.replace(/\s/g, "")}`}
-                className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#1E1F20] hover:bg-[#333538] border border-white/5 text-gray-200 hover:text-white transition-all text-xs sm:text-sm group"
+                className="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-soft hover:bg-surface border border-border/60 text-foreground transition-all text-xs sm:text-sm group shadow-sm"
               >
-                <Phone aria-hidden="true" className="h-4 w-4 text-red-400 group-hover:scale-110 transition-transform shrink-0" />
+                <Phone aria-hidden="true" className="h-4 w-4 text-brand group-hover:scale-110 transition-transform shrink-0" />
                 <span>{BUSINESS.supportPhone}</span>
               </a>
-              <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#1E1F20] border border-white/5 text-gray-200 text-xs sm:text-sm sm:col-span-2 lg:col-span-1">
-                <MapPin aria-hidden="true" className="h-4 w-4 text-red-400 shrink-0" />
+              <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-soft border border-border/60 text-muted-foreground text-xs sm:text-sm sm:col-span-2 lg:col-span-1 shadow-sm">
+                <MapPin aria-hidden="true" className="h-4 w-4 text-brand shrink-0" />
                 <span className="line-clamp-1">{BUSINESS.registeredAddress}</span>
               </div>
             </div>
@@ -107,16 +110,16 @@ export function Footer() {
         </div>
 
         {/* Stitch Bottom Status Bar */}
-        <div className="border-t border-[#28292A] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-normal text-gray-400">
+        <div className="border-t border-border/70 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-normal text-muted-foreground">
           <span>
             © {year} {BUSINESS.legalName}. All rights reserved.
           </span>
           <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#28292A] border border-white/5 text-[11px] text-gray-300">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-soft border border-border/60 text-[11px] text-foreground font-medium">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
               Offline-First Sync Engine Active
             </span>
-            <span className="inline-flex items-center gap-1.5 text-gray-300">
+            <span className="inline-flex items-center gap-1.5 text-muted-foreground font-medium">
               Made with pride in India 🇮🇳
             </span>
           </div>
@@ -131,21 +134,33 @@ function FooterCol({
   links,
 }: {
   title: string;
-  links: ReadonlyArray<{ readonly to: string; readonly label: string }>;
+  links: ReadonlyArray<{ readonly to?: string; readonly href?: string; readonly label: string }>;
 }) {
   return (
     <div>
-      <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-gray-400 mb-4">{title}</h3>
+      <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground mb-4">{title}</h3>
       <ul className="space-y-3">
         {links.map((link) => (
-          <li key={link.to}>
-            <Link
-              to={link.to}
-              className="group inline-flex items-center gap-1 text-sm font-normal text-gray-300 transition-all hover:text-white hover:translate-x-0.5"
-            >
-              <span>{link.label}</span>
-              <span className="opacity-0 transition-opacity group-hover:opacity-100 text-gray-400 text-xs">→</span>
-            </Link>
+          <li key={link.label}>
+            {link.href ? (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1 text-sm font-normal text-muted-foreground transition-all hover:text-foreground hover:translate-x-0.5"
+              >
+                <span>{link.label}</span>
+                <span className="opacity-0 transition-opacity group-hover:opacity-100 text-muted-foreground text-xs">↗</span>
+              </a>
+            ) : (
+              <Link
+                to={link.to!}
+                className="group inline-flex items-center gap-1 text-sm font-normal text-muted-foreground transition-all hover:text-foreground hover:translate-x-0.5"
+              >
+                <span>{link.label}</span>
+                <span className="opacity-0 transition-opacity group-hover:opacity-100 text-muted-foreground text-xs">→</span>
+              </Link>
+            )}
           </li>
         ))}
       </ul>
