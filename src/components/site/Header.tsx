@@ -1,10 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { ExternalLink, Menu, X, Sun, Moon } from "lucide-react";
+import { ExternalLink, Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/khanabook-logo.webp";
 import { BUSINESS } from "@/lib/business-config";
-import { useTheme } from "@/lib/theme-provider";
-import { UiVerseThemeToggle } from "@/components/uiverse";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -17,7 +15,6 @@ const NAV = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-md shadow-sm transition-colors w-full">
@@ -67,9 +64,6 @@ export function Header() {
 
         {/* Right CTA Actions */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          {/* UIVerse Signature Day/Night Celestial Switch */}
-          <UiVerseThemeToggle />
-
           <a
             href={BUSINESS.playStoreUrl}
             target="_blank"
@@ -139,12 +133,6 @@ export function Header() {
                 Request Setup Help
               </Link>
             </nav>
-
-            {/* Mobile Theme Toggle Row */}
-            <div className="flex items-center justify-between pt-3 border-t border-border/50 px-2">
-              <span className="text-xs text-muted-foreground font-medium">Theme Mode</span>
-              <UiVerseThemeToggle />
-            </div>
 
             <div className="pt-2 grid gap-2">
               <a

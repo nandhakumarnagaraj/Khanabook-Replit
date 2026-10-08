@@ -143,16 +143,16 @@ import { ThemeProvider } from "../lib/theme-provider";
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="light">
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('khanabook-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}if(t==='light'){document.documentElement.classList.remove('dark');document.documentElement.classList.add('light');}else{document.documentElement.classList.remove('light');document.documentElement.classList.add('dark');}}catch(e){}})();`,
+            __html: `(function(){try{document.documentElement.classList.remove('dark');document.documentElement.classList.add('light');localStorage.setItem('khanabook-theme','light');}catch(e){}})();`,
           }}
         />
         <HeadContent />
       </head>
-      <body className="min-h-screen selection:bg-brand/30 selection:text-white transition-colors duration-200 overflow-x-hidden w-full">
+      <body className="min-h-screen selection:bg-brand/30 selection:text-brand-foreground transition-colors duration-200 overflow-x-hidden w-full">
         {children}
         <Scripts />
       </body>

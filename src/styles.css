@@ -42,36 +42,37 @@
 :root {
   --radius: 0.75rem;
 
-  /* Google Stitch Dark Design System */
-  --background: #131314;
-  --foreground: #f1f3f4;
+  /* Google Stitch Light Design System */
+  color-scheme: light;
+  --background: #f8f9fa;
+  --foreground: #1f1f1f;
 
-  --surface: #1e1f20;
-  --surface-soft: #28292a;
+  --surface: #ffffff;
+  --surface-soft: #f1f3f4;
 
-  --card: #28292a;
-  --card-foreground: #f1f3f4;
+  --card: #ffffff;
+  --card-foreground: #1f1f1f;
 
-  --popover: #28292a;
-  --popover-foreground: #f1f3f4;
+  --popover: #ffffff;
+  --popover-foreground: #1f1f1f;
 
-  --primary: #ffffff;
-  --primary-foreground: #131314;
+  --primary: #1f1f1f;
+  --primary-foreground: #ffffff;
 
-  --secondary: #28292a;
-  --secondary-foreground: #f1f3f4;
+  --secondary: #f1f3f4;
+  --secondary-foreground: #1f1f1f;
 
-  --muted: #1e1f20;
-  --muted-foreground: #9aa0a6;
+  --muted: #f1f3f4;
+  --muted-foreground: #5f6368;
 
-  --accent: #28292a;
-  --accent-foreground: #ffffff;
+  --accent: #f1f3f4;
+  --accent-foreground: #1f1f1f;
 
   --destructive: oklch(0.57 0.24 27);
   --destructive-foreground: #ffffff;
 
-  --border: rgba(255, 255, 255, 0.08);
-  --input: rgba(255, 255, 255, 0.12);
+  --border: rgba(0, 0, 0, 0.08);
+  --input: rgba(0, 0, 0, 0.12);
   --ring: var(--brand);
 
   /* Brand: KhanaBook signature red & gold */
@@ -160,6 +161,16 @@ html.light .border-white\/30 {
 
 html.light .text-white {
   color: #1f1f1f !important;
+}
+
+/* Ensure colored buttons retain crisp white text in light mode */
+html.light .bg-brand,
+html.light .bg-brand.text-white,
+html.light .bg-brand .text-white,
+html.light [class*="bg-brand"] .text-white,
+html.light .bg-emerald-600.text-white,
+html.light .bg-emerald-500.text-white {
+  color: #ffffff !important;
 }
 
 html.light .text-gray-100 {
