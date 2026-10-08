@@ -48,36 +48,55 @@ function PrivacyPolicy() {
         <div className="w-[92vw] md:w-[75vw] mx-auto">
           <div className="max-w-4xl space-y-8 text-sm sm:text-base text-gray-300 leading-relaxed">
             <p className="text-gray-400">
-              This Privacy Policy describes how <strong className="text-white">{BUSINESS.legalName}</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;) handles personal information in relation to the KhanaBook offline-first restaurant POS Android app and Cloud Web Dashboard.
+              This Privacy Policy describes how{" "}
+              <strong className="text-white">{BUSINESS.legalName}</strong> (&ldquo;we&rdquo;,
+              &ldquo;us&rdquo;) handles personal information in relation to the KhanaBook
+              offline-first restaurant POS Android app and Cloud Web Dashboard.
             </p>
 
             <div className="space-y-6">
               <Block title="Data We Collect">
-                We collect restaurant account information such as business name, phone number, email address and staff login details; customer order records entered by the restaurant (e.g. table number, bill details); bills, invoices, menu items, inventory logs and payment mode references (cash, UPI, card, split); and diagnostic device information needed to ensure offline sync integrity.
+                We collect restaurant account information such as business name, phone number, email
+                address and staff login details; customer order records entered by the restaurant
+                (e.g. table number, bill details); bills, invoices, menu items, inventory logs and
+                payment mode references (cash, UPI, card, split); and diagnostic device information
+                needed to ensure offline sync integrity.
               </Block>
 
               <Block title="Local Device Storage and Offline Use">
-                KhanaBook stores operational billing and order records locally on the Android device using SQLite WAL mode so billing, menu access, and dual thermal KOT printing continue uninterrupted during network failures. Authorized device users have access to data corresponding to their assigned roles.
+                KhanaBook stores operational billing and order records locally on the Android device
+                using SQLite WAL mode so billing, menu access, and dual thermal KOT printing
+                continue uninterrupted during network failures. Authorized device users have access
+                to data corresponding to their assigned roles.
               </Block>
 
               <Block title="Cloud Synchronisation">
-                When connectivity is available, completed records are synchronized to our cloud infrastructure for encrypted backup, account administration, and restaurant-wide consolidated reporting across approved terminals and the Web Dashboard.
+                When connectivity is available, completed records are synchronized to our cloud
+                infrastructure for encrypted backup, account administration, and restaurant-wide
+                consolidated reporting across approved terminals and the Web Dashboard.
               </Block>
 
               <Block title="Menu Photo Import">
-                When using the on-device menu photo import feature, image text recognition is performed securely to recommend item names and rates. The restaurant operator reviews all extracted items before confirming.
+                When using the on-device menu photo import feature, image text recognition is
+                performed securely to recommend item names and rates. The restaurant operator
+                reviews all extracted items before confirming.
               </Block>
 
               <Block title="Invoice Sharing and Exports">
-                When sharing PDF bills via WhatsApp or SMS, recipient numbers and message content are handled through the installed communication application under its respective privacy terms. Exported CSV and Excel reports are fully controlled by the restaurant administrator.
+                When sharing PDF bills via WhatsApp or SMS, recipient numbers and message content
+                are handled through the installed communication application under its respective
+                privacy terms. Exported CSV and Excel reports are fully controlled by the restaurant
+                administrator.
               </Block>
 
               <Block title="Payment Data">
-                KhanaBook records payment modes and reference notes entered by the cashier. It does not process cardholder PINs or sensitive banking credentials directly.
+                KhanaBook records payment modes and reference notes entered by the cashier. It does
+                not process cardholder PINs or sensitive banking credentials directly.
               </Block>
 
               <Block title="Data Retention & Security">
-                Data is retained while the restaurant account remains active and thereafter as required by statutory, tax, or legal retention requirements. {DISCLAIMERS.security}
+                Data is retained while the restaurant account remains active and thereafter as
+                required by statutory, tax, or legal retention requirements. {DISCLAIMERS.security}
               </Block>
 
               <Block title="Privacy & Grievance Contact">

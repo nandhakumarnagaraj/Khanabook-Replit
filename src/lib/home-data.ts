@@ -15,7 +15,7 @@ export const FEATURES = [
   },
   {
     title: "100% Offline-First SQLite WAL Architecture",
-    body: "Engineered specifically for Indian restaurant realities. Local SQLite WAL database on your Android devices guarantees 0ms latency billing that never halts, buffers, or loses an order when internet cuts or power fluctuates. Records silently synchronize to the Cloud Web Dashboard when connectivity returns.",
+    body: "Engineered specifically for Indian restaurant realities. Local SQLite WAL database on your Android devices guarantees instant local billing that never halts, buffers, or loses an order when internet cuts or power fluctuates. Records silently synchronize to the Cloud Web Dashboard when connectivity returns.",
   },
   {
     title: "Centralized Cloud Web Dashboard",
@@ -55,7 +55,7 @@ export const FAQS = [
   },
   {
     q: "How does KhanaBook continue billing when the internet goes down?",
-    a: "Unlike fragile browser-based POS systems that buffer and crash when broadband disconnects, KhanaBook runs natively on Android with an embedded SQLite database. All billing, table management, item search, and thermal KOT printing happen 100% locally with 0ms latency. When your internet reconnects, settled records sync to the cloud automatically.",
+    a: "Unlike fragile browser-based POS systems that buffer and crash when broadband disconnects, KhanaBook runs natively on Android with an embedded SQLite database. All billing, table management, item search, and thermal KOT printing happen 100% locally without cloud lag. When your internet reconnects, settled records sync to the cloud automatically.",
   },
   {
     q: "How does multi-terminal synchronization work without a central server PC?",

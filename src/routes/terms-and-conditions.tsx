@@ -99,7 +99,9 @@ function Terms() {
         <div className="w-[92vw] md:w-[75vw] mx-auto">
           <div className="max-w-4xl space-y-6 text-sm sm:text-base text-gray-300 leading-relaxed">
             <p className="text-gray-400">
-              These Terms and Conditions govern the use of the KhanaBook offline-first restaurant POS Android app and Cloud Web Dashboard provided by <strong className="text-white">{BUSINESS.legalName}</strong>.
+              These Terms and Conditions govern the use of the KhanaBook offline-first restaurant
+              POS Android app and Cloud Web Dashboard provided by{" "}
+              <strong className="text-white">{BUSINESS.legalName}</strong>.
             </p>
 
             <div className="space-y-4">

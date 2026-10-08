@@ -50,22 +50,20 @@ function ContactUsPage() {
 
         <div className="w-[92vw] md:w-[75vw] mx-auto relative z-10 text-center">
           <EntranceReveal direction="up" delay={0.05}>
-            <UiVerseBadge pulseColor="emerald">
-              DIRECT SUPPORT &amp; OFFICE CONTACT
-            </UiVerseBadge>
+            <UiVerseBadge pulseColor="emerald">DIRECT SUPPORT &amp; OFFICE CONTACT</UiVerseBadge>
           </EntranceReveal>
 
           <EntranceReveal direction="up" delay={0.15}>
             <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
-              We&apos;re Here to Help Your{" "}
-              <br className="hidden sm:inline" />
+              We&apos;re Here to Help Your <br className="hidden sm:inline" />
               <span className="hl">Restaurant Succeed.</span>
             </h1>
           </EntranceReveal>
 
           <EntranceReveal direction="up" delay={0.25}>
             <p className="mt-5 text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Reach out directly for Android app onboarding, printer compatibility checks, multi-terminal setups, or Web Dashboard access.
+              Reach out directly for Android app onboarding, printer compatibility checks,
+              multi-terminal setups, or Web Dashboard access.
             </p>
           </EntranceReveal>
         </div>
@@ -213,15 +211,12 @@ function ContactUsPage() {
             Ready to Try <span className="hl">KhanaBook?</span>
           </h2>
           <p className="mt-4 text-base text-gray-400 max-w-xl mx-auto">
-            Zero subscription fee currently. Download the Android app or get in touch for personalized onboarding.
+            Zero subscription fee currently. Download the Android app or get in touch for
+            personalized onboarding.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href={BUSINESS.playStoreUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
+            <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
               <UiVerseGlowingButton variant="emerald" size="md">
                 <Download className="h-4 w-4" />
                 <span>Download Android App</span>

@@ -1,6 +1,15 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { ChevronUp, ChevronDown, Sparkles, WifiOff, Printer, IndianRupee } from "lucide-react";
+import { motion, AnimatePresence, useReducedMotion } from "motion/react";
+import {
+  ChevronUp,
+  ChevronDown,
+  Sparkles,
+  WifiOff,
+  Printer,
+  IndianRupee,
+  Play,
+  Pause,
+} from "lucide-react";
 import appHome from "@/assets/app-home.png";
 import appBilling from "@/assets/app-billing.png";
 import appPayment from "@/assets/app-payment.png";
@@ -65,10 +74,11 @@ export function VerticalHeroSwiper() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState<1 | -1>(1);
   const [isPaused, setIsPaused] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   // Auto-play timer
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || shouldReduceMotion) return;
 
     const timer = setInterval(() => {
       setDirection(1);
@@ -76,7 +86,7 @@ export function VerticalHeroSwiper() {
     }, 4500);
 
     return () => clearInterval(timer);
-  }, [isPaused]);
+  }, [isPaused, shouldReduceMotion]);
 
   const goToSlide = (index: number) => {
     setDirection(index > currentIndex ? 1 : -1);
@@ -129,6 +139,10 @@ export function VerticalHeroSwiper() {
       className="relative w-full max-w-xl mx-auto lg:max-w-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setIsPaused(false)}
     >
       {/* Background ambient lighting */}
       <div
@@ -180,19 +194,33 @@ export function VerticalHeroSwiper() {
               </p>
             </div>
 
-            {/* Vertical Arrow Navigators */}
+            {/* Vertical Arrow Navigators + Pause/Play */}
             <div className="flex items-center gap-1.5 ml-2 shrink-0">
               <button
+                type="button"
+                onClick={() => setIsPaused((prev) => !prev)}
+                aria-label={isPaused ? "Play slide presentation" : "Pause slide presentation"}
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface hover:bg-surface-soft text-foreground transition-colors hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+              >
+                {isPaused ? (
+                  <Play className="h-3.5 w-3.5 text-brand fill-current" />
+                ) : (
+                  <Pause className="h-3.5 w-3.5 text-muted-foreground" />
+                )}
+              </button>
+              <button
+                type="button"
                 onClick={handlePrev}
                 aria-label="Previous screen"
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface hover:bg-surface-soft text-foreground transition-colors hover:scale-105 active:scale-95"
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface hover:bg-surface-soft text-foreground transition-colors hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
               >
                 <ChevronUp className="h-4 w-4" />
               </button>
               <button
+                type="button"
                 onClick={handleNext}
                 aria-label="Next screen"
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface hover:bg-surface-soft text-foreground transition-colors hover:scale-105 active:scale-95"
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface hover:bg-surface-soft text-foreground transition-colors hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
               >
                 <ChevronDown className="h-4 w-4" />
               </button>

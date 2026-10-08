@@ -5,8 +5,12 @@ export function OfflineIndicator() {
   const [offline, setOffline] = useState(false);
 
   useEffect(() => {
-    function goOffline() { setOffline(true); }
-    function goOnline() { setOffline(false); }
+    function goOffline() {
+      setOffline(true);
+    }
+    function goOnline() {
+      setOffline(false);
+    }
 
     // Check initial state
     if (!navigator.onLine) setOffline(true);

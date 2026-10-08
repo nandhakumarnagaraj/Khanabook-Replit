@@ -45,10 +45,7 @@ export function NumberTicker({
   }, [springValue, decimalPlaces]);
 
   return (
-    <span
-      className={`inline-block tabular-nums font-mono font-black ${className}`}
-      ref={ref}
-    >
+    <span className={`inline-block tabular-nums font-mono font-black ${className}`} ref={ref}>
       {direction === "down" ? value : 0}
     </span>
   );

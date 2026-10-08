@@ -72,9 +72,10 @@ export function Footer() {
                 </div>
               </div>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground max-w-2xl">
-                Engineered for high-tempo Indian restaurants, cafes, cloud kitchens and QSRs.
-                100% offline multi-terminal Android POS app for high-speed counter billing and dual KOT printing,
-                paired with a powerful Web Dashboard for remote sales, inventory, and menu analytics.
+                Engineered for high-tempo Indian restaurants, cafes, cloud kitchens and QSRs. 100%
+                offline multi-terminal Android POS app for high-speed counter billing and dual KOT
+                printing, paired with a powerful Web Dashboard for remote sales, inventory, and menu
+                analytics.
               </p>
             </div>
 
@@ -84,14 +85,20 @@ export function Footer() {
                 href={`mailto:${BUSINESS.supportEmail}`}
                 className="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-soft hover:bg-surface border border-border/60 text-foreground transition-all text-xs sm:text-sm group shadow-sm"
               >
-                <Mail aria-hidden="true" className="h-4 w-4 text-brand group-hover:scale-110 transition-transform shrink-0" />
+                <Mail
+                  aria-hidden="true"
+                  className="h-4 w-4 text-brand group-hover:scale-110 transition-transform shrink-0"
+                />
                 <span className="truncate">{BUSINESS.supportEmail}</span>
               </a>
               <a
                 href={`tel:${BUSINESS.supportPhone.replace(/\s/g, "")}`}
                 className="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-soft hover:bg-surface border border-border/60 text-foreground transition-all text-xs sm:text-sm group shadow-sm"
               >
-                <Phone aria-hidden="true" className="h-4 w-4 text-brand group-hover:scale-110 transition-transform shrink-0" />
+                <Phone
+                  aria-hidden="true"
+                  className="h-4 w-4 text-brand group-hover:scale-110 transition-transform shrink-0"
+                />
                 <span>{BUSINESS.supportPhone}</span>
               </a>
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-soft border border-border/60 text-muted-foreground text-xs sm:text-sm sm:col-span-2 lg:col-span-1 shadow-sm">
@@ -138,7 +145,9 @@ function FooterCol({
 }) {
   return (
     <div>
-      <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground mb-4">{title}</h3>
+      <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground mb-4">
+        {title}
+      </h3>
       <ul className="space-y-3">
         {links.map((link) => (
           <li key={link.label}>
@@ -150,7 +159,9 @@ function FooterCol({
                 className="group inline-flex items-center gap-1 text-sm font-normal text-muted-foreground transition-all hover:text-foreground hover:translate-x-0.5"
               >
                 <span>{link.label}</span>
-                <span className="opacity-0 transition-opacity group-hover:opacity-100 text-muted-foreground text-xs">↗</span>
+                <span className="opacity-0 transition-opacity group-hover:opacity-100 text-muted-foreground text-xs">
+                  ↗
+                </span>
               </a>
             ) : (
               <Link
@@ -158,7 +169,9 @@ function FooterCol({
                 className="group inline-flex items-center gap-1 text-sm font-normal text-muted-foreground transition-all hover:text-foreground hover:translate-x-0.5"
               >
                 <span>{link.label}</span>
-                <span className="opacity-0 transition-opacity group-hover:opacity-100 text-muted-foreground text-xs">→</span>
+                <span className="opacity-0 transition-opacity group-hover:opacity-100 text-muted-foreground text-xs">
+                  →
+                </span>
               </Link>
             )}
           </li>

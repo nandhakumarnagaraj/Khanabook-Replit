@@ -15,8 +15,11 @@ export function CustomCursor() {
   const springY = useSpring(mouseY, { stiffness: 450, damping: 32 });
 
   useEffect(() => {
-    // Check if device is touch-primary
-    if (window.matchMedia("(pointer: coarse)").matches) {
+    // Check if device is touch-primary or user prefers reduced motion
+    if (
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
       setIsTouch(true);
       return;
     }
@@ -25,7 +28,7 @@ export function CustomCursor() {
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
-      if (!isVisible) setIsVisible(true);
+      setIsVisible(true);
     };
 
     const handleMouseDown = () => setIsClicking(true);
@@ -38,7 +41,7 @@ export function CustomCursor() {
       if (!target) return;
 
       const interactive = target.closest(
-        'a, button, [role="button"], input, textarea, select, [data-cursor-hover], .clickable'
+        'a, button, [role="button"], input, textarea, select, [data-cursor-hover], .clickable',
       );
       setIsHovered(!!interactive);
     };
@@ -58,7 +61,7 @@ export function CustomCursor() {
       document.removeEventListener("mouseenter", handleMouseEnter);
       document.removeEventListener("mouseover", handleElementHover);
     };
-  }, [mouseX, mouseY, isVisible]);
+  }, [mouseX, mouseY]);
 
   if (isTouch || !isVisible) return null;
 

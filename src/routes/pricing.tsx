@@ -49,25 +49,45 @@ export const Route = createFileRoute("/pricing")({
   component: PricingPage,
 });
 
-const INCLUDED = [
-  "100% Offline-first Android POS billing (zero downtime during broadband or power cuts)",
-  "Up to 5 approved Android terminals per restaurant (Cashier counter + Table stewards)",
-  "Full access to Cloud Web Dashboard from any browser",
-  "Table floor plan visualizer, table shifting, merging, and captain steward ordering",
-  "Dine-in, quick-service takeaway, token numbering, and delivery order workflows",
-  "Cash, dynamic UPI QR on printed bill, card, and multi-mode split-payment recording",
-  "Dual ESC/POS thermal printing (counter receipts + kitchen KOTs via USB/BT/Wi-Fi)",
-  "Multi-station kitchen routing (Tandoor, Main Kitchen, Chinese, Bar)",
-  "Terminal-specific GST invoice series and isolated daily sequence counters",
-  "Centralized menu engineering with categories, portion sizes, add-ons and modifiers",
-  "Instant '86' sold-out item toggling across all active terminals in one tap",
-  "Raw material inventory tracking with Recipe Bill of Materials (BOM) auto-deduction",
-  "Low-stock threshold alerts, ingredient wastage logs, and consumption auditing",
-  "End-of-day cash drawer float reconciliation & closing Z-Reports",
-  "Daily, monthly, payment-mode, item-velocity, and hourly sales rush reports",
-  "Dedicated Accountant read-only web login with GST-compliant Excel/PDF exports",
-  "Paperless digital PDF invoice generation with WhatsApp and SMS sharing",
-  "Role-based staff permissions and manager authorization PINs for comps and voids",
+const INCLUDED_GROUPS = [
+  {
+    category: "Billing & Front-of-House",
+    items: [
+      "100% Offline-first Android POS billing (zero downtime during broadband or power cuts)",
+      "Up to 5 approved Android terminals per restaurant (Cashier counter + Table stewards)",
+      "Table floor plan visualizer, table shifting, merging, and captain steward ordering",
+      "Dine-in, quick-service takeaway, token numbering, and delivery order workflows",
+      "Cash, dynamic UPI QR on printed bill, card, and multi-mode split-payment recording",
+      "Paperless digital PDF invoice generation with WhatsApp and SMS sharing",
+    ],
+  },
+  {
+    category: "Kitchen & Order Routing",
+    items: [
+      "Dual ESC/POS thermal printing (counter receipts + kitchen KOTs via USB/BT/Wi-Fi)",
+      "Multi-station kitchen routing (Tandoor, Main Kitchen, Chinese, Bar)",
+      "Instant '86' sold-out item toggling across all active terminals in one tap",
+    ],
+  },
+  {
+    category: "Cloud Web Dashboard & Inventory",
+    items: [
+      "Full access to Cloud Web Dashboard from any laptop, tablet, or PC browser",
+      "Centralized menu engineering with categories, portion sizes, add-ons and modifiers",
+      "Raw material inventory tracking with Recipe Bill of Materials (BOM) auto-deduction",
+      "Low-stock threshold alerts, ingredient wastage logs, and consumption auditing",
+    ],
+  },
+  {
+    category: "Finance, GST & Administration",
+    items: [
+      "Terminal-specific GST invoice series and isolated daily sequence counters",
+      "End-of-day cash drawer float reconciliation & closing Z-Reports",
+      "Daily, monthly, payment-mode, item-velocity, and hourly sales rush reports",
+      "Dedicated Accountant read-only web login with GST-compliant Excel/PDF exports",
+      "Role-based staff permissions and manager authorization PINs for comps and voids",
+    ],
+  },
 ];
 
 const NOT_INCLUDED = [
@@ -169,15 +189,15 @@ function PricingPage() {
 
           <EntranceReveal direction="up" delay={0.15}>
             <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
-              Enterprise POS Power.{" "}
-              <br className="hidden sm:inline" />
+              Enterprise POS Power. <br className="hidden sm:inline" />
               <span className="hl">₹0 Software Subscription.</span>
             </h1>
           </EntranceReveal>
 
           <EntranceReveal direction="up" delay={0.25}>
             <p className="mt-5 text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              No software subscription fees for the offline-first Android POS App or the Cloud Web Dashboard. Keep 100% of your restaurant margins.
+              No software subscription fees for the offline-first Android POS App or the Cloud Web
+              Dashboard. Keep 100% of your restaurant margins.
             </p>
           </EntranceReveal>
 
@@ -185,7 +205,13 @@ function PricingPage() {
           <EntranceReveal direction="up" delay={0.35}>
             <div className="mt-12 max-w-xl mx-auto">
               <div className="relative rounded-3xl border border-brand/40 bg-[#1E1F20] p-8 md:p-10 text-center shadow-2xl overflow-hidden">
-                <BorderBeam size={260} duration={12} delay={0} colorFrom="#c026d3" colorTo="#dc2626" />
+                <BorderBeam
+                  size={260}
+                  duration={12}
+                  delay={0}
+                  colorFrom="#c026d3"
+                  colorTo="#dc2626"
+                />
 
                 <div className="inline-flex items-center gap-2 rounded-full bg-brand/10 border border-brand/30 px-3.5 py-1 text-xs font-bold text-brand mb-6">
                   <Sparkles className="h-3.5 w-3.5" />
@@ -193,7 +219,9 @@ function PricingPage() {
                 </div>
 
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-6xl sm:text-7xl font-extrabold text-white tracking-tight">₹0</span>
+                  <span className="text-6xl sm:text-7xl font-extrabold text-white tracking-tight">
+                    ₹0
+                  </span>
                   <span className="text-gray-400 font-semibold text-lg">/month</span>
                 </div>
 
@@ -205,21 +233,13 @@ function PricingPage() {
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-                  <a
-                    href={BUSINESS.playStoreUrl}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
+                  <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
                     <UiVerseGlowingButton variant="emerald" size="md">
                       <Download className="h-4 w-4" />
                       <span>Download Android App</span>
                     </UiVerseGlowingButton>
                   </a>
-                  <a
-                    href={BUSINESS.loginUrl}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
+                  <a href={BUSINESS.loginUrl} target="_blank" rel="noreferrer noopener">
                     <UiVerseGlowingButton variant="white" size="md">
                       <Cloud className="h-4 w-4" />
                       <span>Launch Web Dashboard</span>
@@ -252,7 +272,8 @@ function PricingPage() {
               Everything Included in <span className="hl">Current Software Access.</span>
             </h2>
             <p className="text-gray-400 mt-3 text-sm sm:text-base">
-              Zero tier locks, zero per-terminal penalty, and zero artificial limits on daily orders.
+              Zero tier locks, zero per-terminal penalty, and zero artificial limits on daily
+              orders.
             </p>
           </div>
 
@@ -269,14 +290,23 @@ function PricingPage() {
                 </div>
               </div>
 
-              <ul className="space-y-3.5">
-                {INCLUDED.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm">
-                    <Check className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span className="text-gray-300 leading-snug">{item}</span>
-                  </li>
+              <div className="space-y-6">
+                {INCLUDED_GROUPS.map((group) => (
+                  <div key={group.category} className="space-y-2.5">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+                      {group.category}
+                    </h4>
+                    <ul className="space-y-2.5">
+                      {group.items.map((item) => (
+                        <li key={item} className="flex items-start gap-2.5 text-sm">
+                          <Check className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                          <span className="text-gray-300 leading-snug">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
 
             {/* NOT INCLUDED / ROADMAP CARD */}
@@ -304,7 +334,9 @@ function PricingPage() {
               </ul>
 
               <div className="mt-8 rounded-xl border border-white/10 bg-[#28292A] p-4 text-xs text-gray-300 leading-relaxed">
-                <strong className="text-white">Note on Payment Gateways:</strong> KhanaBook records payment modes (Cash, UPI, Card, Split) and reference IDs accurately for accounting and GST. Direct in-app bank gateway settlement is currently under development.
+                <strong className="text-white">Note on Payment Gateways:</strong> KhanaBook records
+                payment modes (Cash, UPI, Card, Split) and reference IDs accurately for accounting
+                and GST. Direct in-app bank gateway settlement is currently under development.
               </div>
             </div>
           </div>
@@ -322,7 +354,8 @@ function PricingPage() {
               Transparent Hardware & <span className="hl">Operational Costs.</span>
             </h2>
             <p className="text-gray-400 mt-3 text-sm sm:text-base">
-              KhanaBook does not sell locked proprietary hardware. You have 100% freedom to use existing devices or purchase hardware from any marketplace.
+              KhanaBook does not sell locked proprietary hardware. You have 100% freedom to use
+              existing devices or purchase hardware from any marketplace.
             </p>
           </div>
 
@@ -411,25 +444,18 @@ function PricingPage() {
             Start Billing with <span className="hl">KhanaBook Today.</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
-            Install the Android app, connect your thermal printer, and manage your menu from the Web Dashboard.
+            Install the Android app, connect your thermal printer, and manage your menu from the Web
+            Dashboard.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href={BUSINESS.playStoreUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
+            <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
               <UiVerseGlowingButton variant="emerald" size="md">
                 <Download className="h-4 w-4" />
                 <span>Download Android App</span>
               </UiVerseGlowingButton>
             </a>
-            <a
-              href={BUSINESS.loginUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
+            <a href={BUSINESS.loginUrl} target="_blank" rel="noreferrer noopener">
               <UiVerseGlowingButton variant="white" size="md">
                 <Cloud className="h-4 w-4" />
                 <span>Web Dashboard Login</span>

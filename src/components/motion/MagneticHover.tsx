@@ -7,11 +7,7 @@ interface MagneticProps {
   strength?: number;
 }
 
-export function MagneticHover({
-  children,
-  className = "",
-  strength = 0.35,
-}: MagneticProps) {
+export function MagneticHover({ children, className = "", strength = 0.35 }: MagneticProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const x = useMotionValue(0);

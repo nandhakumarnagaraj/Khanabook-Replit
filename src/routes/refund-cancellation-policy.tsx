@@ -48,32 +48,46 @@ function Refund() {
         <div className="w-[92vw] md:w-[75vw] mx-auto">
           <div className="max-w-4xl space-y-6 text-sm sm:text-base text-gray-300 leading-relaxed">
             <p className="text-gray-400">
-              This policy explains how refunds and cancellations are handled for KhanaBook, a product of <strong className="text-white">{BUSINESS.legalName}</strong>.
+              This policy explains how refunds and cancellations are handled for KhanaBook, a
+              product of <strong className="text-white">{BUSINESS.legalName}</strong>.
             </p>
 
             <div className="space-y-4">
               <Item title="KhanaBook Software Charges">
-                KhanaBook software currently has ₹0 subscription fee, so there is no software subscription payment to cancel or refund. If paid plans are introduced in the future, clear cancellation and refund terms will be published prior to charges taking effect.
+                KhanaBook software currently has ₹0 subscription fee, so there is no software
+                subscription payment to cancel or refund. If paid plans are introduced in the
+                future, clear cancellation and refund terms will be published prior to charges
+                taking effect.
               </Item>
 
               <Item title="Payments Recorded in KhanaBook">
-                KhanaBook records payment modes (Cash, UPI QR, Card, Split) and reference IDs entered by the cashier; it does not process or settle payments through an integrated in-app banking gateway. Any transaction between the restaurant and a diner remains between the diner, the restaurant, and their payment provider.
+                KhanaBook records payment modes (Cash, UPI QR, Card, Split) and reference IDs
+                entered by the cashier; it does not process or settle payments through an integrated
+                in-app banking gateway. Any transaction between the restaurant and a diner remains
+                between the diner, the restaurant, and their payment provider.
               </Item>
 
               <Item title="Restaurant Diner Refunds">
-                Restaurants retain full discretion over customer refunds and bill cancellations. Settlement reversals are handled directly through the merchant&apos;s UPI or card machine provider.
+                Restaurants retain full discretion over customer refunds and bill cancellations.
+                Settlement reversals are handled directly through the merchant&apos;s UPI or card
+                machine provider.
               </Item>
 
               <Item title="Optional Compliance or Professional Services">
-                Fees for optional compliance or professional services offered through {BUSINESS.siblingPlatform} are governed by the specific written service agreement accepted for that engagement.
+                Fees for optional compliance or professional services offered through{" "}
+                {BUSINESS.siblingPlatform} are governed by the specific written service agreement
+                accepted for that engagement.
               </Item>
 
               <Item title="Third-Party Hardware & Printers">
-                KhanaBook does not sell proprietary hardware. Android smartphones, tablets, and thermal ESC/POS printers purchased from third-party vendors or marketplaces are governed by the respective seller&apos;s return and warranty policies.
+                KhanaBook does not sell proprietary hardware. Android smartphones, tablets, and
+                thermal ESC/POS printers purchased from third-party vendors or marketplaces are
+                governed by the respective seller&apos;s return and warranty policies.
               </Item>
 
               <Item title="Billing Queries & Support Contact">
-                For questions regarding any charge made directly by {BUSINESS.legalName}, contact us at{" "}
+                For questions regarding any charge made directly by {BUSINESS.legalName}, contact us
+                at{" "}
                 <a href={`mailto:${BUSINESS.supportEmail}`} className="text-brand hover:underline">
                   {BUSINESS.supportEmail}
                 </a>{" "}

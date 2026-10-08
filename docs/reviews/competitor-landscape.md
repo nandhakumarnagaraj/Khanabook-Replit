@@ -10,18 +10,18 @@ KhanaBook claims: **₹0 software · offline-first Android POS · ≤5 meshed te
 printing · GST invoices · no integrated gateway · no Zomato/Swiggy ingestion · no QR storefront.**
 
 The last three gaps define who actually competes with us. The defensible differentiator is
-**multi-terminal offline sync with per-terminal invoice series** — *not* price (free tiers exist).
+**multi-terminal offline sync with per-terminal invoice series** — _not_ price (free tiers exist).
 
 ## Tier 1 — India restaurant POS leaders (paid SaaS)
 
-| Competitor | Notes | Indicative price |
-|---|---|---|
-| **Petpooja (POSS)** | Category default; vendor claims 1,00,000–1,50,000 outlets, ~60 lakh bills/day; Swiggy/Zomato/ONDC integrations, marketplace apps | ~₹10,000/yr (Techjockey); G2 tiers $50–135 — varies by source |
-| **Restroworks** (ex-Posist) | Enterprise / multi-location chains, deepest feature set | Quote-based |
-| **Rista (by DotPe)** | Cloud POS bundled with DotPe QR ordering + payments | Quote-based |
-| **Gofrugal** | Retail + restaurant POS; on-premise option | From ~₹8,999/yr (on-prem) |
-| **TMBill, Marg ERP, Sapaad** | Mid-market Windows/cloud POS | Quote-based |
-| **Recaho, Indostra, Foody POS, Output Books** | Smaller Indian players; collide in local search | Mixed |
+| Competitor                                    | Notes                                                                                                                            | Indicative price                                              |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| **Petpooja (POSS)**                           | Category default; vendor claims 1,00,000–1,50,000 outlets, ~60 lakh bills/day; Swiggy/Zomato/ONDC integrations, marketplace apps | ~₹10,000/yr (Techjockey); G2 tiers $50–135 — varies by source |
+| **Restroworks** (ex-Posist)                   | Enterprise / multi-location chains, deepest feature set                                                                          | Quote-based                                                   |
+| **Rista (by DotPe)**                          | Cloud POS bundled with DotPe QR ordering + payments                                                                              | Quote-based                                                   |
+| **Gofrugal**                                  | Retail + restaurant POS; on-premise option                                                                                       | From ~₹8,999/yr (on-prem)                                     |
+| **TMBill, Marg ERP, Sapaad**                  | Mid-market Windows/cloud POS                                                                                                     | Quote-based                                                   |
+| **Recaho, Indostra, Foody POS, Output Books** | Smaller Indian players; collide in local search                                                                                  | Mixed                                                         |
 
 ## Tier 2 — Offline-first / PC POS (closest functional twins)
 
@@ -32,13 +32,13 @@ The last three gaps define who actually competes with us. The defensible differe
 
 ## Tier 3 — Free & freemium billing apps (price-position threats)
 
-| Competitor | Notes |
-|---|---|
-| **Zobaze POS** | **Sharpest competitor.** Free plan: unlimited billing, single owner; paid for staff/reports. ~4.7★, ~28,700 Play reviews. Offline billing + table management. |
-| **Loyverse** | Genuinely free core POS, no forced processor; weak on Indian GST/KOT. |
-| **Odoo POS (Community)** | Free, self-hostable, floor plans + kitchen prep; cost is setup effort. |
-| **Superbill, BillKaro** | Cheap Android GST billing for cafés/food trucks. |
-| **myBillBook, Vyapar, Khatabook/OkCredit** | Adjacent (generic billing/ledger), free or near-free; appear in the same searches. |
+| Competitor                                 | Notes                                                                                                                                                         |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Zobaze POS**                             | **Sharpest competitor.** Free plan: unlimited billing, single owner; paid for staff/reports. ~4.7★, ~28,700 Play reviews. Offline billing + table management. |
+| **Loyverse**                               | Genuinely free core POS, no forced processor; weak on Indian GST/KOT.                                                                                         |
+| **Odoo POS (Community)**                   | Free, self-hostable, floor plans + kitchen prep; cost is setup effort.                                                                                        |
+| **Superbill, BillKaro**                    | Cheap Android GST billing for cafés/food trucks.                                                                                                              |
+| **myBillBook, Vyapar, Khatabook/OkCredit** | Adjacent (generic billing/ledger), free or near-free; appear in the same searches.                                                                            |
 
 ## Tier 4 — Ordering & aggregator layer (we have no answer today)
 

@@ -32,6 +32,15 @@ export const BUSINESS = {
   lastUpdatedDate: "July 1, 2026",
 } as const;
 
+export const PRODUCT_SPECS = {
+  androidVersion: "Android 8.0+",
+  maxTerminals: 5,
+  maxPrinters: 2,
+  printerTypes: "ESC/POS USB, Bluetooth, or Wi-Fi thermal printers (58mm / 80mm)",
+  localDatabase: "Local SQLite WAL mode",
+  subscriptionPrice: "₹0",
+} as const;
+
 // Build an absolute URL from a site-relative path (e.g. "/features").
 export function absUrl(path: string): string {
   const base = BUSINESS.siteUrl.replace(/\/$/, "");

@@ -122,7 +122,8 @@ function PostPage() {
           <div className="max-w-3xl space-y-6 text-base sm:text-lg text-gray-300 leading-relaxed">
             {isDraft && (
               <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-xs text-amber-300">
-                <strong className="text-white">Draft preview:</strong> This article is currently under editorial review.
+                <strong className="text-white">Draft preview:</strong> This article is currently
+                under editorial review.
               </div>
             )}
 

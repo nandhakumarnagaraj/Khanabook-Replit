@@ -5,13 +5,13 @@
 
 ## Bugs / correctness
 
-| # | Severity | Where | Issue |
-|---|----------|-------|-------|
-| 1 | High | `src/routes/index.tsx:771` | `flex items-center` applied directly to a `<td>` in the architecture table. `display:flex` overrides `table-cell` → misaligned rows/cells across browsers. Fix: wrap contents in a `<span className="flex …">`, keep the `<td>` plain. |
-| 2 | High | `src/routes/index.tsx:177` vs everything else | Homepage says "Android 9.0+"; terms, FAQ, compare, get-started all say **8.0+**. Terms and marketing must match for a compliance-adjacent product. |
-| 3 | High | `src/routes/pricing.tsx` (INCLUDED) | Says printers are "Bluetooth" only; terms/help/compare say **"USB, Wi-Fi or Bluetooth"**. Pricing is the page buyers screenshot. |
-| 4 | High | `src/components/site/FloatingCtas.tsx:51` | Sticky CTA bar sets `aria-hidden={!visible}` but its links stay keyboard-focusable while invisible (WCAG 2.4.7). Add `visibility:hidden` or `inert`. |
-| 5 | Low | `src/components/motion/CustomCursor.tsx` | `isVisible` in the effect dep array re-subscribes listeners on every toggle; handlers close over stale state. Also never hides the native cursor → two cursors; ignores `prefers-reduced-motion`. |
+| #   | Severity | Where                                         | Issue                                                                                                                                                                                                                                  |
+| --- | -------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | High     | `src/routes/index.tsx:771`                    | `flex items-center` applied directly to a `<td>` in the architecture table. `display:flex` overrides `table-cell` → misaligned rows/cells across browsers. Fix: wrap contents in a `<span className="flex …">`, keep the `<td>` plain. |
+| 2   | High     | `src/routes/index.tsx:177` vs everything else | Homepage says "Android 9.0+"; terms, FAQ, compare, get-started all say **8.0+**. Terms and marketing must match for a compliance-adjacent product.                                                                                     |
+| 3   | High     | `src/routes/pricing.tsx` (INCLUDED)           | Says printers are "Bluetooth" only; terms/help/compare say **"USB, Wi-Fi or Bluetooth"**. Pricing is the page buyers screenshot.                                                                                                       |
+| 4   | High     | `src/components/site/FloatingCtas.tsx:51`     | Sticky CTA bar sets `aria-hidden={!visible}` but its links stay keyboard-focusable while invisible (WCAG 2.4.7). Add `visibility:hidden` or `inert`.                                                                                   |
+| 5   | Low      | `src/components/motion/CustomCursor.tsx`      | `isVisible` in the effect dep array re-subscribes listeners on every toggle; handlers close over stale state. Also never hides the native cursor → two cursors; ignores `prefers-reduced-motion`.                                      |
 
 ## SEO / sharing
 

@@ -35,7 +35,8 @@ export const BATTLECARD_CATEGORIES: BattlecardCategory[] = [
         desktopPosStatus: "bad",
         cloudSaas: "Laptops, iPads or browser tablets",
         cloudSaasStatus: "warning",
-        description: "Whether you need to invest ₹35,000+ in bulky Windows PC hardware and UPS backups.",
+        description:
+          "Whether you need to invest ₹35,000+ in bulky Windows PC hardware and UPS backups.",
       },
       {
         feature: "Upfront Hardware Capital",
@@ -77,7 +78,8 @@ export const BATTLECARD_CATEGORIES: BattlecardCategory[] = [
         desktopPosStatus: "good",
         cloudSaas: "Freezes or buffers; orders and bill printing halt",
         cloudSaasStatus: "bad",
-        description: "What happens when your broadband Wi-Fi disconnects on a crowded Saturday night.",
+        description:
+          "What happens when your broadband Wi-Fi disconnects on a crowded Saturday night.",
       },
       {
         feature: "Server Architecture",
@@ -119,7 +121,8 @@ export const BATTLECARD_CATEGORIES: BattlecardCategory[] = [
         desktopPosStatus: "bad",
         cloudSaas: "Multi-login supported, but requires strong Wi-Fi everywhere",
         cloudSaasStatus: "warning",
-        description: "Cost and complexity to equip 2–5 staff members with handheld billing and ordering.",
+        description:
+          "Cost and complexity to equip 2–5 staff members with handheld billing and ordering.",
       },
       {
         feature: "Thermal Printer Connectivity",
@@ -131,7 +134,8 @@ export const BATTLECARD_CATEGORIES: BattlecardCategory[] = [
         desktopPosStatus: "warning",
         cloudSaas: "Requires separate desktop bridge agent or Bluetooth only",
         cloudSaasStatus: "warning",
-        description: "How your receipt and KOT printers physically connect to your billing terminals.",
+        description:
+          "How your receipt and KOT printers physically connect to your billing terminals.",
       },
       {
         feature: "Invoice Number Series Isolation",
@@ -143,7 +147,8 @@ export const BATTLECARD_CATEGORIES: BattlecardCategory[] = [
         desktopPosStatus: "warning",
         cloudSaas: "Cloud sequence vulnerable to offline sequence clash",
         cloudSaasStatus: "warning",
-        description: "Guarantee that 2 simultaneous offline terminals never generate the same invoice number.",
+        description:
+          "Guarantee that 2 simultaneous offline terminals never generate the same invoice number.",
       },
     ],
   },
@@ -173,7 +178,8 @@ export const BATTLECARD_CATEGORIES: BattlecardCategory[] = [
         desktopPosStatus: "good",
         cloudSaas: "Some take 1%–2.5% cuts on online and QR orders",
         cloudSaasStatus: "warning",
-        description: "Whether the POS software charges hidden percentage tolls on your customer orders.",
+        description:
+          "Whether the POS software charges hidden percentage tolls on your customer orders.",
       },
       {
         feature: "Data Ownership & Portability",

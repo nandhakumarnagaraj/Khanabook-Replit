@@ -16,7 +16,6 @@ The enhancements are layered onto the existing TanStack Start/Router application
 
 No new npm dependencies are introduced. All animation, intersection observation, and online/offline detection use browser APIs directly.
 
-
 ## Components and Interfaces
 
 ### 1. `useInView` Hook — Scroll-Based Entrance Animations
@@ -36,9 +35,7 @@ export function useInView(options?: { threshold?: number; once?: boolean }) {
     const el = ref.current;
     if (!el) return;
 
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) {
       setIsInView(true); // Skip animation, show immediately
       return;
@@ -51,7 +48,7 @@ export function useInView(options?: { threshold?: number; once?: boolean }) {
           if (options?.once !== false) observer.unobserve(el);
         }
       },
-      { threshold: options?.threshold ?? 0.1 }
+      { threshold: options?.threshold ?? 0.1 },
     );
 
     observer.observe(el);
@@ -61,7 +58,6 @@ export function useInView(options?: { threshold?: number; once?: boolean }) {
   return { ref, isInView };
 }
 ```
-
 
 ### 2. Section Component Enhancement — Animation Logic Placement
 
@@ -115,7 +111,6 @@ export function Section({
 
 When `prefers-reduced-motion: reduce` is active, `useInView` immediately sets `isInView = true`, so the section renders fully visible with no transition.
 
-
 ### 3. Product Tabs Section — Homepage Feature Showcase
 
 **Decision:** Use the existing shadcn/ui `Tabs` component (backed by Radix UI `@radix-ui/react-tabs`) which already handles keyboard navigation (arrow keys), ARIA roles (`tablist`, `tab`, `tabpanel`), and focus management. No carousel, no auto-advance.
@@ -129,7 +124,7 @@ export interface ProductTab {
   id: string;
   label: string;
   description: string;
-  imageSrc: string;       // Static screenshot path from src/assets/
+  imageSrc: string; // Static screenshot path from src/assets/
   imageAlt: string;
 }
 
@@ -188,7 +183,6 @@ export function ProductTabs() {
 ```
 
 Tab state is managed internally by Radix Tabs (uncontrolled with `defaultValue`). No external state management needed.
-
 
 ### 4. Help Guides — Expandable Step-by-Step Instructions
 
@@ -306,7 +300,6 @@ export function HelpGuides() {
 
 Accordion behavior (one-at-a-time) is achieved by controlled state (`openId`). The visual style matches the existing FAQ `<details>` pattern with `border-border bg-surface rounded-xl`.
 
-
 ### 5. Per-Route Error Boundaries
 
 **Decision:** Use TanStack Router's built-in `errorComponent` export on each route file. This is the idiomatic approach — no custom React class-based error boundaries needed. The router catches render errors within the route and displays the exported error component.
@@ -360,7 +353,6 @@ export const Route = createFileRoute("/help")({
 ```
 
 This is independent of the root-level `ErrorComponent` already in `__root.tsx`, which acts as the final fallback.
-
 
 ### 6. Offline Indicator
 
@@ -421,10 +413,10 @@ The indicator appears immediately when `navigator.onLine` becomes `false` (well 
 
 **Placement:** Rendered inside `RootComponent` in `__root.tsx`, after `<SiteHeader />`.
 
-
 ### 7. Form Enhancement — Get Started Page
 
 **Decision:** Controlled form with `onBlur` validation (not `onChange` — less noisy). The existing form already uses controlled error state (`useState<Errors>`). Enhancements add:
+
 - `onBlur` handlers on each field for inline validation
 - Spinner using Lucide `Loader2` icon with `animate-spin`
 - `aria-describedby` linking each field to its error message (already partially implemented via `Field` component)
@@ -494,7 +486,6 @@ import { Loader2 } from "lucide-react";
 
 No new form library is introduced — the existing `useState`-based approach is sufficient for this single form.
 
-
 ### 8. Loading States / Skeleton Screens
 
 **Decision:** Use TanStack Router's `pendingComponent` export on each route. The pending component renders shadcn/ui `Skeleton` elements matching the expected layout of that page.
@@ -530,7 +521,6 @@ export const Route = createFileRoute("/help")({
 ```
 
 The `Skeleton` component uses `animate-pulse` with `bg-primary/10` which respects the existing design tokens.
-
 
 ### 9. Social Proof Section
 
@@ -570,7 +560,10 @@ Uses `bg-muted/50` and `border-border` from design tokens. `flex-wrap` handles r
 ```css
 @utility card-surface {
   /* existing styles... */
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 /* Add hover via standard CSS targeting the utility class output */
@@ -589,7 +582,6 @@ Uses `bg-muted/50` and `border-border` from design tokens. `flex-wrap` handles r
 
 Transition duration is 200ms. Under reduced motion, only box-shadow and border-color change (no transform).
 
-
 ### 11. Performance — Critical Asset Preloading
 
 **Location:** `src/routes/__root.tsx` head configuration and `src/routes/index.tsx` head configuration.
@@ -600,7 +592,7 @@ Transition duration is 200ms. Under reduced motion, only box-shadow and border-c
 links: [
   { rel: "preload", href: posPhone, as: "image" },
   // existing links...
-]
+];
 ```
 
 **Font preload** (in root route head — already uses preconnect, add preload for the font file):
@@ -615,7 +607,7 @@ links: [
     type: "font/woff2",
     crossOrigin: "anonymous",
   },
-]
+];
 ```
 
 **Lazy loading:** All images already use `loading="lazy"` except the hero image (`loading="eager"`). Audit remaining images to confirm compliance.
@@ -626,52 +618,55 @@ links: [
 
 ### ProductTab
 
-| Field       | Type   | Description                                      |
-|-------------|--------|--------------------------------------------------|
-| id          | string | Unique tab identifier (kebab-case)               |
-| label       | string | Tab button display text                          |
-| description | string | Caption shown below the screenshot               |
-| imageSrc    | string | Import path to static screenshot                 |
-| imageAlt    | string | Alt text describing the screenshot               |
+| Field       | Type   | Description                        |
+| ----------- | ------ | ---------------------------------- |
+| id          | string | Unique tab identifier (kebab-case) |
+| label       | string | Tab button display text            |
+| description | string | Caption shown below the screenshot |
+| imageSrc    | string | Import path to static screenshot   |
+| imageAlt    | string | Alt text describing the screenshot |
 
 ### HelpGuide
 
-| Field  | Type     | Description                                    |
-|--------|----------|------------------------------------------------|
-| id     | string   | Unique guide identifier (kebab-case)           |
-| title  | string   | Guide heading displayed on the trigger         |
-| steps  | string[] | Ordered list of step-by-step instructions      |
+| Field | Type     | Description                               |
+| ----- | -------- | ----------------------------------------- |
+| id    | string   | Unique guide identifier (kebab-case)      |
+| title | string   | Guide heading displayed on the trigger    |
+| steps | string[] | Ordered list of step-by-step instructions |
 
 ### Form Errors (existing, enhanced)
 
-| Field     | Type              | Description                           |
-|-----------|-------------------|---------------------------------------|
-| name      | string \| undefined | Error for the name field             |
-| restaurant| string \| undefined | Error for the restaurant field       |
-| phone     | string \| undefined | Error for the phone field            |
-| city      | string \| undefined | Error for the city field             |
-| terminals | string \| undefined | Error for the terminals field        |
-| type      | string \| undefined | Error for the type select            |
-| consent   | string \| undefined | Error for the consent checkbox       |
-
+| Field      | Type                | Description                    |
+| ---------- | ------------------- | ------------------------------ |
+| name       | string \| undefined | Error for the name field       |
+| restaurant | string \| undefined | Error for the restaurant field |
+| phone      | string \| undefined | Error for the phone field      |
+| city       | string \| undefined | Error for the city field       |
+| terminals  | string \| undefined | Error for the terminals field  |
+| type       | string \| undefined | Error for the type select      |
+| consent    | string \| undefined | Error for the consent checkbox |
 
 ## Error Handling
 
 ### Route-Level Errors
+
 - Each route exports `errorComponent: RouteError` — catches render errors and shows retry/home UI
 - Root-level `ErrorComponent` in `__root.tsx` remains as the final fallback
 
 ### Form Submission Errors
+
 - Network failures: caught in `try/catch`, display user-friendly message with fallback contact info
 - Validation errors: displayed inline per-field via `aria-describedby`-linked error elements
 - Duplicate submission prevention: button disabled during submission and after success
 
 ### Offline State
+
 - Detected via `useSyncExternalStore` subscribing to `online`/`offline` events
 - Renders a dismissible (auto-dismissing) banner — does not block user interaction
 - SSR-safe: `getServerSnapshot` returns `true` (assume online during server render)
 
 ### Animation Failures
+
 - IntersectionObserver not supported (very old browsers): `useInView` returns `isInView = true` by default, so content is always visible
 - Reduced motion: bypasses animation entirely, content shown immediately
 
@@ -704,7 +699,6 @@ src/
 └── styles.css                      (MODIFIED — add card hover states)
 ```
 
-
 ## Testing Strategy
 
 - **Unit tests:** Verify specific examples — skeleton renders during loading, error boundary catches errors, offline indicator appears on offline event, social proof renders placeholder text, keyboard activation of help guides.
@@ -716,58 +710,58 @@ Property-based tests target the pure logic hooks (`useInView`, `useOnlineStatus`
 
 ## Correctness Properties
 
-*A property is a characteristic or behavior that should hold true across all valid executions of a system — essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
+_A property is a characteristic or behavior that should hold true across all valid executions of a system — essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees._
 
 ### Property 1: Required field validation on blur
 
-*For any* required form field in the Get Started form that is left empty (value is empty string or only whitespace), blurring that field SHALL produce a non-empty error message adjacent to that field.
+_For any_ required form field in the Get Started form that is left empty (value is empty string or only whitespace), blurring that field SHALL produce a non-empty error message adjacent to that field.
 
 **Validates: Requirements 2.1**
 
 ### Property 2: Phone format validation on blur
 
-*For any* string value in the phone field that does not match the Indian mobile number pattern (`/^(\+?91[\s-]?)?[6-9]\d{9}$/`), blurring the phone field SHALL produce a format-specific error message.
+_For any_ string value in the phone field that does not match the Indian mobile number pattern (`/^(\+?91[\s-]?)?[6-9]\d{9}$/`), blurring the phone field SHALL produce a format-specific error message.
 
 **Validates: Requirements 2.2**
 
 ### Property 3: Error-field ARIA association
 
-*For any* form field in the Get Started form that has a visible error message, the field element's `aria-describedby` attribute SHALL reference the `id` of the error message element.
+_For any_ form field in the Get Started form that has a visible error message, the field element's `aria-describedby` attribute SHALL reference the `id` of the error message element.
 
 **Validates: Requirements 2.6**
 
 ### Property 4: Section entrance animation on viewport intersection
 
-*For any* Section component that enters the viewport (intersection ratio ≥ 0.1) while the user does NOT have reduced motion enabled, the section SHALL transition from `opacity: 0` to `opacity: 1`.
+_For any_ Section component that enters the viewport (intersection ratio ≥ 0.1) while the user does NOT have reduced motion enabled, the section SHALL transition from `opacity: 0` to `opacity: 1`.
 
 **Validates: Requirements 3.1, 3.2**
 
 ### Property 5: Reduced motion bypasses animation
 
-*For any* Section component, when `prefers-reduced-motion: reduce` is active, the section SHALL be rendered with full opacity and no transform offset immediately (isInView = true from initialization).
+_For any_ Section component, when `prefers-reduced-motion: reduce` is active, the section SHALL be rendered with full opacity and no transform offset immediately (isInView = true from initialization).
 
 **Validates: Requirements 3.3**
 
 ### Property 6: Tab selection displays corresponding content
 
-*For any* tab in the Product Tabs section, clicking that tab SHALL cause the tab panel with the matching `value` to become visible, and all other tab panels to be hidden.
+_For any_ tab in the Product Tabs section, clicking that tab SHALL cause the tab panel with the matching `value` to become visible, and all other tab panels to be hidden.
 
 **Validates: Requirements 8.2**
 
 ### Property 7: Active tab visual distinction
 
-*For any* tab in the Product Tabs section that has `data-state="active"`, it SHALL have the brand background color applied (via `data-[state=active]:bg-brand` class).
+_For any_ tab in the Product Tabs section that has `data-state="active"`, it SHALL have the brand background color applied (via `data-[state=active]:bg-brand` class).
 
 **Validates: Requirements 8.3**
 
 ### Property 8: Help guide expand/collapse toggle with ARIA state
 
-*For any* Help Guide section, activating its trigger toggles visibility: if collapsed, it expands to show steps; if expanded, it collapses to hide steps. In both cases, the trigger's `aria-expanded` attribute SHALL reflect the current open/closed state (`"true"` when open, `"false"` when closed).
+_For any_ Help Guide section, activating its trigger toggles visibility: if collapsed, it expands to show steps; if expanded, it collapses to hide steps. In both cases, the trigger's `aria-expanded` attribute SHALL reflect the current open/closed state (`"true"` when open, `"false"` when closed).
 
 **Validates: Requirements 9.2, 9.3, 9.5**
 
 ### Property 9: Below-fold images use lazy loading
 
-*For any* `<img>` element rendered below the initial viewport fold (i.e., not the hero image), the element SHALL have `loading="lazy"` attribute set.
+_For any_ `<img>` element rendered below the initial viewport fold (i.e., not the hero image), the element SHALL have `loading="lazy"` attribute set.
 
 **Validates: Requirements 10.3**

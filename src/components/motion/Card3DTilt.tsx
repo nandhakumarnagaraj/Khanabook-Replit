@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "motion/react";
 
 interface Card3DTiltProps {
   children: React.ReactNode;
@@ -14,6 +14,7 @@ export function Card3DTilt({
   intensity = 15,
   glare = true,
 }: Card3DTiltProps) {
+  const shouldReduceMotion = useReducedMotion();
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -46,6 +47,10 @@ export function Card3DTilt({
     mouseX.set(0.5);
     mouseY.set(0.5);
   };
+
+  if (shouldReduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <div

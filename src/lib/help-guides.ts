@@ -9,7 +9,8 @@ export const SETUP_GUIDES: HelpGuide[] = [
   {
     id: "printer-pairing",
     title: "Connect Printers (USB, Wi-Fi & Bluetooth)",
-    description: "Connect compatible thermal printers via USB cable, Wi-Fi network, or Bluetooth for customer receipts and KOTs.",
+    description:
+      "Connect compatible thermal printers via USB cable, Wi-Fi network, or Bluetooth for customer receipts and KOTs.",
     steps: [
       "Confirm that each printer is compatible with KhanaBook before purchasing or configuring hardware.",
       "Connect your thermal printer via USB OTG cable, connect it to your local Wi-Fi router, or place it in Bluetooth pairing mode.",

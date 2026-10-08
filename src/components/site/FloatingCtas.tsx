@@ -3,7 +3,9 @@ import { Link } from "@tanstack/react-router";
 import { BUSINESS } from "@/lib/business-config";
 
 const whatsappNumber = BUSINESS.supportPhone.replace(/[^0-9]/g, "");
-const whatsappText = encodeURIComponent("Hi KhanaBook, I'd like to know more about your POS system.");
+const whatsappText = encodeURIComponent(
+  "Hi KhanaBook, I'd like to know more about your POS system.",
+);
 
 function WhatsAppIcon() {
   return (
@@ -41,25 +43,33 @@ export function FloatingCtas() {
           href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
           target="_blank"
           rel="noreferrer noopener"
-          className="whatsapp-float"
+          className={`whatsapp-float ${visible ? "is-scrolled" : ""}`}
           aria-label="Chat with KhanaBook on WhatsApp"
         >
           <WhatsAppIcon />
         </a>
       )}
 
-      <div className={`sticky-cta-bar ${visible ? "visible" : ""}`} aria-hidden={!visible}>
-        <Link to="/get-started" className="sticky-cta-btn">
-          Get KhanaBook
-        </Link>
+      <div
+        className={`sticky-cta-bar ${visible ? "visible" : ""}`}
+        aria-hidden={!visible}
+        inert={!visible ? true : undefined}
+        style={{ visibility: visible ? "visible" : "hidden" }}
+      >
         <a
           href={BUSINESS.playStoreUrl}
           target="_blank"
           rel="noreferrer noopener"
-          className="sticky-play-btn"
+          className="sticky-cta-btn focus-visible:ring-2 focus-visible:ring-white focus:outline-none"
         >
-          Google Play
+          Download App
         </a>
+        <Link
+          to="/get-started"
+          className="sticky-play-btn focus-visible:ring-2 focus-visible:ring-brand focus:outline-none"
+        >
+          Setup Help
+        </Link>
       </div>
     </>
   );

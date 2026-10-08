@@ -20,8 +20,7 @@ export const Route = createFileRoute("/roi-calculator")({
   head: () => ({
     meta: [
       {
-        title:
-          "Savings Estimator — KhanaBook Offline-First POS | Android App & Web Dashboard",
+        title: "Savings Estimator — KhanaBook Offline-First POS | Android App & Web Dashboard",
       },
       {
         name: "description",
@@ -88,7 +87,8 @@ function ROIPage() {
 
           <EntranceReveal direction="up" delay={0.25}>
             <p className="mt-4 text-base sm:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Estimate the operational value gained by eliminating expensive recurring software subscriptions and avoiding bulky Windows PC hardware setups.
+              Estimate the operational value gained by eliminating expensive recurring software
+              subscriptions and avoiding bulky Windows PC hardware setups.
             </p>
           </EntranceReveal>
         </div>
@@ -191,14 +191,22 @@ function ROIPage() {
             {/* RESULTS CARD (5 cols) */}
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl border border-brand/40 bg-[#1E1F20] p-6 sm:p-8 shadow-2xl overflow-hidden">
-                <BorderBeam size={220} duration={12} delay={0} colorFrom="#c026d3" colorTo="#dc2626" />
+                <BorderBeam
+                  size={220}
+                  duration={12}
+                  delay={0}
+                  colorFrom="#c026d3"
+                  colorTo="#dc2626"
+                />
 
                 <div className="text-xs uppercase tracking-widest font-extrabold text-brand mb-1">
                   Estimated Operational Value
                 </div>
                 <div className="text-5xl sm:text-6xl font-extrabold text-white tracking-tight mt-2">
                   ₹{result.monthly.toLocaleString("en-IN")}
-                  <span className="text-xs font-semibold text-gray-400 block sm:inline sm:ml-2">/ month</span>
+                  <span className="text-xs font-semibold text-gray-400 block sm:inline sm:ml-2">
+                    / month
+                  </span>
                 </div>
 
                 <div className="mt-4 rounded-xl border border-white/10 bg-[#28292A] p-4 text-sm text-gray-300">
@@ -211,15 +219,21 @@ function ROIPage() {
                 <div className="mt-6 space-y-3 pt-4 border-t border-white/10 text-xs">
                   <div className="flex justify-between text-gray-400">
                     <span>Direct Software Subscription Saved:</span>
-                    <span className="text-white font-bold">₹{result.posCost.toLocaleString("en-IN")}/mo</span>
+                    <span className="text-white font-bold">
+                      ₹{result.posCost.toLocaleString("en-IN")}/mo
+                    </span>
                   </div>
                   <div className="flex justify-between text-gray-400">
                     <span>Staff Productivity (~{result.hoursSaved} hrs):</span>
-                    <span className="text-white font-bold">₹{result.timeValue.toLocaleString("en-IN")}/mo</span>
+                    <span className="text-white font-bold">
+                      ₹{result.timeValue.toLocaleString("en-IN")}/mo
+                    </span>
                   </div>
                   <div className="flex justify-between text-gray-400">
                     <span>Paper & Operational Efficiency:</span>
-                    <span className="text-white font-bold">₹{result.paperCostMonthly.toLocaleString("en-IN")}/mo</span>
+                    <span className="text-white font-bold">
+                      ₹{result.paperCostMonthly.toLocaleString("en-IN")}/mo
+                    </span>
                   </div>
                 </div>
 

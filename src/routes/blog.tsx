@@ -24,8 +24,7 @@ export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
       {
-        title:
-          "Blog — KhanaBook Offline-First Multi-Terminal POS | Android App & Web Dashboard",
+        title: "Blog — KhanaBook Offline-First Multi-Terminal POS | Android App & Web Dashboard",
       },
       {
         name: "description",
@@ -122,7 +121,8 @@ function BlogPage() {
 
           <EntranceReveal direction="up" delay={0.25}>
             <p className="mt-4 text-base sm:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Technical breakdowns, offline architecture deep dives, and operational playbooks to run faster restaurants.
+              Technical breakdowns, offline architecture deep dives, and operational playbooks to
+              run faster restaurants.
             </p>
           </EntranceReveal>
 

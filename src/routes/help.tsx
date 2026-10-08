@@ -103,7 +103,8 @@ function HelpPage() {
 
           <EntranceReveal direction="up" delay={0.25}>
             <p className="mt-4 text-base sm:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Step-by-step guides for Android POS terminal setup, ESC/POS printer routing, multi-terminal peer sync, and Cloud Web Dashboard management.
+              Step-by-step guides for Android POS terminal setup, ESC/POS printer routing,
+              multi-terminal peer sync, and Cloud Web Dashboard management.
             </p>
           </EntranceReveal>
 
@@ -192,7 +193,8 @@ function HelpPage() {
               Step-by-Step <span className="hl">Installation Guides.</span>
             </h2>
             <p className="text-xs sm:text-sm text-gray-400 mt-2">
-              Follow these verified walkthroughs to get your Android terminals and thermal printers running.
+              Follow these verified walkthroughs to get your Android terminals and thermal printers
+              running.
             </p>
           </div>
 
@@ -244,7 +246,10 @@ function HelpPage() {
               })
             ) : (
               <div className="rounded-2xl border border-white/10 bg-[#1E1F20] p-8 text-center text-gray-400">
-                <p>No results found for &ldquo;{query}&rdquo;. Try another search term or contact our support team.</p>
+                <p>
+                  No results found for &ldquo;{query}&rdquo;. Try another search term or contact our
+                  support team.
+                </p>
               </div>
             )}
           </div>

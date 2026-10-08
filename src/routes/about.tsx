@@ -27,7 +27,10 @@ export const Route = createFileRoute("/about")({
         name: "description",
         content: `${BUSINESS.productName} is an offline-first multi-terminal restaurant POS engineered by ${BUSINESS.legalName}. Discover why we built our Android POS App and Cloud Web Dashboard for Indian restaurants.`,
       },
-      { property: "og:title", content: `About ${BUSINESS.productName} — Built for Indian Restaurants` },
+      {
+        property: "og:title",
+        content: `About ${BUSINESS.productName} — Built for Indian Restaurants`,
+      },
       {
         property: "og:description",
         content:
@@ -87,15 +90,15 @@ function AboutPage() {
 
           <EntranceReveal direction="up" delay={0.15}>
             <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
-              Built for the High-Pressure Reality of{" "}
-              <br className="hidden sm:inline" />
+              Built for the High-Pressure Reality of <br className="hidden sm:inline" />
               <span className="hl">Indian Food & Beverage.</span>
             </h1>
           </EntranceReveal>
 
           <EntranceReveal direction="up" delay={0.25}>
             <p className="mt-5 text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Why Indian restaurants deserve an offline-first multi-terminal POS with a native Android app at the counter and a cloud Web Dashboard in the back office.
+              Why Indian restaurants deserve an offline-first multi-terminal POS with a native
+              Android app at the counter and a cloud Web Dashboard in the back office.
             </p>
           </EntranceReveal>
         </div>
@@ -114,19 +117,31 @@ function AboutPage() {
               </h2>
               <div className="mt-6 space-y-4 text-sm sm:text-base text-gray-400 leading-relaxed">
                 <p>
-                  Restaurants across India operate in demanding, unpredictable environments: unexpected power cuts, fluctuating 4G/broadband links, multi-waiter simultaneous tables, and non-stop kitchen ticket queues on Friday and Saturday nights.
+                  Restaurants across India operate in demanding, unpredictable environments:
+                  unexpected power cuts, fluctuating 4G/broadband links, multi-waiter simultaneous
+                  tables, and non-stop kitchen ticket queues on Friday and Saturday nights.
                 </p>
                 <p>
-                  Most modern cloud POS systems run inside web browser tabs. The second the internet lags or drops, the entire billing counter halts, screens spin with buffering wheels, and kitchen orders are lost.
+                  Most modern cloud POS systems run inside web browser tabs. The second the internet
+                  lags or drops, the entire billing counter halts, screens spin with buffering
+                  wheels, and kitchen orders are lost.
                 </p>
                 <p>
-                  On the other side, legacy Windows desktop systems require dedicated bulky PCs, expensive uninterrupted power supplies (UPS), and costly annual maintenance contracts (AMCs).
+                  On the other side, legacy Windows desktop systems require dedicated bulky PCs,
+                  expensive uninterrupted power supplies (UPS), and costly annual maintenance
+                  contracts (AMCs).
                 </p>
               </div>
             </div>
 
             <div className="rounded-2xl border border-brand/30 bg-[#1E1F20] p-8 shadow-xl relative overflow-hidden">
-              <BorderBeam size={220} duration={12} delay={0} colorFrom="#c026d3" colorTo="#dc2626" />
+              <BorderBeam
+                size={220}
+                duration={12}
+                delay={0}
+                colorFrom="#c026d3"
+                colorTo="#dc2626"
+              />
               <h3 className="text-xl font-bold text-white mb-4">
                 The KhanaBook Dual-Engine Breakthrough
               </h3>
@@ -141,7 +156,9 @@ function AboutPage() {
                     Android POS App (Counter & Kitchen)
                   </div>
                   <p className="text-xs text-gray-400">
-                    Runs natively on Android with local SQLite WAL storage. 0ms latency, zero reliance on external internet for billing, table management, or dual ESC/POS thermal printing.
+                    Runs natively on Android with local SQLite WAL storage. Instant local response,
+                    zero reliance on external internet for billing, table management, or dual
+                    ESC/POS thermal printing.
                   </p>
                 </div>
 
@@ -151,7 +168,9 @@ function AboutPage() {
                     Web Dashboard
                   </div>
                   <p className="text-xs text-gray-400">
-                    Runs in any browser on PC, laptop, or tablet. Provides owners and accountants with centralized menu engineering, raw material recipe tracking, staff controls, and live GST sales telemetry.
+                    Runs in any browser on PC, laptop, or tablet. Provides owners and accountants
+                    with centralized menu engineering, raw material recipe tracking, staff controls,
+                    and live GST sales telemetry.
                   </p>
                 </div>
               </div>
@@ -205,7 +224,8 @@ function AboutPage() {
               Who Operates <span className="hl">KhanaBook.</span>
             </h2>
             <p className="text-gray-400 mt-3 text-sm">
-              KhanaBook is engineered and operated by a registered Indian private limited entity committed to transparent business practices.
+              KhanaBook is engineered and operated by a registered Indian private limited entity
+              committed to transparent business practices.
             </p>
           </div>
 
@@ -254,25 +274,18 @@ function AboutPage() {
             Experience the <span className="hl">KhanaBook Difference.</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
-            Get started with zero software subscription fees. Download the Android app or request a personalized onboarding demo.
+            Get started with zero software subscription fees. Download the Android app or request a
+            personalized onboarding demo.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href={BUSINESS.playStoreUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
+            <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
               <UiVerseGlowingButton variant="emerald" size="md">
                 <Download className="h-4 w-4" />
                 <span>Download Android App</span>
               </UiVerseGlowingButton>
             </a>
-            <a
-              href={BUSINESS.loginUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
+            <a href={BUSINESS.loginUrl} target="_blank" rel="noreferrer noopener">
               <UiVerseGlowingButton variant="white" size="md">
                 <Cloud className="h-4 w-4" />
                 <span>Web Dashboard</span>

@@ -35,9 +35,7 @@ export function UiVerseBadge({
           <span
             className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 ${pingColors[pulseColor]}`}
           />
-          <span
-            className={`relative inline-flex h-2 w-2 rounded-full ${dotColors[pulseColor]}`}
-          />
+          <span className={`relative inline-flex h-2 w-2 rounded-full ${dotColors[pulseColor]}`} />
         </span>
         {children}
       </div>

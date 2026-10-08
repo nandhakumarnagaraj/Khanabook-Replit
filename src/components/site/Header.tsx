@@ -56,7 +56,9 @@ export function Header() {
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
               className="inline-flex h-9 items-center justify-center rounded-full px-4 text-sm font-medium text-muted-foreground transition-all hover:bg-surface hover:text-foreground"
-              activeProps={{ className: "bg-surface text-foreground font-bold shadow-sm border border-border/70" }}
+              activeProps={{
+                className: "bg-surface text-foreground font-bold shadow-sm border border-border/70",
+              }}
             >
               {item.label}
             </Link>
@@ -68,17 +70,25 @@ export function Header() {
           {/* UIVerse Signature Day/Night Celestial Switch */}
           <UiVerseThemeToggle />
 
+          <a
+            href={BUSINESS.playStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-white bg-brand hover:bg-brand/90 rounded-full shadow-sm transition-all focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+          >
+            Download App
+          </a>
           <Link
             to="/get-started"
-            className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-white bg-brand hover:bg-brand/90 rounded-full shadow-sm transition-all"
+            className="hidden md:inline-flex items-center justify-center px-3.5 py-2 text-xs font-bold text-foreground bg-surface-soft hover:bg-surface border border-border/70 rounded-full shadow-sm transition-all focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           >
-            Get Started
+            Setup Help
           </Link>
           <a
             href={BUSINESS.loginUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center justify-center gap-1.5 rounded-full bg-surface-soft hover:bg-surface border border-border/70 px-4 py-2 text-xs font-bold text-foreground shadow-sm transition-all hover:scale-[1.02]"
+            className="hidden lg:inline-flex items-center justify-center gap-1.5 rounded-full bg-surface-soft hover:bg-surface border border-border/70 px-3.5 py-2 text-xs font-bold text-foreground shadow-sm transition-all hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             title="Log in to KhanaBook Web Dashboard"
           >
             <span>Web Dashboard</span>
@@ -92,14 +102,21 @@ export function Header() {
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-surface-soft text-foreground shadow-sm transition-colors hover:bg-surface xl:hidden"
             onClick={() => setOpen((value) => !value)}
           >
-            {open ? <X aria-hidden="true" className="h-5 w-5" /> : <Menu aria-hidden="true" className="h-5 w-5" />}
+            {open ? (
+              <X aria-hidden="true" className="h-5 w-5" />
+            ) : (
+              <Menu aria-hidden="true" className="h-5 w-5" />
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation Drawer */}
       {open && (
-        <div id="mobile-navigation" className="border-t border-border/70 bg-background/95 backdrop-blur-xl shadow-2xl xl:hidden">
+        <div
+          id="mobile-navigation"
+          className="border-t border-border/70 bg-background/95 backdrop-blur-xl shadow-2xl xl:hidden"
+        >
           <div className="w-[92vw] md:w-[75vw] mx-auto py-5 space-y-3 font-['Google_Sans',_sans-serif]">
             <nav aria-label="Mobile navigation" className="grid gap-1.5">
               {NAV.map((item) => (
@@ -119,7 +136,7 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 className="flex h-11 items-center rounded-xl px-4 text-base font-medium text-muted-foreground transition-colors hover:bg-surface-soft hover:text-foreground"
               >
-                Get Started
+                Request Setup Help
               </Link>
             </nav>
 
@@ -129,15 +146,25 @@ export function Header() {
               <UiVerseThemeToggle />
             </div>
 
-            <a
-              href={BUSINESS.loginUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 flex h-11 w-full items-center justify-center gap-2 rounded-full bg-brand text-white px-4 text-sm font-bold shadow-md hover:bg-brand/90"
-            >
-              <span>Web Dashboard Login</span>
-              <ExternalLink aria-hidden="true" className="h-3.5 w-3.5" />
-            </a>
+            <div className="pt-2 grid gap-2">
+              <a
+                href={BUSINESS.playStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-brand text-white px-4 text-sm font-bold shadow-md hover:bg-brand/90"
+              >
+                <span>Download Android App</span>
+              </a>
+              <a
+                href={BUSINESS.loginUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-11 w-full items-center justify-center gap-2 rounded-full border border-border/70 bg-surface-soft text-foreground px-4 text-sm font-bold shadow-sm hover:bg-surface"
+              >
+                <span>Web Dashboard Login</span>
+                <ExternalLink aria-hidden="true" className="h-3.5 w-3.5 opacity-70" />
+              </a>
+            </div>
           </div>
         </div>
       )}

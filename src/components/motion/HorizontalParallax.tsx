@@ -1,10 +1,5 @@
 import { useRef } from "react";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "motion/react";
+import { motion, useScroll, useSpring, useTransform, useReducedMotion } from "motion/react";
 import {
   UtensilsCrossed,
   Coffee,
@@ -82,17 +77,43 @@ const ROW_ONE = [
 ];
 
 const ROW_TWO = [
-  { label: "0ms Local Latency", icon: Zap, color: "text-amber-500", bg: "bg-amber-500/10" },
-  { label: "USB, Wi-Fi & Bluetooth Printers", icon: Printer, color: "text-blue-500", bg: "bg-blue-500/10" },
-  { label: "100% Offline Resilience", icon: WifiOff, color: "text-emerald-500", bg: "bg-emerald-500/10" },
-  { label: "Up to 5 Terminals in Sync", icon: Layers, color: "text-indigo-500", bg: "bg-indigo-500/10" },
-  { label: "Zero Cloud Outage Risk", icon: ShieldCheck, color: "text-teal-500", bg: "bg-teal-500/10" },
-  { label: "GST & Custom Tax Invoices", icon: ReceiptText, color: "text-rose-500", bg: "bg-rose-500/10" },
+  { label: "Instant Local SQLite", icon: Zap, color: "text-amber-500", bg: "bg-amber-500/10" },
+  {
+    label: "USB, Wi-Fi & Bluetooth Printers",
+    icon: Printer,
+    color: "text-blue-500",
+    bg: "bg-blue-500/10",
+  },
+  {
+    label: "100% Offline Resilience",
+    icon: WifiOff,
+    color: "text-emerald-500",
+    bg: "bg-emerald-500/10",
+  },
+  {
+    label: "Up to 5 Terminals in Sync",
+    icon: Layers,
+    color: "text-indigo-500",
+    bg: "bg-indigo-500/10",
+  },
+  {
+    label: "Zero Cloud Outage Risk",
+    icon: ShieldCheck,
+    color: "text-teal-500",
+    bg: "bg-teal-500/10",
+  },
+  {
+    label: "GST & Custom Tax Invoices",
+    icon: ReceiptText,
+    color: "text-rose-500",
+    bg: "bg-rose-500/10",
+  },
   { label: "UPI & Cash Split Payment", icon: IndianRupee, color: "text-brand", bg: "bg-brand/10" },
 ];
 
 export function HorizontalParallax() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -132,7 +153,7 @@ export function HorizontalParallax() {
 
       <div className="flex flex-col gap-5">
         {/* Row 1 — Moving Left */}
-        <motion.div style={{ x: x1 }} className="flex gap-4 w-max">
+        <motion.div style={shouldReduceMotion ? undefined : { x: x1 }} className="flex gap-4 w-max">
           {[...ROW_ONE, ...ROW_ONE, ...ROW_ONE].map((item, index) => {
             const Icon = item.icon;
             return (
@@ -141,7 +162,9 @@ export function HorizontalParallax() {
                 className={`group flex items-center gap-3 rounded-full border border-border bg-surface px-6 py-3.5 md:py-4 min-h-[52px] md:min-h-[56px] text-sm md:text-base font-semibold text-foreground shadow-sm hover:scale-105 transition-all duration-200 cursor-default select-none ${item.border}`}
               >
                 <span className={`flex items-center justify-center rounded-full p-1.5 ${item.bg}`}>
-                  <Icon className={`h-4.5 w-4.5 md:h-5 md:w-5 ${item.color} group-hover:rotate-12 transition-transform duration-200`} />
+                  <Icon
+                    className={`h-4.5 w-4.5 md:h-5 md:w-5 ${item.color} group-hover:rotate-12 transition-transform duration-200`}
+                  />
                 </span>
                 <span>{item.label}</span>
               </div>
@@ -150,7 +173,7 @@ export function HorizontalParallax() {
         </motion.div>
 
         {/* Row 2 — Moving Right */}
-        <motion.div style={{ x: x2 }} className="flex gap-4 w-max">
+        <motion.div style={shouldReduceMotion ? undefined : { x: x2 }} className="flex gap-4 w-max">
           {[...ROW_TWO, ...ROW_TWO, ...ROW_TWO].map((item, index) => {
             const Icon = item.icon;
             return (
@@ -159,7 +182,9 @@ export function HorizontalParallax() {
                 className="group flex items-center gap-3 rounded-full border border-border bg-surface px-6 py-3.5 md:py-4 min-h-[52px] md:min-h-[56px] text-sm md:text-base font-semibold text-foreground shadow-sm hover:border-brand/40 hover:bg-surface-soft hover:scale-105 transition-all duration-200 cursor-default select-none"
               >
                 <span className={`flex items-center justify-center rounded-full p-1.5 ${item.bg}`}>
-                  <Icon className={`h-4.5 w-4.5 md:h-5 md:w-5 shrink-0 ${item.color} group-hover:scale-110 transition-transform duration-200`} />
+                  <Icon
+                    className={`h-4.5 w-4.5 md:h-5 md:w-5 shrink-0 ${item.color} group-hover:scale-110 transition-transform duration-200`}
+                  />
                 </span>
                 <span>{item.label}</span>
               </div>

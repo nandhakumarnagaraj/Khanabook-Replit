@@ -95,7 +95,7 @@ const STORY_BLOCKS = [
 ];
 
 const SETUP_STRIP = [
-  { icon: WifiOff, label: "100% Offline 0ms SQLite Billing" },
+  { icon: WifiOff, label: "100% Offline SQLite Billing" },
   { icon: Smartphone, label: "Standard Android Phones & Tablets" },
   { icon: Layers, label: "Up to 5 Synchronized Terminals" },
   { icon: Printer, label: "Dual ESC/POS Thermal Receipt & KOT Printers" },
@@ -153,7 +153,7 @@ const ARCH_COMPARISON = [
   },
   {
     feature: "Speed during Peak Rush",
-    khanabook: "0ms instant SQLite write",
+    khanabook: "Instant local SQLite write",
     cloud: "800ms – 3s cloud API lag",
     legacy: "Slow Windows OS disk lag",
   },
@@ -174,7 +174,7 @@ const ARCH_COMPARISON = [
 const HARDWARE_CHECKLIST = [
   {
     title: "Android Tablet or Phone",
-    desc: "Any Android 9.0+ device (Samsung Galaxy Tab, Lenovo, or Redmi phones). Zero proprietary POS terminal lock-in.",
+    desc: "Any Android 8.0+ device (Samsung Galaxy Tab, Lenovo, or Redmi phones). Zero proprietary POS terminal lock-in.",
     icon: Smartphone,
   },
   {
@@ -275,33 +275,27 @@ function Home() {
 
               {/* Subheadline */}
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                High-speed 0ms offline billing on standard Android phones and tablets. Synchronize up to 5 terminals locally over Wi-Fi when broadband drops, paired with a real-time Cloud Web Dashboard.
+                High-speed offline billing on standard Android phones and tablets. Synchronize up to
+                5 terminals locally over Wi-Fi when broadband drops, paired with a real-time Cloud
+                Web Dashboard.
               </p>
 
               <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
-                <Link to="/get-started">
+                <a href={BUSINESS.playStoreUrl} target="_blank" rel="noopener noreferrer">
                   <UiVerseGlowingButton variant="brand" size="lg">
-                    <span>Get KhanaBook Free</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </UiVerseGlowingButton>
-                </Link>
-
-                <a
-                  href={BUSINESS.playStoreUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <UiVerseGlowingButton variant="emerald" size="lg">
                     <Download className="h-4 w-4" />
                     <span>Download Android App</span>
                   </UiVerseGlowingButton>
                 </a>
 
-                <a
-                  href={BUSINESS.loginUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link to="/get-started">
+                  <UiVerseGlowingButton variant="emerald" size="lg">
+                    <span>Request Setup Help</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </UiVerseGlowingButton>
+                </Link>
+
+                <a href={BUSINESS.loginUrl} target="_blank" rel="noopener noreferrer">
                   <UiVerseGlowingButton variant="white" size="lg">
                     <span>Web Dashboard</span>
                     <ExternalLink className="h-4 w-4 opacity-70" />
@@ -312,7 +306,7 @@ function Home() {
               <div className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-muted-foreground font-medium">
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
-                  0ms Offline SQLite WAL Billing
+                  Instant Offline SQLite Billing
                 </span>
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
@@ -374,7 +368,9 @@ function Home() {
                 <NumberTicker value={0} />
               </div>
               <div className="text-xs font-bold text-foreground mt-1">Mandatory Cloud Tax</div>
-              <div className="text-[11px] text-muted-foreground font-mono">Direct device control</div>
+              <div className="text-[11px] text-muted-foreground font-mono">
+                Direct device control
+              </div>
             </div>
           </div>
         </div>
@@ -384,7 +380,10 @@ function Home() {
       <HorizontalParallax />
 
       {/* DUAL-ENGINE ARCHITECTURE — ANDROID APP + WEB DASHBOARD */}
-      <section className="py-20 md:py-28 bg-[#1E1F20]/30 border-y border-white/[0.06]" id="dual-engine">
+      <section
+        className="py-20 md:py-28 bg-[#1E1F20]/30 border-y border-white/[0.06]"
+        id="dual-engine"
+      >
         <div className="w-[92vw] md:w-[75vw] mx-auto">
           <EntranceReveal direction="up">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -393,7 +392,9 @@ function Home() {
                 Offline-First Android App + <span className="hl">Web Dashboard</span>
               </h2>
               <p className="mt-4 text-base md:text-lg text-muted-foreground">
-                Floor staff run high-speed counter billing and kitchen KOTs offline on Android, while restaurant owners control menus, inventory, and analytics from any web browser.
+                Floor staff run high-speed counter billing and kitchen KOTs offline on Android,
+                while restaurant owners control menus, inventory, and analytics from any web
+                browser.
               </p>
             </div>
           </EntranceReveal>
@@ -421,35 +422,44 @@ function Home() {
                     Android POS App
                   </h3>
                   <p className="text-sm font-medium text-muted-foreground mb-6 leading-relaxed">
-                    Designed for rapid floor service, billing counters, and kitchen coordination on any supported Android tablet or phone.
+                    Designed for rapid floor service, billing counters, and kitchen coordination on
+                    any supported Android tablet or phone.
                   </p>
 
                   <ul className="space-y-3.5 text-sm text-muted-foreground">
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400 shrink-0 mt-0.5" />
-                      <span><strong>0ms Local SQLite Write Latency:</strong> Zero spinner delay during peak lunch and dinner rushes.</span>
+                      <span>
+                        <strong>Instant Local SQLite Writes:</strong> Zero spinner delay during peak
+                        lunch and dinner rushes.
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400 shrink-0 mt-0.5" />
-                      <span><strong>Up to 5 Mesh Terminals:</strong> Synchronize active tables across multiple handhelds over local Wi-Fi without internet.</span>
+                      <span>
+                        <strong>Up to 5 Mesh Terminals:</strong> Synchronize active tables across
+                        multiple handhelds over local Wi-Fi without internet.
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400 shrink-0 mt-0.5" />
-                      <span><strong>Dual Thermal Printers:</strong> Direct ESC/POS printing for customer bills and kitchen KOTs via USB, Bluetooth, or LAN.</span>
+                      <span>
+                        <strong>Dual Thermal Printers:</strong> Direct ESC/POS printing for customer
+                        bills and kitchen KOTs via USB, Bluetooth, or LAN.
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400 shrink-0 mt-0.5" />
-                      <span><strong>India Payment Split:</strong> Instant dynamic UPI QR display, cash, and card split handling with GST computing.</span>
+                      <span>
+                        <strong>India Payment Split:</strong> Instant dynamic UPI QR display, cash,
+                        and card split handling with GST computing.
+                      </span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-border/60 flex flex-wrap items-center gap-3">
-                  <a
-                    href={BUSINESS.playStoreUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={BUSINESS.playStoreUrl} target="_blank" rel="noopener noreferrer">
                     <UiVerseGlowingButton variant="emerald" size="md">
                       <span>Download Android App</span>
                       <Download className="h-4 w-4" />
@@ -484,35 +494,44 @@ function Home() {
                     Web Dashboard
                   </h3>
                   <p className="text-sm font-medium text-muted-foreground mb-6 leading-relaxed">
-                    Accessible from any web browser on Mac, Windows PC, iPad, iPhone, or laptop with instant zero-install cloud access.
+                    Accessible from any web browser on Mac, Windows PC, iPad, iPhone, or laptop with
+                    instant zero-install cloud access.
                   </p>
 
                   <ul className="space-y-3.5 text-sm text-muted-foreground">
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-amber-500 dark:text-amber-400 shrink-0 mt-0.5" />
-                      <span><strong>Live Remote Sales Telemetry:</strong> Monitor daily revenue, hourly order spikes, and settled bills from anywhere in the world.</span>
+                      <span>
+                        <strong>Live Remote Sales Telemetry:</strong> Monitor daily revenue, hourly
+                        order spikes, and settled bills from anywhere in the world.
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-amber-500 dark:text-amber-400 shrink-0 mt-0.5" />
-                      <span><strong>Centralized Menu &amp; Pricing:</strong> Update dishes, category layouts, item variants, and tax rates pushed to all terminals.</span>
+                      <span>
+                        <strong>Centralized Menu &amp; Pricing:</strong> Update dishes, category
+                        layouts, item variants, and tax rates pushed to all terminals.
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-amber-500 dark:text-amber-400 shrink-0 mt-0.5" />
-                      <span><strong>Inventory &amp; Recipe BOM:</strong> Track stock decrements, portion recipes, and receive automatic low-stock replenishment alerts.</span>
+                      <span>
+                        <strong>Inventory &amp; Recipe BOM:</strong> Track stock decrements, portion
+                        recipes, and receive automatic low-stock replenishment alerts.
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-amber-500 dark:text-amber-400 shrink-0 mt-0.5" />
-                      <span><strong>Financial Reports &amp; GST:</strong> Export audit-ready GST sales summaries, accountant CSV sheets, and PDF tax returns in one click.</span>
+                      <span>
+                        <strong>Financial Reports &amp; GST:</strong> Export audit-ready GST sales
+                        summaries, accountant CSV sheets, and PDF tax returns in one click.
+                      </span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-border/60 flex flex-wrap items-center gap-3">
-                  <a
-                    href={BUSINESS.loginUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={BUSINESS.loginUrl} target="_blank" rel="noopener noreferrer">
                     <UiVerseGlowingButton variant="brand" size="md">
                       <span>Launch Web Dashboard</span>
                       <ExternalLink className="h-4 w-4" />
@@ -538,8 +557,8 @@ function Home() {
                 An all-rounder <span className="hl">restaurant POS.</span>
               </h2>
               <p className="mt-3 text-muted-foreground">
-                Everything that happens between an order landing and the bill closing — handled in one
-                app.
+                Everything that happens between an order landing and the bill closing — handled in
+                one app.
               </p>
             </div>
           </EntranceReveal>
@@ -669,10 +688,12 @@ function Home() {
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="eyebrow mb-3">Versatile Formats</div>
               <h2 className="text-3xl md:text-5xl font-black text-foreground">
-                Engineered for <span className="hl">Every Format</span> of Indian Food &amp; Beverage
+                Engineered for <span className="hl">Every Format</span> of Indian Food &amp;
+                Beverage
               </h2>
               <p className="mt-4 text-base md:text-lg text-muted-foreground">
-                Switch effortlessly between rapid 5-second counter billing and multi-steward fine-dine table operations.
+                Switch effortlessly between rapid 5-second counter billing and multi-steward
+                fine-dine table operations.
               </p>
             </div>
           </EntranceReveal>
@@ -737,11 +758,12 @@ function Home() {
                 Live Interactive Operations Command Center
               </div>
               <h2 className="text-3xl md:text-5xl font-black text-foreground">
-                Experience the <TextShimmer className="text-brand font-black">Offline POS Engine</TextShimmer> Live
+                Experience the{" "}
+                <TextShimmer className="text-brand font-black">Offline POS Engine</TextShimmer> Live
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 Test table billing, rapid menu item selection, instant GST calculation, and thermal
-                KOT dispatching right now — engineered with 0ms local response.
+                KOT dispatching right now — engineered with instant local response.
               </p>
             </div>
           </EntranceReveal>
@@ -753,7 +775,9 @@ function Home() {
                 💡
               </div>
               <p className="text-xs sm:text-sm text-foreground font-medium leading-relaxed">
-                <strong className="font-bold text-amber-500">Interactive Demo:</strong> Tap menu items on the simulated terminal below to add dishes, test instant GST splitting, switch tables, and simulate offline network cuts in real time!
+                <strong className="font-bold text-amber-500">Interactive Demo:</strong> Tap menu
+                items on the simulated terminal below to add dishes, test instant GST splitting,
+                switch tables, and simulate offline network cuts in real time!
               </p>
             </div>
           </EntranceReveal>
@@ -777,7 +801,8 @@ function Home() {
                 Technical Architecture <span className="hl">Comparison</span>
               </h2>
               <p className="mt-4 text-base md:text-lg text-muted-foreground">
-                Why local SQLite edge architecture destroys legacy Windows machines and fragile browser-only cloud SaaS.
+                Why local SQLite edge architecture destroys legacy Windows machines and fragile
+                browser-only cloud SaaS.
               </p>
             </div>
           </EntranceReveal>
@@ -795,8 +820,12 @@ function Home() {
                       </span>
                     </div>
                   </th>
-                  <th className="p-4 sm:p-5 text-muted-foreground font-medium">Fragile Cloud-Only SaaS</th>
-                  <th className="p-4 sm:p-5 text-muted-foreground font-medium">Legacy Windows PC</th>
+                  <th className="p-4 sm:p-5 text-muted-foreground font-medium">
+                    Fragile Cloud-Only SaaS
+                  </th>
+                  <th className="p-4 sm:p-5 text-muted-foreground font-medium">
+                    Legacy Windows PC
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border/40 text-muted-foreground">
@@ -824,8 +853,13 @@ function Home() {
                 <Smartphone className="h-5 w-5" />
               </span>
               <div>
-                <h3 className="text-lg font-bold text-foreground">Recommended Zero-Lockin Hardware Setup</h3>
-                <p className="text-xs text-muted-foreground">Standard non-proprietary hardware you can buy anywhere at competitive retail prices.</p>
+                <h3 className="text-lg font-bold text-foreground">
+                  Recommended Zero-Lockin Hardware Setup
+                </h3>
+                <p className="text-xs text-muted-foreground">
+                  Standard non-proprietary hardware you can buy anywhere at competitive retail
+                  prices.
+                </p>
               </div>
             </div>
 
@@ -833,7 +867,10 @@ function Home() {
               {HARDWARE_CHECKLIST.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.title} className="p-4 rounded-xl bg-surface-soft border border-border/50">
+                  <div
+                    key={item.title}
+                    className="p-4 rounded-xl bg-surface-soft border border-border/50"
+                  >
                     <div className="flex items-center gap-2.5 mb-2">
                       <Icon className="h-4 w-4 text-brand" />
                       <span className="font-bold text-foreground text-sm">{item.title}</span>
@@ -923,7 +960,13 @@ function Home() {
           <EntranceReveal direction="up" className="w-full">
             <Card3DTilt intensity={5} glare={false} className="w-full">
               <div className="w-full rounded-3xl bg-surface text-foreground p-10 md:p-16 lg:p-20 text-center relative overflow-hidden shadow-2xl border border-border/80">
-                <BorderBeam size={340} duration={12} colorFrom="#dc2626" colorTo="#f59e0b" borderWidth={2} />
+                <BorderBeam
+                  size={340}
+                  duration={12}
+                  colorFrom="#dc2626"
+                  colorTo="#f59e0b"
+                  borderWidth={2}
+                />
                 <div
                   aria-hidden
                   className="absolute inset-0 opacity-20 pointer-events-none"
@@ -936,13 +979,21 @@ function Home() {
                     Never Let Internet Failure Stop Your <span className="hl">Dinner Rush.</span>
                   </h2>
                   <p className="mt-4 text-muted-foreground max-w-4xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed">
-                    Join over 3,400+ restaurants across India operating zero-downtime counters with KhanaBook.
-                    Billing, KOT, payments, and up to 5 synchronized terminals in one Android app.
+                    Built for restaurants across India operating zero-downtime counters with
+                    KhanaBook. Billing, KOT, payments, and up to 5 synchronized terminals in one
+                    Android app.
                   </p>
                   <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
-                    <Link to="/get-started">
+                    <a href={BUSINESS.playStoreUrl} target="_blank" rel="noopener noreferrer">
                       <UiVerseGlowingButton variant="brand" size="lg">
-                        <span>Get KhanaBook Free</span>
+                        <Download className="h-4 w-4" />
+                        <span>Download Android App</span>
+                      </UiVerseGlowingButton>
+                    </a>
+
+                    <Link to="/get-started">
+                      <UiVerseGlowingButton variant="emerald" size="lg">
+                        <span>Request Setup Help</span>
                         <ArrowRight className="h-4 w-4" />
                       </UiVerseGlowingButton>
                     </Link>

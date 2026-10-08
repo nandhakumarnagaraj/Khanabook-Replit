@@ -19,8 +19,7 @@ export function ShinyButton({
   const variantStyles = {
     brand:
       "bg-gradient-to-r from-[#dc2626] via-[#e11d48] to-[#ea580c] text-white shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.02] active:scale-[0.98]",
-    dark:
-      "bg-neutral-900 text-white shadow-lg shadow-black/20 hover:shadow-black/30 hover:scale-[1.02] active:scale-[0.98] border border-neutral-800",
+    dark: "bg-neutral-900 text-white shadow-lg shadow-black/20 hover:shadow-black/30 hover:scale-[1.02] active:scale-[0.98] border border-neutral-800",
     outline:
       "bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md text-foreground border border-border shadow-sm hover:border-brand/40 hover:scale-[1.02] active:scale-[0.98]",
   };

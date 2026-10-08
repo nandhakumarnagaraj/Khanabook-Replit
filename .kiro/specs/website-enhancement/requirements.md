@@ -135,4 +135,3 @@ This document specifies requirements for enhancing the KhanaBook marketing websi
 2. THE Website SHALL preload the Karla font files using `<link rel="preload">` tags with `as="font"` and `crossorigin` attributes.
 3. THE Website SHALL apply `loading="lazy"` to all images below the initial viewport fold.
 4. THE Website SHALL verify code splitting by route so that each route loads only its own JavaScript bundle and shared vendor chunks.
-

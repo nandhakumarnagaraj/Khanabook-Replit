@@ -1,21 +1,22 @@
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, Quote, Star, CheckCircle2 } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { ChevronLeft, ChevronRight, Quote, Star, Play, Pause } from "lucide-react";
+import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { TESTIMONIALS } from "@/lib/testimonials";
 
 export function TestimonialCarousel() {
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState<1 | -1>(1);
   const [isPaused, setIsPaused] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || shouldReduceMotion) return;
     const timer = window.setInterval(() => {
       setDirection(1);
       setActive((current) => (current + 1) % TESTIMONIALS.length);
     }, 6000);
     return () => window.clearInterval(timer);
-  }, [isPaused]);
+  }, [isPaused, shouldReduceMotion]);
 
   const testimonial = TESTIMONIALS[active];
 
@@ -33,6 +34,10 @@ export function TestimonialCarousel() {
       aria-label="Customer stories"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setIsPaused(false)}
     >
       <div className="relative min-h-[22rem] md:min-h-[19rem] flex items-center justify-center overflow-hidden rounded-3xl border border-border bg-surface-soft/80 backdrop-blur-md p-6 sm:p-10 shadow-xl">
         <Quote
@@ -44,9 +49,19 @@ export function TestimonialCarousel() {
           <motion.div
             key={active}
             custom={direction}
-            initial={{ opacity: 0, x: direction * 40, filter: "blur(4px)" }}
-            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, x: -direction * 40, filter: "blur(4px)" }}
+            initial={
+              shouldReduceMotion
+                ? { opacity: 0 }
+                : { opacity: 0, x: direction * 40, filter: "blur(4px)" }
+            }
+            animate={
+              shouldReduceMotion ? { opacity: 1 } : { opacity: 1, x: 0, filter: "blur(0px)" }
+            }
+            exit={
+              shouldReduceMotion
+                ? { opacity: 0 }
+                : { opacity: 0, x: -direction * 40, filter: "blur(4px)" }
+            }
             transition={{ duration: 0.35, ease: "easeInOut" }}
             className="flex flex-col justify-between w-full h-full"
           >
@@ -56,7 +71,7 @@ export function TestimonialCarousel() {
                 <Star key={i} className="h-4 w-4 fill-amber-500 text-amber-500" />
               ))}
               <span className="ml-2 text-xs font-bold text-muted-foreground">
-                Verified Restaurant Partner
+                Restaurant Experience
               </span>
             </div>
 
@@ -71,10 +86,11 @@ export function TestimonialCarousel() {
               <div>
                 <span className="flex items-center gap-1.5 font-bold text-base text-foreground">
                   {testimonial.name}
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500" />
                 </span>
                 <span className="text-xs text-muted-foreground font-medium">
-                  {testimonial.role} · <strong className="text-foreground">{testimonial.business}</strong> ({testimonial.location})
+                  {testimonial.role} ·{" "}
+                  <strong className="text-foreground">{testimonial.business}</strong> (
+                  {testimonial.location})
                 </span>
               </div>
             </figcaption>
@@ -88,9 +104,24 @@ export function TestimonialCarousel() {
           type="button"
           onClick={() => goTo(active - 1)}
           aria-label="Previous customer story"
-          className="grid h-10 w-10 place-items-center rounded-full border border-border bg-surface text-foreground shadow-sm transition-all hover:scale-105 active:scale-95 hover:border-brand hover:text-brand"
+          className="grid h-10 w-10 place-items-center rounded-full border border-border bg-surface text-foreground shadow-sm transition-all hover:scale-105 active:scale-95 hover:border-brand hover:text-brand focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
         >
           <ChevronLeft aria-hidden="true" className="h-5 w-5" />
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setIsPaused((prev) => !prev)}
+          aria-label={
+            isPaused ? "Play customer stories carousel" : "Pause customer stories carousel"
+          }
+          className="grid h-10 w-10 place-items-center rounded-full border border-border bg-surface text-foreground shadow-sm transition-all hover:scale-105 active:scale-95 hover:border-brand hover:text-brand focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+        >
+          {isPaused ? (
+            <Play aria-hidden="true" className="h-4 w-4 fill-current text-brand" />
+          ) : (
+            <Pause aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
+          )}
         </button>
 
         <div
@@ -104,10 +135,8 @@ export function TestimonialCarousel() {
               onClick={() => goTo(index)}
               aria-label={`Show story ${index + 1}`}
               aria-current={index === active ? "true" : undefined}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                index === active
-                  ? "w-8 bg-brand"
-                  : "w-2.5 bg-border hover:bg-brand/50"
+              className={`h-2.5 rounded-full transition-all duration-300 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none ${
+                index === active ? "w-8 bg-brand" : "w-2.5 bg-border hover:bg-brand/50"
               }`}
             />
           ))}
@@ -117,7 +146,7 @@ export function TestimonialCarousel() {
           type="button"
           onClick={() => goTo(active + 1)}
           aria-label="Next customer story"
-          className="grid h-10 w-10 place-items-center rounded-full border border-border bg-surface text-foreground shadow-sm transition-all hover:scale-105 active:scale-95 hover:border-brand hover:text-brand"
+          className="grid h-10 w-10 place-items-center rounded-full border border-border bg-surface text-foreground shadow-sm transition-all hover:scale-105 active:scale-95 hover:border-brand hover:text-brand focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
         >
           <ChevronRight aria-hidden="true" className="h-5 w-5" />
         </button>

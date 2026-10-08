@@ -36,7 +36,10 @@ export const Route = createFileRoute("/compare")({
         content:
           "Compare KhanaBook against traditional Windows desktop POS, hybrid PC bridge servers, and browser-only cloud SaaS. See why Indian restaurants choose offline-first Android billing with up to 5 synced terminals and Cloud Web Dashboard.",
       },
-      { property: "og:title", content: "KhanaBook vs Alternative Architectures — Restaurant POS Battlecard" },
+      {
+        property: "og:title",
+        content: "KhanaBook vs Alternative Architectures — Restaurant POS Battlecard",
+      },
       {
         property: "og:description",
         content:
@@ -87,8 +90,8 @@ function ComparePage() {
 
           <EntranceReveal direction="up" delay={0.25}>
             <p className="mt-5 text-base sm:text-lg md:text-xl text-gray-100/70 max-w-3xl mx-auto leading-relaxed">
-              Compare KhanaBook's offline-first Android architecture against hybrid PC bridge servers,
-              legacy Windows desktop software, and cloud SaaS web apps.
+              Compare KhanaBook's offline-first Android architecture against hybrid PC bridge
+              servers, legacy Windows desktop software, and cloud SaaS web apps.
             </p>
           </EntranceReveal>
 
@@ -139,33 +142,36 @@ function ComparePage() {
 
             {/* Filter Tabs */}
             <div className="flex flex-wrap gap-2">
-              {["All", "Hardware & Cost Requirements", "Offline Resilience & Service Continuity", "Multi-Terminal & Printer Capabilities"].map(
-                (tab) => {
-                  const label =
-                    tab === "All"
-                      ? "All Specs"
-                      : tab.includes("Hardware")
-                        ? "Hardware & Cost"
-                        : tab.includes("Offline")
-                          ? "Offline Tech"
-                          : "Terminals & Print";
-                  const active = activeCategory === tab;
-                  return (
-                    <button
-                      key={tab}
-                      type="button"
-                      onClick={() => setActiveCategory(tab)}
-                      className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${
-                        active
-                          ? "bg-white text-[#131314] shadow-md scale-105"
-                          : "bg-[#28292A] text-gray-300 hover:text-white hover:bg-[#333538] border border-white/5"
-                      }`}
-                    >
-                      {label}
-                    </button>
-                  );
-                }
-              )}
+              {[
+                "All",
+                "Hardware & Cost Requirements",
+                "Offline Resilience & Service Continuity",
+                "Multi-Terminal & Printer Capabilities",
+              ].map((tab) => {
+                const label =
+                  tab === "All"
+                    ? "All Specs"
+                    : tab.includes("Hardware")
+                      ? "Hardware & Cost"
+                      : tab.includes("Offline")
+                        ? "Offline Tech"
+                        : "Terminals & Print";
+                const active = activeCategory === tab;
+                return (
+                  <button
+                    key={tab}
+                    type="button"
+                    onClick={() => setActiveCategory(tab)}
+                    className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${
+                      active
+                        ? "bg-white text-[#131314] shadow-md scale-105"
+                        : "bg-[#28292A] text-gray-300 hover:text-white hover:bg-[#333538] border border-white/5"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -288,7 +294,8 @@ function ComparePage() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {HIDDEN_TRAPS.map((trap) => {
-              const Icon = trap.icon === "Cpu" ? Cpu : trap.icon === "Smartphone" ? Smartphone : WifiOff;
+              const Icon =
+                trap.icon === "Cpu" ? Cpu : trap.icon === "Smartphone" ? Smartphone : WifiOff;
               return (
                 <div
                   key={trap.title}
@@ -372,8 +379,8 @@ function ComparePage() {
               What to check in any POS contract before signing
             </h2>
             <p className="mt-3 text-sm md:text-base text-gray-400">
-              Use this checklist to verify fine print, add-on costs, and technical boundaries with any
-              software vendor.
+              Use this checklist to verify fine print, add-on costs, and technical boundaries with
+              any software vendor.
             </p>
           </div>
 
@@ -383,7 +390,9 @@ function ComparePage() {
                 <tr className="border-b border-[#28292A] bg-[#1E1F20] text-xs uppercase tracking-wider text-gray-400">
                   <th className="p-4 sm:p-5 w-[25%] font-bold">Capability</th>
                   <th className="p-4 sm:p-5 w-[40%] font-bold text-white">KhanaBook Standard</th>
-                  <th className="p-4 sm:p-5 w-[35%] font-bold text-gray-300">What to verify elsewhere</th>
+                  <th className="p-4 sm:p-5 w-[35%] font-bold text-gray-300">
+                    What to verify elsewhere
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/[0.06] text-xs sm:text-sm">
@@ -451,7 +460,13 @@ function ComparePage() {
       <section className="py-20 md:py-28">
         <div className="w-[92vw] md:w-[75vw] mx-auto">
           <div className="w-full rounded-3xl bg-[#28292A] border border-white/10 p-10 md:p-16 lg:p-20 text-center relative overflow-hidden shadow-2xl">
-            <BorderBeam size={340} duration={12} colorFrom="#dc2626" colorTo="#f59e0b" borderWidth={2} />
+            <BorderBeam
+              size={340}
+              duration={12}
+              colorFrom="#dc2626"
+              colorTo="#f59e0b"
+              borderWidth={2}
+            />
             <div
               aria-hidden
               className="absolute inset-0 opacity-20 pointer-events-none"
@@ -465,25 +480,18 @@ function ComparePage() {
               </h2>
               <p className="mt-4 text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed">
                 Install KhanaBook in minutes on any Android device. No subscriptions, no hardware
-                lock-in, and 100% offline billing that never stops — paired with live Web Dashboard control.
+                lock-in, and 100% offline billing that never stops — paired with live Web Dashboard
+                control.
               </p>
 
               <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
-                <a
-                  href={BUSINESS.playStoreUrl}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
+                <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
                   <UiVerseGlowingButton variant="emerald" size="md">
                     <span>Download Android App</span>
                   </UiVerseGlowingButton>
                 </a>
 
-                <a
-                  href={BUSINESS.loginUrl}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
+                <a href={BUSINESS.loginUrl} target="_blank" rel="noreferrer noopener">
                   <UiVerseGlowingButton variant="white" size="md">
                     <span>Launch Web Dashboard</span>
                   </UiVerseGlowingButton>

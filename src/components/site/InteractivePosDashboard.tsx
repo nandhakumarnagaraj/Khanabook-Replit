@@ -83,16 +83,17 @@ export function InteractivePosDashboard() {
   };
 
   const updateQty = (id: string, delta: number) => {
-    setCart((prev) =>
-      prev
-        .map((i) => {
-          if (i.item.id === id) {
-            const newQty = i.qty + delta;
-            return newQty > 0 ? { ...i, qty: newQty } : null;
-          }
-          return i;
-        })
-        .filter(Boolean) as { item: MenuItem; qty: number }[]
+    setCart(
+      (prev) =>
+        prev
+          .map((i) => {
+            if (i.item.id === id) {
+              const newQty = i.qty + delta;
+              return newQty > 0 ? { ...i, qty: newQty } : null;
+            }
+            return i;
+          })
+          .filter(Boolean) as { item: MenuItem; qty: number }[],
     );
     setIsKotPrinted(false);
   };
@@ -149,7 +150,7 @@ export function InteractivePosDashboard() {
           <span className="hidden sm:inline-block h-3.5 w-px bg-border" />
 
           <div className="flex items-center gap-1.5 text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400">
-            <span>0ms Local Latency</span>
+            <span>Instant Local Response</span>
           </div>
         </div>
 
@@ -190,8 +191,8 @@ export function InteractivePosDashboard() {
               <WifiOff className="h-4 w-4 shrink-0 text-amber-500" />
               <span>
                 <strong>Zero Outage Impact:</strong> Broadband or cellular is down, but your POS
-                continues creating bills, printing KOTs via Bluetooth, and syncing with up to 5 local
-                terminals with zero delay.
+                continues creating bills, printing KOTs via Bluetooth, and syncing with up to 5
+                local terminals with zero delay.
               </span>
             </div>
           </motion.div>
@@ -462,9 +463,7 @@ export function InteractivePosDashboard() {
                   onClick={handlePrintKot}
                   disabled={cart.length === 0}
                   className={`flex-1 flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-xs font-bold transition-all shadow-md active:scale-95 disabled:opacity-50 disabled:pointer-events-none ${
-                    isKotPrinted
-                      ? "bg-emerald-600 text-white"
-                      : "btn-primary w-full"
+                    isKotPrinted ? "bg-emerald-600 text-white" : "btn-primary w-full"
                   }`}
                 >
                   {isKotPrinted ? (

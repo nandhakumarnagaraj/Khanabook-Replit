@@ -187,7 +187,8 @@ function GetStartedPage() {
 
           <EntranceReveal direction="up" delay={0.25}>
             <p className="mt-4 text-base sm:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Fill in your details for a personalized onboarding call, or download the Android app and launch the Web Dashboard directly.
+              Fill in your details for a personalized onboarding call, or download the Android app
+              and launch the Web Dashboard directly.
             </p>
           </EntranceReveal>
         </div>
@@ -203,7 +204,8 @@ function GetStartedPage() {
                 <div className="mb-6 pb-4 border-b border-white/10">
                   <h2 className="text-xl font-bold text-white">Request Onboarding Assistance</h2>
                   <p className="text-xs text-gray-400 mt-1">
-                    Our team will assist with menu import, ESC/POS printer setup, and multi-terminal sync.
+                    Our team will assist with menu import, ESC/POS printer setup, and multi-terminal
+                    sync.
                   </p>
                 </div>
 
@@ -304,7 +306,8 @@ function GetStartedPage() {
                       className="mt-0.5 accent-brand"
                     />
                     <span>
-                      I agree to be contacted via WhatsApp/Phone by KhanaBook for restaurant POS onboarding under the{" "}
+                      I agree to be contacted via WhatsApp/Phone by KhanaBook for restaurant POS
+                      onboarding under the{" "}
                       <a href="/privacy-policy" className="text-brand hover:underline">
                         Privacy Policy
                       </a>
@@ -345,7 +348,13 @@ function GetStartedPage() {
             <div className="lg:col-span-5 space-y-6">
               {/* CARD 1: ANDROID APP */}
               <div className="relative rounded-2xl border border-emerald-500/30 bg-[#1E1F20] p-6 shadow-xl overflow-hidden hover:border-emerald-500/50 transition-all">
-                <BorderBeam size={180} duration={12} delay={0} colorFrom="#10b981" colorTo="#059669" />
+                <BorderBeam
+                  size={180}
+                  duration={12}
+                  delay={0}
+                  colorFrom="#10b981"
+                  colorTo="#059669"
+                />
                 <div className="flex items-center gap-3 mb-3">
                   <div className="h-10 w-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
                     <Smartphone className="h-5 w-5" />
@@ -359,7 +368,8 @@ function GetStartedPage() {
                 </div>
 
                 <p className="text-xs text-gray-400 leading-relaxed">
-                  Install directly on your Android phone or tablet from the Google Play Store. Create your account and start billing offline immediately.
+                  Install directly on your Android phone or tablet from the Google Play Store.
+                  Create your account and start billing offline immediately.
                 </p>
 
                 <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
@@ -378,7 +388,13 @@ function GetStartedPage() {
 
               {/* CARD 2: WEB DASHBOARD */}
               <div className="relative rounded-2xl border border-blue-500/30 bg-[#1E1F20] p-6 shadow-xl overflow-hidden hover:border-blue-500/50 transition-all">
-                <BorderBeam size={180} duration={12} delay={6} colorFrom="#3b82f6" colorTo="#1d4ed8" />
+                <BorderBeam
+                  size={180}
+                  duration={12}
+                  delay={6}
+                  colorFrom="#3b82f6"
+                  colorTo="#1d4ed8"
+                />
                 <div className="flex items-center gap-3 mb-3">
                   <div className="h-10 w-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
                     <Cloud className="h-5 w-5" />
@@ -392,11 +408,14 @@ function GetStartedPage() {
                 </div>
 
                 <p className="text-xs text-gray-400 leading-relaxed">
-                  Open in your browser on PC, laptop, or iPad. Edit categories, upload dish photos, inspect live sales telemetry, and manage inventory BOM.
+                  Open in your browser on PC, laptop, or iPad. Edit categories, upload dish photos,
+                  inspect live sales telemetry, and manage inventory BOM.
                 </p>
 
                 <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                  <span className="text-[11px] text-blue-300 font-semibold">Instant Zero-Install Access</span>
+                  <span className="text-[11px] text-blue-300 font-semibold">
+                    Instant Zero-Install Access
+                  </span>
                   <a
                     href={BUSINESS.loginUrl}
                     target="_blank"

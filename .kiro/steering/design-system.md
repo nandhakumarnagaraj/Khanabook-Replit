@@ -36,6 +36,7 @@ inclusion: auto
 ## Component Reuse
 
 Always prefer existing components before creating new ones:
+
 - `Section` — standard page section wrapper (eyebrow + title + desc + children)
 - `FAQ` — accordion FAQ list
 - `Header` / `Footer` — site-wide navigation

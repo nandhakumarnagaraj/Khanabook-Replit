@@ -83,13 +83,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "KhanaBook — Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard" },
+      {
+        title:
+          "KhanaBook — Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard",
+      },
       {
         name: "description",
         content:
           "KhanaBook is an offline-first multi-terminal restaurant POS. 100% offline billing on Android phones & tablets with up to 5 synchronized terminals, paired with a powerful cloud Web Dashboard for centralized menus, inventory, staff, and live sales.",
       },
-      { property: "og:title", content: "KhanaBook — Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard" },
+      {
+        property: "og:title",
+        content:
+          "KhanaBook — Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard",
+      },
       {
         property: "og:description",
         content:
@@ -97,11 +104,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "KhanaBook" },
+      { property: "og:image", content: khanabookLogo },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: khanabookLogo },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "preload", href: "https://fonts.gstatic.com/s/karla/v30/qkBIXvYC6trAT55ZBi1ueQ.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
       { rel: "icon", type: "image/webp", href: khanabookLogo },
       { rel: "shortcut icon", type: "image/webp", href: khanabookLogo },
       { rel: "apple-touch-icon", href: khanabookLogo },
@@ -158,11 +166,21 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[99999] focus:px-4 focus:py-2 focus:bg-brand focus:text-white focus:rounded-lg focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-white"
+        >
+          Skip to main content
+        </a>
         <ParallaxBackground />
         <div className="min-h-screen flex flex-col transition-colors duration-200 overflow-x-hidden w-full">
           <SiteHeader />
           <OfflineIndicator />
-          <main className="flex-1 w-full overflow-x-hidden">
+          <main
+            id="main-content"
+            tabIndex={-1}
+            className="flex-1 w-full overflow-x-hidden outline-none"
+          >
             <Outlet />
           </main>
           <SiteFooter />

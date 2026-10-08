@@ -125,33 +125,33 @@ Enhance the KhanaBook marketing website with scroll-based entrance animations, f
     - Confirm route-level code splitting via Vite build output
     - _Requirements: 10.3, 10.4_
 
-- [ ]* 10. Write property tests for form validation
-  - [ ]* 10.1 Write property test for required field validation on blur
+- [ ]\* 10. Write property tests for form validation
+  - [ ]\* 10.1 Write property test for required field validation on blur
     - **Property 1: Required field validation on blur**
     - **Validates: Requirements 2.1**
 
-  - [ ]* 10.2 Write property test for phone format validation
+  - [ ]\* 10.2 Write property test for phone format validation
     - **Property 2: Phone format validation on blur**
     - **Validates: Requirements 2.2**
 
-  - [ ]* 10.3 Write property test for error-field ARIA association
+  - [ ]\* 10.3 Write property test for error-field ARIA association
     - **Property 3: Error-field ARIA association**
     - **Validates: Requirements 2.6**
 
-- [ ]* 11. Write property tests for animations and UI components
-  - [ ]* 11.1 Write property test for section entrance animation
+- [ ]\* 11. Write property tests for animations and UI components
+  - [ ]\* 11.1 Write property test for section entrance animation
     - **Property 4: Section entrance animation on viewport intersection**
     - **Validates: Requirements 3.1, 3.2**
 
-  - [ ]* 11.2 Write property test for reduced motion bypass
+  - [ ]\* 11.2 Write property test for reduced motion bypass
     - **Property 5: Reduced motion bypasses animation**
     - **Validates: Requirements 3.3**
 
-  - [ ]* 11.3 Write property test for tab selection
+  - [ ]\* 11.3 Write property test for tab selection
     - **Property 6: Tab selection displays corresponding content**
     - **Validates: Requirements 8.2**
 
-  - [ ]* 11.4 Write property test for help guide expand/collapse
+  - [ ]\* 11.4 Write property test for help guide expand/collapse
     - **Property 8: Help guide expand/collapse toggle with ARIA state**
     - **Validates: Requirements 9.2, 9.3, 9.5**
 
