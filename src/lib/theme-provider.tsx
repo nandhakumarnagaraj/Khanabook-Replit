@@ -4,14 +4,10 @@ export type Theme = "light";
 
 interface ThemeContextType {
   theme: "light";
-  setTheme: (theme: "light") => void;
-  toggleTheme: () => void;
 }
 
 const defaultContext: ThemeContextType = {
   theme: "light",
-  setTheme: () => {},
-  toggleTheme: () => {},
 };
 
 const ThemeContext = createContext<ThemeContextType>(defaultContext);

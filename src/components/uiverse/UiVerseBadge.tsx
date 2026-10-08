@@ -6,24 +6,19 @@ interface UiVerseBadgeProps {
   className?: string;
 }
 
+const PULSE_COLORS = {
+  emerald: "bg-emerald-400",
+  amber: "bg-amber-400",
+  blue: "bg-blue-400",
+  brand: "bg-brand",
+} as const;
+
 export function UiVerseBadge({
   children,
   pulseColor = "emerald",
   className = "",
 }: UiVerseBadgeProps) {
-  const dotColors = {
-    emerald: "bg-emerald-400",
-    amber: "bg-amber-400",
-    blue: "bg-blue-400",
-    brand: "bg-brand",
-  };
-
-  const pingColors = {
-    emerald: "bg-emerald-400",
-    amber: "bg-amber-400",
-    blue: "bg-blue-400",
-    brand: "bg-brand",
-  };
+  const colorClass = PULSE_COLORS[pulseColor];
 
   return (
     <div
@@ -33,9 +28,9 @@ export function UiVerseBadge({
         {/* Pulsing Radar Beacon Dot */}
         <span className="relative flex h-2 w-2">
           <span
-            className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 ${pingColors[pulseColor]}`}
+            className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 ${colorClass}`}
           />
-          <span className={`relative inline-flex h-2 w-2 rounded-full ${dotColors[pulseColor]}`} />
+          <span className={`relative inline-flex h-2 w-2 rounded-full ${colorClass}`} />
         </span>
         {children}
       </div>

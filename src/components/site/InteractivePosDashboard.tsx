@@ -389,27 +389,33 @@ export function InteractivePosDashboard() {
                       <div className="flex items-center gap-2 shrink-0">
                         <div className="flex items-center rounded-md border border-border bg-surface">
                           <button
+                            type="button"
                             onClick={() => updateQty(item.id, -1)}
-                            className="p-1 hover:text-brand transition-colors"
+                            aria-label={`Decrease quantity of ${item.name}`}
+                            className="h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center hover:text-brand transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                           >
-                            <Minus className="h-2.5 w-2.5" />
+                            <Minus className="h-3 w-3" />
                           </button>
-                          <span className="px-1.5 font-bold text-[11px]">{qty}</span>
+                          <span className="px-1.5 font-bold text-xs">{qty}</span>
                           <button
+                            type="button"
                             onClick={() => updateQty(item.id, 1)}
-                            className="p-1 hover:text-brand transition-colors"
+                            aria-label={`Increase quantity of ${item.name}`}
+                            className="h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center hover:text-brand transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                           >
-                            <Plus className="h-2.5 w-2.5" />
+                            <Plus className="h-3 w-3" />
                           </button>
                         </div>
                         <span className="w-12 text-right font-bold text-foreground">
                           ₹{item.price * qty}
                         </span>
                         <button
+                          type="button"
                           onClick={() => removeItem(item.id)}
-                          className="text-muted-foreground hover:text-red-500 transition-colors ml-1"
+                          aria-label={`Remove ${item.name} from order`}
+                          className="h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center text-muted-foreground hover:text-red-500 transition-colors ml-1 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                         >
-                          <Trash2 className="h-3 w-3" />
+                          <Trash2 className="h-3.5 w-3.5" />
                         </button>
                       </div>
                     </div>

@@ -206,7 +206,10 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:url", content: absUrl("/") },
     ],
-    links: [{ rel: "canonical", href: absUrl("/") }],
+    links: [
+      { rel: "canonical", href: absUrl("/") },
+      { rel: "preload", as: "image", href: appHome },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -378,6 +381,25 @@ function Home() {
 
       {/* WHO IT'S FOR & CORE CAPABILITIES — Horizontal Parallax Marquee */}
       <HorizontalParallax />
+
+      {/* SOCIAL PROOF PLACEHOLDER STRIP (Req 7) */}
+      <section className="py-10 border-b border-border/60 bg-surface/40">
+        <div className="w-[92vw] md:w-[75vw] mx-auto text-center">
+          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-6">
+            Trusted by independent dining outlets • Customer logos coming soon
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 opacity-60">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div
+                key={i}
+                className="h-10 w-28 sm:h-12 sm:w-36 rounded-xl border border-border/70 bg-surface-soft/60 flex items-center justify-center shadow-xs"
+              >
+                <div className="h-2 w-16 sm:w-20 rounded bg-muted-foreground/20" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* DUAL-ENGINE ARCHITECTURE — ANDROID APP + WEB DASHBOARD */}
       <section

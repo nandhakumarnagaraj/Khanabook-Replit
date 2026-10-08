@@ -36,15 +36,15 @@ export const SETUP_GUIDES: HelpGuide[] = [
   },
   {
     id: "menu-import",
-    title: "Import Your Menu from a Photo",
-    description: "Use Android on-device OCR to reduce manual menu entry.",
+    title: "Create and Import Your Menu",
+    description: "Set up categories, items, prices and GST tax slabs quickly.",
     steps: [
-      "Open menu management and choose the menu-photo import option (Beta).",
-      "Take or select a clear, well-lit photo with item names and prices visible.",
-      "KhanaBook processes the image on the Android device and suggests detected menu text.",
-      "Review every suggested name and price, correct OCR errors, and assign the appropriate categories and tax rates.",
-      "Add variants or other details that were not available in the source image.",
-      "Save only after reviewing the result. Other approved terminals receive the saved menu data after synchronisation.",
+      "Open the Web Dashboard or POS menu editor to add categories (e.g. Starters, Curries, Beverages).",
+      "Add items with base pricing, food types (Veg/Non-Veg), and applicable GST tax slabs (e.g. 5% or 18%).",
+      "Upload existing menu items in bulk using the standard CSV template on the Web Dashboard.",
+      "Configure portion sizes, item variants, and kitchen modifier add-ons.",
+      "Assign KOT printer routing so food and beverage items route to their designated kitchen stations.",
+      "Save the menu. All active Android terminals synchronize changes automatically when connected.",
     ],
   },
   {

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { motion, useMotionValue, useSpring } from "motion/react";
+import { motion, useMotionValue, useSpring, useReducedMotion } from "motion/react";
 
 interface MagneticProps {
   children: React.ReactNode;
@@ -9,6 +9,7 @@ interface MagneticProps {
 
 export function MagneticHover({ children, className = "", strength = 0.35 }: MagneticProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -18,7 +19,7 @@ export function MagneticHover({ children, className = "", strength = 0.35 }: Mag
   const smoothY = useSpring(y, springConfig);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
+    if (shouldReduceMotion || !ref.current) return;
     const { clientX, clientY } = e;
     const { left, top, width, height } = ref.current.getBoundingClientRect();
 
@@ -30,9 +31,14 @@ export function MagneticHover({ children, className = "", strength = 0.35 }: Mag
   };
 
   const handleMouseLeave = () => {
+    if (shouldReduceMotion) return;
     x.set(0);
     y.set(0);
   };
+
+  if (shouldReduceMotion) {
+    return <div className={`inline-block ${className}`}>{children}</div>;
+  }
 
   return (
     <motion.div

@@ -195,24 +195,24 @@ export function VerticalHeroSwiper() {
             </div>
 
             {/* Vertical Arrow Navigators + Pause/Play */}
-            <div className="flex items-center gap-1.5 ml-2 shrink-0">
+            <div className="flex items-center gap-2 ml-2 shrink-0">
               <button
                 type="button"
                 onClick={() => setIsPaused((prev) => !prev)}
                 aria-label={isPaused ? "Play slide presentation" : "Pause slide presentation"}
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface hover:bg-surface-soft text-foreground transition-colors hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                className="flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-lg border border-border bg-surface hover:bg-surface-soft text-foreground transition-colors hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
               >
                 {isPaused ? (
-                  <Play className="h-3.5 w-3.5 text-brand fill-current" />
+                  <Play className="h-4 w-4 text-brand fill-current" />
                 ) : (
-                  <Pause className="h-3.5 w-3.5 text-muted-foreground" />
+                  <Pause className="h-4 w-4 text-muted-foreground" />
                 )}
               </button>
               <button
                 type="button"
                 onClick={handlePrev}
                 aria-label="Previous screen"
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface hover:bg-surface-soft text-foreground transition-colors hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                className="flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-lg border border-border bg-surface hover:bg-surface-soft text-foreground transition-colors hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
               >
                 <ChevronUp className="h-4 w-4" />
               </button>
@@ -220,7 +220,7 @@ export function VerticalHeroSwiper() {
                 type="button"
                 onClick={handleNext}
                 aria-label="Next screen"
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface hover:bg-surface-soft text-foreground transition-colors hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                className="flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-lg border border-border bg-surface hover:bg-surface-soft text-foreground transition-colors hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
               >
                 <ChevronDown className="h-4 w-4" />
               </button>

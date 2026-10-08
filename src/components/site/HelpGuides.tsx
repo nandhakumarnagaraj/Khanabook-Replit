@@ -24,6 +24,7 @@ export function HelpGuides() {
             className="rounded-xl border border-border bg-surface overflow-hidden transition-all duration-200"
           >
             <button
+              id={`tab-${guide.id}`}
               type="button"
               onClick={() => toggle(guide.id)}
               onKeyDown={(e) => {

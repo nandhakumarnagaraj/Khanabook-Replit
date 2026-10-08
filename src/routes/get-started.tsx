@@ -261,7 +261,10 @@ function GetStartedPage() {
                         Restaurant Format <span className="text-brand">*</span>
                       </label>
                       <select
+                        id="field-type"
                         name="type"
+                        aria-invalid={Boolean(errors.type)}
+                        aria-describedby={errors.type ? "error-type" : undefined}
                         className="w-full rounded-xl border border-white/10 bg-[#28292A] px-4 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-brand"
                         defaultValue=""
                       >
@@ -274,7 +277,11 @@ function GetStartedPage() {
                           </option>
                         ))}
                       </select>
-                      {errors.type && <p className="mt-1 text-xs text-brand">{errors.type}</p>}
+                      {errors.type && (
+                        <p id="error-type" className="mt-1 text-xs text-brand">
+                          {errors.type}
+                        </p>
+                      )}
                     </div>
 
                     <Field
@@ -501,6 +508,7 @@ function Field({
   min?: number;
   onBlurValidate?: (name: string, value: string) => void;
 }) {
+  const errorId = error ? `error-${name}` : undefined;
   return (
     <div>
       <label htmlFor={`field-${name}`} className="block text-xs font-bold text-gray-300 mb-1.5">
@@ -512,12 +520,18 @@ function Field({
         type={type}
         placeholder={placeholder}
         min={min}
+        aria-invalid={Boolean(error)}
+        aria-describedby={errorId}
         className={`w-full rounded-xl border bg-[#28292A] px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand transition-colors ${
           error ? "border-brand bg-brand/5" : "border-white/10"
         }`}
         onBlur={(e) => onBlurValidate?.(name, e.target.value)}
       />
-      {error && <p className="mt-1 text-xs text-brand">{error}</p>}
+      {error && (
+        <p id={errorId} className="mt-1 text-xs text-brand">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
