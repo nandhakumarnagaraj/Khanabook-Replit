@@ -27,9 +27,9 @@ export function Header() {
           <img
             src={logo}
             alt="KhanaBook Logo"
-            width={48}
-            height={48}
-            className="h-11 w-11 md:h-12 md:w-12 object-contain transition-transform duration-200 group-hover:scale-105 shrink-0"
+            width={60}
+            height={60}
+            className="h-13 w-13 sm:h-14 sm:w-14 md:h-[60px] md:w-[60px] object-contain transition-transform duration-200 group-hover:scale-105 shrink-0"
           />
           <div className="flex flex-col">
             <span className="text-xl md:text-2xl font-black tracking-tight text-[#000030] dark:text-foreground leading-none">
