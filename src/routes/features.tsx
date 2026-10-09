@@ -481,7 +481,7 @@ function FeaturesPage() {
             <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
               <UiVerseGlowingButton variant="brand">
                 <PlayStoreIcon className="h-4 w-4 shrink-0" />
-                Download Android POS App
+                Download App
               </UiVerseGlowingButton>
             </a>
             <a

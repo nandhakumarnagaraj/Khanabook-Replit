@@ -283,7 +283,7 @@ function AboutPage() {
             <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
               <UiVerseGlowingButton variant="brand" size="md">
                 <PlayStoreIcon className="h-4 w-4 shrink-0" />
-                <span>Download Android App</span>
+                <span>Download App</span>
               </UiVerseGlowingButton>
             </a>
             <a

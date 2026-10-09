@@ -135,7 +135,7 @@ export function Header() {
                 className="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-brand text-white px-4 text-sm font-bold shadow-md hover:bg-brand/90"
               >
                 <PlayStoreIcon className="h-4 w-4 shrink-0" />
-                <span>Download Android App</span>
+                <span>Download App</span>
               </a>
               <a
                 href={BUSINESS.loginUrl}
