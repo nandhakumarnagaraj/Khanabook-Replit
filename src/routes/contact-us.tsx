@@ -14,6 +14,7 @@ import {
 import { BUSINESS, absUrl } from "@/lib/business-config";
 import { EntranceReveal } from "@/components/motion/EntranceReveal";
 import { UiVerseBadge, UiVerseGlowingButton } from "@/components/uiverse";
+import { PlayStoreIcon } from "@/components/icons/PlayStoreIcon";
 
 export const Route = createFileRoute("/contact-us")({
   head: () => ({
@@ -218,7 +219,7 @@ function ContactUsPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
               <UiVerseGlowingButton variant="emerald" size="md">
-                <Download className="h-4 w-4" />
+                <PlayStoreIcon className="h-4 w-4 shrink-0" />
                 <span>Download Android App</span>
               </UiVerseGlowingButton>
             </a>

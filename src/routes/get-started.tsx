@@ -17,6 +17,7 @@ import { BUSINESS, DISCLAIMERS, absUrl } from "@/lib/business-config";
 import { EntranceReveal } from "@/components/motion/EntranceReveal";
 import { BorderBeam } from "@/components/motion/primitives/BorderBeam";
 import { UiVerseBadge, UiVerseGlowingButton } from "@/components/uiverse";
+import { PlayStoreIcon } from "@/components/icons/PlayStoreIcon";
 
 export const Route = createFileRoute("/get-started")({
   head: () => ({
@@ -390,7 +391,7 @@ function GetStartedPage() {
                     rel="noreferrer noopener"
                     className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black px-4 py-1.5 text-xs font-bold transition-all"
                   >
-                    <Download className="h-3.5 w-3.5" />
+                    <PlayStoreIcon className="h-3.5 w-3.5 shrink-0" />
                     Google Play Store
                   </a>
                 </div>

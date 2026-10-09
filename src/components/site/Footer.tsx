@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/khanabook-logo.webp";
 import { BUSINESS } from "@/lib/business-config";
+import { PlayStoreIcon } from "@/components/icons/PlayStoreIcon";
 
 const FOOTER_GROUPS = [
   {
@@ -156,8 +157,11 @@ function FooterCol({
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1 py-1 min-h-6 text-sm font-normal text-muted-foreground transition-all hover:text-foreground hover:translate-x-0.5"
+                className="group inline-flex items-center gap-1.5 py-1 min-h-6 text-sm font-normal text-muted-foreground transition-all hover:text-foreground hover:translate-x-0.5"
               >
+                {link.href === BUSINESS.playStoreUrl && (
+                  <PlayStoreIcon className="h-3.5 w-3.5 shrink-0" />
+                )}
                 <span>{link.label}</span>
                 <span className="opacity-0 transition-opacity group-hover:opacity-100 text-muted-foreground text-xs">
                   ↗

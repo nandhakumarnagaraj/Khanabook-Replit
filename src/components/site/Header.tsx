@@ -3,6 +3,7 @@ import { ExternalLink, Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/khanabook-logo.webp";
 import { BUSINESS } from "@/lib/business-config";
+import { PlayStoreIcon } from "@/components/icons/PlayStoreIcon";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -130,8 +131,10 @@ export function Header() {
                 href={BUSINESS.playStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
                 className="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-brand text-white px-4 text-sm font-bold shadow-md hover:bg-brand/90"
               >
+                <PlayStoreIcon className="h-4 w-4 shrink-0" />
                 <span>Download Android App</span>
               </a>
               <a

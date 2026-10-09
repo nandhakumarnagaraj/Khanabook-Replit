@@ -29,6 +29,7 @@ import { EntranceReveal } from "@/components/motion/EntranceReveal";
 import { ShinyButton } from "@/components/motion/primitives/ShinyButton";
 import { BorderBeam } from "@/components/motion/primitives/BorderBeam";
 import { UiVerseBadge, UiVerseGlowingButton } from "@/components/uiverse";
+import { PlayStoreIcon } from "@/components/icons/PlayStoreIcon";
 
 export const Route = createFileRoute("/features")({
   head: () => ({
@@ -241,7 +242,7 @@ function FeaturesPage() {
                   rel="noreferrer noopener"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"
                 >
-                  <Download className="h-3.5 w-3.5" />
+                  <PlayStoreIcon className="h-3.5 w-3.5 shrink-0" />
                   Get Android App →
                 </a>
               </div>
@@ -479,7 +480,7 @@ function FeaturesPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
               <UiVerseGlowingButton variant="brand">
-                <Download className="h-4 w-4" />
+                <PlayStoreIcon className="h-4 w-4 shrink-0" />
                 Download Android POS App
               </UiVerseGlowingButton>
             </a>

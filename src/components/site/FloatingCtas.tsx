@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { BUSINESS } from "@/lib/business-config";
+import { PlayStoreIcon } from "@/components/icons/PlayStoreIcon";
 
 const whatsappNumber = BUSINESS.supportPhone.replace(/[^0-9]/g, "");
 const whatsappText = encodeURIComponent(
@@ -60,9 +61,10 @@ export function FloatingCtas() {
           href={BUSINESS.playStoreUrl}
           target="_blank"
           rel="noreferrer noopener"
-          className="sticky-cta-btn focus-visible:ring-2 focus-visible:ring-white focus:outline-none"
+          className="sticky-cta-btn focus-visible:ring-2 focus-visible:ring-white focus:outline-none inline-flex items-center justify-center gap-1.5"
         >
-          Download App
+          <PlayStoreIcon className="h-4 w-4 shrink-0" />
+          <span>Download App</span>
         </a>
         <Link
           to="/get-started"

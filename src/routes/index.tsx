@@ -48,6 +48,28 @@ import { SpotlightCard } from "@/components/motion/primitives/SpotlightCard";
 import { NumberTicker } from "@/components/motion/primitives/NumberTicker";
 import { HaikeiWave } from "@/components/motion/primitives/HaikeiWave";
 import { UiVerseBadge, UiVerseGlowingButton, UiVerseCard } from "@/components/uiverse";
+import { PlayStoreIcon } from "@/components/icons/PlayStoreIcon";
+
+const TRUSTED_OUTLETS = [
+  {
+    name: "Biryaniwale Anna",
+    url: "https://biryaniwale.shop/",
+    type: "Biryani & Cloud Kitchen",
+    badge: "biryaniwale.shop ↗",
+  },
+  { name: "Maazi Cafe", type: "Café & Bakery" },
+  { name: "Shree Jalaram Parotha House", type: "North Indian Dining" },
+  { name: "Nutri Shakes", type: "Healthy Shakes & Juices" },
+  { name: "Savaji Hotel", type: "Traditional Dining" },
+  { name: "Saket Cafe", type: "Specialty Café" },
+  { name: "Pizza Town", type: "Pizzeria & QSR" },
+  { name: "VJ ENTERPRISES's Restaurant", type: "Multi-Cuisine Restaurant" },
+  { name: "Sagar Tirlotkar's Restaurant", type: "Family Dining" },
+  { name: "Karim's Palace's Restaurant", type: "Mughlai Dining" },
+  { name: "Raju Karmali's Restaurant", type: "Casual Dining" },
+  { name: "Salt and Pepper", type: "Restro & Lounge" },
+  { name: "Biryani Hub", type: "Specialty Biryani" },
+];
 
 const FEATURE_ICONS = [ReceiptText, Layers, Printer, WifiOff, UtensilsCrossed, BarChart3];
 
@@ -243,7 +265,7 @@ function Home() {
               <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
                 <a href={BUSINESS.playStoreUrl} target="_blank" rel="noopener noreferrer">
                   <UiVerseGlowingButton variant="brand" size="lg">
-                    <Download className="h-4 w-4" />
+                    <PlayStoreIcon className="h-4 w-4 shrink-0" />
                     <span>Download Android App</span>
                   </UiVerseGlowingButton>
                 </a>
@@ -343,21 +365,73 @@ function Home() {
       {/* WHO IT'S FOR & CORE CAPABILITIES — Horizontal Parallax Marquee */}
       <HorizontalParallax />
 
-      {/* SOCIAL PROOF PLACEHOLDER STRIP (Req 7) */}
-      <section className="py-10 border-b border-border/60 bg-surface/40">
-        <div className="w-[92vw] md:w-[75vw] mx-auto text-center">
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-6">
-            Trusted by independent dining outlets • Customer logos coming soon
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 opacity-60">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div
-                key={i}
-                className="h-10 w-28 sm:h-12 sm:w-36 rounded-xl border border-border/70 bg-surface-soft/60 flex items-center justify-center shadow-xs"
-              >
-                <div className="h-2 w-16 sm:w-20 rounded bg-muted-foreground/20" />
-              </div>
-            ))}
+      {/* SOCIAL PROOF — TRUSTED DINING OUTLETS */}
+      <section className="py-14 sm:py-16 border-b border-border/60 bg-surface/40 relative">
+        <div className="w-[92vw] lg:w-[88vw] xl:w-[80vw] max-w-7xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+            <div className="eyebrow mb-3">Real Outlets • Real Counters</div>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
+              Trusted by Independent Dining Outlets Across India
+            </h2>
+            <p className="mt-2 text-xs sm:text-sm text-muted-foreground">
+              From busy biryani hubs to high-frequency cafés and family restaurants running
+              zero-downtime offline counter billing.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
+            {TRUSTED_OUTLETS.map((outlet) => {
+              if (outlet.url) {
+                return (
+                  <a
+                    key={outlet.name}
+                    href={outlet.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative flex flex-col justify-between p-4 rounded-xl border border-border/80 bg-surface hover:bg-surface-soft shadow-xs hover:shadow-md hover:border-brand transition-all duration-200"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-1 mb-1.5">
+                        <span className="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                        <span className="text-[11px] font-bold text-foreground uppercase tracking-wider inline-flex items-center gap-0.5">
+                          {outlet.badge}
+                        </span>
+                      </div>
+                      <h3 className="text-sm font-bold text-foreground group-hover:text-brand transition-colors line-clamp-1">
+                        {outlet.name}
+                      </h3>
+                      <p className="text-[11px] text-muted-foreground mt-0.5">{outlet.type}</p>
+                    </div>
+                    <span className="mt-3 text-xs text-foreground font-semibold inline-flex items-center gap-1 group-hover:underline">
+                      Visit Website →
+                    </span>
+                  </a>
+                );
+              }
+
+              return (
+                <div
+                  key={outlet.name}
+                  className="flex flex-col justify-between p-4 rounded-xl border border-border/80 bg-surface hover:border-border hover:bg-surface-soft shadow-2xs transition-all duration-200"
+                >
+                  <div>
+                    <div className="flex items-center gap-1.5 mb-1.5">
+                      <span className="inline-block h-1.5 w-1.5 rounded-full bg-muted-foreground/60" />
+                      <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
+                        Partner Outlet
+                      </span>
+                    </div>
+                    <h3 className="text-sm font-bold text-foreground line-clamp-1">
+                      {outlet.name}
+                    </h3>
+                    <p className="text-[11px] text-muted-foreground mt-0.5">{outlet.type}</p>
+                  </div>
+                  <span className="mt-3 text-xs text-muted-foreground font-medium inline-flex items-center gap-1">
+                    ✓ Verified POS Setup
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -444,8 +518,8 @@ function Home() {
                 <div className="mt-8 pt-6 border-t border-border/60 flex flex-wrap items-center gap-3">
                   <a href={BUSINESS.playStoreUrl} target="_blank" rel="noopener noreferrer">
                     <UiVerseGlowingButton variant="emerald" size="md">
+                      <PlayStoreIcon className="h-4 w-4 shrink-0" />
                       <span>Download Android App</span>
-                      <Download className="h-4 w-4" />
                     </UiVerseGlowingButton>
                   </a>
                   <Link to="/features" className="btn-secondary">
@@ -904,7 +978,7 @@ function Home() {
                   <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
                     <a href={BUSINESS.playStoreUrl} target="_blank" rel="noopener noreferrer">
                       <UiVerseGlowingButton variant="brand" size="lg">
-                        <Download className="h-4 w-4" />
+                        <PlayStoreIcon className="h-4 w-4 shrink-0" />
                         <span>Download Android App</span>
                       </UiVerseGlowingButton>
                     </a>
