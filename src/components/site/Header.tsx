@@ -32,10 +32,10 @@ export function Header() {
             className="h-11 w-11 md:h-12 md:w-12 object-contain transition-transform duration-200 group-hover:scale-105 shrink-0"
           />
           <div className="flex flex-col">
-            <span className="text-xl md:text-2xl font-black tracking-tight text-[#0a0e27] dark:text-foreground leading-none">
+            <span className="text-xl md:text-2xl font-black tracking-tight text-[#000030] dark:text-foreground leading-none">
               Khana<span className="text-[#4b26d4] dark:text-[#a78bfa]">Book</span>
             </span>
-            <span className="hidden sm:inline-block text-xs md:text-[13px] font-normal tracking-wide text-[#334155] dark:text-muted-foreground mt-1">
+            <span className="hidden sm:inline-block text-xs md:text-[13px] font-normal tracking-wide text-[#48486a] dark:text-muted-foreground mt-1">
               Fast &nbsp;|&nbsp; Simple &nbsp;|&nbsp; Reliable
             </span>
           </div>
