@@ -22,7 +22,7 @@ export function Header() {
         {/* Brand / Logo Block - Vertical Stack & Shrink Guard */}
         <Link
           to="/"
-          className="flex items-center gap-3.5 rounded-2xl focus-visible:ring-2 focus-visible:ring-ring group shrink-0"
+          className="flex items-center gap-1.5 sm:gap-2 rounded-2xl focus-visible:ring-2 focus-visible:ring-ring group shrink-0"
         >
           <img
             src={logo}
