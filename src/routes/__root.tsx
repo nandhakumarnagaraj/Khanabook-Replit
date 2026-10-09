@@ -136,6 +136,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 import { ThemeProvider } from "../lib/theme-provider";
+import { MotionConfig } from "motion/react";
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
@@ -161,28 +162,30 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[99999] focus:px-4 focus:py-2 focus:bg-brand focus:text-white focus:rounded-lg focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-white"
-        >
-          Skip to main content
-        </a>
-        <ParallaxBackground />
-        <div className="min-h-screen flex flex-col transition-colors duration-200 overflow-x-hidden w-full">
-          <SiteHeader />
-          <OfflineIndicator />
-          <main
-            id="main-content"
-            tabIndex={-1}
-            className="flex-1 w-full overflow-x-hidden outline-none"
+      <MotionConfig reducedMotion="never">
+        <ThemeProvider>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[99999] focus:px-4 focus:py-2 focus:bg-brand focus:text-white focus:rounded-lg focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-white"
           >
-            <Outlet />
-          </main>
-          <SiteFooter />
-          <FloatingCtas />
-        </div>
-      </ThemeProvider>
+            Skip to main content
+          </a>
+          <ParallaxBackground />
+          <div className="min-h-screen flex flex-col transition-colors duration-200 overflow-x-hidden w-full">
+            <SiteHeader />
+            <OfflineIndicator />
+            <main
+              id="main-content"
+              tabIndex={-1}
+              className="flex-1 w-full overflow-x-hidden outline-none"
+            >
+              <Outlet />
+            </main>
+            <SiteFooter />
+            <FloatingCtas />
+          </div>
+        </ThemeProvider>
+      </MotionConfig>
     </QueryClientProvider>
   );
 }
