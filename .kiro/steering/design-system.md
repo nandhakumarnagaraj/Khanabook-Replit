@@ -10,7 +10,7 @@ inclusion: auto
 - **Target users:** Independent Indian restaurant owners, café operators, food-stall owners
 - **Primary goal:** Explain the product honestly and encourage Play Store install or demo request
 - **Technology:** React 19, TanStack Start/Router, TypeScript (strict), Vite 8, Tailwind CSS 4, shadcn/ui (new-york style), Lucide icons
-- **Platform:** Lovable.dev connected, deployed to Cloudflare via Nitro
+- **Platform:** Standalone repository, deployed to Cloudflare via Nitro
 
 ## Design Tokens (already defined in src/styles.css)
 

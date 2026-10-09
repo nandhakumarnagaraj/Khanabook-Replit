@@ -1,12 +1,8 @@
-<!-- LOVABLE:BEGIN -->
+# KhanaBook Agent Guidelines
 
-> [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
->
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
+## Guidelines for Autonomous Agents & Pair Programmers
 
-<!-- LOVABLE:END -->
+- **Branch Stability**: Keep the `main` branch in a healthy, passing state with zero lint or type errors.
+- **Git History**: Keep commits atomic, clean, and well-described. Avoid force-pushing to published branches.
+- **Verification**: Always run `npm run lint` and `npx tsc --noEmit` before committing code changes.
+- **Design Tokens**: Follow the styling tokens in `src/styles.css` and guidelines in `.kiro/steering/design-system.md`.
