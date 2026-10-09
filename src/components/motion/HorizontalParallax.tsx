@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import {
   UtensilsCrossed,
   Coffee,
@@ -185,6 +186,35 @@ function MarqueeRow({
 }
 
 export function HorizontalParallax() {
+  const [mouseShift, setMouseShift] = useState(0);
+  const targetShift = useRef(0);
+  const currentShift = useRef(0);
+  const rafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const handlePointerMove = (e: PointerEvent) => {
+      // Ratio from -1 (left edge of screen) to +1 (right edge of screen)
+      const ratio = (e.clientX / window.innerWidth - 0.5) * 2;
+      // Max displacement of 200px in opposing directions
+      targetShift.current = ratio * 200;
+    };
+
+    const tick = () => {
+      // Spring inertia damping / lerp
+      currentShift.current += (targetShift.current - currentShift.current) * 0.08;
+      setMouseShift(currentShift.current);
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    rafRef.current = requestAnimationFrame(tick);
+
+    return () => {
+      window.removeEventListener("pointermove", handlePointerMove);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
+
   return (
     <section className="relative overflow-hidden py-16 md:py-20 border-y border-border/80 bg-surface/30 backdrop-blur-sm">
       <style>{`
@@ -223,11 +253,25 @@ export function HorizontalParallax() {
       </div>
 
       <div className="flex flex-col gap-5">
-        {/* Row 1 — Gliding Left */}
-        <MarqueeRow items={ROW_ONE} direction="left" />
+        {/* Row 1 — Moving Left + Cursor Dynamic Shift */}
+        <div
+          style={{
+            transform: `translate3d(${-mouseShift}px, 0, 0)`,
+            willChange: "transform",
+          }}
+        >
+          <MarqueeRow items={ROW_ONE} direction="left" />
+        </div>
 
-        {/* Row 2 — Gliding Right */}
-        <MarqueeRow items={ROW_TWO} direction="right" />
+        {/* Row 2 — Moving Right + Cursor Dynamic Shift */}
+        <div
+          style={{
+            transform: `translate3d(${mouseShift}px, 0, 0)`,
+            willChange: "transform",
+          }}
+        >
+          <MarqueeRow items={ROW_TWO} direction="right" />
+        </div>
       </div>
     </section>
   );

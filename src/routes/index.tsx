@@ -17,9 +17,6 @@ import {
   ExternalLink,
   Cpu,
   CheckCircle2,
-  Flame,
-  Coffee,
-  Store,
   Router,
   Cloud,
   Database,
@@ -28,7 +25,6 @@ import {
 import appHome from "@/assets/app-home.png";
 import { Section } from "@/components/site/Section";
 import { FAQ } from "@/components/site/FAQ";
-import { ProductTabs } from "@/components/site/ProductTabs";
 import { TestimonialCarousel } from "@/components/site/TestimonialCarousel";
 import { InteractivePosDashboard } from "@/components/site/InteractivePosDashboard";
 import { BUSINESS, DISCLAIMERS, absUrl } from "@/lib/business-config";
@@ -80,41 +76,6 @@ const SETUP_STRIP = [
   { icon: Printer, label: "Dual ESC/POS Thermal Receipt & KOT Printers" },
   { icon: Cloud, label: "Cloud Web Dashboard" },
   { icon: ShieldCheck, label: "GST-Ready Registers & Staff Role Controls" },
-];
-
-const FNB_FORMATS = [
-  {
-    icon: UtensilsCrossed,
-    title: "Dhabas & Fine-Dine",
-    desc: "Table management, steward mobile ordering, captain app, split bill, and complimentary items with steward authorization PINs.",
-    badge: "Steward Mode",
-    color: "text-brand",
-    borderHover: "hover:border-brand/40",
-  },
-  {
-    icon: Flame,
-    title: "QSRs & Fast Food",
-    desc: "Lightning 5-second token billing, dual screen customer display, dynamic UPI QR on screen, and automated token call audio.",
-    badge: "Token Billing",
-    color: "text-amber-500",
-    borderHover: "hover:border-amber-500/40",
-  },
-  {
-    icon: Coffee,
-    title: "Cafes & Bakeries",
-    desc: "Barcode weighing scale integration, custom cake advance bookings, delivery date slots, and ingredient recipe batching.",
-    badge: "Weigh Scale Ready",
-    color: "text-emerald-400",
-    borderHover: "hover:border-emerald-500/40",
-  },
-  {
-    icon: Store,
-    title: "Cloud Kitchens",
-    desc: "Centralized KDS (Kitchen Display System), multi-brand dispatch on a single tablet screen, rider handoff, and prep time tracking.",
-    badge: "Multi-Brand KDS",
-    color: "text-blue-400",
-    borderHover: "hover:border-blue-500/40",
-  },
 ];
 
 const ARCH_COMPARISON = [
@@ -671,70 +632,6 @@ function Home() {
             );
           })}
         </div>
-      </Section>
-
-      {/* INDIAN F&B FORMAT SUPPORT — Google Stitch Bento */}
-      <section className="py-20 md:py-28 bg-surface-soft/60 border-y border-border/60" id="formats">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
-          <EntranceReveal direction="up">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="eyebrow mb-3">Versatile Formats</div>
-              <h2 className="text-3xl md:text-5xl font-black text-foreground">
-                Engineered for <span className="hl">Every Format</span> of Indian Food &amp;
-                Beverage
-              </h2>
-              <p className="mt-4 text-base md:text-lg text-muted-foreground">
-                Switch effortlessly between rapid 5-second counter billing and multi-steward
-                fine-dine table operations.
-              </p>
-            </div>
-          </EntranceReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {FNB_FORMATS.map((fmt) => {
-              const Icon = fmt.icon;
-              return (
-                <UiVerseCard
-                  key={fmt.title}
-                  className={`p-6 flex flex-col justify-between shadow-lg transition-all ${fmt.borderHover} hover:translate-y-[-2px]`}
-                >
-                  <div className="flex flex-col h-full justify-between">
-                    <div>
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="h-12 w-12 rounded-xl bg-surface-soft border border-border/60 flex items-center justify-center">
-                          <Icon className={`h-6 w-6 ${fmt.color}`} />
-                        </span>
-                        <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-surface-soft border border-border/60 text-muted-foreground">
-                          {fmt.badge}
-                        </span>
-                      </div>
-                      <h3 className="text-lg font-bold text-foreground mb-2">{fmt.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{fmt.desc}</p>
-                    </div>
-                    <div className="pt-4 mt-6 border-t border-border/60 flex items-center justify-between text-xs font-semibold text-foreground">
-                      <span className={fmt.color}>Active Support</span>
-                      <ArrowRight className="h-3.5 w-3.5 opacity-60" />
-                    </div>
-                  </div>
-                </UiVerseCard>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* PRODUCT TABS */}
-      <Section
-        eyebrow="See it in action"
-        title={
-          <>
-            What KhanaBook <span className="hl">looks like.</span>
-          </>
-        }
-        desc="Click a feature to see how it works in the app."
-        className="bg-surface-soft"
-      >
-        <ProductTabs />
       </Section>
 
       {/* HAIKEI ORGANIC WAVE ACCENT — TOP */}
