@@ -1,6 +1,3 @@
-import { useRef } from "react";
-import { motion, useScroll, useSpring, useTransform, useReducedMotion } from "motion/react";
-import { useMounted } from "@/hooks/use-mounted";
 import {
   UtensilsCrossed,
   Coffee,
@@ -117,32 +114,79 @@ const ROW_TWO = [
   { label: "UPI & Cash Split Payment", icon: IndianRupee, color: "text-brand", bg: "bg-brand/10" },
 ];
 
-export function HorizontalParallax() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const shouldReduceMotion = useReducedMotion();
-  const mounted = useMounted();
-  const reduceMotion = mounted && shouldReduceMotion;
+interface MarqueeItem {
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+  color: string;
+  bg: string;
+  border?: string;
+}
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
-  // Parallax translation driven by scroll
-  const x1 = useTransform(smoothProgress, [0, 1], ["0%", "-35%"]);
-  const x2 = useTransform(smoothProgress, [0, 1], ["-35%", "0%"]);
+function MarqueeRow({
+  items,
+  direction = "left",
+}: {
+  items: MarqueeItem[];
+  direction?: "left" | "right";
+}) {
+  const animClass = direction === "left" ? "animate-marquee-left" : "animate-marquee-right";
+  // Repeat items to fill wide displays
+  const repeated = [...items, ...items];
 
   return (
     <div
-      ref={containerRef}
-      className="relative overflow-hidden py-16 md:py-20 border-y border-border/80 bg-surface/30 backdrop-blur-sm"
+      className="marquee-group flex overflow-hidden select-none py-1"
+      aria-label={
+        direction === "left" ? "Supported dining formats" : "Core operational capabilities"
+      }
     >
+      <div className={`flex shrink-0 items-center gap-4 ${animClass} pr-4`}>
+        {repeated.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <div
+              key={`track-a-${item.label}-${index}`}
+              className={`group flex items-center gap-3 rounded-full border border-border bg-surface px-6 py-3.5 md:py-4 min-h-[52px] md:min-h-[56px] text-sm md:text-base font-semibold text-foreground shadow-sm hover:scale-105 transition-all duration-200 cursor-default select-none ${
+                item.border || "hover:border-brand/40 hover:bg-surface-soft"
+              }`}
+            >
+              <span className={`flex items-center justify-center rounded-full p-1.5 ${item.bg}`}>
+                <Icon
+                  className={`h-4.5 w-4.5 md:h-5 md:w-5 shrink-0 ${item.color} group-hover:rotate-12 transition-transform duration-200`}
+                />
+              </span>
+              <span className="whitespace-nowrap">{item.label}</span>
+            </div>
+          );
+        })}
+      </div>
+      <div aria-hidden className={`flex shrink-0 items-center gap-4 ${animClass} pr-4`}>
+        {repeated.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <div
+              key={`track-b-${item.label}-${index}`}
+              className={`group flex items-center gap-3 rounded-full border border-border bg-surface px-6 py-3.5 md:py-4 min-h-[52px] md:min-h-[56px] text-sm md:text-base font-semibold text-foreground shadow-sm hover:scale-105 transition-all duration-200 cursor-default select-none ${
+                item.border || "hover:border-brand/40 hover:bg-surface-soft"
+              }`}
+            >
+              <span className={`flex items-center justify-center rounded-full p-1.5 ${item.bg}`}>
+                <Icon
+                  className={`h-4.5 w-4.5 md:h-5 md:w-5 shrink-0 ${item.color} group-hover:rotate-12 transition-transform duration-200`}
+                />
+              </span>
+              <span className="whitespace-nowrap">{item.label}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+export function HorizontalParallax() {
+  return (
+    <section className="relative overflow-hidden py-16 md:py-20 border-y border-border/80 bg-surface/30 backdrop-blur-sm">
       {/* Background subtle gradient masks on edges */}
       <div
         aria-hidden
@@ -160,46 +204,12 @@ export function HorizontalParallax() {
       </div>
 
       <div className="flex flex-col gap-5">
-        {/* Row 1 — Moving Left */}
-        <motion.div style={reduceMotion ? undefined : { x: x1 }} className="flex gap-4 w-max">
-          {[...ROW_ONE, ...ROW_ONE, ...ROW_ONE].map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={`${item.label}-${index}`}
-                className={`group flex items-center gap-3 rounded-full border border-border bg-surface px-6 py-3.5 md:py-4 min-h-[52px] md:min-h-[56px] text-sm md:text-base font-semibold text-foreground shadow-sm hover:scale-105 transition-all duration-200 cursor-default select-none ${item.border}`}
-              >
-                <span className={`flex items-center justify-center rounded-full p-1.5 ${item.bg}`}>
-                  <Icon
-                    className={`h-4.5 w-4.5 md:h-5 md:w-5 ${item.color} group-hover:rotate-12 transition-transform duration-200`}
-                  />
-                </span>
-                <span>{item.label}</span>
-              </div>
-            );
-          })}
-        </motion.div>
+        {/* Row 1 — Gliding Left */}
+        <MarqueeRow items={ROW_ONE} direction="left" />
 
-        {/* Row 2 — Moving Right */}
-        <motion.div style={reduceMotion ? undefined : { x: x2 }} className="flex gap-4 w-max">
-          {[...ROW_TWO, ...ROW_TWO, ...ROW_TWO].map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={`${item.label}-${index}`}
-                className="group flex items-center gap-3 rounded-full border border-border bg-surface px-6 py-3.5 md:py-4 min-h-[52px] md:min-h-[56px] text-sm md:text-base font-semibold text-foreground shadow-sm hover:border-brand/40 hover:bg-surface-soft hover:scale-105 transition-all duration-200 cursor-default select-none"
-              >
-                <span className={`flex items-center justify-center rounded-full p-1.5 ${item.bg}`}>
-                  <Icon
-                    className={`h-4.5 w-4.5 md:h-5 md:w-5 shrink-0 ${item.color} group-hover:scale-110 transition-transform duration-200`}
-                  />
-                </span>
-                <span>{item.label}</span>
-              </div>
-            );
-          })}
-        </motion.div>
+        {/* Row 2 — Gliding Right */}
+        <MarqueeRow items={ROW_TWO} direction="right" />
       </div>
-    </div>
+    </section>
   );
 }
