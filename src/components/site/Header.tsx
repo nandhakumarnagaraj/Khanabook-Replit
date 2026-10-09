@@ -22,21 +22,21 @@ export function Header() {
         {/* Brand / Logo Block - Vertical Stack & Shrink Guard */}
         <Link
           to="/"
-          className="flex items-center gap-3 rounded-2xl focus-visible:ring-2 focus-visible:ring-ring group shrink-0"
+          className="flex items-center gap-3.5 rounded-2xl focus-visible:ring-2 focus-visible:ring-ring group shrink-0"
         >
           <img
             src={logo}
             alt="KhanaBook Logo"
             width={48}
             height={48}
-            className="h-10 w-10 md:h-11 md:w-11 rounded-xl border border-border/60 shadow-sm transition-transform duration-200 group-hover:scale-105 shrink-0"
+            className="h-11 w-11 md:h-12 md:w-12 object-contain transition-transform duration-200 group-hover:scale-105 shrink-0"
           />
           <div className="flex flex-col">
-            <span className="text-xl md:text-2xl font-black tracking-tight text-foreground leading-none">
+            <span className="text-xl md:text-2xl font-black tracking-tight text-[#0a0e27] dark:text-foreground leading-none">
               Khana<span className="text-[#4b26d4] dark:text-[#a78bfa]">Book</span>
             </span>
-            <span className="hidden sm:inline-block text-[11px] font-medium tracking-tight text-muted-foreground mt-0.5">
-              Fast | Simple | Reliable
+            <span className="hidden sm:inline-block text-xs md:text-[13px] font-normal tracking-wide text-[#334155] dark:text-muted-foreground mt-1">
+              Fast &nbsp;|&nbsp; Simple &nbsp;|&nbsp; Reliable
             </span>
           </div>
         </Link>
