@@ -1290,13 +1290,13 @@ html.light .text-gray-100\/70 {
     transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(calc(-100% - 1rem), 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
 }
 
 @keyframes marquee-scroll-right {
   0% {
-    transform: translate3d(calc(-100% - 1rem), 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
   100% {
     transform: translate3d(0, 0, 0);
@@ -1304,23 +1304,11 @@ html.light .text-gray-100\/70 {
 }
 
 .animate-marquee-left {
-  animation: marquee-scroll-left 42s linear infinite;
+  animation: marquee-scroll-left 28s linear infinite !important;
   will-change: transform;
 }
 
 .animate-marquee-right {
-  animation: marquee-scroll-right 46s linear infinite;
+  animation: marquee-scroll-right 32s linear infinite !important;
   will-change: transform;
-}
-
-.marquee-group:hover .animate-marquee-left,
-.marquee-group:hover .animate-marquee-right {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-marquee-left,
-  .animate-marquee-right {
-    animation-play-state: paused;
-  }
 }

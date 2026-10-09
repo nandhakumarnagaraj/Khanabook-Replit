@@ -187,6 +187,25 @@ function MarqueeRow({
 export function HorizontalParallax() {
   return (
     <section className="relative overflow-hidden py-16 md:py-20 border-y border-border/80 bg-surface/30 backdrop-blur-sm">
+      <style>{`
+        @keyframes marquee-scroll-left {
+          0% { transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-100%, 0, 0); }
+        }
+        @keyframes marquee-scroll-right {
+          0% { transform: translate3d(-100%, 0, 0); }
+          100% { transform: translate3d(0, 0, 0); }
+        }
+        .animate-marquee-left {
+          animation: marquee-scroll-left 28s linear infinite !important;
+          will-change: transform;
+        }
+        .animate-marquee-right {
+          animation: marquee-scroll-right 32s linear infinite !important;
+          will-change: transform;
+        }
+      `}</style>
+
       {/* Background subtle gradient masks on edges */}
       <div
         aria-hidden
