@@ -1,5 +1,6 @@
 import React from "react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
+import { useMounted } from "@/hooks/use-mounted";
 
 interface EntranceRevealProps {
   children: React.ReactNode;
@@ -16,6 +17,14 @@ export function EntranceReveal({
   className = "",
   duration = 0.6,
 }: EntranceRevealProps) {
+  const shouldReduceMotion = useReducedMotion();
+  const mounted = useMounted();
+  const reduceMotion = mounted && shouldReduceMotion;
+
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   const directionOffset = {
     up: { y: 35, x: 0 },
     down: { y: -35, x: 0 },
@@ -59,6 +68,14 @@ export function StaggerGroup({
   className?: string;
   staggerDelay?: number;
 }) {
+  const shouldReduceMotion = useReducedMotion();
+  const mounted = useMounted();
+  const reduceMotion = mounted && shouldReduceMotion;
+
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       initial="hidden"
@@ -86,6 +103,14 @@ export function StaggerItem({
   children: React.ReactNode;
   className?: string;
 }) {
+  const shouldReduceMotion = useReducedMotion();
+  const mounted = useMounted();
+  const reduceMotion = mounted && shouldReduceMotion;
+
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       variants={{

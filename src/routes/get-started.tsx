@@ -257,7 +257,10 @@ function GetStartedPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-gray-300 mb-1.5">
+                      <label
+                        htmlFor="field-type"
+                        className="block text-xs font-bold text-gray-300 mb-1.5"
+                      >
                         Restaurant Format <span className="text-brand">*</span>
                       </label>
                       <select
@@ -315,7 +318,7 @@ function GetStartedPage() {
                     <span>
                       I agree to be contacted via WhatsApp/Phone by KhanaBook for restaurant POS
                       onboarding under the{" "}
-                      <a href="/privacy-policy" className="text-brand hover:underline">
+                      <a href="/privacy-policy" className="text-brand underline">
                         Privacy Policy
                       </a>
                       .

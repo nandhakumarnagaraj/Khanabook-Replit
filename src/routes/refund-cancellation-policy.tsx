@@ -88,7 +88,7 @@ function Refund() {
               <Item title="Billing Queries & Support Contact">
                 For questions regarding any charge made directly by {BUSINESS.legalName}, contact us
                 at{" "}
-                <a href={`mailto:${BUSINESS.supportEmail}`} className="text-brand hover:underline">
+                <a href={`mailto:${BUSINESS.supportEmail}`} className="text-brand underline">
                   {BUSINESS.supportEmail}
                 </a>{" "}
                 with your transaction details.

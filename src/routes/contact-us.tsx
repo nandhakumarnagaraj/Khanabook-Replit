@@ -79,7 +79,7 @@ function ContactUsPage() {
                 <div className="h-12 w-12 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center text-brand mb-4">
                   <Phone className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Call Support</h3>
+                <h2 className="text-xl font-bold text-white">Call Support</h2>
                 <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                   Speak directly with our technical deployment and customer success team.
                 </p>
@@ -106,7 +106,7 @@ function ContactUsPage() {
                 <div className="h-12 w-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4">
                   <MessageSquare className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-white">WhatsApp Chat</h3>
+                <h2 className="text-xl font-bold text-white">WhatsApp Chat</h2>
                 <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                   Instant chat for quick questions, printer setup verification, and screenshots.
                 </p>
@@ -134,7 +134,7 @@ function ContactUsPage() {
                 <div className="h-12 w-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4">
                   <Mail className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Email Inquiries</h3>
+                <h2 className="text-xl font-bold text-white">Email Inquiries</h2>
                 <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                   For multi-outlet franchises, enterprise deployments, and legal or tax matters.
                 </p>

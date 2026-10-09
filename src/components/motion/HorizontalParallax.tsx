@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useSpring, useTransform, useReducedMotion } from "motion/react";
+import { useMounted } from "@/hooks/use-mounted";
 import {
   UtensilsCrossed,
   Coffee,
@@ -119,6 +120,8 @@ const ROW_TWO = [
 export function HorizontalParallax() {
   const containerRef = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
+  const mounted = useMounted();
+  const reduceMotion = mounted && shouldReduceMotion;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -158,7 +161,7 @@ export function HorizontalParallax() {
 
       <div className="flex flex-col gap-5">
         {/* Row 1 — Moving Left */}
-        <motion.div style={shouldReduceMotion ? undefined : { x: x1 }} className="flex gap-4 w-max">
+        <motion.div style={reduceMotion ? undefined : { x: x1 }} className="flex gap-4 w-max">
           {[...ROW_ONE, ...ROW_ONE, ...ROW_ONE].map((item, index) => {
             const Icon = item.icon;
             return (
@@ -178,7 +181,7 @@ export function HorizontalParallax() {
         </motion.div>
 
         {/* Row 2 — Moving Right */}
-        <motion.div style={shouldReduceMotion ? undefined : { x: x2 }} className="flex gap-4 w-max">
+        <motion.div style={reduceMotion ? undefined : { x: x2 }} className="flex gap-4 w-max">
           {[...ROW_TWO, ...ROW_TWO, ...ROW_TWO].map((item, index) => {
             const Icon = item.icon;
             return (

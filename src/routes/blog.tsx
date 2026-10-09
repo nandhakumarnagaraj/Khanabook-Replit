@@ -194,6 +194,8 @@ function BlogCard({ post }: { post: BlogPost }) {
             <img
               src={image}
               alt=""
+              width={800}
+              height={450}
               loading="lazy"
               className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
             />

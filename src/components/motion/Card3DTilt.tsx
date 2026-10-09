@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "motion/react";
+import { useMounted } from "@/hooks/use-mounted";
 
 interface Card3DTiltProps {
   children: React.ReactNode;
@@ -15,6 +16,8 @@ export function Card3DTilt({
   glare = true,
 }: Card3DTiltProps) {
   const shouldReduceMotion = useReducedMotion();
+  const mounted = useMounted();
+  const reduceMotion = mounted && shouldReduceMotion;
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -48,7 +51,7 @@ export function Card3DTilt({
     mouseY.set(0.5);
   };
 
-  if (shouldReduceMotion) {
+  if (reduceMotion) {
     return <div className={className}>{children}</div>;
   }
 

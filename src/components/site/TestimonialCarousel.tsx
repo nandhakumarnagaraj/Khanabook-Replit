@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, Quote, Star, Play, Pause } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
+import { useMounted } from "@/hooks/use-mounted";
 import { TESTIMONIALS } from "@/lib/testimonials";
 
 export function TestimonialCarousel() {
@@ -8,6 +9,8 @@ export function TestimonialCarousel() {
   const [direction, setDirection] = useState<1 | -1>(1);
   const [isPaused, setIsPaused] = useState(false);
   const shouldReduceMotion = useReducedMotion();
+  const mounted = useMounted();
+  const reduceMotion = mounted && shouldReduceMotion;
 
   useEffect(() => {
     if (isPaused || shouldReduceMotion) return;
@@ -50,15 +53,11 @@ export function TestimonialCarousel() {
             key={active}
             custom={direction}
             initial={
-              shouldReduceMotion
-                ? { opacity: 0 }
-                : { opacity: 0, x: direction * 40, filter: "blur(4px)" }
+              reduceMotion ? { opacity: 0 } : { opacity: 0, x: direction * 40, filter: "blur(4px)" }
             }
-            animate={
-              shouldReduceMotion ? { opacity: 1 } : { opacity: 1, x: 0, filter: "blur(0px)" }
-            }
+            animate={reduceMotion ? { opacity: 1 } : { opacity: 1, x: 0, filter: "blur(0px)" }}
             exit={
-              shouldReduceMotion
+              reduceMotion
                 ? { opacity: 0 }
                 : { opacity: 0, x: -direction * 40, filter: "blur(4px)" }
             }
@@ -135,10 +134,15 @@ export function TestimonialCarousel() {
               onClick={() => goTo(index)}
               aria-label={`Show story ${index + 1}`}
               aria-current={index === active ? "true" : undefined}
-              className={`h-2.5 rounded-full transition-all duration-300 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none ${
-                index === active ? "w-8 bg-brand" : "w-2.5 bg-border hover:bg-brand/50"
-              }`}
-            />
+              className="group relative flex h-7 w-7 items-center justify-center rounded-full focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            >
+              <span
+                aria-hidden="true"
+                className={`block h-2.5 rounded-full transition-all duration-300 ${
+                  index === active ? "w-8 bg-brand" : "w-2.5 bg-border group-hover:bg-brand/50"
+                }`}
+              />
+            </button>
           ))}
         </div>
 

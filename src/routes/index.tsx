@@ -25,11 +25,7 @@ import {
   Database,
   Download,
 } from "lucide-react";
-import posTerminal from "@/assets/pos-terminal.webp";
-import chefHandshake from "@/assets/chef-handshake.webp";
-import serverRoom from "@/assets/server-room.webp";
 import appHome from "@/assets/app-home.png";
-import appBilling from "@/assets/app-billing.png";
 import { Section } from "@/components/site/Section";
 import { FAQ } from "@/components/site/FAQ";
 import { ProductTabs } from "@/components/site/ProductTabs";
@@ -54,45 +50,6 @@ import { HaikeiWave } from "@/components/motion/primitives/HaikeiWave";
 import { UiVerseBadge, UiVerseGlowingButton, UiVerseCard } from "@/components/uiverse";
 
 const FEATURE_ICONS = [ReceiptText, Layers, Printer, WifiOff, UtensilsCrossed, BarChart3];
-
-const STORY_BLOCKS = [
-  {
-    title: "Lightning 3-Second Counter Billing",
-    body: "Punch dine-in, takeaway, and delivery orders with instant touch search, item modifiers, and customized table maps. Support pay-before or pay-after workflows, split payments across Cash, Dynamic UPI QR, and Card, and share instant digital invoices via WhatsApp or SMS.",
-    image: appBilling,
-    alt: "KhanaBook new-bill screen for selecting menu items and creating an order",
-    icon: ReceiptText,
-    reverse: false,
-    portrait: true,
-  },
-  {
-    title: "Multi-Terminal Mesh (Up to 5 Devices)",
-    body: "Equip stewards with captain ordering handhelds while cashiers manage settlements at the main counter. Each terminal maintains its own GST-compliant invoice series and daily order counter, synchronizing locally over Wi-Fi without needing external broadband.",
-    image: posTerminal,
-    alt: "KhanaBook POS terminal on a restaurant counter",
-    icon: Layers,
-    reverse: true,
-    portrait: false,
-  },
-  {
-    title: "Dual ESC/POS Thermal Printing & Kitchen KOT",
-    body: "Route orders automatically to up to two standard USB, Bluetooth, or Wi-Fi thermal printers. Print customer receipts at the counter while instantly firing KOTs to kitchen preparation stations (Tandoor, Chinese, Bar), complete with reprint and item void tracking.",
-    image: chefHandshake,
-    alt: "Restaurant kitchen staff coordinating on orders",
-    icon: Printer,
-    reverse: false,
-    portrait: false,
-  },
-  {
-    title: "100% Offline Resilience & Cloud Web Dashboard",
-    body: "Zero counter freezes during broadband drops or power cuts thanks to local SQLite WAL storage. Silently uploads finalized receipts to the Cloud Web Dashboard for remote sales telemetry, menu edits, and GST tax reports.",
-    image: serverRoom,
-    alt: "Cloud infrastructure syncing restaurant data",
-    icon: WifiOff,
-    reverse: true,
-    portrait: false,
-  },
-];
 
 const SETUP_STRIP = [
   { icon: WifiOff, label: "100% Offline SQLite Billing" },
@@ -291,18 +248,22 @@ function Home() {
                   </UiVerseGlowingButton>
                 </a>
 
-                <Link to="/get-started">
-                  <UiVerseGlowingButton variant="emerald" size="lg">
-                    <span>Request Setup Help</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </UiVerseGlowingButton>
+                <Link
+                  to="/get-started"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface/80 px-6 py-3.5 text-sm font-bold text-foreground hover:border-brand hover:text-brand transition-all"
+                >
+                  <span>Request Setup Help</span>
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
 
-                <a href={BUSINESS.loginUrl} target="_blank" rel="noopener noreferrer">
-                  <UiVerseGlowingButton variant="white" size="lg">
-                    <span>Web Dashboard</span>
-                    <ExternalLink className="h-4 w-4 opacity-70" />
-                  </UiVerseGlowingButton>
+                <a
+                  href={BUSINESS.loginUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-2 py-3.5 text-sm font-bold text-muted-foreground hover:text-brand transition-colors"
+                >
+                  <span>Web Dashboard</span>
+                  <ExternalLink className="h-4 w-4 opacity-70" />
                 </a>
               </div>
 
@@ -569,71 +530,6 @@ function Home() {
         </div>
       </section>
 
-      {/* AN ALL-ROUNDER RESTAURANT POS — alternating story blocks */}
-      <section className="py-24">
-        <div className="container-page">
-          <EntranceReveal direction="up">
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <div className="eyebrow mb-3">What it does</div>
-              <h2 className="text-3xl md:text-5xl font-black">
-                An all-rounder <span className="hl">restaurant POS.</span>
-              </h2>
-              <p className="mt-3 text-muted-foreground">
-                Everything that happens between an order landing and the bill closing — handled in
-                one app.
-              </p>
-            </div>
-          </EntranceReveal>
-
-          <div className="space-y-20 md:space-y-24">
-            {STORY_BLOCKS.map((block) => {
-              const Icon = block.icon;
-              return (
-                <div
-                  key={block.title}
-                  className={`grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto w-full ${
-                    block.reverse ? "md:[&>*:first-child]:order-2" : ""
-                  }`}
-                >
-                  <EntranceReveal direction={block.reverse ? "right" : "left"}>
-                    <span className="icon-badge h-12 w-12 mb-4 shadow-sm hover:scale-110 transition-transform">
-                      <Icon aria-hidden className="h-5 w-5 text-brand" />
-                    </span>
-                    <h3 className="text-2xl font-black mb-3">{block.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-lg">{block.body}</p>
-                  </EntranceReveal>
-
-                  <EntranceReveal direction={block.reverse ? "left" : "right"} delay={0.15}>
-                    <Card3DTilt intensity={10} glare={true}>
-                      <div
-                        className={`rounded-3xl overflow-hidden border border-border shadow-2xl bg-surface-soft/80 backdrop-blur-sm transition-shadow hover:shadow-brand/10 ${
-                          block.portrait
-                            ? "flex min-h-[34rem] items-center justify-center p-4"
-                            : "p-2"
-                        }`}
-                      >
-                        <img
-                          src={block.image}
-                          alt={block.alt}
-                          width={block.portrait ? 720 : 800}
-                          height={block.portrait ? 1600 : 800}
-                          loading="lazy"
-                          className={
-                            block.portrait
-                              ? "max-h-[38rem] w-auto max-w-full rounded-2xl object-contain shadow-md"
-                              : "h-auto w-full rounded-2xl"
-                          }
-                        />
-                      </div>
-                    </Card3DTilt>
-                  </EntranceReveal>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* WORKS WITH YOUR SETUP */}
       <section className="bg-surface-soft/60 backdrop-blur-sm py-24 border-y border-border/80">
         <div className="container-page">
@@ -834,7 +730,7 @@ function Home() {
               <thead>
                 <tr className="border-b border-border/70 bg-surface-soft text-foreground font-bold">
                   <th className="p-4 sm:p-5">Capability</th>
-                  <th className="p-4 sm:p-5 bg-brand/10 dark:bg-brand/15 text-brand font-black border-x border-brand/25">
+                  <th className="p-4 sm:p-5 bg-brand/10 dark:bg-brand/15 text-red-800 font-black border-x border-brand/25">
                     <div className="flex items-center gap-2">
                       <span>KhanaBook (Offline Mesh)</span>
                       <span className="text-[10px] uppercase px-2 py-0.5 rounded-full bg-brand text-white font-extrabold tracking-wider shadow-sm">
@@ -854,10 +750,10 @@ function Home() {
                 {ARCH_COMPARISON.map((row) => (
                   <tr key={row.feature} className="hover:bg-surface-soft/40 transition-colors">
                     <td className="p-4 sm:p-5 font-bold text-foreground">{row.feature}</td>
-                    <td className="p-4 sm:p-5 bg-brand/5 dark:bg-brand/10 border-x border-brand/25 text-emerald-500 dark:text-emerald-400 font-bold">
+                    <td className="p-4 sm:p-5 bg-brand/5 dark:bg-brand/10 border-x border-brand/25 font-bold">
                       <div className="flex items-center gap-1.5">
-                        <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500 dark:text-emerald-400" />
-                        <span>{row.khanabook}</span>
+                        <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-800" />
+                        <span className="text-emerald-800">{row.khanabook}</span>
                       </div>
                     </td>
                     <td className="p-4 sm:p-5 text-muted-foreground">{row.cloud}</td>

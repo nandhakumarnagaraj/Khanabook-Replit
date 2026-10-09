@@ -157,7 +157,7 @@ export function InteractivePosDashboard() {
         {/* Interactive Internet Cut Simulator Toggle */}
         <button
           onClick={() => setIsOfflineSimulated((prev) => !prev)}
-          className={`flex items-center gap-2 rounded-xl border px-3.5 py-1.5 text-xs font-bold transition-all ${
+          className={`flex items-center gap-2 rounded-xl border px-4 py-2.5 min-h-[44px] text-xs font-bold transition-all ${
             isOfflineSimulated
               ? "border-amber-500/50 bg-amber-500/10 text-amber-600 dark:text-amber-400 shadow-md"
               : "border-border bg-surface hover:bg-surface-soft text-foreground shadow-sm"
@@ -258,7 +258,7 @@ export function InteractivePosDashboard() {
                 <button
                   key={table.id}
                   onClick={() => setSelectedTable(table.id)}
-                  className={`flex flex-col items-start rounded-xl border px-3.5 py-2 text-xs transition-all shrink-0 ${
+                  className={`flex flex-col items-start rounded-xl border px-4 py-2.5 text-xs transition-all shrink-0 ${
                     isSelected
                       ? "border-brand bg-brand text-brand-foreground shadow-sm"
                       : "border-border bg-surface hover:bg-surface-soft text-foreground"
@@ -285,7 +285,7 @@ export function InteractivePosDashboard() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`rounded-lg px-3 py-1.5 text-xs font-bold transition-all shrink-0 ${
+                  className={`rounded-lg px-4 py-2.5 text-xs font-bold transition-all shrink-0 flex items-center min-h-[44px] ${
                     isActive
                       ? "bg-foreground text-background shadow-sm"
                       : "border border-border bg-surface text-muted-foreground hover:text-foreground"
@@ -307,7 +307,7 @@ export function InteractivePosDashboard() {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => addItem(item)}
-                  className={`group relative flex items-center justify-between rounded-xl border p-3.5 transition-all cursor-pointer select-none ${
+                  className={`group relative flex items-center justify-between rounded-xl border p-4 transition-all cursor-pointer select-none ${
                     inCart
                       ? "border-brand/40 bg-brand/5 shadow-sm"
                       : "border-border bg-surface hover:border-border hover:bg-surface-soft"
@@ -335,12 +335,12 @@ export function InteractivePosDashboard() {
 
                   <div className="flex items-center gap-1 shrink-0 ml-2">
                     {inCart ? (
-                      <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-brand text-brand-foreground font-mono font-bold text-xs shadow-sm">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-brand-foreground font-mono font-bold text-xs shadow-sm">
                         {inCart.qty}
                       </span>
                     ) : (
-                      <span className="flex h-6 w-6 items-center justify-center rounded-lg border border-border bg-surface text-muted-foreground group-hover:border-brand group-hover:text-brand transition-colors">
-                        <Plus className="h-3.5 w-3.5" />
+                      <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-surface text-muted-foreground group-hover:border-brand group-hover:text-brand transition-colors">
+                        <Plus className="h-4 w-4" />
                       </span>
                     )}
                   </div>
@@ -362,10 +362,10 @@ export function InteractivePosDashboard() {
                 </div>
                 <button
                   onClick={() => setCart([])}
-                  className="flex items-center gap-1 text-[11px] text-muted-foreground hover:text-red-500 transition-colors"
+                  className="flex items-center gap-1.5 rounded-lg px-3 py-2.5 -m-1 min-h-[40px] text-[11px] text-muted-foreground hover:text-red-500 transition-colors"
                   title="Clear order"
                 >
-                  <RotateCcw className="h-3 w-3" />
+                  <RotateCcw className="h-3.5 w-3.5" />
                   <span>Reset</span>
                 </button>
               </div>
@@ -392,7 +392,7 @@ export function InteractivePosDashboard() {
                             type="button"
                             onClick={() => updateQty(item.id, -1)}
                             aria-label={`Decrease quantity of ${item.name}`}
-                            className="h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center hover:text-brand transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                            className="h-11 w-11 flex items-center justify-center hover:text-brand transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                           >
                             <Minus className="h-3 w-3" />
                           </button>
@@ -401,7 +401,7 @@ export function InteractivePosDashboard() {
                             type="button"
                             onClick={() => updateQty(item.id, 1)}
                             aria-label={`Increase quantity of ${item.name}`}
-                            className="h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center hover:text-brand transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                            className="h-11 w-11 flex items-center justify-center hover:text-brand transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                           >
                             <Plus className="h-3 w-3" />
                           </button>
@@ -413,7 +413,7 @@ export function InteractivePosDashboard() {
                           type="button"
                           onClick={() => removeItem(item.id)}
                           aria-label={`Remove ${item.name} from order`}
-                          className="h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center text-muted-foreground hover:text-red-500 transition-colors ml-1 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                          className="h-11 w-11 flex items-center justify-center text-muted-foreground hover:text-red-500 transition-colors ml-1 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                         >
                           <Trash2 className="h-3.5 w-3.5" />
                         </button>
@@ -451,7 +451,7 @@ export function InteractivePosDashboard() {
                   <button
                     key={mode}
                     onClick={() => setSelectedPayment(mode)}
-                    className={`rounded-lg py-1.5 text-xs font-bold font-mono transition-all ${
+                    className={`rounded-lg py-2.5 text-xs font-bold font-mono transition-all flex items-center justify-center min-h-[44px] ${
                       selectedPayment === mode
                         ? "border border-brand bg-brand/10 text-brand shadow-sm"
                         : "border border-border bg-surface text-muted-foreground hover:text-foreground"
@@ -468,7 +468,7 @@ export function InteractivePosDashboard() {
                 <button
                   onClick={handlePrintKot}
                   disabled={cart.length === 0}
-                  className={`flex-1 flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-xs font-bold transition-all shadow-md active:scale-95 disabled:opacity-50 disabled:pointer-events-none ${
+                  className={`flex-1 min-h-[48px] flex items-center justify-center gap-1.5 rounded-xl px-4 py-3 text-xs font-bold transition-all shadow-md active:scale-95 disabled:opacity-50 disabled:pointer-events-none ${
                     isKotPrinted ? "bg-emerald-600 text-white" : "btn-primary w-full"
                   }`}
                 >

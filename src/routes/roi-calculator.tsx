@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { isValidElement, cloneElement, useMemo, useState } from "react";
+import type { ReactElement } from "react";
 import {
   IndianRupee,
   Clock,
@@ -29,7 +30,6 @@ export const Route = createFileRoute("/roi-calculator")({
       },
       { property: "og:title", content: "Restaurant POS Savings Estimator — KhanaBook" },
       { property: "og:url", content: absUrl("/roi-calculator") },
-      { name: "robots", content: "noindex" },
     ],
     links: [{ rel: "canonical", href: absUrl("/roi-calculator") }],
   }),
@@ -108,6 +108,7 @@ function ROIPage() {
               </div>
 
               <SliderField
+                id="pos-cost-slider"
                 label="Current POS Monthly Subscription"
                 value={`₹${posCost.toLocaleString("en-IN")}`}
                 sublabel="What you currently pay for recurring POS licenses"
@@ -124,6 +125,7 @@ function ROIPage() {
               </SliderField>
 
               <SliderField
+                id="bills-per-day-slider"
                 label="Average Bills per Day"
                 value={`${billsPerDay} orders`}
                 sublabel="Daily volume across Dine-in, Takeaway & Delivery"
@@ -140,6 +142,7 @@ function ROIPage() {
               </SliderField>
 
               <SliderField
+                id="minutes-saved-slider"
                 label="Counter Minutes Saved per Bill"
                 value={`${minutesSavedPerBill} min`}
                 sublabel="Sub-second offline Android touch search vs slow web browser buffering"
@@ -156,6 +159,7 @@ function ROIPage() {
               </SliderField>
 
               <SliderField
+                id="staff-cost-slider"
                 label="Staff Cost per Hour"
                 value={`₹${staffHourlyRate}/hr`}
                 sublabel="Hourly wage of cashier / steward staff handling billing"
@@ -172,6 +176,7 @@ function ROIPage() {
               </SliderField>
 
               <SliderField
+                id="paper-cost-slider"
                 label="Monthly Thermal Paper & Hardware Waste"
                 value={`₹${paperCostMonthly}`}
                 sublabel="Paper rolls, printer maintenance, ink/ribbon costs"
@@ -258,11 +263,13 @@ function ROIPage() {
 }
 
 function SliderField({
+  id,
   label,
   value,
   sublabel,
   children,
 }: {
+  id: string;
   label: string;
   value: string;
   sublabel: string;
@@ -271,11 +278,15 @@ function SliderField({
   return (
     <div>
       <div className="flex justify-between items-baseline mb-1">
-        <span className="text-sm font-bold text-white">{label}</span>
+        <label htmlFor={id} className="text-sm font-bold text-white">
+          {label}
+        </label>
         <span className="text-sm font-bold text-brand">{value}</span>
       </div>
       <p className="text-[11px] text-gray-300 mb-2">{sublabel}</p>
-      {children}
+      {isValidElement(children)
+        ? cloneElement(children as ReactElement<{ id?: string }>, { id })
+        : children}
     </div>
   );
 }

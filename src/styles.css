@@ -140,6 +140,26 @@ html.light .bg-\[\#1E1F20\] {
     0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
+html.light .bg-\[\#1E1F20\]\/90 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-\[\#1E1F20\]\/80 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+html.light .bg-\[\#1E1F20\]\/50 {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light .bg-\[\#1E1F20\]\/30 {
+  background-color: #f1f3f4 !important;
+}
+
+html.light .bg-\[\#161718\]\/40 {
+  background-color: rgba(0, 0, 0, 0.045) !important;
+}
+
 html.light .bg-\[\#28292A\] {
   background-color: #f1f3f4 !important;
 }
@@ -163,19 +183,38 @@ html.light .text-white {
   color: #1f1f1f !important;
 }
 
-/* Ensure colored buttons, alerts, and banners retain crisp white text in light mode */
+/* Ensure colored buttons, alerts, and banners retain crisp white text in light mode.
+   The [class*="bg-..."] * patterns match Tailwind variants such as bg-brand/30.
+   Exclude selection: prefixed variants — selection highlight colors are NOT element
+   backgrounds, but their substring would otherwise white-out every descendant. */
 html.light .bg-brand,
 html.light .bg-brand *,
-html.light [class*="bg-brand"] *,
-html.light [class*="bg-amber-"] *,
-html.light [class*="bg-emerald-"] *,
-html.light [class*="bg-red-"] *,
-html.light [class*="bg-blue-"] *,
-html.light [class*="bg-indigo-"] *,
-html.light [class*="bg-violet-"] *,
-html.light [class*="bg-neutral-900"] *,
-html.light [class*="bg-black"] *,
-html.light [class*="bg-gray-900"] *,
+html.light
+  [class*="bg-brand"]:not([class*="selection:bg-brand"]):not([class*="bg-brand"][class*="/"])
+  *,
+html.light
+  [class*="bg-amber-"]:not([class*="selection:bg-amber-"]):not([class*="bg-amber-"][class*="/"])
+  *,
+html.light
+  [class*="bg-emerald-"]:not([class*="selection:bg-emerald-"]):not(
+    [class*="bg-emerald-"][class*="/"]
+  )
+  *,
+html.light
+  [class*="bg-red-"]:not([class*="selection:bg-red-"]):not([class*="bg-red-"][class*="/"])
+  *,
+html.light
+  [class*="bg-blue-"]:not([class*="selection:bg-blue-"]):not([class*="bg-blue-"][class*="/"])
+  *,
+html.light
+  [class*="bg-indigo-"]:not([class*="selection:bg-indigo-"]):not([class*="bg-indigo-"][class*="/"])
+  *,
+html.light
+  [class*="bg-violet-"]:not([class*="selection:bg-violet-"]):not([class*="bg-violet-"][class*="/"])
+  *,
+html.light [class*="bg-neutral-900"]:not([class*="selection:bg-neutral-900"]) *,
+html.light [class*="bg-black"]:not([class*="selection:bg-black"]) *,
+html.light [class*="bg-gray-900"]:not([class*="selection:bg-gray-900"]) *,
 html.light .btn-primary,
 html.light .btn-primary *,
 html.light [role="alert"],
@@ -197,11 +236,53 @@ html.light .text-gray-300 {
 }
 
 html.light .text-gray-400 {
-  color: #5f6368 !important;
+  color: #55595e !important;
 }
 
 html.light .text-gray-500 {
-  color: #70757a !important;
+  color: #6b7075 !important;
+}
+
+/* Eyebrows use var(--brand) directly; darken in light to preserve AA contrast */
+html.light .eyebrow {
+  color: #b91c1c !important;
+}
+
+/* Darken tinted-on-light brand/emerald text to preserve AA contrast in light mode */
+html.light .text-brand {
+  color: #b91c1c !important;
+}
+
+html.light .text-emerald-500 {
+  color: #15803d !important;
+}
+
+html.light .text-emerald-400 {
+  color: #15803d !important;
+}
+
+html.light .text-emerald-300 {
+  color: #15803d !important;
+}
+
+html.light .text-red-200 {
+  color: #b91c1c !important;
+}
+
+html.light .text-red-400 {
+  color: #b91c1c !important;
+}
+
+html.light .text-amber-400 {
+  color: #b45309 !important;
+}
+
+html.light .text-blue-400 {
+  color: #1d4ed8 !important;
+}
+
+html.light [class*="text-amber-300"] {
+  color: #92400e !important;
 }
 
 /* High-contrast primary action buttons */
@@ -1191,4 +1272,12 @@ html.light select.bg-\[\#28292A\] option {
   .whatsapp-float.is-scrolled {
     bottom: 5.25rem;
   }
+}
+
+html.light .text-white\/10 {
+  color: rgba(31, 31, 31, 0.08) !important;
+}
+
+html.light .text-gray-100\/70 {
+  color: #55595e !important;
 }

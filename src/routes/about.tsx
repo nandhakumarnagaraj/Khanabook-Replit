@@ -248,7 +248,7 @@ function AboutPage() {
             </div>
             <div className="flex flex-wrap justify-between gap-2 border-b border-white/10 pb-3">
               <span className="font-bold text-white">Support Email:</span>
-              <a href={`mailto:${BUSINESS.supportEmail}`} className="text-brand hover:underline">
+              <a href={`mailto:${BUSINESS.supportEmail}`} className="text-brand underline">
                 {BUSINESS.supportEmail}
               </a>
             </div>
@@ -280,21 +280,25 @@ function AboutPage() {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
-              <UiVerseGlowingButton variant="emerald" size="md">
+              <UiVerseGlowingButton variant="brand" size="md">
                 <Download className="h-4 w-4" />
                 <span>Download Android App</span>
               </UiVerseGlowingButton>
             </a>
-            <a href={BUSINESS.loginUrl} target="_blank" rel="noreferrer noopener">
-              <UiVerseGlowingButton variant="white" size="md">
-                <Cloud className="h-4 w-4" />
-                <span>Web Dashboard</span>
-              </UiVerseGlowingButton>
+            <a
+              href={BUSINESS.loginUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface/80 px-6 py-3.5 text-sm font-bold text-foreground hover:border-brand hover:text-brand transition-all"
+            >
+              <Cloud className="h-4 w-4" />
+              <span>Web Dashboard</span>
             </a>
-            <Link to="/get-started">
-              <UiVerseGlowingButton variant="brand" size="md">
-                <span>Get Started Now →</span>
-              </UiVerseGlowingButton>
+            <Link
+              to="/get-started"
+              className="inline-flex items-center gap-1.5 px-2 py-3.5 text-sm font-bold text-muted-foreground hover:text-brand transition-colors"
+            >
+              Get Started Now →
             </Link>
           </div>
         </div>

@@ -18,12 +18,11 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-md shadow-sm transition-colors w-full">
-      <div className="w-[92vw] md:w-[75vw] mx-auto flex h-20 items-center justify-between gap-4 font-['Google_Sans',_sans-serif]">
+      <div className="w-[94vw] md:w-[86vw] lg:w-[84vw] xl:w-[80vw] max-w-7xl mx-auto flex h-20 items-center justify-between gap-4 font-['Google_Sans',_sans-serif]">
         {/* Brand / Logo Block - Vertical Stack & Shrink Guard */}
         <Link
           to="/"
           className="flex items-center gap-3 rounded-2xl focus-visible:ring-2 focus-visible:ring-ring group shrink-0"
-          aria-label="KhanaBook home"
         >
           <img
             src={logo}
@@ -34,10 +33,10 @@ export function Header() {
           />
           <div className="flex flex-col">
             <span className="text-xl md:text-2xl font-black tracking-tight text-foreground leading-none">
-              KhanaBook
+              Khana<span className="text-[#4b26d4] dark:text-[#a78bfa]">Book</span>
             </span>
-            <span className="hidden sm:inline-block text-[10px] font-semibold tracking-wider uppercase text-muted-foreground mt-1">
-              Android App • Web Dashboard
+            <span className="hidden sm:inline-block text-[11px] font-medium tracking-tight text-muted-foreground mt-0.5">
+              Fast | Simple | Reliable
             </span>
           </div>
         </Link>
@@ -64,17 +63,9 @@ export function Header() {
 
         {/* Right CTA Actions */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          <a
-            href={BUSINESS.playStoreUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-white bg-brand hover:bg-brand/90 rounded-full shadow-sm transition-all focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-          >
-            Download App
-          </a>
           <Link
             to="/get-started"
-            className="hidden md:inline-flex items-center justify-center px-3.5 py-2 text-xs font-bold text-foreground bg-surface-soft hover:bg-surface border border-border/70 rounded-full shadow-sm transition-all focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-foreground bg-surface-soft hover:bg-surface border border-border/70 rounded-full shadow-sm transition-all focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           >
             Setup Help
           </Link>
@@ -111,7 +102,7 @@ export function Header() {
           id="mobile-navigation"
           className="border-t border-border/70 bg-background/95 backdrop-blur-xl shadow-2xl xl:hidden"
         >
-          <div className="w-[92vw] md:w-[75vw] mx-auto py-5 space-y-3 font-['Google_Sans',_sans-serif]">
+          <div className="w-[94vw] md:w-[86vw] lg:w-[84vw] xl:w-[80vw] max-w-7xl mx-auto py-5 space-y-3 font-['Google_Sans',_sans-serif]">
             <nav aria-label="Mobile navigation" className="grid gap-1.5">
               {NAV.map((item) => (
                 <Link

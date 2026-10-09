@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useMotionValue, useSpring, useReducedMotion } from "motion/react";
+import { useMounted } from "@/hooks/use-mounted";
 
 interface MagneticProps {
   children: React.ReactNode;
@@ -10,6 +11,8 @@ interface MagneticProps {
 export function MagneticHover({ children, className = "", strength = 0.35 }: MagneticProps) {
   const ref = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
+  const mounted = useMounted();
+  const reduceMotion = mounted && shouldReduceMotion;
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -36,7 +39,7 @@ export function MagneticHover({ children, className = "", strength = 0.35 }: Mag
     y.set(0);
   };
 
-  if (shouldReduceMotion) {
+  if (reduceMotion) {
     return <div className={`inline-block ${className}`}>{children}</div>;
   }
 

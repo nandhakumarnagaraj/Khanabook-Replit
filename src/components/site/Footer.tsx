@@ -145,9 +145,9 @@ function FooterCol({
 }) {
   return (
     <div>
-      <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground mb-4">
+      <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground mb-4">
         {title}
-      </h3>
+      </h2>
       <ul className="space-y-3">
         {links.map((link) => (
           <li key={link.label}>
@@ -156,7 +156,7 @@ function FooterCol({
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1 text-sm font-normal text-muted-foreground transition-all hover:text-foreground hover:translate-x-0.5"
+                className="group inline-flex items-center gap-1 py-1 min-h-6 text-sm font-normal text-muted-foreground transition-all hover:text-foreground hover:translate-x-0.5"
               >
                 <span>{link.label}</span>
                 <span className="opacity-0 transition-opacity group-hover:opacity-100 text-muted-foreground text-xs">
@@ -166,7 +166,7 @@ function FooterCol({
             ) : (
               <Link
                 to={link.to!}
-                className="group inline-flex items-center gap-1 text-sm font-normal text-muted-foreground transition-all hover:text-foreground hover:translate-x-0.5"
+                className="group inline-flex items-center gap-1 py-1 min-h-6 text-sm font-normal text-muted-foreground transition-all hover:text-foreground hover:translate-x-0.5"
               >
                 <span>{link.label}</span>
                 <span className="opacity-0 transition-opacity group-hover:opacity-100 text-muted-foreground text-xs">

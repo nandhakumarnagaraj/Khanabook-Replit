@@ -101,7 +101,7 @@ function PrivacyPolicy() {
 
               <Block title="Privacy & Grievance Contact">
                 Grievance Officer: {BUSINESS.grievanceOfficer}. Support Email:{" "}
-                <a href={`mailto:${BUSINESS.supportEmail}`} className="text-brand hover:underline">
+                <a href={`mailto:${BUSINESS.supportEmail}`} className="text-brand underline">
                   {BUSINESS.supportEmail}
                 </a>
                 . Registered Address: {BUSINESS.registeredAddress}.

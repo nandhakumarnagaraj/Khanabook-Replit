@@ -234,16 +234,19 @@ function PricingPage() {
 
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                   <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
-                    <UiVerseGlowingButton variant="emerald" size="md">
+                    <UiVerseGlowingButton variant="brand" size="md">
                       <Download className="h-4 w-4" />
                       <span>Download Android App</span>
                     </UiVerseGlowingButton>
                   </a>
-                  <a href={BUSINESS.loginUrl} target="_blank" rel="noreferrer noopener">
-                    <UiVerseGlowingButton variant="white" size="md">
-                      <Cloud className="h-4 w-4" />
-                      <span>Launch Web Dashboard</span>
-                    </UiVerseGlowingButton>
+                  <a
+                    href={BUSINESS.loginUrl}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface/80 px-6 py-3.5 text-sm font-bold text-foreground hover:border-brand hover:text-brand transition-all"
+                  >
+                    <Cloud className="h-4 w-4" />
+                    <span>Launch Web Dashboard</span>
                   </a>
                 </div>
 

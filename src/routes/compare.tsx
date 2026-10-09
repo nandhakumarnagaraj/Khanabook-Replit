@@ -89,7 +89,7 @@ function ComparePage() {
           </EntranceReveal>
 
           <EntranceReveal direction="up" delay={0.25}>
-            <p className="mt-5 text-base sm:text-lg md:text-xl text-gray-100/70 max-w-3xl mx-auto leading-relaxed">
+            <p className="mt-5 text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Compare KhanaBook's offline-first Android architecture against hybrid PC bridge
               servers, legacy Windows desktop software, and cloud SaaS web apps.
             </p>
@@ -359,7 +359,9 @@ function ComparePage() {
                 key={step.step}
                 className="bg-[#28292A] rounded-2xl border border-white/[0.06] p-6 sm:p-8 relative overflow-hidden shadow-lg"
               >
-                <div className="text-4xl font-black text-white/10 mb-4">{step.step}</div>
+                <div className="text-4xl font-black text-brand mb-4" aria-hidden="true">
+                  {step.step}
+                </div>
                 <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
                 <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">{step.desc}</p>
               </div>
@@ -447,7 +449,7 @@ function ComparePage() {
                     />
                   </svg>
                 </summary>
-                <div className="m-0 text-sm md:text-base leading-relaxed text-gray-100/70 px-5 md:px-7 pb-5 pt-2">
+                <div className="m-0 text-sm md:text-base leading-relaxed text-gray-400 px-5 md:px-7 pb-5 pt-2">
                   {faq.a}
                 </div>
               </details>
@@ -486,22 +488,26 @@ function ComparePage() {
 
               <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
                 <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
-                  <UiVerseGlowingButton variant="emerald" size="md">
+                  <UiVerseGlowingButton variant="brand" size="md">
                     <span>Download Android App</span>
                   </UiVerseGlowingButton>
                 </a>
 
-                <a href={BUSINESS.loginUrl} target="_blank" rel="noreferrer noopener">
-                  <UiVerseGlowingButton variant="white" size="md">
-                    <span>Launch Web Dashboard</span>
-                  </UiVerseGlowingButton>
+                <a
+                  href={BUSINESS.loginUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface/80 px-6 py-3.5 text-sm font-bold text-foreground hover:border-brand hover:text-brand transition-all"
+                >
+                  <span>Launch Web Dashboard</span>
                 </a>
 
-                <Link to="/get-started">
-                  <UiVerseGlowingButton variant="brand" size="md">
-                    <span>Request a Demo</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </UiVerseGlowingButton>
+                <Link
+                  to="/get-started"
+                  className="inline-flex items-center gap-1.5 px-2 py-3.5 text-sm font-bold text-muted-foreground hover:text-brand transition-colors"
+                >
+                  <span>Request a Demo</span>
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>

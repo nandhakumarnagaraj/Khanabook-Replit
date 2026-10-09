@@ -478,19 +478,25 @@ function FeaturesPage() {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
-              <UiVerseGlowingButton variant="emerald">
+              <UiVerseGlowingButton variant="brand">
                 <Download className="h-4 w-4" />
                 Download Android POS App
               </UiVerseGlowingButton>
             </a>
-            <a href={BUSINESS.loginUrl} target="_blank" rel="noreferrer noopener">
-              <UiVerseGlowingButton variant="blue">
-                <Cloud className="h-4 w-4 text-blue-400" />
-                Launch Web Dashboard
-              </UiVerseGlowingButton>
+            <a
+              href={BUSINESS.loginUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface/80 px-6 py-3.5 text-sm font-bold text-foreground hover:border-brand hover:text-brand transition-all"
+            >
+              <Cloud className="h-4 w-4" />
+              Launch Web Dashboard
             </a>
-            <Link to="/get-started">
-              <UiVerseGlowingButton variant="brand">Request a Setup Demo →</UiVerseGlowingButton>
+            <Link
+              to="/get-started"
+              className="inline-flex items-center gap-1.5 px-2 py-3.5 text-sm font-bold text-muted-foreground hover:text-brand transition-colors"
+            >
+              Request a Setup Demo →
             </Link>
           </div>
         </div>
