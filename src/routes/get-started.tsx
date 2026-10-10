@@ -18,6 +18,7 @@ import { EntranceReveal } from "@/components/motion/EntranceReveal";
 import { BorderBeam } from "@/components/motion/primitives/BorderBeam";
 import { UiVerseBadge, UiVerseGlowingButton } from "@/components/uiverse";
 import { PlayStoreIcon } from "@/components/icons/PlayStoreIcon";
+import { GooglePlayBadge } from "@/components/ui/GooglePlayBadge";
 
 export const Route = createFileRoute("/get-started")({
   head: () => ({
@@ -385,15 +386,7 @@ function GetStartedPage() {
 
                 <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
                   <span className="text-[11px] text-gray-300">Android 8.0+ supported</span>
-                  <a
-                    href={BUSINESS.playStoreUrl}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black px-4 py-1.5 text-xs font-bold transition-all"
-                  >
-                    <PlayStoreIcon className="h-3.5 w-3.5 shrink-0" />
-                    Google Play Store
-                  </a>
+                  <GooglePlayBadge size="sm" />
                 </div>
               </div>
 

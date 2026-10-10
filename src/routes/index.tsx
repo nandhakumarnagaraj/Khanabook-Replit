@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   IndianRupee,
@@ -21,6 +22,7 @@ import {
   Cloud,
   Database,
   Download,
+  Play,
 } from "lucide-react";
 import appHome from "@/assets/app-home.png";
 import { Section } from "@/components/site/Section";
@@ -43,8 +45,10 @@ import { ShinyButton } from "@/components/motion/primitives/ShinyButton";
 import { SpotlightCard } from "@/components/motion/primitives/SpotlightCard";
 import { NumberTicker } from "@/components/motion/primitives/NumberTicker";
 import { HaikeiWave } from "@/components/motion/primitives/HaikeiWave";
-import { UiVerseBadge, UiVerseGlowingButton, UiVerseCard } from "@/components/uiverse";
+import { UiVerseGlowingButton, UiVerseCard } from "@/components/uiverse";
 import { PlayStoreIcon } from "@/components/icons/PlayStoreIcon";
+import { GooglePlayBadge } from "@/components/ui/GooglePlayBadge";
+import { TutorialModal } from "@/components/site/TutorialModal";
 
 const TRUSTED_OUTLETS = [
   {
@@ -124,7 +128,7 @@ const HARDWARE_CHECKLIST = [
   },
   {
     title: "Local Mesh Wi-Fi Router",
-    desc: "Any standard ₹1,200 TP-Link or D-Link router for multi-terminal sync without active internet connection required.",
+    desc: "Any standard TP-Link or D-Link router for multi-terminal sync without active internet connection required.",
     icon: Router,
   },
 ];
@@ -185,6 +189,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const [tutorialOpen, setTutorialOpen] = useState(false);
   const latestPosts = PUBLISHED_POSTS.slice(0, 3);
 
   return (
@@ -201,15 +206,11 @@ function Home() {
           className="absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full blur-3xl opacity-20"
           style={{ background: "radial-gradient(circle, var(--gold), transparent 70%)" }}
         />
-        <div className="w-[92vw] lg:w-[88vw] xl:w-[80vw] max-w-7xl mx-auto pt-16 pb-20 md:pt-24 md:pb-28 grid lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-14 items-center relative">
+        <div className="w-[92vw] lg:w-[88vw] xl:w-[80vw] max-w-7xl mx-auto pt-6 pb-16 md:pt-8 md:pb-20 lg:pt-10 lg:pb-24 grid lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-14 items-center relative">
           <EntranceReveal direction="up" delay={0.1}>
-            <div className="max-w-2xl space-y-4">
-              <UiVerseBadge pulseColor="emerald">
-                ⚡ ₹0 Core POS • 100% Offline Mesh • Up to 5 Terminals
-              </UiVerseBadge>
-
+            <div className="max-w-2xl flex flex-col -mt-2 sm:-mt-4 lg:-mt-6">
               {/* Headline with natural wrapping and zero clipping */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.15]">
                 Never Let Internet Failure Stop Your{" "}
                 <span className="bg-amber-100 text-amber-900 dark:bg-amber-500/20 dark:text-amber-300 px-2 py-0.5 rounded-lg inline-block font-black">
                   Dinner Rush.
@@ -217,40 +218,28 @@ function Home() {
               </h1>
 
               {/* Subheadline */}
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <p className="mt-5 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
                 High-speed offline billing on standard Android phones and tablets. Synchronize up to
                 5 terminals locally over Wi-Fi when broadband drops, paired with a real-time Cloud
                 Web Dashboard.
               </p>
 
-              <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
-                <a href={BUSINESS.playStoreUrl} target="_blank" rel="noopener noreferrer">
-                  <UiVerseGlowingButton variant="brand" size="lg">
-                    <PlayStoreIcon className="h-4 w-4 shrink-0" />
-                    <span>Download App</span>
-                  </UiVerseGlowingButton>
-                </a>
+              {/* Action Buttons Row */}
+              <div className="mt-8 flex flex-wrap items-center gap-3.5 sm:gap-4">
+                <GooglePlayBadge size="md" />
 
-                <Link
-                  to="/get-started"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface/80 px-6 py-3.5 text-sm font-bold text-foreground hover:border-brand hover:text-brand transition-all"
+                <button
+                  type="button"
+                  onClick={() => setTutorialOpen(true)}
+                  className="inline-flex h-[44px] items-center justify-center gap-2 rounded-full bg-brand text-white px-5 sm:px-6 text-sm font-semibold tracking-wide shadow-sm hover:shadow-md hover:shadow-brand/20 hover:-translate-y-0.5 hover:bg-brand/95 active:translate-y-0 active:scale-[0.99] transition-all duration-200 cursor-pointer group shrink-0"
                 >
-                  <span>Request Setup Help</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-
-                <a
-                  href={BUSINESS.loginUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-2 py-3.5 text-sm font-bold text-muted-foreground hover:text-brand transition-colors"
-                >
-                  <span>Web Dashboard</span>
-                  <ExternalLink className="h-4 w-4 opacity-70" />
-                </a>
+                  <Play className="h-3.5 w-3.5 fill-white shrink-0 transition-transform group-hover:scale-110" />
+                  <span>Watch Tutorials</span>
+                </button>
               </div>
 
-              <div className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-muted-foreground font-medium">
+              {/* Trust & Spec Highlights */}
+              <div className="mt-8 pt-6 border-t border-border/60 flex flex-wrap items-center gap-y-2.5 gap-x-6 text-xs text-muted-foreground font-medium">
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
                   Instant Offline SQLite Billing
@@ -477,14 +466,13 @@ function Home() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-border/60 flex flex-wrap items-center gap-3">
-                  <a href={BUSINESS.playStoreUrl} target="_blank" rel="noopener noreferrer">
-                    <UiVerseGlowingButton variant="emerald" size="md">
-                      <PlayStoreIcon className="h-4 w-4 shrink-0" />
-                      <span>Download App</span>
-                    </UiVerseGlowingButton>
-                  </a>
-                  <Link to="/features" className="btn-secondary">
-                    App Features →
+                  <GooglePlayBadge size="md" />
+                  <Link
+                    to="/features"
+                    className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#4B26D4] px-5 text-sm font-bold text-white shadow-md shadow-[#4B26D4]/25 transition-all duration-200 hover:bg-[#3f1fb8] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B26D4]"
+                  >
+                    <span>App Features</span>
+                    <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
@@ -549,14 +537,21 @@ function Home() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-border/60 flex flex-wrap items-center gap-3">
-                  <a href={BUSINESS.loginUrl} target="_blank" rel="noopener noreferrer">
-                    <UiVerseGlowingButton variant="brand" size="md">
-                      <span>Launch Web Dashboard</span>
-                      <ExternalLink className="h-4 w-4" />
-                    </UiVerseGlowingButton>
+                  <a
+                    href={BUSINESS.loginUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex h-11 items-center justify-center gap-2 rounded-full border-2 border-border/80 bg-white dark:bg-surface px-5 text-sm font-bold text-foreground shadow-sm transition-all duration-200 hover:bg-surface-soft hover:border-[#4B26D4]/50 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B26D4]"
+                  >
+                    <span>Launch Web Dashboard</span>
+                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" />
                   </a>
-                  <Link to="/about" className="btn-secondary">
-                    Learn Architecture →
+                  <Link
+                    to="/about"
+                    className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#000030] px-5 text-sm font-bold text-white shadow-md shadow-[#000030]/25 transition-all duration-200 hover:bg-[#0a0a42] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#000030]"
+                  >
+                    <span>Learn Architecture</span>
+                    <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
@@ -873,15 +868,10 @@ function Home() {
                     Android app.
                   </p>
                   <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
-                    <a href={BUSINESS.playStoreUrl} target="_blank" rel="noopener noreferrer">
-                      <UiVerseGlowingButton variant="brand" size="lg">
-                        <PlayStoreIcon className="h-4 w-4 shrink-0" />
-                        <span>Download App</span>
-                      </UiVerseGlowingButton>
-                    </a>
+                    <GooglePlayBadge size="lg" />
 
                     <Link to="/get-started">
-                      <UiVerseGlowingButton variant="emerald" size="lg">
+                      <UiVerseGlowingButton variant="brand" size="lg">
                         <span>Request Setup Help</span>
                         <ArrowRight className="h-4 w-4" />
                       </UiVerseGlowingButton>
@@ -899,6 +889,8 @@ function Home() {
           </EntranceReveal>
         </div>
       </section>
+
+      <TutorialModal open={tutorialOpen} onOpenChange={setTutorialOpen} />
     </>
   );
 }

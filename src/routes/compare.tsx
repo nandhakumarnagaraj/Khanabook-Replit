@@ -27,6 +27,7 @@ import { MagneticHover } from "@/components/motion/MagneticHover";
 import { BorderBeam } from "@/components/motion/primitives/BorderBeam";
 import { UiVerseBadge, UiVerseGlowingButton } from "@/components/uiverse";
 import { PlayStoreIcon } from "@/components/icons/PlayStoreIcon";
+import { GooglePlayBadge } from "@/components/ui/GooglePlayBadge";
 
 export const Route = createFileRoute("/compare")({
   head: () => ({
@@ -488,12 +489,7 @@ function ComparePage() {
               </p>
 
               <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
-                <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
-                  <UiVerseGlowingButton variant="brand" size="md">
-                    <PlayStoreIcon className="h-4 w-4 shrink-0" />
-                    <span>Download App</span>
-                  </UiVerseGlowingButton>
-                </a>
+                <GooglePlayBadge size="md" />
 
                 <a
                   href={BUSINESS.loginUrl}

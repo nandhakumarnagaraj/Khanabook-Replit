@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ExternalLink, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/khanabook-logo.webp";
 import { BUSINESS } from "@/lib/business-config";
@@ -33,10 +33,10 @@ export function Header() {
             className="h-13 w-13 sm:h-14 sm:w-14 md:h-[60px] md:w-[60px] object-contain transition-transform duration-200 group-hover:scale-105 shrink-0"
           />
           <div className="flex flex-col">
-            <span className="text-xl md:text-2xl font-black tracking-tight text-[#000030] dark:text-foreground leading-none">
-              Khana<span className="text-[#4b26d4] dark:text-[#a78bfa]">Book</span>
+            <span className="text-xl md:text-2xl font-black tracking-tight text-[#000000] leading-none">
+              Khana<span className="text-[#4B26D4]">Book</span>
             </span>
-            <span className="hidden sm:inline-block text-xs md:text-[13px] font-normal tracking-wide text-[#48486a] dark:text-muted-foreground mt-1">
+            <span className="hidden sm:inline-block text-xs md:text-[13px] font-normal tracking-wide text-[#000000] mt-1">
               Fast &nbsp;|&nbsp; Simple &nbsp;|&nbsp; Reliable
             </span>
           </div>
@@ -52,9 +52,13 @@ export function Header() {
               key={item.to}
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
-              className="inline-flex h-9 items-center justify-center rounded-full px-4 text-sm font-medium text-muted-foreground transition-all hover:bg-surface hover:text-foreground"
+              className="inline-flex h-9 items-center justify-center rounded-full px-4 text-sm transition-all duration-200 select-none cursor-pointer"
+              inactiveProps={{
+                className:
+                  "font-medium text-muted-foreground hover:text-foreground hover:bg-foreground/5",
+              }}
               activeProps={{
-                className: "bg-surface text-foreground font-bold shadow-sm border border-border/70",
+                className: "bg-brand text-white font-bold shadow-sm shadow-brand/25",
               }}
             >
               {item.label}
@@ -64,21 +68,14 @@ export function Header() {
 
         {/* Right CTA Actions */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          <Link
-            to="/get-started"
-            className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-foreground bg-surface-soft hover:bg-surface border border-border/70 rounded-full shadow-sm transition-all focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-          >
-            Setup Help
-          </Link>
           <a
             href={BUSINESS.loginUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:inline-flex items-center justify-center gap-1.5 rounded-full bg-surface-soft hover:bg-surface border border-border/70 px-3.5 py-2 text-xs font-bold text-foreground shadow-sm transition-all hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            className="hidden sm:inline-flex items-center justify-center rounded-full bg-brand text-white hover:bg-brand/90 h-11 px-6 text-sm font-bold shadow-md shadow-brand/25 transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             title="Log in to KhanaBook Web Dashboard"
           >
-            <span>Web Dashboard</span>
-            <ExternalLink aria-hidden="true" className="h-3.5 w-3.5 opacity-70" />
+            <span>Login</span>
           </a>
           <button
             type="button"
@@ -111,19 +108,18 @@ export function Header() {
                   to={item.to}
                   activeOptions={{ exact: item.to === "/" }}
                   onClick={() => setOpen(false)}
-                  className="flex h-11 items-center rounded-xl px-4 text-base font-medium text-muted-foreground transition-colors hover:bg-surface-soft hover:text-foreground"
-                  activeProps={{ className: "bg-surface-soft text-foreground font-bold" }}
+                  className="flex h-11 items-center rounded-xl px-4 text-base transition-colors"
+                  inactiveProps={{
+                    className:
+                      "font-medium text-muted-foreground hover:bg-surface-soft hover:text-foreground",
+                  }}
+                  activeProps={{
+                    className: "bg-brand text-white font-bold shadow-sm shadow-brand/20",
+                  }}
                 >
                   {item.label}
                 </Link>
               ))}
-              <Link
-                to="/get-started"
-                onClick={() => setOpen(false)}
-                className="flex h-11 items-center rounded-xl px-4 text-base font-medium text-muted-foreground transition-colors hover:bg-surface-soft hover:text-foreground"
-              >
-                Request Setup Help
-              </Link>
             </nav>
 
             <div className="pt-2 grid gap-2">
@@ -141,10 +137,9 @@ export function Header() {
                 href={BUSINESS.loginUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-11 w-full items-center justify-center gap-2 rounded-full border border-border/70 bg-surface-soft text-foreground px-4 text-sm font-bold shadow-sm hover:bg-surface"
+                className="flex h-11 w-full items-center justify-center rounded-full border border-border/70 bg-surface-soft text-foreground px-4 text-sm font-bold shadow-sm hover:bg-surface"
               >
-                <span>Web Dashboard Login</span>
-                <ExternalLink aria-hidden="true" className="h-3.5 w-3.5 opacity-70" />
+                <span>Login</span>
               </a>
             </div>
           </div>

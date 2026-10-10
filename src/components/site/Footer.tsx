@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/khanabook-logo.webp";
 import { BUSINESS } from "@/lib/business-config";
 import { PlayStoreIcon } from "@/components/icons/PlayStoreIcon";
+import { GooglePlayBadge } from "@/components/ui/GooglePlayBadge";
 
 const FOOTER_GROUPS = [
   {
@@ -78,6 +79,9 @@ export function Footer() {
                 printing, paired with a powerful Web Dashboard for remote sales, inventory, and menu
                 analytics.
               </p>
+              <div className="mt-4 pt-1">
+                <GooglePlayBadge size="sm" />
+              </div>
             </div>
 
             {/* Quick Contact Chips */}

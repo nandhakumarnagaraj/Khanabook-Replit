@@ -30,6 +30,7 @@ import { ShinyButton } from "@/components/motion/primitives/ShinyButton";
 import { BorderBeam } from "@/components/motion/primitives/BorderBeam";
 import { UiVerseBadge, UiVerseGlowingButton } from "@/components/uiverse";
 import { PlayStoreIcon } from "@/components/icons/PlayStoreIcon";
+import { GooglePlayBadge } from "@/components/ui/GooglePlayBadge";
 
 export const Route = createFileRoute("/features")({
   head: () => ({
@@ -450,8 +451,8 @@ function FeaturesPage() {
               </div>
               <h3 className="text-lg font-bold text-white">Local Wi-Fi Mesh</h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
-                Any basic ₹1,200 home/office Wi-Fi router. Synchronizes up to 5 terminals locally
-                even if broadband WAN link is disconnected.
+                Any basic home/office Wi-Fi router. Synchronizes up to 5 terminals locally even if
+                broadband WAN link is disconnected.
               </p>
               <div className="mt-4 text-xs font-semibold text-gray-300">
                 TP-Link, D-Link, Mercusys, etc.
@@ -478,12 +479,7 @@ function FeaturesPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
-              <UiVerseGlowingButton variant="brand">
-                <PlayStoreIcon className="h-4 w-4 shrink-0" />
-                Download App
-              </UiVerseGlowingButton>
-            </a>
+            <GooglePlayBadge size="md" />
             <a
               href={BUSINESS.loginUrl}
               target="_blank"

@@ -21,6 +21,7 @@ import { EntranceReveal } from "@/components/motion/EntranceReveal";
 import { BorderBeam } from "@/components/motion/primitives/BorderBeam";
 import { UiVerseBadge, UiVerseGlowingButton } from "@/components/uiverse";
 import { PlayStoreIcon } from "@/components/icons/PlayStoreIcon";
+import { GooglePlayBadge } from "@/components/ui/GooglePlayBadge";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
@@ -124,7 +125,7 @@ const HARDWARE_COSTS = [
   {
     title: "Local Wi-Fi Router",
     desc: "Any basic Wi-Fi router connects up to 5 terminals locally even without active internet connection.",
-    cost: "~₹1,200",
+    cost: "Market Price",
     highlight: "One-time hardware",
     icon: Zap,
   },
@@ -234,12 +235,7 @@ function PricingPage() {
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-                  <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
-                    <UiVerseGlowingButton variant="brand" size="md">
-                      <PlayStoreIcon className="h-4 w-4 shrink-0" />
-                      <span>Download App</span>
-                    </UiVerseGlowingButton>
-                  </a>
+                  <GooglePlayBadge size="md" />
                   <a
                     href={BUSINESS.loginUrl}
                     target="_blank"
@@ -453,12 +449,7 @@ function PricingPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a href={BUSINESS.playStoreUrl} target="_blank" rel="noreferrer noopener">
-              <UiVerseGlowingButton variant="emerald" size="md">
-                <PlayStoreIcon className="h-4 w-4 shrink-0" />
-                <span>Download App</span>
-              </UiVerseGlowingButton>
-            </a>
+            <GooglePlayBadge size="md" />
             <a href={BUSINESS.loginUrl} target="_blank" rel="noreferrer noopener">
               <UiVerseGlowingButton variant="white" size="md">
                 <Cloud className="h-4 w-4" />
