@@ -231,9 +231,9 @@ function Home() {
                 <button
                   type="button"
                   onClick={() => setTutorialOpen(true)}
-                  className="inline-flex h-[44px] items-center justify-center gap-2 rounded-full bg-brand text-white px-5 sm:px-6 text-sm font-semibold tracking-wide shadow-sm hover:shadow-md hover:shadow-brand/20 hover:-translate-y-0.5 hover:bg-brand/95 active:translate-y-0 active:scale-[0.99] transition-all duration-200 cursor-pointer group shrink-0"
+                  className="group inline-flex h-[44px] items-center justify-center gap-2 rounded-lg border border-border/80 bg-surface-soft px-4 sm:px-5 text-sm font-semibold text-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-brand/35 hover:bg-surface active:translate-y-0 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 cursor-pointer shrink-0"
                 >
-                  <Play className="h-3.5 w-3.5 fill-white shrink-0 transition-transform group-hover:scale-110" />
+                  <Play className="h-3.5 w-3.5 fill-brand text-brand shrink-0 transition-transform group-hover:scale-110" />
                   <span>Watch Tutorials</span>
                 </button>
               </div>
