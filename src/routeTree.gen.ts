@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AppRouteImport } from './routes/app'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as CompareRouteImport } from './routes/compare'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
@@ -19,6 +20,7 @@ import { Route as GetStartedRouteImport } from './routes/get-started'
 import { Route as HelpRouteImport } from './routes/help'
 import { Route as HelpCenterRouteImport } from './routes/help-center'
 import { Route as LegalRouteImport } from './routes/legal'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as RefundCancellationPolicyRouteImport } from './routes/refund-cancellation-policy'
@@ -35,6 +37,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -77,6 +84,11 @@ const LegalRoute = LegalRouteImport.update({
   path: '/legal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
@@ -117,6 +129,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/app': typeof AppRoute
   '/blog': typeof BlogRouteWithChildren
   '/compare': typeof CompareRoute
   '/contact-us': typeof ContactUsRoute
@@ -125,6 +138,7 @@ export interface FileRoutesByFullPath {
   '/help': typeof HelpRoute
   '/help-center': typeof HelpCenterRoute
   '/legal': typeof LegalRoute
+  '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-cancellation-policy': typeof RefundCancellationPolicyRoute
@@ -136,6 +150,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/app': typeof AppRoute
   '/blog': typeof BlogRouteWithChildren
   '/compare': typeof CompareRoute
   '/contact-us': typeof ContactUsRoute
@@ -144,6 +159,7 @@ export interface FileRoutesByTo {
   '/help': typeof HelpRoute
   '/help-center': typeof HelpCenterRoute
   '/legal': typeof LegalRoute
+  '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-cancellation-policy': typeof RefundCancellationPolicyRoute
@@ -156,6 +172,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/app': typeof AppRoute
   '/blog': typeof BlogRouteWithChildren
   '/compare': typeof CompareRoute
   '/contact-us': typeof ContactUsRoute
@@ -164,6 +181,7 @@ export interface FileRoutesById {
   '/help': typeof HelpRoute
   '/help-center': typeof HelpCenterRoute
   '/legal': typeof LegalRoute
+  '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-cancellation-policy': typeof RefundCancellationPolicyRoute
@@ -177,6 +195,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/app'
     | '/blog'
     | '/compare'
     | '/contact-us'
@@ -185,6 +204,7 @@ export interface FileRouteTypes {
     | '/help'
     | '/help-center'
     | '/legal'
+    | '/login'
     | '/pricing'
     | '/privacy-policy'
     | '/refund-cancellation-policy'
@@ -196,6 +216,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/app'
     | '/blog'
     | '/compare'
     | '/contact-us'
@@ -204,6 +225,7 @@ export interface FileRouteTypes {
     | '/help'
     | '/help-center'
     | '/legal'
+    | '/login'
     | '/pricing'
     | '/privacy-policy'
     | '/refund-cancellation-policy'
@@ -215,6 +237,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/app'
     | '/blog'
     | '/compare'
     | '/contact-us'
@@ -223,6 +246,7 @@ export interface FileRouteTypes {
     | '/help'
     | '/help-center'
     | '/legal'
+    | '/login'
     | '/pricing'
     | '/privacy-policy'
     | '/refund-cancellation-policy'
@@ -235,6 +259,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AppRoute: typeof AppRoute
   BlogRoute: typeof BlogRouteWithChildren
   CompareRoute: typeof CompareRoute
   ContactUsRoute: typeof ContactUsRoute
@@ -243,6 +268,7 @@ export interface RootRouteChildren {
   HelpRoute: typeof HelpRoute
   HelpCenterRoute: typeof HelpCenterRoute
   LegalRoute: typeof LegalRoute
+  LoginRoute: typeof LoginRoute
   PricingRoute: typeof PricingRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundCancellationPolicyRoute: typeof RefundCancellationPolicyRoute
@@ -265,6 +291,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -321,6 +354,13 @@ declare module '@tanstack/react-router' {
       path: '/legal'
       fullPath: '/legal'
       preLoaderRoute: typeof LegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pricing': {
@@ -388,6 +428,7 @@ const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AppRoute: AppRoute,
   BlogRoute: BlogRouteWithChildren,
   CompareRoute: CompareRoute,
   ContactUsRoute: ContactUsRoute,
@@ -396,6 +437,7 @@ const rootRouteChildren: RootRouteChildren = {
   HelpRoute: HelpRoute,
   HelpCenterRoute: HelpCenterRoute,
   LegalRoute: LegalRoute,
+  LoginRoute: LoginRoute,
   PricingRoute: PricingRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundCancellationPolicyRoute: RefundCancellationPolicyRoute,
