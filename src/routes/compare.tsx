@@ -76,7 +76,7 @@ function ComparePage() {
           className="pointer-events-none absolute top-10 left-10 h-72 w-72 rounded-full bg-gold/10 blur-3xl"
         />
 
-        <div className="w-[92vw] md:w-[75vw] mx-auto relative z-10 text-center">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto relative z-10 text-center">
           <EntranceReveal direction="up" delay={0.05}>
             <UiVerseBadge pulseColor="emerald">
               TRANSPARENT RESTAURANT POS ARCHITECTURE COMPARISON
@@ -131,7 +131,7 @@ function ComparePage() {
 
       {/* 2. THE 4-WAY BATTLECARD MATRIX */}
       <section className="py-16 md:py-24 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
             <div>
               <div className="text-xs font-bold uppercase tracking-[0.16em] text-gray-400 mb-2">
@@ -280,7 +280,7 @@ function ComparePage() {
 
       {/* 3. THE 3 HIDDEN COMPETITOR TRAPS */}
       <section className="py-16 md:py-24 border-b border-[#28292A] bg-[#161718]/40">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <div className="text-xs font-bold uppercase tracking-[0.16em] text-red-400 mb-2">
               AVOID EXPENSIVE SURPRISES
@@ -341,7 +341,7 @@ function ComparePage() {
 
       {/* 4. THE 3-STEP SEAMLESS SWITCHING GUIDE */}
       <section className="py-16 md:py-24 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="text-xs font-bold uppercase tracking-[0.16em] text-gray-400 mb-2">
               ZERO DOWNTIME MIGRATION
@@ -374,7 +374,7 @@ function ComparePage() {
 
       {/* 5. VERIFICATION CHECKLIST (PRESERVED DATA IN STITCH ACCORDION) */}
       <section className="py-16 md:py-24 border-b border-[#28292A] bg-[#161718]/40">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <div className="text-xs font-bold uppercase tracking-[0.16em] text-gray-400 mb-2">
               BUYER'S DUE DILIGENCE
@@ -420,7 +420,7 @@ function ComparePage() {
 
       {/* 6. SWITCHING FAQS (GOOGLE STITCH STYLE) */}
       <section className="py-16 md:py-24 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
               Frequently asked switching questions
@@ -462,7 +462,7 @@ function ComparePage() {
 
       {/* 7. BOTTOM CTA CARD (GOOGLE STITCH 75% WIDTH) */}
       <section className="py-20 md:py-28">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="w-full rounded-3xl bg-[#28292A] border border-white/10 p-10 md:p-16 lg:p-20 text-center relative overflow-hidden shadow-2xl">
             <BorderBeam
               size={340}
