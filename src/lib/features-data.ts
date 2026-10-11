@@ -34,23 +34,22 @@ export const FEATURE_GROUPS: { id: string; title: string; items: FeatureItem[] }
         body: "Generate professional digital PDF invoices and share them instantly via WhatsApp or SMS, saving expensive thermal paper rolls.",
       },
       {
-        name: "Integrated Payment Gateway Collection",
-        body: "Direct in-app bank gateway processing and real-time payment status verification from within the POS terminal.",
-        status: "coming-soon",
+        name: "Integrated Easebuzz Payment Processing",
+        body: "Direct sub-merchant onboarding, in-app CPV verification, dynamic UPI QR collection, and instant payment settlement reconciliation.",
       },
     ],
   },
   {
     id: "multi-terminal",
-    title: "Multi-Terminal Wi-Fi Mesh Synchronization",
+    title: "Multi-Terminal Independent Operations & Cloud Sync",
     items: [
       {
-        name: "Up to 5 Synchronized Android Terminals",
-        body: "Connect up to 5 Android phones or tablets per restaurant simultaneously—allowing stewards to take orders table-side while the cashier bills at the counter.",
+        name: "Up to 5 Authorized Android Terminals",
+        body: "Connect up to 5 Android phones or tablets per restaurant simultaneously—with secure 4-digit challenge approval by the owner on the Web Dashboard.",
       },
       {
-        name: "Local Wi-Fi Mesh (Zero Broadband Dependency)",
-        body: "Terminals synchronize orders locally over your Wi-Fi router in real time, even if the external broadband internet connection is completely down.",
+        name: "Terminal-Scoped Zero-Downtime Billing",
+        body: "Each terminal operates independently with zero broadband dependency, maintaining its own billing counter and local receipt printer.",
       },
       {
         name: "Independent GST Invoice Series per Terminal",
@@ -58,11 +57,11 @@ export const FEATURE_GROUPS: { id: string; title: string; items: FeatureItem[] }
       },
       {
         name: "Isolated Draft Orders & Collision Prevention",
-        body: "Running drafts and active table orders stay isolated on the handling terminal until committed, preventing cashier and steward order overwrites.",
+        body: "Running drafts and orders stay safely isolated on the handling terminal until committed, preventing cashier and steward order overwrites.",
       },
       {
         name: "Background Cloud Sync with Live Telemetry",
-        body: "Settled orders silently upload to the cloud infrastructure when internet connectivity is active, displaying visible sync telemetry in the app.",
+        body: "Settled orders silently upload to the cloud infrastructure via resilient batch syncing, displaying visible sync telemetry in the app.",
       },
       {
         name: "Outlet-Level Consolidated Reporting",
@@ -109,8 +108,8 @@ export const FEATURE_GROUPS: { id: string; title: string; items: FeatureItem[] }
         body: "All transactions and operational data commit directly to the Android device's native database in ~50ms with zero network dependency.",
       },
       {
-        name: "Resilient Conflict-Free Peer Mesh",
-        body: "Terminals queue updates safely and resolve local sync states gracefully without race conditions or data loss during peak dinner rushes.",
+        name: "Resilient Conflict-Free Transaction Queuing",
+        body: "Terminals queue updates safely in local SQLite and resolve sync states gracefully without race conditions or data loss during peak dinner rushes.",
       },
       {
         name: "Automatic Cloud Sync & Retry Mechanism",
@@ -181,11 +180,11 @@ export const FEATURE_GROUPS: { id: string; title: string; items: FeatureItem[] }
   },
   {
     id: "compliance",
-    title: "Tax Compliance, Accountant Access & Partner Services",
+    title: "Tax Compliance, CA Exports & Partner Services",
     items: [
       {
-        name: "Accountant Read-Only Web Portal",
-        body: "Grant your chartered accountant or tax consultant dedicated read-only access to download tax reports via the Web Dashboard.",
+        name: "CA & Tax-Ready Export Suite",
+        body: "Download GST-compliant sales registers, tax breakdowns, and HSN/SAC reports in Excel, CSV, or PDF to share directly with your accountant or CA.",
       },
       {
         name: "GST-Ready B2B & B2C Sales Registers",

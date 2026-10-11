@@ -127,8 +127,8 @@ const HARDWARE_CHECKLIST = [
     icon: Printer,
   },
   {
-    title: "Local Mesh Wi-Fi Router",
-    desc: "Any standard TP-Link or D-Link router for multi-terminal sync without active internet connection required.",
+    title: "Wi-Fi Router / LAN",
+    desc: "Any standard Wi-Fi router connects network thermal printers and enables background cloud sync.",
     icon: Router,
   },
 ];
@@ -294,7 +294,7 @@ function Home() {
                 <span>≤</span>
                 <NumberTicker value={5} />
               </div>
-              <div className="text-xs font-bold text-foreground mt-1">Mesh Terminals</div>
+              <div className="text-xs font-bold text-foreground mt-1">Active Terminals</div>
               <div className="text-[11px] text-muted-foreground font-mono">Independent series</div>
             </div>
 
@@ -444,8 +444,8 @@ function Home() {
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400 shrink-0 mt-0.5" />
                       <span>
-                        <strong>Up to 5 Mesh Terminals:</strong> Synchronize active tables across
-                        multiple handhelds over local Wi-Fi without internet.
+                        <strong>Up to 5 Active Terminals:</strong> Run multiple billing counters and
+                        steward devices independently with zero collision.
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -530,7 +530,7 @@ function Home() {
                       <CheckCircle2 className="h-5 w-5 text-amber-500 dark:text-amber-400 shrink-0 mt-0.5" />
                       <span>
                         <strong>Financial Reports &amp; GST:</strong> Export audit-ready GST sales
-                        summaries, accountant CSV sheets, and PDF tax returns in one click.
+                        summaries, CA-ready CSV sheets, and PDF tax returns in one click.
                       </span>
                     </li>
                   </ul>
@@ -698,7 +698,7 @@ function Home() {
                   <th className="p-4 sm:p-5">Capability</th>
                   <th className="p-4 sm:p-5 bg-brand/10 dark:bg-brand/15 text-red-800 font-black border-x border-brand/25">
                     <div className="flex items-center gap-2">
-                      <span>KhanaBook (Offline Mesh)</span>
+                      <span>KhanaBook (Offline First)</span>
                       <span className="text-[10px] uppercase px-2 py-0.5 rounded-full bg-brand text-white font-extrabold tracking-wider shadow-sm">
                         Winner
                       </span>

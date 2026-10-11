@@ -38,13 +38,13 @@ export const TUTORIAL_VIDEOS: TutorialVideo[] = [
     tag: "Billing",
   },
   {
-    id: "mesh-sync",
-    title: "Multi-Terminal Wi-Fi Mesh Synchronization",
+    id: "terminal-sync",
+    title: "Multi-Terminal Setup & Cloud Synchronization",
     description:
-      "Synchronizing up to 5 Android terminals locally over standard Wi-Fi without active internet connectivity.",
+      "Authorizing and running up to 5 Android terminals per restaurant with automatic cloud synchronization.",
     duration: "3:15",
-    fileName: "mesh-sync.mp4",
-    tag: "Offline Mesh",
+    fileName: "terminal-sync.mp4",
+    tag: "Terminal Setup",
   },
   {
     id: "menu-import",

@@ -423,7 +423,7 @@ The indicator appears immediately when `navigator.onLine` becomes `false` (well 
 
 **Validation timing:** On blur for individual fields. Full re-validation on submit.
 
-The existing `Field` component already renders `aria-describedby={error ? \`${id}-err\` : undefined}` and error `<p id={\`${id}-err\`}>`. The enhancement adds an `onBlur` prop to trigger validation for that specific field.
+The existing `Field` component already renders `aria-describedby={error ? \`${id}-err\` : undefined}`and error`<p id={\`${id}-err\`}>`. The enhancement adds an `onBlur` prop to trigger validation for that specific field.
 
 ```typescript
 function Field({

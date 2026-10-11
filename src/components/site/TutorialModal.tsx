@@ -45,7 +45,7 @@ export function TutorialModal({ open, onOpenChange, initialVideoId }: TutorialMo
             </DialogTitle>
           </div>
           <DialogDescription className="text-xs sm:text-sm text-gray-400">
-            Step-by-step guides for offline billing, printer setup, and multi-terminal mesh sync.
+            Step-by-step guides for offline billing, printer setup, and multi-terminal cloud sync.
           </DialogDescription>
         </DialogHeader>
 

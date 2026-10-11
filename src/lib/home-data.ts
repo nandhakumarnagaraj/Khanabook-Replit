@@ -6,8 +6,8 @@ export const FEATURES = [
     body: "Generate bills in under 3 seconds with instant touch search, barcode scanning, item modifiers, and customized table maps. Support dine-in, takeaway, and delivery orders with pay-before or pay-after workflows. Record cash, dynamic UPI QR, card, and split payments with automated GST computation.",
   },
   {
-    title: "Multi-Terminal Wi-Fi Mesh (Up to 5 Terminals)",
-    body: "Run your entire outlet smoothly with up to 5 synchronized Android terminals—empower stewards to punch orders table-side while the cashier settles bills at the counter. Each terminal maintains its own GST-compliant invoice series and daily order counter, synchronizing locally over Wi-Fi even during broadband outages.",
+    title: "Multi-Terminal Independent Operations (Up to 5 Terminals)",
+    body: "Run your entire outlet smoothly with up to 5 authorized Android terminals—empower stewards to punch orders table-side while the cashier settles bills at the counter. Each terminal maintains its own GST-compliant invoice series and daily order counter, operating with zero broadband dependency and syncing seamlessly to your unified Web Dashboard.",
   },
   {
     title: "Dual ESC/POS Thermal Printing & Kitchen KOT",
@@ -26,8 +26,8 @@ export const FEATURES = [
     body: "Track raw ingredients with precision using automated Recipe Bills of Materials (BOM). Deduct ingredients from stock automatically as dishes are billed, configure low-stock reorder thresholds, and eliminate food wastage and theft with detailed consumption audit trails.",
   },
   {
-    title: "Accountant Portal & GST Tax Compliance",
-    body: "Provide your CA or accountant with dedicated read-only web access to download GST-compliant B2B and B2C sales registers, payment mode summaries, and HSN/SAC reports in Excel and PDF formats, simplifying monthly tax reconciliations.",
+    title: "CA-Ready Exports & GST Tax Compliance",
+    body: "Easily download GST-compliant B2B and B2C sales registers, payment mode summaries, and HSN/SAC reports in Excel and PDF formats from the Web Dashboard, simplifying monthly tax reconciliations for you and your CA.",
   },
 ];
 
@@ -59,7 +59,7 @@ export const FAQS = [
   },
   {
     q: "How does multi-terminal synchronization work without a central server PC?",
-    a: "You can approve up to 5 Android smartphones or tablets per restaurant. Devices connect over your local Wi-Fi router (even with no active broadband internet) using a secure peer-to-peer mesh. Stewards can take orders tableside, and tickets immediately print in the kitchen while the cashier sees open orders.",
+    a: "You can authorize up to 5 Android smartphones or tablets per restaurant with secure owner challenge approval. Each terminal operates independently with its own local offline database and invoice numbering, so your billing counters never halt. When internet is active, all terminal sales automatically aggregate on your Cloud Web Dashboard for outlet-wide oversight.",
   },
   {
     q: "What hardware and printers does KhanaBook support?",
@@ -67,7 +67,7 @@ export const FAQS = [
   },
   {
     q: "What is the difference between the Android App and the Web Dashboard?",
-    a: "The Android POS App is built for fast frontline operations—billing, captain ordering, table shifts, and instant KOT printing at the counter and kitchen. The Cloud Web Dashboard is built for owners and accountants—allowing remote menu pricing edits, recipe BOM inventory control, staff role management, and live sales telemetry from any browser.",
+    a: "The Android POS App is built for fast frontline operations—billing, captain ordering, table shifts, and instant KOT printing at the counter and kitchen. The Cloud Web Dashboard is built for owners—allowing remote menu pricing edits, recipe BOM inventory control, staff management, terminal device approvals, and live sales telemetry from any browser.",
   },
   {
     q: "Can I share digital bills on WhatsApp and export GST reports?",

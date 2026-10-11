@@ -137,7 +137,7 @@ export function InteractivePosDashboard() {
                 isOfflineSimulated ? "bg-amber-500 animate-pulse" : "bg-emerald-500 animate-ping"
               }`}
             />
-            {isOfflineSimulated ? "OFFLINE MODE ACTIVE" : "LOCAL MESH ONLINE"}
+            {isOfflineSimulated ? "OFFLINE MODE ACTIVE" : "LOCAL POS ONLINE"}
           </div>
 
           <span className="hidden sm:inline-block h-3.5 w-px bg-border" />

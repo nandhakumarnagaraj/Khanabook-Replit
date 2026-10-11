@@ -60,11 +60,11 @@ export const HELP_FAQS = [
   },
   {
     q: "How can my accountant access bills or reports?",
-    a: `Use the Accountant web login at ${BUSINESS.loginUrl} for read-only access to supported restaurant reports. You can also export supported invoices or reports as PDF or CSV when a file is needed.`,
+    a: `Owners can export supported sales registers and tax reports as Excel, PDF, or CSV directly from the Web Dashboard at ${BUSINESS.loginUrl} to share with their accountant for GSTR-1 and GSTR-3B filings.`,
   },
   {
     q: "Does KhanaBook process customer payments?",
-    a: "No. KhanaBook currently records payment modes and references entered by the restaurant; integrated payment-gateway processing and verification are not currently available.",
+    a: "Yes. KhanaBook supports direct Easebuzz payment processing with sub-merchant onboarding and dynamic UPI QR collection, as well as recording Cash, Card, and custom split payments.",
   },
   {
     q: "How do I contact support?",

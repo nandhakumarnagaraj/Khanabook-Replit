@@ -59,7 +59,7 @@ const PRINCIPLES = [
   {
     icon: Cloud,
     title: "Dual-Engine Architecture",
-    desc: "Cashiers and stewards need instant sub-second native Android response times. Owners and accountants need real-time multi-terminal analytics, recipe tracking, and menu management on a Cloud Web Dashboard.",
+    desc: "Cashiers and stewards need instant sub-second native Android response times. Owners need real-time multi-terminal analytics, recipe tracking, CA export tools, and menu management on a Cloud Web Dashboard.",
   },
   {
     icon: ShieldCheck,
@@ -170,9 +170,9 @@ function AboutPage() {
                     Web Dashboard
                   </div>
                   <p className="text-xs text-gray-400">
-                    Runs in any browser on PC, laptop, or tablet. Provides owners and accountants
-                    with centralized menu engineering, raw material recipe tracking, staff controls,
-                    and live GST sales telemetry.
+                    Runs in any browser on PC, laptop, or tablet. Provides owners with centralized
+                    menu engineering, raw material recipe tracking, staff controls, CA-ready tax
+                    exports, and live GST sales telemetry.
                   </p>
                 </div>
               </div>

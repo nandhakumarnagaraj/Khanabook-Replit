@@ -86,7 +86,7 @@ const INCLUDED_GROUPS = [
       "Terminal-specific GST invoice series and isolated daily sequence counters",
       "End-of-day cash drawer float reconciliation & closing Z-Reports",
       "Daily, monthly, payment-mode, item-velocity, and hourly sales rush reports",
-      "Dedicated Accountant read-only web login with GST-compliant Excel/PDF exports",
+      "Owner Web Dashboard with GST-compliant Excel/PDF sales exports for your CA",
       "Role-based staff permissions and manager authorization PINs for comps and voids",
     ],
   },
@@ -94,8 +94,8 @@ const INCLUDED_GROUPS = [
 
 const NOT_INCLUDED = [
   {
-    item: "Integrated payment-gateway processing or verification",
-    note: "Not currently available — payments are recorded in KhanaBook",
+    item: "Third-party payment aggregator MDR fees",
+    note: "Standard merchant acquiring rates apply directly through your merchant account",
   },
   {
     item: "Automated direct Swiggy / Zomato order ingestion",
@@ -123,10 +123,10 @@ const HARDWARE_COSTS = [
     icon: Printer,
   },
   {
-    title: "Local Wi-Fi Router",
-    desc: "Any basic Wi-Fi router connects up to 5 terminals locally even without active internet connection.",
+    title: "Wi-Fi Router / Network",
+    desc: "Connects network thermal printers to your terminals and enables seamless background cloud sync.",
     cost: "Market Price",
-    highlight: "One-time hardware",
+    highlight: "Standard equipment",
     icon: Zap,
   },
   {
@@ -153,7 +153,7 @@ const PRICING_FAQS = [
   },
   {
     q: "Is the Web Dashboard also free?",
-    a: "Yes! Your account includes access to the Cloud Web Dashboard for centralized menu editing, live sales telemetry, recipe management, and accountant reports.",
+    a: "Yes! Your account includes access to the Cloud Web Dashboard for centralized menu editing, live sales telemetry, recipe management, and CA tax reports.",
   },
   {
     q: "Does KhanaBook take a cut of my food sales or billing volume?",

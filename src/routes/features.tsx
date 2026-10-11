@@ -205,8 +205,8 @@ function FeaturesPage() {
                   <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span className="text-gray-300">
-                      <strong className="text-white">Multi-Terminal Mesh:</strong> Connect up to 5
-                      Android terminals simultaneously (Cashier + Stewards).
+                      <strong className="text-white">Multi-Terminal Support:</strong> Connect up to
+                      5 authorized Android terminals simultaneously (Cashier + Stewards).
                     </span>
                   </div>
                   <div className="flex items-start gap-2.5">
@@ -271,8 +271,8 @@ function FeaturesPage() {
                 <h3 className="text-xl sm:text-2xl font-bold text-white">Web Dashboard</h3>
                 <p className="text-sm text-gray-400 mt-2 leading-relaxed">
                   Accessible from any browser on laptop, PC, iPad or smartphone via the Cloud Web
-                  Dashboard. Gives owners and accountants live cloud visibility without disrupting
-                  the counter.
+                  Dashboard. Gives owners live cloud visibility, control, and analytics without
+                  disrupting the counter.
                 </p>
 
                 <div className="mt-6 space-y-3 pt-4 border-t border-white/5 text-sm">
@@ -307,8 +307,8 @@ function FeaturesPage() {
                   <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="h-4 w-4 text-blue-400 shrink-0 mt-0.5" />
                     <span className="text-gray-300">
-                      <strong className="text-white">Accountant & GST Reports:</strong> Read-only
-                      login for CA/tax consultant with one-click Excel & PDF export.
+                      <strong className="text-white">CA & GST Reports:</strong> Export-ready sales
+                      registers and tax summaries for your CA in one-click Excel & PDF formats.
                     </span>
                   </div>
                 </div>
@@ -449,10 +449,10 @@ function FeaturesPage() {
               <div className="h-12 w-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mx-auto mb-4">
                 <Router className="h-6 w-6" />
               </div>
-              <h3 className="text-lg font-bold text-white">Local Wi-Fi Mesh</h3>
+              <h3 className="text-lg font-bold text-white">Wi-Fi Router / LAN</h3>
               <p className="text-xs text-gray-400 mt-2 leading-relaxed">
-                Any basic home/office Wi-Fi router. Synchronizes up to 5 terminals locally even if
-                broadband WAN link is disconnected.
+                Connects network thermal printers to your terminals and enables seamless background
+                cloud synchronization.
               </p>
               <div className="mt-4 text-xs font-semibold text-gray-300">
                 TP-Link, D-Link, Mercusys, etc.
