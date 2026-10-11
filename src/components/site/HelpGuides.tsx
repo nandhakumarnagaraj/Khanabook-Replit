@@ -45,6 +45,7 @@ export function HelpGuides() {
               id={`guide-${guide.id}`}
               role="region"
               aria-labelledby={`tab-${guide.id}`}
+              aria-hidden={!isOpen}
               className={`overflow-hidden transition-all duration-300 ease-out ${isOpen ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"}`}
             >
               <ol className="px-5 pb-5 space-y-3">
