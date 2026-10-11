@@ -469,7 +469,7 @@ function Home() {
                   <GooglePlayBadge size="md" />
                   <Link
                     to="/features"
-                    className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#4B26D4] px-5 text-sm font-bold text-white shadow-md shadow-[#4B26D4]/25 transition-all duration-200 hover:bg-[#3f1fb8] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B26D4]"
+                    className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-brand px-5 text-sm font-bold text-brand-foreground shadow-md shadow-brand/25 transition-all duration-200 hover:bg-brand/90 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
                   >
                     <span>App Features</span>
                     <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
