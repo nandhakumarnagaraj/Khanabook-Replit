@@ -27,12 +27,6 @@ export function HelpGuides() {
               id={`tab-${guide.id}`}
               type="button"
               onClick={() => toggle(guide.id)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  toggle(guide.id);
-                }
-              }}
               aria-expanded={isOpen}
               aria-controls={`guide-${guide.id}`}
               className="w-full px-5 py-4 flex items-center justify-between gap-4 text-left"

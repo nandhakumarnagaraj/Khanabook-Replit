@@ -88,11 +88,19 @@ export function ProductTabs() {
               id={`tab-${tab.id}`}
               onClick={() => setActive(i)}
               onKeyDown={(e) => {
-                if (e.key === "ArrowRight") setActive((i + 1) % TABS.length);
-                if (e.key === "ArrowLeft") setActive((i - 1 + TABS.length) % TABS.length);
+                let nextIndex = i;
+                if (e.key === "ArrowRight") nextIndex = (i + 1) % TABS.length;
+                else if (e.key === "ArrowLeft") nextIndex = (i - 1 + TABS.length) % TABS.length;
+                else if (e.key === "Home") nextIndex = 0;
+                else if (e.key === "End") nextIndex = TABS.length - 1;
+                else return;
+
+                e.preventDefault();
+                setActive(nextIndex);
+                document.getElementById(`tab-${TABS[nextIndex].id}`)?.focus();
               }}
               tabIndex={isActive ? 0 : -1}
-              className={`shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-bold transition-all duration-200 ${
+              className={`shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-bold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
                 isActive
                   ? "bg-brand text-brand-foreground shadow-lg shadow-brand/30"
                   : "bg-surface border border-border text-muted-foreground hover:border-brand/40 hover:text-foreground"
