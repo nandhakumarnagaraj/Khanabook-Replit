@@ -72,7 +72,7 @@ function PostPage() {
           className="pointer-events-none absolute -top-40 right-1/4 h-96 w-96 rounded-full bg-brand/15 blur-3xl"
         />
 
-        <div className="w-[92vw] md:w-[75vw] mx-auto relative z-10">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto relative z-10">
           <Link
             to="/blog"
             className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-400 hover:text-white transition-colors mb-6"
@@ -118,7 +118,7 @@ function PostPage() {
 
       {/* 2. ARTICLE BODY */}
       <section className="py-12 md:py-16">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="max-w-3xl space-y-6 text-base sm:text-lg text-gray-300 leading-relaxed">
             {isDraft && (
               <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-xs text-amber-300">
@@ -158,7 +158,7 @@ function PostPage() {
 function PostNotFound() {
   return (
     <div className="bg-[#131314] text-white min-h-screen py-24 text-center">
-      <div className="w-[92vw] md:w-[75vw] mx-auto">
+      <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold">Article Not Found</h1>
         <p className="mt-3 text-gray-400">The article you were looking for could not be located.</p>
         <Link
