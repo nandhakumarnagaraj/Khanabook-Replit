@@ -182,7 +182,7 @@ function PricingPage() {
           className="pointer-events-none absolute top-10 left-10 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl"
         />
 
-        <div className="w-[92vw] md:w-[75vw] mx-auto relative z-10 text-center">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto relative z-10 text-center">
           <EntranceReveal direction="up" delay={0.05}>
             <UiVerseBadge pulseColor="emerald">
               TRANSPARENT RESTAURANT PRICING • ZERO SOFTWARE SUBSCRIPTION
@@ -263,7 +263,7 @@ function PricingPage() {
 
       {/* 2. WHAT'S INCLUDED VS ROADMAP */}
       <section className="py-16 md:py-24 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs uppercase font-extrabold tracking-widest text-brand">
               Feature Transparency
@@ -345,7 +345,7 @@ function PricingPage() {
 
       {/* 3. HARDWARE & THIRD-PARTY COSTS BREAKDOWN */}
       <section className="py-16 md:py-24 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs uppercase font-extrabold tracking-widest text-brand">
               Zero Forced Hardware Bundles
@@ -391,7 +391,7 @@ function PricingPage() {
 
       {/* 4. FREQUENTLY ASKED QUESTIONS */}
       <section className="py-16 md:py-24 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs uppercase font-extrabold tracking-widest text-brand">
               Common Questions
@@ -439,7 +439,7 @@ function PricingPage() {
           className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-96 w-[600px] rounded-full bg-brand/15 blur-3xl"
         />
 
-        <div className="w-[92vw] md:w-[75vw] mx-auto relative z-10">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto relative z-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Start Billing with <span className="hl">KhanaBook Today.</span>
           </h2>
