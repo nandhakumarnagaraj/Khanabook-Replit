@@ -50,7 +50,7 @@ export function Footer() {
         className="pointer-events-none absolute -left-32 -bottom-32 h-80 w-80 rounded-full bg-gold/5 blur-3xl"
       />
 
-      <div className="w-[92vw] md:w-[75vw] mx-auto relative pt-16 pb-12 font-['Google_Sans',_sans-serif]">
+      <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto relative pt-16 pb-12 font-['Google_Sans',_sans-serif]">
         {/* Google Stitch Elevated Brand & Contact Card */}
         <div className="bg-surface rounded-2xl border border-border/70 p-6 sm:p-8 lg:p-10 mb-12 shadow-xl">
           <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12 items-center">
