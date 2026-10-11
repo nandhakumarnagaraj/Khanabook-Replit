@@ -102,7 +102,7 @@ function BlogPage() {
           className="pointer-events-none absolute top-10 left-10 h-72 w-72 rounded-full bg-amber-500/10 blur-3xl"
         />
 
-        <div className="w-[92vw] md:w-[75vw] mx-auto relative z-10 text-center">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto relative z-10 text-center">
           <EntranceReveal direction="up" delay={0.05}>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#1E1F20] px-4 py-1.5 text-xs font-semibold text-gray-300 shadow-sm">
               <span className="relative flex h-2 w-2">
@@ -147,7 +147,7 @@ function BlogPage() {
 
       {/* 2. BLOG POSTS GRID */}
       <section className="py-14 md:py-20 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           {posts.length === 0 ? (
             <div className="max-w-2xl mx-auto rounded-2xl border border-white/10 bg-[#1E1F20] p-8 text-center text-gray-400">
               Articles are being reviewed before publication. Please check back soon.
