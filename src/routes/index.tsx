@@ -231,9 +231,9 @@ function Home() {
                 <button
                   type="button"
                   onClick={() => setTutorialOpen(true)}
-                  className="inline-flex h-[44px] items-center justify-center gap-2 rounded-full bg-brand text-white px-5 sm:px-6 text-sm font-semibold tracking-wide shadow-sm hover:shadow-md hover:shadow-brand/20 hover:-translate-y-0.5 hover:bg-brand/95 active:translate-y-0 active:scale-[0.99] transition-all duration-200 cursor-pointer group shrink-0"
+                  className="group inline-flex h-[44px] items-center justify-center gap-2 rounded-lg border border-border/80 bg-surface-soft px-4 sm:px-5 text-sm font-semibold text-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-brand/35 hover:bg-surface active:translate-y-0 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 cursor-pointer shrink-0"
                 >
-                  <Play className="h-3.5 w-3.5 fill-white shrink-0 transition-transform group-hover:scale-110" />
+                  <Play className="h-3.5 w-3.5 fill-brand text-brand shrink-0 transition-transform group-hover:scale-110" />
                   <span>Watch Tutorials</span>
                 </button>
               </div>
@@ -469,7 +469,7 @@ function Home() {
                   <GooglePlayBadge size="md" />
                   <Link
                     to="/features"
-                    className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#4B26D4] px-5 text-sm font-bold text-white shadow-md shadow-[#4B26D4]/25 transition-all duration-200 hover:bg-[#3f1fb8] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B26D4]"
+                    className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-brand px-5 text-sm font-bold text-brand-foreground shadow-md shadow-brand/25 transition-all duration-200 hover:bg-brand/90 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
                   >
                     <span>App Features</span>
                     <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />

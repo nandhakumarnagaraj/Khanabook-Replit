@@ -34,7 +34,7 @@ export function Header() {
           />
           <div className="flex flex-col">
             <span className="text-xl md:text-2xl font-black tracking-tight text-[#000000] leading-none">
-              Khana<span className="text-[#4B26D4]">Book</span>
+              Khana<span className="text-brand">Book</span>
             </span>
             <span className="hidden sm:inline-block text-xs md:text-[13px] font-normal tracking-wide text-[#000000] mt-1">
               Fast &nbsp;|&nbsp; Simple &nbsp;|&nbsp; Reliable
