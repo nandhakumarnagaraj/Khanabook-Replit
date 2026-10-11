@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://khanabook.com/sitemap.xml
+Sitemap: https://khanabook.in/sitemap.xml

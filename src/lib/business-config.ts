@@ -10,7 +10,7 @@ export const BUSINESS = {
 
   // Canonical site URL used for SEO tags and sitemap. Update to the final
   // production domain once confirmed by the business.
-  siteUrl: "https://khanabook.com",
+  siteUrl: "https://khanabook.in",
 
   // Values migrated from the previous static site. Verify legal identifiers
   // below before launch.

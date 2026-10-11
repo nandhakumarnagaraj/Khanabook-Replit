@@ -70,7 +70,7 @@ async function submitLead(payload: Record<string, unknown>): Promise<{ ok: boole
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        source: "khanabook.com/get-started",
+        source: "khanabook.in/get-started",
         product: BUSINESS.productName,
         ...payload,
       }),
