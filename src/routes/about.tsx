@@ -83,7 +83,7 @@ function AboutPage() {
           className="pointer-events-none absolute top-10 left-10 h-72 w-72 rounded-full bg-amber-500/10 blur-3xl"
         />
 
-        <div className="w-[92vw] md:w-[75vw] mx-auto relative z-10 text-center">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto relative z-10 text-center">
           <EntranceReveal direction="up" delay={0.05}>
             <UiVerseBadge pulseColor="emerald">
               OUR MISSION &amp; ENGINEERING PHILOSOPHY
@@ -108,7 +108,7 @@ function AboutPage() {
 
       {/* 2. THE PROBLEM & SOLUTION */}
       <section className="py-16 md:py-24 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <span className="text-xs uppercase font-extrabold tracking-widest text-brand">
@@ -183,7 +183,7 @@ function AboutPage() {
 
       {/* 3. CORE PRINCIPLES */}
       <section className="py-16 md:py-24 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs uppercase font-extrabold tracking-widest text-brand">
               Guiding Principles
@@ -217,7 +217,7 @@ function AboutPage() {
 
       {/* 4. COMPANY & STATUTORY TRANSPARENCY */}
       <section className="py-16 md:py-24 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs uppercase font-extrabold tracking-widest text-brand">
               Corporate Governance
@@ -271,7 +271,7 @@ function AboutPage() {
           className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-96 w-[600px] rounded-full bg-brand/15 blur-3xl"
         />
 
-        <div className="w-[92vw] md:w-[75vw] mx-auto relative z-10">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto relative z-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Experience the <span className="hl">KhanaBook Difference.</span>
           </h2>

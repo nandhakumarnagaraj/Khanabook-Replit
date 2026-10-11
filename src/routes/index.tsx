@@ -391,7 +391,7 @@ function Home() {
         className="py-20 md:py-28 bg-[#1E1F20]/30 border-y border-white/[0.06]"
         id="dual-engine"
       >
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <EntranceReveal direction="up">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="eyebrow mb-3">Two Powerful Sides of One System</div>
@@ -541,14 +541,14 @@ function Home() {
                     href={BUSINESS.loginUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex h-11 items-center justify-center gap-2 rounded-full border-2 border-border/80 bg-white dark:bg-surface px-5 text-sm font-bold text-foreground shadow-sm transition-all duration-200 hover:bg-surface-soft hover:border-[#4B26D4]/50 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B26D4]"
+                    className="group inline-flex h-11 items-center justify-center gap-2 rounded-full border-2 border-border/80 bg-white dark:bg-surface px-5 text-sm font-bold text-foreground shadow-sm transition-all duration-200 hover:bg-surface-soft hover:border-brand/50 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
                   >
                     <span>Launch Web Dashboard</span>
                     <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" />
                   </a>
                   <Link
                     to="/about"
-                    className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#000030] px-5 text-sm font-bold text-white shadow-md shadow-[#000030]/25 transition-all duration-200 hover:bg-[#0a0a42] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#000030]"
+                    className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-brand px-5 text-sm font-bold text-brand-foreground shadow-md shadow-brand/25 transition-all duration-200 hover:bg-brand/90 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
                   >
                     <span>Learn Architecture</span>
                     <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -677,7 +677,7 @@ function Home() {
 
       {/* TECHNICAL ARCHITECTURE COMPARISON — Google Stitch Matrix */}
       <section className="py-20 md:py-28" id="architecture">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <EntranceReveal direction="up">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="eyebrow mb-3">Architectural Superiority</div>
@@ -823,7 +823,7 @@ function Home() {
 
       {/* FAQ — GOOGLE STITCH TYPOGRAPHY & 75vw SCREEN WIDTH */}
       <section className="py-20 md:py-28" id="faq">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <EntranceReveal direction="up" className="w-full">
             <div className="mb-8 text-center md:text-left">
               <div className="eyebrow mb-3">FAQ</div>
@@ -840,7 +840,7 @@ function Home() {
 
       {/* CTA — 75% SCREEN WIDTH ABOVE FOOTER */}
       <section className="pb-20 md:pb-28">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <EntranceReveal direction="up" className="w-full">
             <Card3DTilt intensity={5} glare={false} className="w-full">
               <div className="w-full rounded-3xl bg-[#121212] text-[#FFFFFF] p-10 md:p-16 lg:p-20 text-center relative overflow-hidden shadow-2xl border border-[#2B1012]">

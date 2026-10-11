@@ -174,7 +174,7 @@ function GetStartedPage() {
           className="pointer-events-none absolute top-10 left-10 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl"
         />
 
-        <div className="w-[92vw] md:w-[75vw] mx-auto relative z-10 text-center">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto relative z-10 text-center">
           <EntranceReveal direction="up" delay={0.05}>
             <UiVerseBadge pulseColor="emerald">
               ONBOARDING &amp; DIRECT ACCESS • ANDROID APP &amp; WEB DASHBOARD
@@ -198,7 +198,7 @@ function GetStartedPage() {
 
       {/* 2. FORM & DIRECT ACCESS GRID */}
       <section className="py-14 md:py-20">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* LEFT: ONBOARDING FORM (7 cols) */}
             <div className="lg:col-span-7">

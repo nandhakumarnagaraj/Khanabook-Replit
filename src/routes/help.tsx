@@ -84,7 +84,7 @@ function HelpPage() {
           className="pointer-events-none absolute top-10 left-10 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl"
         />
 
-        <div className="w-[92vw] md:w-[75vw] mx-auto relative z-10 text-center">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto relative z-10 text-center">
           <EntranceReveal direction="up" delay={0.05}>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#1E1F20] px-4 py-1.5 text-xs font-semibold text-gray-300 shadow-sm">
               <span className="relative flex h-2 w-2">
@@ -132,7 +132,7 @@ function HelpPage() {
 
       {/* 2. CORE SETUP PILLARS BENTO */}
       <section className="py-14 md:py-20 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs uppercase font-extrabold tracking-widest text-brand">
               Essential Topics
@@ -184,7 +184,7 @@ function HelpPage() {
 
       {/* 3. STEP-BY-STEP SETUP GUIDES */}
       <section className="py-14 md:py-20 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs uppercase font-extrabold tracking-widest text-brand">
               Interactive Walkthroughs
@@ -206,7 +206,7 @@ function HelpPage() {
 
       {/* 4. FREQUENTLY ASKED QUESTIONS */}
       <section className="py-14 md:py-20 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs uppercase font-extrabold tracking-widest text-brand">
               Common Questions
@@ -258,7 +258,7 @@ function HelpPage() {
 
       {/* 5. DIRECT SUPPORT CHANNELS */}
       <section className="py-16 md:py-24 text-center">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
             Still Have Questions? <span className="hl">Talk with Engineers.</span>
           </h2>

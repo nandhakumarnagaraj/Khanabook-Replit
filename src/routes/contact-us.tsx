@@ -50,7 +50,7 @@ function ContactUsPage() {
           className="pointer-events-none absolute top-10 left-10 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl"
         />
 
-        <div className="w-[92vw] md:w-[75vw] mx-auto relative z-10 text-center">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto relative z-10 text-center">
           <EntranceReveal direction="up" delay={0.05}>
             <UiVerseBadge pulseColor="emerald">DIRECT SUPPORT &amp; OFFICE CONTACT</UiVerseBadge>
           </EntranceReveal>
@@ -73,7 +73,7 @@ function ContactUsPage() {
 
       {/* 2. CONTACT BENTO CHANNELS */}
       <section className="py-16 md:py-24 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Phone */}
             <div className="rounded-2xl border border-white/10 bg-[#1E1F20] p-6 sm:p-8 flex flex-col justify-between hover:border-brand/30 transition-all">
@@ -161,7 +161,7 @@ function ContactUsPage() {
 
       {/* 3. CORPORATE & STATUTORY INFORMATION */}
       <section className="py-16 md:py-24 border-b border-[#28292A]">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-10 w-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white">
@@ -208,7 +208,7 @@ function ContactUsPage() {
 
       {/* 4. CTA */}
       <section className="py-20 md:py-28 text-center">
-        <div className="w-[92vw] md:w-[75vw] mx-auto">
+        <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-white">
             Ready to Try <span className="hl">KhanaBook?</span>
           </h2>
