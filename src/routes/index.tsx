@@ -843,7 +843,7 @@ function Home() {
         <div className="w-[92vw] md:w-[75vw] mx-auto">
           <EntranceReveal direction="up" className="w-full">
             <Card3DTilt intensity={5} glare={false} className="w-full">
-              <div className="w-full rounded-3xl bg-surface text-foreground p-10 md:p-16 lg:p-20 text-center relative overflow-hidden shadow-2xl border border-border/80">
+              <div className="w-full rounded-3xl bg-[#121212] text-[#FFFFFF] p-10 md:p-16 lg:p-20 text-center relative overflow-hidden shadow-2xl border border-[#2B1012]">
                 <BorderBeam
                   size={340}
                   duration={12}
@@ -853,36 +853,37 @@ function Home() {
                 />
                 <div
                   aria-hidden
-                  className="absolute inset-0 opacity-20 pointer-events-none"
+                  className="absolute inset-0 pointer-events-none"
                   style={{
-                    background: "radial-gradient(circle at 30% 30%, var(--brand), transparent 65%)",
+                    background: "radial-gradient(circle at 25% 50%, #2B1012, transparent 60%)",
                   }}
                 />
                 <div className="relative z-10">
                   <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black">
-                    Never Let Internet Failure Stop Your <span className="hl">Dinner Rush.</span>
+                    Ready to run <span className="hl">smarter?</span>
                   </h2>
-                  <p className="mt-4 text-muted-foreground max-w-4xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed">
-                    Built for restaurants across India operating zero-downtime counters with
-                    KhanaBook. Billing, KOT, payments, and up to 5 synchronized terminals in one
-                    Android app.
+                  <p className="mt-4 text-[#B8A6A7] max-w-3xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed">
+                    Get KhanaBook set up for your restaurant — billing, KOT, payments and
+                    multi-terminal operations in one Android app.
                   </p>
                   <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
-                    <GooglePlayBadge size="lg" />
-
-                    <Link to="/get-started">
-                      <UiVerseGlowingButton variant="brand" size="lg">
-                        <span>Request Setup Help</span>
-                        <ArrowRight className="h-4 w-4" />
-                      </UiVerseGlowingButton>
+                    <Link
+                      to="/get-started"
+                      className="inline-flex h-[50px] items-center justify-center rounded-full bg-[#F0142D] text-[#FFFFFF] px-8 text-base font-bold shadow-[0_0_25px_rgba(240,20,45,0.35)] hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] transition-all duration-200"
+                    >
+                      Get KhanaBook
                     </Link>
 
-                    <Link to="/features">
-                      <UiVerseGlowingButton variant="white" size="lg">
-                        <span>Explore All Features</span>
-                      </UiVerseGlowingButton>
+                    <Link
+                      to="/blog"
+                      className="inline-flex h-[50px] items-center justify-center rounded-full bg-[#FFFFFF] text-[#1F1F1F] px-8 text-base font-bold hover:bg-[#F1F3F4] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] transition-all duration-200"
+                    >
+                      Read Our Blog
                     </Link>
                   </div>
+                  <p className="mt-10 text-[#B8A6A7] text-xs sm:text-sm">
+                    KhanaBook is a product of PIQUANT CONSULTANCY SERVICES PRIVATE LIMITED.
+                  </p>
                 </div>
               </div>
             </Card3DTilt>

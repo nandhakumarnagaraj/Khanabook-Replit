@@ -417,7 +417,7 @@ html.light select.bg-\[\#28292A\] option {
 }
 
 @utility hl {
-  background: linear-gradient(90deg, var(--brand), var(--gold-dark));
+  background: linear-gradient(90deg, #ef233c 0%, #f15a24 55%, #ffc928 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
