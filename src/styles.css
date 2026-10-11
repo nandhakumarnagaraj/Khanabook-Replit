@@ -1175,8 +1175,8 @@ html.light select.bg-\[\#28292A\] option {
 
 .whatsapp-float {
   position: fixed;
-  right: 1.25rem;
-  bottom: 1.25rem;
+  right: calc(1.25rem + env(safe-area-inset-right, 0px));
+  bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
   z-index: 40;
   display: grid;
   width: 3.25rem;
@@ -1205,7 +1205,7 @@ html.light select.bg-\[\#28292A\] option {
 .sticky-cta-bar {
   position: fixed;
   left: 50%;
-  bottom: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
   z-index: 45;
   display: flex;
   gap: 0.5rem;
@@ -1261,10 +1261,10 @@ html.light select.bg-\[\#28292A\] option {
 
 @media (max-width: 767px) {
   .whatsapp-float {
-    bottom: 1.25rem;
+    bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
   }
   .whatsapp-float.is-scrolled {
-    bottom: 5.25rem;
+    bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px));
   }
 }
 
