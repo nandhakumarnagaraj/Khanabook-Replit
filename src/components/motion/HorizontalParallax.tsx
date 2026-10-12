@@ -253,7 +253,7 @@ export function HorizontalParallax() {
       </div>
 
       <div className="flex flex-col gap-5">
-        {/* Row 1 — Moving Left + Cursor Dynamic Shift */}
+        {/* Row 1 - Moving Left + Cursor Dynamic Shift */}
         <div
           style={{
             transform: `translate3d(${-mouseShift}px, 0, 0)`,
@@ -263,7 +263,7 @@ export function HorizontalParallax() {
           <MarqueeRow items={ROW_ONE} direction="left" />
         </div>
 
-        {/* Row 2 — Moving Right + Cursor Dynamic Shift */}
+        {/* Row 2 - Moving Right + Cursor Dynamic Shift */}
         <div
           style={{
             transform: `translate3d(${mouseShift}px, 0, 0)`,

@@ -45,7 +45,7 @@ export const FEATURE_GROUPS: { id: string; title: string; items: FeatureItem[] }
     items: [
       {
         name: "Up to 5 Authorized Android Terminals",
-        body: "Connect up to 5 Android phones or tablets per restaurant simultaneously—with secure 4-digit challenge approval by the owner on the Web Dashboard.",
+        body: "Connect up to 5 Android phones or tablets per restaurant simultaneously, with secure 4-digit challenge approval by the owner on the Web Dashboard.",
       },
       {
         name: "Terminal-Scoped Zero-Downtime Billing",
@@ -79,7 +79,7 @@ export const FEATURE_GROUPS: { id: string; title: string; items: FeatureItem[] }
       },
       {
         name: "Dual Thermal Printer Routing",
-        body: "Connect up to two standard 58mm or 80mm ESC/POS thermal printers via USB, Bluetooth, or Wi-Fi—one for counter receipts and one for kitchen KOTs.",
+        body: "Connect up to two standard 58mm or 80mm ESC/POS thermal printers via USB, Bluetooth, or Wi-Fi: one for counter receipts and one for kitchen KOTs.",
       },
       {
         name: "Multi-Station Kitchen Routing",

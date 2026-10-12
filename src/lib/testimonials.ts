@@ -19,7 +19,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "I was using a tablet for billing and it got lost. I logged into another phone and all my data was backed up — it continued from the existing order ID like nothing happened.",
+      "I was using a tablet for billing and it got lost. I logged into another phone and all my data was backed up: it continued from the existing order ID like nothing happened.",
     initials: "TK",
     name: "Tharun Kumar",
     role: "Founder",

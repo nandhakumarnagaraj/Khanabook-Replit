@@ -28,7 +28,7 @@ export const Route = createFileRoute("/pricing")({
     meta: [
       {
         title:
-          "Pricing — KhanaBook Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard",
+          "Pricing - KhanaBook Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard",
       },
       {
         name: "description",
@@ -37,7 +37,7 @@ export const Route = createFileRoute("/pricing")({
       },
       {
         property: "og:title",
-        content: "KhanaBook Pricing — Transparent Offline-First POS (₹0 Subscription)",
+        content: "KhanaBook Pricing - Transparent Offline-First POS (₹0 Subscription)",
       },
       {
         property: "og:description",
@@ -99,11 +99,11 @@ const NOT_INCLUDED = [
   },
   {
     item: "Automated direct Swiggy / Zomato order ingestion",
-    note: "Coming soon — online orders currently recorded as an order source",
+    note: "Coming soon: online orders currently recorded as an order source",
   },
   {
     item: "Customer self-ordering QR storefront",
-    note: "Roadmap item — steward mobile ordering is fully available today",
+    note: "Roadmap item: steward mobile ordering is fully available today",
   },
 ];
 

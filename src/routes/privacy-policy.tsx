@@ -5,7 +5,7 @@ import { EntranceReveal } from "@/components/motion/EntranceReveal";
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — KhanaBook Restaurant POS" },
+      { title: "Privacy Policy - KhanaBook Restaurant POS" },
       {
         name: "description",
         content: `Privacy Policy for KhanaBook offline-first restaurant POS, a product of ${BUSINESS.legalName}.`,

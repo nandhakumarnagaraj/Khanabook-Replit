@@ -21,14 +21,14 @@ export const Route = createFileRoute("/roi-calculator")({
   head: () => ({
     meta: [
       {
-        title: "Savings Estimator — KhanaBook Offline-First POS | Android App & Web Dashboard",
+        title: "Savings Estimator - KhanaBook Offline-First POS | Android App & Web Dashboard",
       },
       {
         name: "description",
         content:
           "Calculate how much your restaurant can save by eliminating annual desktop software subscriptions and bulky PC hardware with KhanaBook's offline-first Android POS and Web Dashboard.",
       },
-      { property: "og:title", content: "Restaurant POS Savings Estimator — KhanaBook" },
+      { property: "og:title", content: "Restaurant POS Savings Estimator - KhanaBook" },
       { property: "og:url", content: absUrl("/roi-calculator") },
     ],
     links: [{ rel: "canonical", href: absUrl("/roi-calculator") }],

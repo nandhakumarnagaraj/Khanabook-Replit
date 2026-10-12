@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         title:
-          "KhanaBook — Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard",
+          "KhanaBook - Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard",
       },
       {
         name: "description",
@@ -91,7 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:title",
         content:
-          "KhanaBook — Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard",
+          "KhanaBook - Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard",
       },
       {
         property: "og:description",

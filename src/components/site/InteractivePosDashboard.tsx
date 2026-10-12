@@ -128,13 +128,13 @@ export function InteractivePosDashboard() {
         className="pointer-events-none absolute -bottom-32 left-0 h-96 w-96 rounded-full bg-gold/10 blur-[120px]"
       />
 
-      {/* TOP DASHBOARD BAR — StringTune & MCPMarket telemetry style */}
+      {/* TOP DASHBOARD BAR - Telemetry style */}
       <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-border/80">
         <div className="flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-mono font-bold text-foreground shadow-sm">
             <span
               className={`flex h-2 w-2 rounded-full ${
-                isOfflineSimulated ? "bg-amber-500 animate-pulse" : "bg-emerald-500 animate-ping"
+                isOfflineSimulated ? "bg-amber-500" : "bg-emerald-500"
               }`}
             />
             {isOfflineSimulated ? "OFFLINE MODE ACTIVE" : "LOCAL POS ONLINE"}
@@ -199,7 +199,7 @@ export function InteractivePosDashboard() {
         )}
       </AnimatePresence>
 
-      {/* METRIC TILES STRIP — High-density SaaS KPI styling */}
+      {/* METRIC TILES STRIP - High-density SaaS KPI styling */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 my-6">
         <div className="rounded-2xl border border-border bg-surface/90 backdrop-blur-md p-4 shadow-sm">
           <div className="flex items-center justify-between text-xs font-bold text-muted-foreground uppercase tracking-wider font-mono">

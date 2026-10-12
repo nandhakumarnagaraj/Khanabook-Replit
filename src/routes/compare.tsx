@@ -32,7 +32,7 @@ import { GooglePlayBadge } from "@/components/ui/GooglePlayBadge";
 export const Route = createFileRoute("/compare")({
   head: () => ({
     meta: [
-      { title: "KhanaBook vs Alternative Architectures — Offline-First Restaurant POS Battlecard" },
+      { title: "KhanaBook vs Alternative Architectures - Offline-First Restaurant POS Battlecard" },
       {
         name: "description",
         content:
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/compare")({
       },
       {
         property: "og:title",
-        content: "KhanaBook vs Alternative Architectures — Restaurant POS Battlecard",
+        content: "KhanaBook vs Alternative Architectures - Restaurant POS Battlecard",
       },
       {
         property: "og:description",
@@ -484,7 +484,7 @@ function ComparePage() {
               </h2>
               <p className="mt-4 text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed">
                 Install KhanaBook in minutes on any Android device. No subscriptions, no hardware
-                lock-in, and 100% offline billing that never stops — paired with live Web Dashboard
+                lock-in, and 100% offline billing that never stops, paired with live Web Dashboard
                 control.
               </p>
 

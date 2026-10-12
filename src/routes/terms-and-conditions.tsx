@@ -5,7 +5,7 @@ import { EntranceReveal } from "@/components/motion/EntranceReveal";
 export const Route = createFileRoute("/terms-and-conditions")({
   head: () => ({
     meta: [
-      { title: "Terms & Conditions — KhanaBook Restaurant POS" },
+      { title: "Terms & Conditions - KhanaBook Restaurant POS" },
       {
         name: "description",
         content: `Terms and Conditions for KhanaBook offline-first restaurant POS, a product of ${BUSINESS.legalName}.`,

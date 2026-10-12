@@ -28,7 +28,7 @@ export const Route = createFileRoute("/help")({
     meta: [
       {
         title:
-          "Help Center — KhanaBook Offline-First Multi-Terminal POS | Android App & Web Dashboard",
+          "Help Center - KhanaBook Offline-First Multi-Terminal POS | Android App & Web Dashboard",
       },
       {
         name: "description",

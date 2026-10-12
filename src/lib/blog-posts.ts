@@ -27,9 +27,9 @@ export const POSTS: BlogPost[] = [
     readingTime: 5,
     status: "published",
     content: [
-      "Restaurant internet can be unreliable during peak service — routers overheat, ISPs blip, tethering plans throttle. A POS that stops working when the internet does costs the restaurant more than the subscription it saves.",
+      "Restaurant internet can be unreliable during peak service: routers overheat, ISPs blip, tethering plans throttle. A POS that stops working when the internet does costs the restaurant more than the subscription it saves.",
       "Offline-first billing means the app treats the local device as the source of truth for an in-progress order. Bills can be created, KOTs can be printed and payments can be recorded without a network call.",
-      "When the internet returns, completed orders are synchronised in the background. The staff experience does not change — only the sync indicator does.",
+      "When the internet returns, completed orders are synchronised in the background. The staff experience does not change; only the sync indicator does.",
     ],
   },
   {
@@ -46,7 +46,7 @@ export const POSTS: BlogPost[] = [
     content: [
       "In a restaurant with more than one billing counter, each device should behave as its own terminal. That means a distinct terminal ID, a separate invoice series and its own set of active orders.",
       "Isolating active orders per terminal avoids two cashiers editing the same draft. Once an order is finalised, the completed data rolls up to a single restaurant-level view for reporting.",
-      "Terminal-specific invoice series also make audits cleaner — every invoice can be traced back to the device that produced it.",
+      "Terminal-specific invoice series also make audits cleaner: every invoice can be traced back to the device that produced it.",
     ],
   },
   {
@@ -62,7 +62,7 @@ export const POSTS: BlogPost[] = [
     status: "published",
     content: [
       "A Kitchen Order Ticket (KOT) is a short instruction to the kitchen. Good KOTs are legible, arrive at the right station and can be reprinted without duplicating the order.",
-      "For restaurants with more than one section — tandoor, curry, dessert — configure a separate printer per station and route items to the right one at menu-item level.",
+      "For restaurants with more than one section (tandoor, curry, dessert), configure a separate printer per station and route items to the right one at menu-item level.",
       "Reprints should be marked clearly so the kitchen doesn't cook the same item twice.",
     ],
   },
@@ -77,7 +77,7 @@ export const POSTS: BlogPost[] = [
     readingTime: 4,
     status: "published",
     content: [
-      "Split payments are common in Indian restaurants — one guest pays UPI, another pays cash. The POS should accept the split without forcing you to void the bill and start over.",
+      "Split payments are common in Indian restaurants: one guest pays UPI, another pays cash. The POS should accept the split without forcing you to void the bill and start over.",
       "Record each portion against its method so reports reflect the real payment mix, not a rounded-off single mode.",
       "Where a payment gateway is used, keep the gateway reference on the bill for later reconciliation.",
     ],
@@ -95,7 +95,7 @@ export const POSTS: BlogPost[] = [
     content: [
       "Restaurant inventory doesn't need to be enterprise-grade to be useful. Start by tracking the ingredients or items that stock out most often.",
       "Where the POS supports it, tie inventory to menu items so a sale can decrement stock. Use low-stock thresholds as reminders, not blockers.",
-      "Reconcile physical stock weekly, not daily — the goal is fewer stock-outs during service, not perfect real-time counts.",
+      "Reconcile physical stock weekly, not daily: the goal is fewer stock-outs during service, not perfect real-time counts.",
     ],
   },
   {
@@ -110,7 +110,7 @@ export const POSTS: BlogPost[] = [
     readingTime: 5,
     status: "published",
     content: [
-      "When multiple terminals share one invoice series, gaps and duplicates are easy — especially if the network drops mid-service.",
+      "When multiple terminals share one invoice series, gaps and duplicates are easy, especially if the network drops mid-service.",
       "Assigning each terminal its own series avoids conflicts. Reports can still aggregate across terminals for restaurant-level reporting.",
       "For audits, being able to say 'this invoice came from Terminal 2' is faster and cleaner than reverse-engineering it from timestamps.",
     ],

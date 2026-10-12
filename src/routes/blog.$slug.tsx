@@ -13,14 +13,14 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ params, loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Unavailable — KhanaBook Blog" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Unavailable - KhanaBook Blog" }, { name: "robots", content: "noindex" }],
       };
     }
     const p = loaderData.post;
     const url = absUrl(`/blog/${params.slug}`);
     const isDraft = p.status === "draft";
     const meta: Array<Record<string, string>> = [
-      { title: `${p.title} — KhanaBook Engineering Blog` },
+      { title: `${p.title} - KhanaBook Engineering Blog` },
       { name: "description", content: p.description },
       { property: "og:title", content: p.title },
       { property: "og:description", content: p.description },

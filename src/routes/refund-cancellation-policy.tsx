@@ -5,7 +5,7 @@ import { EntranceReveal } from "@/components/motion/EntranceReveal";
 export const Route = createFileRoute("/refund-cancellation-policy")({
   head: () => ({
     meta: [
-      { title: "Refund & Cancellation Policy — KhanaBook Restaurant POS" },
+      { title: "Refund & Cancellation Policy - KhanaBook Restaurant POS" },
       {
         name: "description",
         content: `Refund and Cancellation Policy for KhanaBook offline-first restaurant POS, a product of ${BUSINESS.legalName}.`,

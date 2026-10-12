@@ -7,7 +7,7 @@ export const FEATURES = [
   },
   {
     title: "Multi-Terminal Independent Operations (Up to 5 Terminals)",
-    body: "Run your entire outlet smoothly with up to 5 authorized Android terminals—empower stewards to punch orders table-side while the cashier settles bills at the counter. Each terminal maintains its own GST-compliant invoice series and daily order counter, operating with zero broadband dependency and syncing seamlessly to your unified Web Dashboard.",
+    body: "Run your entire outlet smoothly with up to 5 authorized Android terminals: empower stewards to punch orders table-side while the cashier settles bills at the counter. Each terminal maintains its own GST-compliant invoice series and daily order counter, operating with zero broadband dependency and syncing seamlessly to your unified Web Dashboard.",
   },
   {
     title: "Dual ESC/POS Thermal Printing & Kitchen KOT",
@@ -67,7 +67,7 @@ export const FAQS = [
   },
   {
     q: "What is the difference between the Android App and the Web Dashboard?",
-    a: "The Android POS App is built for fast frontline operations—billing, captain ordering, table shifts, and instant KOT printing at the counter and kitchen. The Cloud Web Dashboard is built for owners—allowing remote menu pricing edits, recipe BOM inventory control, staff management, terminal device approvals, and live sales telemetry from any browser.",
+    a: "The Android POS App is built for fast frontline operations: billing, captain ordering, table shifts, and instant KOT printing at the counter and kitchen. The Cloud Web Dashboard is built for owners, allowing remote menu pricing edits, recipe BOM inventory control, staff management, terminal device approvals, and live sales telemetry from any browser.",
   },
   {
     q: "Can I share digital bills on WhatsApp and export GST reports?",

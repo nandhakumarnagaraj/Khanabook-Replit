@@ -20,12 +20,12 @@ import { GooglePlayBadge } from "@/components/ui/GooglePlayBadge";
 export const Route = createFileRoute("/contact-us")({
   head: () => ({
     meta: [
-      { title: `Contact Us — ${BUSINESS.productName} Support & Offices` },
+      { title: `Contact Us - ${BUSINESS.productName} Support & Offices` },
       {
         name: "description",
         content: `Contact ${BUSINESS.legalName}, the creators of ${BUSINESS.productName} offline-first restaurant POS. Phone, WhatsApp, email, and corporate office details.`,
       },
-      { property: "og:title", content: `Contact Us — ${BUSINESS.productName}` },
+      { property: "og:title", content: `Contact Us - ${BUSINESS.productName}` },
       { property: "og:url", content: absUrl("/contact-us") },
     ],
     links: [{ rel: "canonical", href: absUrl("/contact-us") }],

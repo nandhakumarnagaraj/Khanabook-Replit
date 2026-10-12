@@ -14,19 +14,19 @@ export function ParallaxBackground() {
 
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      {/* Dynamic ambient orb 1 — Top Right (Brand red / crimson) */}
+      {/* Dynamic ambient orb 1 - Top Right (Brand red / crimson) */}
       <motion.div
         style={reduceMotion ? undefined : { y: orb1Y }}
         className="absolute -top-32 -right-32 h-[550px] w-[550px] rounded-full bg-brand/10 blur-[130px]"
       />
 
-      {/* Dynamic ambient orb 2 — Middle Left (Gold / Amber) */}
+      {/* Dynamic ambient orb 2 - Middle Left (Gold / Amber) */}
       <motion.div
         style={reduceMotion ? undefined : { y: orb2Y }}
         className="absolute top-[45%] -left-32 h-[480px] w-[480px] rounded-full bg-gold/15 blur-[120px]"
       />
 
-      {/* Dynamic ambient orb 3 — Lower Right */}
+      {/* Dynamic ambient orb 3 - Lower Right */}
       <motion.div
         style={reduceMotion ? undefined : { y: orb3Y }}
         className="absolute bottom-10 right-10 h-[400px] w-[400px] rounded-full bg-brand/5 blur-[100px]"

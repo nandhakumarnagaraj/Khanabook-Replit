@@ -25,7 +25,7 @@ export const Route = createFileRoute("/get-started")({
     meta: [
       {
         title:
-          "Get KhanaBook — Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard",
+          "Get KhanaBook - Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard",
       },
       {
         name: "description",

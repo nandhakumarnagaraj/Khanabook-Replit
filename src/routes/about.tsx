@@ -23,7 +23,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       {
-        title: `About Us — ${BUSINESS.productName} | Offline-First Multi-Terminal Restaurant POS`,
+        title: `About Us - ${BUSINESS.productName} | Offline-First Multi-Terminal Restaurant POS`,
       },
       {
         name: "description",
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/about")({
       },
       {
         property: "og:title",
-        content: `About ${BUSINESS.productName} — Built for Indian Restaurants`,
+        content: `About ${BUSINESS.productName} - Built for Indian Restaurants`,
       },
       {
         property: "og:description",

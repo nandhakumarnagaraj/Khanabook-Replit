@@ -4,7 +4,7 @@
 export const BUSINESS = {
   legalName: "PIQUANT CONSULTANCY SERVICES PRIVATE LIMITED",
   productName: "KhanaBook",
-  productTagline: "Offline-First Multi-Terminal Restaurant POS — Android App & Web Dashboard",
+  productTagline: "Offline-First Multi-Terminal Restaurant POS - Android App & Web Dashboard",
   siblingPlatform: "India Advocacy",
   siblingPlatformDescription: "legal-tech and business-compliance platform",
 
@@ -59,6 +59,6 @@ export const DISCLAIMERS = {
   security:
     "We use appropriate technical and organisational safeguards designed to protect your data.",
   compareDisclaimer:
-    "This table describes KhanaBook's approach and lists what to check in any other POS. It does not make claims about specific competing products — capabilities vary by provider, plan, hardware and configuration.",
+    "This table describes KhanaBook's approach and lists what to check in any other POS. It does not make claims about specific competing products - capabilities vary by provider, plan, hardware and configuration.",
   roi: "Results are indicative operational value based on the values you enter. KhanaBook may not eliminate all paper or operational costs, and staff time saved does not automatically translate to direct cash savings. Actual outcomes depend on your restaurant's operations, hardware, payment provider rates and optional services.",
 } as const;

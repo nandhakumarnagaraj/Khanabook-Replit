@@ -98,7 +98,7 @@ const ARCH_COMPARISON = [
   {
     feature: "Speed during Peak Rush",
     khanabook: "50ms local SQLite write",
-    cloud: "800ms – 3s cloud API lag",
+    cloud: "800ms - 3s cloud API lag",
     legacy: "Slow Windows OS disk lag",
   },
   {
@@ -110,7 +110,7 @@ const ARCH_COMPARISON = [
   {
     feature: "Monthly Recurring Fees",
     khanabook: "₹0 Core POS (Zero Tax)",
-    cloud: "₹1,500 – ₹5,000/mo lock-in",
+    cloud: "₹1,500 - ₹5,000/mo lock-in",
     legacy: "High AMC & license renewals",
   },
 ];
@@ -136,13 +136,13 @@ const HARDWARE_CHECKLIST = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "KhanaBook — Offline-First Restaurant POS" },
+      { title: "KhanaBook - Offline-First Restaurant POS" },
       {
         name: "description",
         content:
           "KhanaBook is an offline-first Android restaurant POS for billing, KOT management, payment recording, menus, inventory and up to five synchronised terminals.",
       },
-      { property: "og:title", content: "KhanaBook — Offline-First Restaurant POS" },
+      { property: "og:title", content: "KhanaBook - Offline-First Restaurant POS" },
       {
         property: "og:description",
         content:
@@ -219,9 +219,8 @@ function Home() {
 
               {/* Subheadline */}
               <p className="mt-5 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
-                High-speed offline billing on standard Android phones and tablets. Synchronize up to
-                5 terminals locally over Wi-Fi when broadband drops, paired with a real-time Cloud
-                Web Dashboard.
+                High-speed offline billing for Android devices with instant local Wi-Fi sync and a
+                real-time Cloud Dashboard.
               </p>
 
               {/* Action Buttons Row */}
@@ -267,7 +266,7 @@ function Home() {
         </div>
       </section>
 
-      {/* REALTIME SAAS METRICS STRIP — Godly, Realtime Colors & Motion Primitives */}
+      {/* REALTIME SAAS METRICS STRIP - Realtime Metrics & Primitives */}
       <section className="py-6 border-y border-border/80 bg-surface/60 backdrop-blur-md">
         <div className="container-page">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -281,7 +280,7 @@ function Home() {
             </div>
 
             <div className="flex flex-col items-center text-center p-3 rounded-2xl bg-surface/80 border border-border/60 shadow-sm">
-              <div className="text-2xl md:text-3xl font-black text-emerald-600 dark:text-emerald-400 font-mono flex items-center">
+              <div className="text-2xl md:text-3xl font-black text-brand font-mono flex items-center">
                 <NumberTicker value={100} />
                 <span>%</span>
               </div>
@@ -290,7 +289,7 @@ function Home() {
             </div>
 
             <div className="flex flex-col items-center text-center p-3 rounded-2xl bg-surface/80 border border-border/60 shadow-sm">
-              <div className="text-2xl md:text-3xl font-black text-amber-500 font-mono flex items-center">
+              <div className="text-2xl md:text-3xl font-black text-brand font-mono flex items-center">
                 <span>≤</span>
                 <NumberTicker value={5} />
               </div>
@@ -299,7 +298,7 @@ function Home() {
             </div>
 
             <div className="flex flex-col items-center text-center p-3 rounded-2xl bg-surface/80 border border-border/60 shadow-sm">
-              <div className="text-2xl md:text-3xl font-black text-blue-600 dark:text-blue-400 font-mono flex items-center">
+              <div className="text-2xl md:text-3xl font-black text-brand font-mono flex items-center">
                 <span>₹</span>
                 <NumberTicker value={0} />
               </div>
@@ -312,14 +311,13 @@ function Home() {
         </div>
       </section>
 
-      {/* WHO IT'S FOR & CORE CAPABILITIES — Horizontal Parallax Marquee */}
+      {/* WHO IT'S FOR & CORE CAPABILITIES - Horizontal Parallax Marquee */}
       <HorizontalParallax />
 
-      {/* SOCIAL PROOF — TRUSTED DINING OUTLETS */}
+      {/* SOCIAL PROOF - TRUSTED DINING OUTLETS */}
       <section className="py-14 sm:py-16 border-b border-border/60 bg-surface/40 relative">
         <div className="w-[92vw] lg:w-[88vw] xl:w-[80vw] max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-            <div className="eyebrow mb-3">Real Outlets • Real Counters</div>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
               Trusted by Independent Dining Outlets Across India
             </h2>
@@ -342,8 +340,7 @@ function Home() {
                   >
                     <div>
                       <div className="flex items-center justify-between gap-1 mb-1.5">
-                        <span className="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <span className="text-[11px] font-bold text-foreground uppercase tracking-wider inline-flex items-center gap-0.5">
+                        <span className="text-[11px] font-bold text-brand uppercase tracking-wider inline-flex items-center gap-0.5">
                           {outlet.badge}
                         </span>
                       </div>
@@ -366,7 +363,6 @@ function Home() {
                 >
                   <div>
                     <div className="flex items-center gap-1.5 mb-1.5">
-                      <span className="inline-block h-1.5 w-1.5 rounded-full bg-muted-foreground/60" />
                       <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
                         Partner Outlet
                       </span>
@@ -386,7 +382,7 @@ function Home() {
         </div>
       </section>
 
-      {/* DUAL-ENGINE ARCHITECTURE — ANDROID APP + WEB DASHBOARD */}
+      {/* DUAL-ENGINE ARCHITECTURE - ANDROID APP + WEB DASHBOARD */}
       <section
         className="py-20 md:py-28 bg-[#1E1F20]/30 border-y border-white/[0.06]"
         id="dual-engine"
@@ -420,7 +416,7 @@ function Home() {
                       <Smartphone className="h-7 w-7" />
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 dark:text-emerald-400 text-xs font-bold font-mono">
-                      <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="h-2 w-2 rounded-full bg-emerald-500" />
                       100% OFFLINE SQLITE
                     </span>
                   </div>
@@ -565,7 +561,6 @@ function Home() {
         <div className="container-page">
           <EntranceReveal direction="up">
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <div className="eyebrow mb-3">Quick & simple</div>
               <h2 className="text-3xl md:text-5xl font-black">
                 Works with the setup <span className="hl">you already have.</span>
               </h2>
@@ -589,9 +584,8 @@ function Home() {
         </div>
       </section>
 
-      {/* DO MORE WITH KHANABOOK — links into /features */}
+      {/* DO MORE WITH KHANABOOK - links into /features */}
       <Section
-        eyebrow="Do more"
         title={
           <>
             Do more with <span className="hl">one restaurant app.</span>
@@ -629,7 +623,7 @@ function Home() {
         </div>
       </Section>
 
-      {/* HAIKEI ORGANIC WAVE ACCENT — TOP */}
+      {/* HAIKEI ORGANIC WAVE ACCENT - TOP */}
       <HaikeiWave className="-mb-1" opacity={0.8} />
 
       {/* INTERACTIVE RESTAURANT POS OPERATIONS DASHBOARD */}
@@ -647,7 +641,7 @@ function Home() {
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 Test table billing, rapid menu item selection, instant GST calculation, and thermal
-                KOT dispatching right now — engineered with instant local response.
+                KOT dispatching right now, engineered with instant local response.
               </p>
             </div>
           </EntranceReveal>
@@ -672,15 +666,14 @@ function Home() {
         </div>
       </section>
 
-      {/* HAIKEI ORGANIC WAVE ACCENT — BOTTOM */}
+      {/* HAIKEI ORGANIC WAVE ACCENT - BOTTOM */}
       <HaikeiWave reverse className="-mt-1" opacity={0.8} />
 
-      {/* TECHNICAL ARCHITECTURE COMPARISON — Google Stitch Matrix */}
+      {/* TECHNICAL ARCHITECTURE COMPARISON - Google Stitch Matrix */}
       <section className="py-20 md:py-28" id="architecture">
         <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <EntranceReveal direction="up">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="eyebrow mb-3">Architectural Superiority</div>
               <h2 className="text-3xl md:text-5xl font-black text-foreground">
                 Technical Architecture <span className="hl">Comparison</span>
               </h2>
@@ -771,7 +764,6 @@ function Home() {
       {/* BLOG PREVIEW */}
       {latestPosts.length > 0 && (
         <Section
-          eyebrow="Grow your restaurant"
           title={
             <>
               From the <span className="hl">KhanaBook blog.</span>
@@ -808,7 +800,6 @@ function Home() {
 
       {/* CUSTOMER STORIES & TESTIMONIALS */}
       <Section
-        eyebrow="Loved by restaurants"
         title={
           <>
             Real feedback from <span className="hl">busy restaurant owners.</span>
@@ -821,12 +812,11 @@ function Home() {
         </EntranceReveal>
       </Section>
 
-      {/* FAQ — GOOGLE STITCH TYPOGRAPHY & 75vw SCREEN WIDTH */}
+      {/* FAQ - GOOGLE STITCH TYPOGRAPHY & 75vw SCREEN WIDTH */}
       <section className="py-20 md:py-28" id="faq">
         <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <EntranceReveal direction="up" className="w-full">
             <div className="mb-8 text-center md:text-left">
-              <div className="eyebrow mb-3">FAQ</div>
               <h2 className="m-0 text-[clamp(40px,8vw,57px)] font-bold tracking-tight text-foreground md:text-[57px] md:leading-[64px]">
                 Common <span className="hl">questions.</span>
               </h2>
@@ -838,7 +828,7 @@ function Home() {
         </div>
       </section>
 
-      {/* CTA — 75% SCREEN WIDTH ABOVE FOOTER */}
+      {/* CTA - 75% SCREEN WIDTH ABOVE FOOTER */}
       <section className="pb-20 md:pb-28">
         <div className="w-[92vw] md:w-[75vw] max-w-7xl mx-auto">
           <EntranceReveal direction="up" className="w-full">
@@ -863,7 +853,7 @@ function Home() {
                     Ready to run <span className="hl">smarter?</span>
                   </h2>
                   <p className="mt-4 text-[#B8A6A7] max-w-3xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed">
-                    Get KhanaBook set up for your restaurant — billing, KOT, payments and
+                    Get KhanaBook set up for your restaurant: billing, KOT, payments and
                     multi-terminal operations in one Android app.
                   </p>
                   <div className="mt-8 flex flex-wrap justify-center items-center gap-4">

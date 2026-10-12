@@ -42,7 +42,7 @@ export function Header() {
           </div>
         </Link>
 
-        {/* Primary Navigation Pills — Google Stitch Dock Style */}
+        {/* Primary Navigation Pills - Google Stitch Dock Style */}
         <nav
           aria-label="Primary"
           className="hidden xl:flex items-center gap-1 rounded-full border border-border/70 bg-surface-soft/80 p-1.5 shadow-inner"

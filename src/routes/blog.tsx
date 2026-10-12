@@ -24,7 +24,7 @@ export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
       {
-        title: "Blog — KhanaBook Offline-First Multi-Terminal POS | Android App & Web Dashboard",
+        title: "Blog - KhanaBook Offline-First Multi-Terminal POS | Android App & Web Dashboard",
       },
       {
         name: "description",

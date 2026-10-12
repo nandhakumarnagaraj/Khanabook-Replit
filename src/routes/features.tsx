@@ -37,7 +37,7 @@ export const Route = createFileRoute("/features")({
     meta: [
       {
         title:
-          "Features — KhanaBook Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard",
+          "Features - KhanaBook Offline-First Multi-Terminal Restaurant POS | Android App & Web Dashboard",
       },
       {
         name: "description",
@@ -47,7 +47,7 @@ export const Route = createFileRoute("/features")({
       {
         property: "og:title",
         content:
-          "Features — KhanaBook Offline-First Multi-Terminal POS (Android App & Web Dashboard)",
+          "Features - KhanaBook Offline-First Multi-Terminal POS (Android App & Web Dashboard)",
       },
       {
         property: "og:description",
