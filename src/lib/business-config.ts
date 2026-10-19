@@ -25,7 +25,7 @@ export const BUSINESS = {
   // Verified customer access URLs.
   loginUrl: "https://kbook.iadv.cloud/login",
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.piquantservices.khanabooklite",
-  tutorialsCdnUrl: "https://cdn.kbook.iadv.cloud/tutorials/",
+  tutorialsCdnUrl: "https://kbook.iadv.cloud/cdn/tutorials/",
   tutorialsVpsPath: "/var/www/cdn.kbook.iadv.cloud/tutorials/",
 
   // Legal

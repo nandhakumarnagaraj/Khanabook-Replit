@@ -156,7 +156,7 @@ export function TutorialModal({ open, onOpenChange, initialVideoId }: TutorialMo
             <div className="mt-auto pt-4 border-t border-white/10 text-[11px] text-gray-400 flex items-center gap-2">
               <Server className="h-3.5 w-3.5 shrink-0 text-emerald-400" />
               <span className="truncate">
-                Host: <code className="text-gray-200">cdn.kbook.iadv.cloud</code>
+                Host: <code className="text-gray-200">kbook.iadv.cloud/cdn</code>
               </span>
             </div>
           </div>

@@ -11,6 +11,24 @@ export interface TutorialVideo {
 
 export const TUTORIAL_VIDEOS: TutorialVideo[] = [
   {
+    id: "create-quickbill",
+    title: "How to Create a QuickBill",
+    description:
+      "Create and print a customer bill in seconds on the KhanaBook POS - add items, apply taxes, and take payment.",
+    duration: "0:42",
+    fileName: "create-quickbill.webm",
+    tag: "Billing",
+  },
+  {
+    id: "cancel-bill-payment-mode",
+    title: "How to Cancel a Bill & Change Payment Mode",
+    description:
+      "Safely cancel an active bill or switch its payment mode (Cash / UPI / Card) after it has already been created.",
+    duration: "0:27",
+    fileName: "cancel-bill-change-payment-mode.webm",
+    tag: "Billing",
+  },
+  {
     id: "app-overview",
     title: "KhanaBook Quick Start & Complete Overview",
     description:
