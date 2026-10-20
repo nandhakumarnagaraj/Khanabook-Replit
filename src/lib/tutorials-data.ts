@@ -11,6 +11,15 @@ export interface TutorialVideo {
 
 export const TUTORIAL_VIDEOS: TutorialVideo[] = [
   {
+    id: "continue-with-google",
+    title: "How to Sign In with Google",
+    description:
+      "Tap the circular G button on the login screen to sign in with your Google account instead of a phone number and password.",
+    duration: "0:10",
+    fileName: "continue-with-google.webm",
+    tag: "Getting Started",
+  },
+  {
     id: "create-quickbill",
     title: "How to Create a QuickBill",
     description:
